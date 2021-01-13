@@ -1,10 +1,11 @@
 # An optional custom script to run before Hugo builds your site.
 # You can delete it if you do not need it.
 
+#This script is a super messy, super hacky way of building the gallery page.
 library(tidyverse)
-imgs <- list.files("content", recursive =T, pattern = "png") %>%
+imgs_og <- list.files("content", recursive =T, pattern = "png") %>%
   str_remove("portfolio/")
-imgs <- paste0("../", imgs)
+imgs <- paste0("../", imgs_og)
 dirs <- str_extract(imgs, ".*/") %>% str_remove("/$")
 imgs <- str_remove(imgs, ".*/")
 
@@ -34,12 +35,11 @@ caps <- str_remove(dirs, "\\.\\./") %>%
   }) %>%
   unlist()
 
-opts <- tibble(img = imgs, dir = dirs, cap = caps, series = series_vec, series_loc = series_locs)
+opts <- tibble(img = imgs_og, dir = dirs, cap = caps, series = series_vec, series_loc = series_locs)
 make_item <- function(img, dir, cap, series, series_loc){
-  paste("gallery_item:",
-        paste0("- album: ", dir),
-        paste0("\timage: ", img),
-        paste0("\tcaption: <a href=",dir,">", cap, "</a>, from the <a href='", series_loc, "'>", series, "</a> series."  ),
+  paste("- album: gallery",
+        paste0("  image: https://github.com/18kimn/blog/raw/master/content/portfolio/", img),
+        paste0("  caption: <a href=",dir,">", cap, "</a>, from the <a href='", series_loc, "'>", series, "</a> series."  ),
         "\n",
         sep = "\n")
 }
@@ -50,11 +50,10 @@ assembled <- paste(
   "---",
   "title: Gallery",
   paste0("date: ", Sys.Date()),
+  "gallery_item:",
   gallery_items,
-  "---",
+  "---\n\n",
   "{{< gallery >}}",
   sep = "\n"
 )
 writeLines(assembled, "content/portfolio/gallery/index.md")
-#didn't want to import another package so the syntax is messy especially here
-  {{< gallery album="album/pics" >}}
