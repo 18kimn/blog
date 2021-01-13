@@ -1,0 +1,28 @@
+{{- define "main" -}}
+
+{{ partial "page_header.html" . }}
+
+<div class="universal-wrapper">
+  {{ with .Content }}
+  <div class="article-style">{{ . }}</div>
+  {{ end }}
+
+  {{ $paginator := .Paginate .Data.Pages }}
+  {{ range $paginator.Pages }}
+    {{ $link := .RelPermalink }}
+    {{ $target := "" }}
+    {{ with .Params.external_link }}
+      {{ $link = . }}
+      {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
+    {{ end }}
+    <div>
+        <center style = "font-size:150%"><u><a href="{{$link}}" {{ $target | safeHTMLAttr }}>{{.Date.Format "2006-01-02"}}: {{.Title }}</a></u></center>
+      <div class="article-style">
+      </div>
+    </div>
+  {{ end }}
+
+  {{ partial "pagination" . }}
+</div>
+
+{{- end -}}

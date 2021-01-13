@@ -1,0 +1,12 @@
+# Font style metadata
+name = "custom_font"
+
+# Optional Google font URL
+google_fonts = ""
+
+# Font families
+heading_font = "Georgia"
+nav_font = "Georgia"
+mono_font = "Georgia"
+body_font = "EB Garamond"
+
