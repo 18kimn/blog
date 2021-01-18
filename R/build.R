@@ -3,7 +3,7 @@
 
 #This script is a super messy, super hacky way of building the gallery page.
 library(tidyverse)
-imgs_og <- list.files("content", recursive =T, pattern = "png") %>%
+imgs_og <- list.files("content", recursive =T, pattern = "png|gif") %>%
   str_remove("portfolio/")
 imgs <- paste0("../", imgs_og)
 dirs <- str_extract(imgs, ".*/") %>% str_remove("/$")
@@ -31,6 +31,7 @@ caps <- str_remove(dirs, "\\.\\./") %>%
       str_subset("title\\:") %>%
       str_remove("title\\:") %>%
       str_remove_all("\"") %>%
+      str_replace_all("\\:", "&colon;") %>%
       str_trim()
   }) %>%
   unlist()
