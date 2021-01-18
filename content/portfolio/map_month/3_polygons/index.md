@@ -1,5 +1,5 @@
 ---
-title: "Polygons"
+title: "Polygons: New Haven properties by size"
 date: 2020-01-03
 ---
 

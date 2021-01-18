@@ -1,5 +1,5 @@
 ---
-title: "Yellow"
+title: "Yellow: Third World decolonization"
 date: 2020-01-09
 ---
 

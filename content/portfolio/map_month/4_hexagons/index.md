@@ -1,5 +1,5 @@
 ---
-title: "Hexagons"
+title: "Hexagons: The Connecticut legislature"
 date: 2020-01-04
 ---
 

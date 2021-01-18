@@ -1,11 +1,11 @@
 ---
-title: "NULL: Prison gerrymandering and migration in the U.S."
+title: "NULL: Prison gerrymandering and migration"
 date: 2020-01-18
 ---
 
 Here's another map that took a few days to make and is still unfinished as it is. For the theme of `NULL`, I created a map to represents prison gerrymandering -- 
 
-<img src="https://github.com/18kimn/blog/content/portfolio/map_month/8_null/assembled.gif" width="50%" />
+<img src="https://github.com/18kimn/blog/raw/master/content/portfolio/map_month/8_null/assembled.gif" width="50%" />
 
 This was challenging to make on two fronts. Firstly, there is no authoritative source for the net increases and decreases due to population migration, and thus the data represented here is problematic for several reasons. I used the [Vera Institute's Incarceration Trends](https://github.com/vera-institute/incarceration-trends) dataset for the home counties of those imprisoned as well as the [Prison Policy Initiative's Data Toolbox](https://www.prisonpolicy.org/data/) to find the group quarters population of each block that contains a prison. I then used a point-to-polygon spatial join to merge prisons onto counties, then summarized everything to the county level for where there were two or more prisons per county. The next step was to create intersections between counties and legislative districts, after which I used the area of each county that had been split to divide a county's population statistics into different legislative districts (Los Angeles County is one example of such a county that resides in multiple congressional districts). I added all of these together by congressional district to create a congressional-district-level profile. Finally, I calculated "population change due to prisons" as the difference between the population of a congressional district due to prisons and the population of the congressional district who had been imprisoned. If more of the population in a district came from a prison as had been sent to a prison, the town effectively experienced an increase in population due to a local prison. If more of the population in a district had been sent to a prison than had come from a prison, this is an indicator of population shrinkage.  
 

@@ -1,5 +1,5 @@
 ---
-title: "Points"
+title: "Points: Yale beyond New Haven"
 date: 2020-01-01
 ---
 

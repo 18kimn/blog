@@ -1,5 +1,5 @@
 ---
-title: "Grid"
+title: "Grid: The Japanese cadastral survey"
 date: 2020-01-10
 ---
 
