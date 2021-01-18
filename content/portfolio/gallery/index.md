@@ -23,20 +23,12 @@ gallery_item:
   caption: <a href=../map_month/4_hexagons>Hexagons: The Connecticut legislature</a>, from the <a href='../map_month/'>Month of Maps</a> series.
 
 - album: gallery
-  image: https://github.com/18kimn/blog/raw/master/content/portfolio/map_month/5_yellow/assembled.gif
-  caption: <a href=../map_month/5_yellow>Yellow: Third World decolonization</a>, from the <a href='../map_month/'>Month of Maps</a> series.
-
-- album: gallery
   image: https://github.com/18kimn/blog/raw/master/content/portfolio/map_month/6_grid/assembled_stanford.png
   caption: <a href=../map_month/6_grid>Grid: The Japanese cadastral survey</a>, from the <a href='../map_month/'>Month of Maps</a> series.
 
 - album: gallery
   image: https://github.com/18kimn/blog/raw/master/content/portfolio/map_month/7_newtool/annotated.png
   caption: <a href=../map_month/7_newtool>Map with a new tool: Seoul, songs, spaces</a>, from the <a href='../map_month/'>Month of Maps</a> series.
-
-- album: gallery
-  image: https://github.com/18kimn/blog/raw/master/content/portfolio/map_month/8_null/assembled.gif
-  caption: <a href=../map_month/8_null>NULL: Prison gerrymandering and migration</a>, from the <a href='../map_month/'>Month of Maps</a> series.
 
 - album: gallery
   image: https://github.com/18kimn/blog/raw/master/content/portfolio/misc/one_korea/one_kor.png
