@@ -16,7 +16,7 @@
       {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
     {{ end }}
     <div>
-        <center style = "font-size:150%"><u><a href="{{$link}}" {{ $target | safeHTMLAttr }}>{{.Date.Format "2006-01-02"}}: {{.Title }}</a></u></center>
+        <center style = "font-size:150%"><u><a href="{{$link}}" {{ $target | safeHTMLAttr }}>{{.Title }}</a></u></center>
       <div class="article-style">
       </div>
     </div>
