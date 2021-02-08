@@ -1,6 +1,6 @@
 ---
 title: Gallery
-date: 2021-01-18
+date: 2021-02-07
 gallery_item:
 - album: gallery
   image: https://github.com/18kimn/blog/raw/master/content/portfolio/map_month/1_points/students_map_final.png
@@ -37,6 +37,10 @@ gallery_item:
 - album: gallery
   image: https://github.com/18kimn/blog/raw/master/content/portfolio/map_month/8_null/assembled.gif
   caption: <a href=../map_month/8_null>NULL&colon; Prison gerrymandering and migration</a>, from the <a href='../map_month/'>Month of Maps</a> series.
+
+- album: gallery
+  image: https://github.com/18kimn/blog/raw/master/content/portfolio/map_month/9_nongeographic/most_songs.png
+  caption: <a href=../map_month/9_nongeographic>Exploring Korean music&colon; a map</a>, from the <a href='../map_month/'>Month of Maps</a> series.
 
 - album: gallery
   image: https://github.com/18kimn/blog/raw/master/content/portfolio/misc/one_korea/one_kor.png
