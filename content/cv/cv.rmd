@@ -84,11 +84,7 @@ CV %>% print_skill_bars()
 Disclaimer {#disclaimer}
 --------------------------------------------------------------------------------
 
-Made with the R packages [**pagedown**](https://github.com/rstudio/pagedown) and [**datadrivencv**](http://nickstrayer.me/datadrivencv/).
-
-The source code is available [here](https://github.com/18kimn/nathankim/tree/master/content/cv).
-
-Last updated on `r date`.
+Made with the R packages [**pagedown**](https://github.com/rstudio/pagedown) and [**datadrivencv**](http://nickstrayer.me/datadrivencv/). The source code is available [here](https://github.com/18kimn/nathankim/tree/master/content/cv). Last updated on `r date`.
 
 
 
@@ -105,8 +101,6 @@ CV %<>% print_text_block("intro")
 ```
 
 
-
-
 Education {data-icon=graduation-cap data-concise=true}
 --------------------------------------------------------------------------------
 
@@ -120,15 +114,6 @@ Awards {data-icon=award data-concise=true}
 CV %<>% print_section('awards')
 ```
 
-Publications {data-icon=graduation-cap data-concise=true}
---------------------------------------------------------------------------------
-```{r}
-
-CV %<>% print_section('publications')
-
-```
-
-
 Work Experience {data-icon=suitcase}
 --------------------------------------------------------------------------------
 
@@ -138,14 +123,38 @@ Work Experience {data-icon=suitcase}
 <!-- ``` -->
 <!-- ::: -->
 
+
 ```{r}
 CV %<>% print_section('work_experience')
 ```
 
 <!-- These breaks just force a new page so section doesnt get cut off -->
-<br>
-<br>
-<br>
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
+
+Publications {data-icon=graduation-cap data-concise=true}
+--------------------------------------------------------------------------------
+```{r}
+
+CV %<>% print_section('publications')
+
+```
+
+Creative Projects {data-icon=paint-brush data-concise=true}
+--------------------------------------------------------------------------------
+<div class = "section level 3 blocks">
+<div class="date"></div>
+<div class="details">
+Click on project titles to view them. See more <a href="https://nathankim.name/portfolio/gallery/">here</a>.
+</div>
+</div>
+
+```{r}
+CV %<>% print_section('creative_projects')
+```
+
+
 
 On-Campus Activities {data-icon=users}
 --------------------------------------------------------------------------------

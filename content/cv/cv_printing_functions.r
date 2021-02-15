@@ -16,7 +16,8 @@
 #' @return A new `CV_Printer` object.
 create_CV_object <-  function(data_location,
                               pdf_mode = FALSE,
-                              sheet_is_publicly_readable = TRUE) {
+                              sheet_is_publicly_readable = TRUE,
+                              resume_mode = FALSE) {
 
   cv <- list(
     pdf_mode = pdf_mode,
@@ -24,7 +25,9 @@ create_CV_object <-  function(data_location,
   )
 
   is_google_sheets_location <- stringr::str_detect(data_location, "docs\\.google\\.com")
-
+  if(resume_mode){
+    cv$entries_data %<>% dplyr::filter(in_resume == "TRUE")
+  }
   if(is_google_sheets_location){
     if(sheet_is_publicly_readable){
       # This tells google sheets to not try and authenticate. Note that this will only
@@ -79,6 +82,7 @@ create_CV_object <-  function(data_location,
     ) %>%
     dplyr::mutate(
       description_bullets = ifelse(description_bullets != "", paste0("- ", description_bullets), ""),
+      description_bullets = ifelse(str_count(description_bullets, "- ") == 1, str_remove_all(description_bullets,"- "), description_bullets),
       start = ifelse(start == "NULL", NA, start),
       end = ifelse(end == "NULL", NA, end),
       start_year = extract_year(start),
@@ -233,7 +237,7 @@ Links {data-icon=link}
 print_contact_info <- function(cv){
   glue::glue_data(
     cv$contact_info,
-    "- <i class='fa fa-{icon}'></i> {contact}"
+    "<i class='fa fa-{icon}'></i> {contact}"
   ) %>% print()
 
   invisible(cv)

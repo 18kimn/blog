@@ -1,0 +1,156 @@
+---
+title: "Nathan Kim's CV"
+author: Nathan Kim
+date: "`r Sys.Date()`"
+params:
+  pdf_mode:
+    value: true
+output:
+  pagedown::html_resume:
+    css: ['resume.css', 'resume']
+    self_contained: true
+---
+
+
+
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(
+  results='asis', 
+  echo = FALSE
+)
+
+library(magrittr) # For the pipe
+library(lubridate)
+library(glue)
+source(here::here("content/cv/resume_printing_functions.r"))
+
+# Read in all data and initialize a CV printer object
+CV <- create_CV_object(
+  data_location = "https://docs.google.com/spreadsheets/d/1Q6UT_U3Ox4Y0BZUx0wUuLIs2KTUl_6qHigLjXcvRPgQ/edit?usp=sharing",  
+  pdf_mode = params$pdf_mode,
+  resume_mode = TRUE,
+)
+date <- Sys.Date()
+date <- glue("{format(date, '%B')} {day(date)}th, {year(date)}")
+```
+
+
+```{r}
+# When in pdf export mode the little dots are unaligned, so fix that with some conditional CSS.
+if(params$pdf_mode) {
+    cat("
+<style>
+:root{
+  --decorator-outer-offset-left: -6.5px;
+}
+</style>")
+}
+```
+
+
+Aside
+================================================================================
+
+```{r, eval = F}
+# Build interactive network of positions colored by section
+# and connected if they occurred in the same year
+source("build_network_logo.R")
+build_network_logo(CV$entries_data)
+```
+
+<div style="width:100%; height:200px; margin-top: -70px; max-width:100%">
+<iframe scrolling="no" id = "cv_network_viz" src="https://korean-music-map.info/" style="border: 0px none; margin-left:-20px; height:200px">
+</iframe>
+</div>
+<br>
+
+A snapshot from a personal creative project. View the full version at [korean-music-map.info](https://korean-music-map.info/). 
+
+Contact {#contact}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %>% print_contact_info()
+```
+
+
+
+Skills {#skills}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %>% print_skills()
+```
+
+
+
+Disclaimer {#disclaimer}
+--------------------------------------------------------------------------------
+
+<br> 
+
+Made with the R packages [**pagedown**](https://github.com/rstudio/pagedown) and [**datadrivencv**](http://nickstrayer.me/datadrivencv/). The source code is available [here](https://github.com/18kimn/nathankim/tree/master/content/cv). Last updated on `r date`.
+
+<br>
+
+```{r}
+if(params$pdf_mode){
+  cat("View this resume online [here](https://nathankim.name/files/resume.html)")
+} else {
+  cat("[<i class='fas fa-download'></i> Download as PDF.](https://github.com/18kimn/nathankim/raw/master/static/files/resume.pdf)")
+}
+```
+
+Main
+================================================================================
+
+Nathan Kim {#title}
+--------------------------------------------------------------------------------
+
+```{r}
+# Note the special double pipe so we modify the CV object in place
+CV %<>% print_text_block("intro_resume") 
+
+```
+
+
+Work Experience {data-icon=suitcase}
+--------------------------------------------------------------------------------
+
+<!-- ::: aside -->
+<!-- ```{r} -->
+<!-- CV %<>% print_text_block('industy_experience_aside') -->
+<!-- ``` -->
+<!-- ::: -->
+
+
+```{r}
+CV %<>% print_section('work_experience')
+```
+
+<!-- These breaks just force a new page so section doesnt get cut off -->
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
+
+
+
+
+
+
+On-Campus Activities {data-icon=users}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %<>% print_section('on-campus_activities')
+```
+
+
+<!-- <br> -->
+<!-- <br> -->
+
+<!-- ```{r} -->
+<!-- CV %<>% print_links() -->
+<!-- ``` -->
+
