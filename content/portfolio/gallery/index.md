@@ -1,6 +1,6 @@
 ---
 title: Gallery
-date: 2021-02-08
+date: 2021-05-16
 gallery_item:
 - album: gallery
   image: https://github.com/18kimn/blog/raw/master/content/portfolio/map_month/1_points/students_map_final.png

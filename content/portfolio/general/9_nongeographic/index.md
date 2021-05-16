@@ -6,6 +6,7 @@ date: 2020-02-07
 The final map I made this month took me two weeks to make and is still not exactly perfect, but it's overall one I'm happy with and that I learned a lot in creating. A preview is shown in the image below, and the full interactive map can be found at [korean-music-map.info](https://korean-music-map.info). All of the code I used to create this can be found at [github.com/18kimn/spotify_features](https://github.com/18kimn/spotify_features). If you're interested in this project and want to talk more, you can email me (nathan [dot] kim [at] yale [dot] edu) or we can talk on Twitter (@nathanckim).
 
 This map is a non-geographic map of Korean musicians. I scraped the dicography of every Korean artist on Spotify through their Web API[^1], then spent a while learning the D3 library in JavaScript to build an interactive plot that is somewhere between a network diagram, a scatter plot, and a map. 
+
 <p align="center"><iframe src= "https://korean-music-map.info//" width="90%" height=800></iframe><br><a href=https://korean-music-map.info> To view the full visualization, click here.</a></p>
 
 ## Basic info

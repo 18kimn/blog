@@ -49,7 +49,7 @@ gallery_items <- paste(unlist(pmap(opts, make_item)), collapse = "")
 
 assembled <- paste(
   "---",
-  "title: Gallery",
+  "title: Projects (gallery view)",
   paste0("date: ", Sys.Date()),
   "gallery_item:",
   gallery_items,

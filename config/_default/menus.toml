@@ -14,22 +14,18 @@
   weight = 30
 
 [[main]]
-  name = "Gallery"
+  name = "Gallery view"
   parent = "Portfolio"
   url = "portfolio/gallery"
   weight = 10
 
 [[main]]
-  name = "Month of Maps"
+  name = "List view"
   parent = "Portfolio"
-  url = "portfolio/map_month"
+  url = "portfolio/general"
   weight = 20
 
-[[main]]
-  name = "Misc."
-  parent = "Portfolio"
-  url = "portfolio/misc"
-  weight = 30
+
 
 
 
