@@ -1,6 +1,6 @@
 ---
 title: "NULL: Prison gerrymandering and migration"
-date: 2020-01-18
+date: 2021-01-18
 ---
 
 Here's another map that took a few days to make and is still unfinished as it is. For the theme of `NULL`, I created a map to represents prison gerrymandering, or the practice of counting incarcerated individuals in their location of imprisonment rather than in their home communities for the Census and for legislative redistricting. With prison gerrymandering, population and political power are artificially inflated in an exo-cartographic manuever: without drawing any new lines on a map, districts of imprisonment gain representative power and districts hit most heavily by the pandemic of mass incarceration lose representative power. 

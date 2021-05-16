@@ -1,6 +1,6 @@
 ---
 title: "Map with a new tool: Seoul, songs, spaces"
-date: 2020-01-12
+date: 2021-01-12
 ---
 
 Over the past few months, I've developed a strong interest in Korean hip-hop, R&B, and Indie. I realized that a lot of these songs are written about specific places in Seoul, while the same cannot be said about many other genres or locations (e.g. songs about New York neighborhoods are not as common). I collected a few here and laid them over a modified version of the Mapbox Japan theme. The new tool I used here was Figma, a graphic design software that is surprisingly intuitive to use.

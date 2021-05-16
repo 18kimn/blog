@@ -1,6 +1,6 @@
 ---
 title: "Hexagons: The Connecticut legislature"
-date: 2020-01-04
+date: 2021-01-04
 ---
 
 For day four ("hexagons"), I made two hexagonal maps of the Connecticut Senate and House Districts. Hexagonal maps let us represent areas equally and contiguously, which is helpful for representing electoral districts that may have disproportionate areas but an equal number of votes in a legislature. Hexagonal maps also provide a more "continuous" picture of space compared to square grid maps, which create straight lines and could exaggerate geographical divisions. 

@@ -1,6 +1,6 @@
 ---
 title: "Lines: Roads, rails, and rivers"
-date: 2020-01-02
+date: 2021-01-02
 ---
 
 For day one ("lines"), I created a simple map of Connecticut using its local railroads, rivers, and roads. Colors are purposefully chosen to emphasize these transportation networks as veins and arteries of the state of Connecticut. 

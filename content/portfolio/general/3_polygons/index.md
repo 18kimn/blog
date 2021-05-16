@@ -1,6 +1,6 @@
 ---
 title: "Polygons: New Haven properties by size"
-date: 2020-01-03
+date: 2021-01-03
 ---
 
 For day three ("polygons"), here's a "map" of New Haven properties sorted by size. This has some aesthetic appeal and interesting stories around land ownership that I've tried to bring out through selective highlighting, for instance showing that the largest property in New Haven is the Yale Golf Course. 

@@ -1,6 +1,6 @@
 ---
 title: "Yellow: Third World decolonization"
-date: 2020-01-09
+date: 2021-01-09
 ---
 
 The prompt of "yellow" was pretty difficult to come up with a response to. Yellow is a pretty uncommon color, and also tends to overpower or clash with lots of colors. 

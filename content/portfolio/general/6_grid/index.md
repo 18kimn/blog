@@ -1,6 +1,6 @@
 ---
 title: "Grid: The Japanese cadastral survey"
-date: 2020-01-10
+date: 2021-01-10
 ---
 
 I actually had to take quite a few days to make this following graphic after trying several data sources and assembly methods. My incomplete response for the prompt of "grid" is a collage of Japanese land survey maps of Korea published in 1910. In brief, the land survey was one of the first projects Japan undertook after it colonized Korea in 1910, documenting every single plot of land in Korea with its value, area, and ownership. The survey was the first unified documentation of land ownership covering all of Korea, and was important to Japan for appropriating land from Korean peasantry as well as systematically collecting land taxes and rent. The land survey was also important in broader terms past economic use; it formed an epistemplogical "backbone" against which further development of all kinds was created, not just economic but also cultural and political. The creation of some 800,000 maps as part of the survey formed a corpus for building development, sewer systems, parks and recreation centers, religious institutiohns, and other structures that were led by the Japanese Governor-General of Korea. These structures were essential for the Japanese project of assmilating Koreans and eliciting cultural consent, which were especially important goals after the March First Movement for Korean independence of 1919, and labor strikes that occurred in the later years of colonial rule. 
