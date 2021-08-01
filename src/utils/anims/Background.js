@@ -1,5 +1,5 @@
 import * as d3 from 'd3'
-import * as topojson from 'topojson'
+import * as topojson from 'topojson-client'
 import * as nhv_blocks from '../data/nhv_blocks.json'
 import theme from '../../styles/Theme'
 
