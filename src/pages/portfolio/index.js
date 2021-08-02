@@ -3,6 +3,7 @@ import { graphql, Link } from 'gatsby'
 import { generateSlug } from '../../utils/stringUtils.js'
 import { dataPropTypes } from '../../utils/propTypes'
 import PageContainer from '../../components/PageContainer.js'
+
 const IndexPage = ({
   data: {
     allMarkdownRemark: { edges },
@@ -20,8 +21,6 @@ const IndexPage = ({
       </div>
     })
 
-
-  
   return (
     <PageContainer>
       <h1>Portfolio</h1>

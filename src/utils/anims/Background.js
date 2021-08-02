@@ -37,7 +37,7 @@ const runBackgroundMap = () => {
     .style('stroke-dasharray', '100 10')
 
   d3.timer((elapsed) => {
-    backgroundMap.style('stroke-dashoffset', elapsed / 100)
+    backgroundMap.style('stroke-dashoffset', elapsed / 75)
   })
 }
 

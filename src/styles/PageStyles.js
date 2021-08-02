@@ -11,7 +11,7 @@ export default makeStyles(() => ({
   },
   page: {
     width: '80vw', 
-    height: '100% - 40px',
+    height: 'calc(100% - 40px)',
     overflowY: 'auto',
     '&::-webkit-scrollbar': {
       display: 'none',

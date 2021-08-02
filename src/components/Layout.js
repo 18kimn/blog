@@ -30,7 +30,13 @@ const Layout = ({content}) => {
 }
 
 Layout.propTypes = {
-  content: PropTypes.elementType.isRequired
+  content: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.element),
+    PropTypes.element
+  ]).isRequired,
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired
+  })
 }
 
 export default Layout

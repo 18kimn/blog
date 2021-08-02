@@ -2,7 +2,7 @@
 import React from 'react'
 import { Grid, Typography } from '@material-ui/core'
 import PageContainer from '../components/PageContainer'
-
+import { Link } from '@gatsbyjs/reach-router'
 const IndexPage = () => {
 
   return (
@@ -25,18 +25,19 @@ const IndexPage = () => {
             </Typography>
             <br/>
             <Typography variant='body1'>
-            I work as a research assistant with Professor Emma Zang through the Yale Institution for Social and Policy Studies, and am an
-            intern with local New Haven nonprofit DataHaven. On campus, I am part of the Asian Students for Ethnic Studies group (formerly the
+            This summer, I&apos;m working with the [Anti-Eviction Mapping Project](https://antievictionmap.com/). I&apos;m also continuing research with Professor Emma 
+            Zang of Yale Sociology and work with local New Haven nonprofit DataHaven. On campus, I am part of the Asian Students for Ethnic Studies group (formerly the
             Asian American Studies Task Force) and perform with Korean drum troup UNITY. Previously, I served as Programming Chair for the Asian American Students Alliance,
             was a Social Chair for the Korean American Students at Yale and was a Dwight Hall Urban Fellow, through which I worked at local nonprofit LEAP.
             </Typography>
             <br/>
             <Typography variant='body1'>
-            You can find more information of my other activities in my CV, and some of my work under the Portfolio tab.
+            You can find more information of my other activities in my <Link to='/files/resume.html'>resume</Link>,
+            and some of my work under the <Link to='/portfolio'>Portfolio</Link> page
             </Typography>
           </Grid>
         </Grid>
-      </Grid>=
+      </Grid>
     </PageContainer>
   )
 }
