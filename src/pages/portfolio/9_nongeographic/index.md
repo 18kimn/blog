@@ -8,7 +8,11 @@ The final map I made this month took me two weeks to make and is still not exact
 
 This map is a non-geographic map of Korean musicians. I scraped the dicography of every Korean artist on Spotify through their Web API[^1], then spent a while learning the D3 library in JavaScript to build an interactive plot that is somewhere between a network diagram, a scatter plot, and a map. 
 
-<p align="center"><iframe src= "https://korean-music-map.info//" width="90%" height=800></iframe><br><a href=https://korean-music-map.info> To view the full visualization, click here.</a></p>
+<p align="center">
+<iframe src= "https://korean-music-map.info//" width="90%" height=800 style={border: 0;}></iframe>
+<br>
+<a href=https://korean-music-map.info> To view the full visualization, click here.</a>
+</p>
 
 ## Basic info
 

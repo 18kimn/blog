@@ -18,14 +18,15 @@ const IndexPage = () => {
           <Grid container direction='column' alignItems='center'>
             <Grid item xs={1}></Grid>
             <Typography variant='body1'>
-            I’m a junior at Yale College double majoring in Ethnicity, Race, & Migration as well as Statistics & Data Science.
+            I’m a senior at Yale College double majoring in Ethnicity, Race, & Migration as well as Statistics & Data Science.
             I am broadly interested in a critical study of space and race, especially in how actions along these dimensions can destroy or advance global imperialism.
             I have related interests in data visualization and interactive presentations. My strengths are in the R tidyverse, and I am also familiar
             with the data.table, Shiny, sf, and spatstat packages. I also have experience working in Python, Stata, Tableau, and Excel.
             </Typography>
             <br/>
             <Typography variant='body1'>
-            This summer, I&apos;m working with the [Anti-Eviction Mapping Project](https://antievictionmap.com/). I&apos;m also continuing research with Professor Emma 
+            This summer, I&apos;m working with the <Link to='https://antievictionmap.com/'>Anti-Eviction Mapping Project,</Link>, a tenant organizing collective 
+            and digital cartography group based out of San Francisco. I&apos;m also continuing research with Professor Emma 
             Zang of Yale Sociology and work with local New Haven nonprofit DataHaven. On campus, I am part of the Asian Students for Ethnic Studies group (formerly the
             Asian American Studies Task Force) and perform with Korean drum troup UNITY. Previously, I served as Programming Chair for the Asian American Students Alliance,
             was a Social Chair for the Korean American Students at Yale and was a Dwight Hall Urban Fellow, through which I worked at local nonprofit LEAP.
