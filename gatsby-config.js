@@ -13,6 +13,8 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-mdx',
     'gatsby-plugin-sharp',
+    'gatsby-theme-material-ui', 
+    'gatsby-plugin-material-ui',
     'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-source-filesystem',
