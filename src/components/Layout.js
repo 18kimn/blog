@@ -11,7 +11,6 @@ import drawEllipses from '../utils/anims/Ellipse.js'
 const Layout = ({content}) => {
 
   useEffect(() => {
-    console.log('layout mounting')
     runBackgroundMap()
     drawEllipses()
   }, [])

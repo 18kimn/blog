@@ -4,7 +4,6 @@ import { dataPropTypes } from '../utils/propTypes'
 import PageContainer from '../components/PageContainer'
 
 const Template = (props) => {
-  console.log(props)
   const { data} = props
   const {frontmatter, html} = data.markdownRemark
   
