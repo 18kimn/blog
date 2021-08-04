@@ -3,7 +3,6 @@ module.exports = {
     title: 'nathan kim',
   },
   plugins: [
-    'gatsby-plugin-image',
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
@@ -12,9 +11,26 @@ module.exports = {
     },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-mdx',
-    'gatsby-plugin-sharp',
     'gatsby-theme-material-ui', 
+    'gatsby-plugin-image',
+    'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-copy-linked-files',
+          },
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 800,
+            },
+          },
+        ],
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -23,6 +39,5 @@ module.exports = {
       },
       __key: 'pages',
     },
-    'gatsby-transformer-remark',
   ],
 }

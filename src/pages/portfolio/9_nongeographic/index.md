@@ -2,7 +2,10 @@
 slug: "/portfolio/9_nongeographic"
 title: "Exploring Korean music: a map"
 date: 2021-02-07
+banner: nongeographic-capture.PNG
 ---
+
+This past winter break, I made a few maps inspired by the [30 day map challenge](https://github.com/tjukanovt/30DayMapChallenge). This is one of them, responding to the prompt of "non-geographic map." The maps in response to the challenge aren't too polished or meaningful, but they were a fun chance to quickly create things and try to learn some new technical skills. 
 
 The final map I made this month took me two weeks to make and is still not exactly perfect, but it's overall one I'm happy with and that I learned a lot in creating. A preview is shown in the image below, and the full interactive map can be found at [korean-music-map.info](https://korean-music-map.info). All of the code I used to create this can be found at [github.com/18kimn/spotify_features](https://github.com/18kimn/spotify_features). If you're interested in this project and want to talk more, you can email me (nathan [dot] kim [at] yale [dot] edu) or we can talk on Twitter (@nathanckim).
 
@@ -35,7 +38,7 @@ The other inspiration for this map was from working through Spotify's recommenda
 
 A major takeaway that I had after creating this map was that hip-hop musicians have the most amount of collaborations by far, and pop musicians have the least amount of collaborations by far. Here's a simple bar graph I made from the data I was working with to show this; nearly all of the top 15 collaborators in Korean music are from Korean hip-hop. This makes sense, there's lots of famous collaborations in American hip-hop too, and in Korean hip-hop some of the most famous tracks are mega-collaborations like [119 Remix](https://open.spotify.com/track/6Y0VCyjVZ7waMVgDMJffu4?si=nr1eegHCRgeAH4vfVeOgpA) or [Code Clear](https://open.spotify.com/track/6Mf7T0kJOuxTop2AE9L0Sc?si=6K-B7-LVShefHn8wfGeISA). Hip-hop musicians also tend to stay hyper-active in music longer than Korean pop musicians (many of the artists in the plot below are in their mid-30s). 
 
-< figure src="most_songs.png" title="" width="50%">
+![](most_songs.png)
 
 The second, more abstract takeaway I had while creating this map was that while there is no way to represent space (or any concept) completely or "accurately," it's still very useful to try. To make a "map", I felt that I needed to represent space; I had no idea how to do so given that longitude/latitude coordinates aren't part of Spotify's data. I instead used force simulations from the D3 library in JS, visually representing social connections as spatial ones via distance and lines. Although horizontal and vertical scales don't mean anything specific on this map as a result, to me this map still represents space -- a complex set of interactions together, where concepts of "near" and "far" can be seen, where movement can be understood. 
 

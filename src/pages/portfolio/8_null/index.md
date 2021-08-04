@@ -1,7 +1,10 @@
 ---
 title: "NULL: Prison gerrymandering and migration"
 date: 2021-01-18
+banner: assembled.png
 ---
+
+This past winter break, I made a few maps inspired by the [30 day map challenge](https://github.com/tjukanovt/30DayMapChallenge). This is one of them, responding to the prompt of "NULL." The maps in response to the challenge aren't too polished or meaningful, but they were a fun chance to quickly create things and try to learn some new technical skills. 
 
 Here's another map that took a few days to make and is still unfinished as it is. For the theme of `NULL`, I created a map to represents prison gerrymandering, or the practice of counting incarcerated individuals in their location of imprisonment rather than in their home communities for the Census and for legislative redistricting. With prison gerrymandering, population and political power are artificially inflated in an exo-cartographic manuever: without drawing any new lines on a map, districts of imprisonment gain representative power and districts hit most heavily by the pandemic of mass incarceration lose representative power. 
 
@@ -9,7 +12,7 @@ The theme of `NULL` in the Month of Maps series fits this pattern well. Some ind
 
 My response was an animated cartogram that shows some congressional districts increasing in size due to this usurpation of political power and others decreasing or disappearing as a result. 
 
-<img src="https://github.com/18kimn/blog/raw/master/content/portfolio/map_month/8_null/assembled.gif" width="50%" />
+![](assembled.gif)
 
 This was challenging to make on two fronts. Firstly, there is no authoritative source for the net increases and decreases due to population migration, and thus the data represented here is problematic for several reasons. I used the [Vera Institute's Incarceration Trends](https://github.com/vera-institute/incarceration-trends) dataset for the home counties of those imprisoned as well as the [Prison Policy Initiative's Data Toolbox](https://www.prisonpolicy.org/data/) to find the group quarters population of each block that contains a prison. I then used a point-to-polygon spatial join to merge prisons onto counties, then summarized everything to the county level for where there were two or more prisons per county. The next step was to create intersections between counties and legislative districts, after which I used the area of each county that had been split to divide a county's population statistics into different legislative districts (Los Angeles County is one example of such a county that resides in multiple congressional districts). I added all of these together by congressional district to create a congressional-district-level profile. Finally, I calculated "population change due to prisons" as the difference between the population of a congressional district due to prisons and the population of the congressional district who had been imprisoned. If more of the population in a district came from a prison as had been sent to a prison, the town effectively experienced an increase in population due to a local prison. If more of the population in a district had been sent to a prison than had come from a prison, this is an indicator of population shrinkage.  
 

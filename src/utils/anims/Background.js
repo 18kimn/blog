@@ -5,7 +5,8 @@ import theme from '../../styles/Theme'
 
 const runBackgroundMap = () => {
   //setup
-  const dims = [window.innerWidth, window.innerHeight]
+  console.log('animation starting')
+  let dims = [window.innerWidth, window.innerHeight]
 
   d3.select('.background').remove()
   const svg = d3.select('#gatsby-focus-wrapper').append('svg')
@@ -18,10 +19,20 @@ const runBackgroundMap = () => {
     .style('background-color', theme.palette.solarized.base3)
     .style('z-index', 0)
 
+
   const projection = d3.geoEquirectangular()
     .center([-72.9279,41.3083])
     .scale(2000000) // kinda ridiculous!
     .translate([dims[0] / 2, dims[1] / 2])
+
+  window.addEventListener('resize', () => {
+    dims = [window.innerWidth, window.innerHeight]
+    svg.attr('width', dims[0])
+      .attr('height', dims[1])
+    projection.translate([dims[0] / 2, dims[1] / 2])
+
+  })
+
   const path = d3.geoPath().projection(projection)
 
 

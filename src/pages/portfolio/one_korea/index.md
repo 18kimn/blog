@@ -1,6 +1,7 @@
 ---
 title: Representing a unified Korea
 date: 2020-09-04
+banner: one_kor.png
 ---
 
 Korea was divided into two in 1945, when on August 15th (now "Liberation Day") Korea was released from the rule of the Japanese Empire. 
@@ -11,7 +12,7 @@ Guns and death were one method of destruction. Others were the use of napalm and
 
 It is impossible to convey the scale of imperial violence on a short blog post, and I hope not to normalize the bloodshed that is yet ongoing. I refer to the violence of the past to illustrate the violent history of the present, or to emphasize that the nation today is created through physical, psychological, cultural, and political destruction. 
 
-< figure src="one_kor.png" title="" >
+![](one_kor.png)
 
 I dream of Korea by seeing what it is not: I dream of unification by despairing at the ever-visible division, I dream of a national identity by seeing the ways this has been destroyed and rebuilt as capitalist necolony, I dream of peace by studying the ongonig violence.
 

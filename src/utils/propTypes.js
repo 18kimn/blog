@@ -6,12 +6,15 @@ const dataPropTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.shape({
-        title: PropTypes.string.isRequired,
+        title: PropTypes.string,
         date: PropTypes.string,
       }),
       edges: PropTypes.array,
       html: PropTypes.string,
-    }).isRequired
+    }),
+    allMarkdownRemark: PropTypes.shape({
+      edges: PropTypes.array
+    }),
   }).isRequired
 }
 

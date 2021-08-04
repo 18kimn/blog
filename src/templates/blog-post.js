@@ -7,7 +7,6 @@ const Template = (props) => {
   const { data} = props
   const {frontmatter, html} = data.markdownRemark
   
-
   return (
     <PageContainer>
       <h1>{frontmatter.title}</h1>

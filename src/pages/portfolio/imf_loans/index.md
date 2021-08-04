@@ -1,6 +1,7 @@
 ---
 title: "The IMF and Global Dispossession"
 date: 2021-05-16
+banner: site-preview.png
 ---
 
 This post is an explainer to a class project titled *The IMF and Global Dispossession,* created for the Fruits of Empire seminar in Spring 2021, led by Professor Gary Okihiro and Erich Kessel. See [here](https://github.com/18kimn/imf_loans/raw/main/text/paper.pdf) to read a paper that is essentially a long-form explanation of this same blog post, minus the notes here on learning code.

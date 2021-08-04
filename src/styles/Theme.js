@@ -33,6 +33,22 @@ const Theme = createTheme({
       fontWeight: 300,
       fontSize: '2rem',
     },
+    h3: {
+      fontWeight: 400,
+      fontSize: '1.5rem',
+    },
+    h4: {
+      fontWeight: 300,
+      fontSize: '1rem',
+    },
+    h5: {
+      fontWeight: 400,
+      fontSize: '1rem',
+    },
+    h6: {
+      fontWeight: 300,
+      fontSize: '.9rem',
+    },
     body1: {
       maxWidth: '62ch',
       fontSize: '.9rem',

@@ -1,30 +1,54 @@
 import React from 'react'
-import { graphql, Link } from 'gatsby'
+import { graphql, navigate } from 'gatsby'
 import { generateSlug } from '../../utils/stringUtils.js'
 import { dataPropTypes } from '../../utils/propTypes'
 import PageContainer from '../../components/PageContainer.js'
+import { GatsbyImage } from 'gatsby-plugin-image'
+import { Card, CardContent, CardActionArea, Box,
+  Grid, Typography } from '@material-ui/core'
+import useStyles from '../../styles/CardStyles.js'
 
 const IndexPage = ({
   data: {
-    allMarkdownRemark: { edges },
+    allMarkdownRemark: { edges},
   },
 }) => {
 
-  
+  const classes = useStyles()
   const Posts = edges
     .filter(edge => /portfolio/.test(edge.node.fileAbsolutePath))
     .map(edge => {
-      return <div key={edge.node.id}>
-        <Link to={generateSlug(edge.node.fileAbsolutePath)}>
-          {edge.node.frontmatter.title}
-        </Link>
-      </div>
+      const node = edge.node 
+      const frontmatter = node.frontmatter
+      const img = frontmatter?.banner?.childImageSharp?.gatsbyImageData
+
+      return <Grid item className={classes.portfolioCard} key={node.id}>
+        <Box width='100%' height='100%'>
+          <Card elevation={2} style={{width: '100%', height: 'calc(min(70vw, 350px) - 25px)'}}>
+            <CardActionArea style={{width: '100%', height: '100%'}} onClick={() => {navigate(generateSlug(node.fileAbsolutePath))}}>
+              <CardContent style={{width: '100%', height: '100%'}}>
+                { img && 
+                <GatsbyImage image={img} style={{height: '100%'}} aspectRatio={1} alt={`Image preview for ${frontmatter.title} post.`} />
+                }
+              </CardContent>
+            </CardActionArea>
+          </Card>
+          <div className={classes.portfolioCardContent}>
+            <Typography variant='h5'>{frontmatter.title}</Typography>
+            { frontmatter.subtitle && 
+                <Typography variant='h6'>{frontmatter.subtitle}</Typography>
+            }
+          </div>
+        </Box>
+      </Grid>
     })
 
   return (
     <PageContainer>
-      <h1>Portfolio</h1>
-      <div>{Posts}</div>
+      <Typography variant='h1'>Portfolio</Typography>
+      <Grid container justifyContent='center'>
+        {Posts}
+      </Grid>
     </PageContainer>
   )
 }
@@ -41,6 +65,12 @@ export const pageQuery = graphql`
           excerpt(pruneLength: 250)
           frontmatter {
             title
+            subtitle
+            banner {
+              childImageSharp {
+                gatsbyImageData(layout: CONSTRAINED)
+              }
+            }
             date(formatString: "YYYY-MM-DD")
           }
         }

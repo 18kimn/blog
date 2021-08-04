@@ -2,6 +2,7 @@ import {makeStyles} from '@material-ui/core/styles'
 
 export default makeStyles(() => ({
   cardcontainer: {
+    maxWidth: '80vw', 
     width: '350px',
     height: '200px',
     borderRadius: '0px',
@@ -20,5 +21,17 @@ export default makeStyles(() => ({
     justifyContent: 'center', 
     alignItems: 'center',
     flexDirection: 'column',
+  },
+  portfolioCard: {
+    width: 'min(70vw, 350px)',
+    height: 'min(70vw, 350px)',
+    margin: '30px 20px 30px 20px',
+  },
+  portfolioCardContent: {
+    position: 'relative', 
+    width: '350px',
+    height: '25px',
+    marginTop: '10px',
+    marginBottom: '20px'
   }
 }))
