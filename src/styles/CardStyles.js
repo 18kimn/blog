@@ -34,4 +34,4 @@ export default makeStyles(() => ({
     marginTop: '10px',
     marginBottom: '20px'
   }
-}))
+}), {index: 1})

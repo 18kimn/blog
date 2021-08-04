@@ -36,4 +36,4 @@ export default makeStyles((theme) => ({
       display: 'none',
     },
   },
-}))
+}), {index: 1})
