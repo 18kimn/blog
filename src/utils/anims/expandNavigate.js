@@ -48,7 +48,7 @@ const expandNavigate = (x) => {
       const inter = d3.interpolateNumber(startHeight, endHeight)
       return (t) => inter(t) + 'px'
     })
-    .on('end', () => navigate('/' + x))
+    .on('end', () => navigate('/' + x + '/'))
 }
 
 export default expandNavigate
