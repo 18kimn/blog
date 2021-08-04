@@ -15,4 +15,4 @@ export default makeStyles(() => ({
     color: '#000000',
     textAlign: 'center',
   },
-}))
+}), {index: 1})
