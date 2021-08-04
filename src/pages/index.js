@@ -25,7 +25,7 @@ const IndexPage = () => {
       className: 'about', ref: useSpringRef()},
     {transform: 'translate(5%,  5%)', transformSmall: 'translate(-50%, 55%)',
       z: 1, component: Portfolio,
-      className: 'portfolio', ref: useSpringRef()}
+      className: 'projects', ref: useSpringRef()}
   ]
   
   const fadeinRef = useSpringRef() 

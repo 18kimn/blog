@@ -10,6 +10,7 @@ const Template = (props) => {
   return (
     <PageContainer>
       <h1>{frontmatter.title}</h1>
+      <h4>{frontmatter.date}</h4>
       <div dangerouslySetInnerHTML={{__html: html}}/>
     </PageContainer>
   )
@@ -23,6 +24,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        date(formatString: "YYYY-MM-DD")
       }
     }
   }

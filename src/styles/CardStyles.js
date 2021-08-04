@@ -22,12 +22,12 @@ export default makeStyles(() => ({
     alignItems: 'center',
     flexDirection: 'column',
   },
-  portfolioCard: {
+  projectsCard: {
     width: 'min(70vw, 350px)',
     height: 'min(70vw, 350px)',
     margin: '30px 20px 30px 20px',
   },
-  portfolioCardContent: {
+  projectsCardContent: {
     position: 'relative', 
     width: '350px',
     height: '25px',

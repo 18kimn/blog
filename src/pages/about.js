@@ -40,7 +40,7 @@ const IndexPage = () => {
                 <br/>
                 <Typography variant='body1'>
             You can find more information of my other activities in my <Link to='/files/resume.html'>resume</Link>,
-            and some of my work under the <Link to='/portfolio'>Portfolio</Link> page
+            some of my work under the <Link to='/projects'>Projects</Link> page, and some writing about the making of this blog <Link to='/writing/about'>here</Link>.
                 </Typography>
               </Grid>
             </Grid>

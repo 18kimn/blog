@@ -16,13 +16,13 @@ const IndexPage = ({
 
   const classes = useStyles()
   const Posts = edges
-    .filter(edge => /portfolio/.test(edge.node.fileAbsolutePath))
+    .filter(edge => /projects/.test(edge.node.fileAbsolutePath))
     .map(edge => {
       const node = edge.node 
       const frontmatter = node.frontmatter
       const img = frontmatter?.banner?.childImageSharp?.gatsbyImageData
 
-      return <Grid item className={classes.portfolioCard} key={node.id}>
+      return <Grid item className={classes.projectsCard} key={node.id}>
         <Box width='100%' height='100%'>
           <Card elevation={2} style={{width: '100%', height: 'calc(min(70vw, 350px) - 25px)'}}>
             <CardActionArea style={{width: '100%', height: '100%'}} onClick={() => {navigate(generateSlug(node.fileAbsolutePath))}}>
@@ -33,7 +33,7 @@ const IndexPage = ({
               </CardContent>
             </CardActionArea>
           </Card>
-          <div className={classes.portfolioCardContent}>
+          <div className={classes.projectsCardContent}>
             <Typography variant='h5'>{frontmatter.title}</Typography>
             { frontmatter.subtitle && 
                 <Typography variant='h6'>{frontmatter.subtitle}</Typography>

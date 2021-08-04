@@ -5,7 +5,6 @@ import theme from '../../styles/Theme'
 
 const runBackgroundMap = () => {
   //setup
-  console.log('animation starting')
   let dims = [window.innerWidth, window.innerHeight]
 
   d3.select('.background').remove()

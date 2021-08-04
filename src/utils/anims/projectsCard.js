@@ -37,13 +37,13 @@ const runPortfolioCardAnim = () => {
   const pxtoNum = (str) => {
     return Number(str.substring(0,str.match('px').index))
   }
-  const width = pxtoNum(d3.select('.portfolioCard').style('width'))
-  const height = pxtoNum(d3.select('.portfolioCard').style('height'))
+  const width = pxtoNum(d3.select('.projectsCard').style('width'))
+  const height = pxtoNum(d3.select('.projectsCard').style('height'))
 
-  d3.selectAll('.portfolioCardAnim').remove()
-  const svg = d3.select('.portfolioCard')
+  d3.selectAll('.projectsCardAnim').remove()
+  const svg = d3.select('.projectsCard')
     .append('svg')
-    .attr('class', 'portfolioCardAnim')
+    .attr('class', 'projectsCardAnim')
     .attr('width', '100%')
     .attr('height', '100%')
     .style('position', 'absolute')

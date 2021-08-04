@@ -1,5 +1,5 @@
 ---
-slug: "/portfolio/9_nongeographic"
+slug: "/projects/9_nongeographic"
 title: "Exploring Korean music: a map"
 date: 2021-02-07
 banner: nongeographic-capture.PNG
@@ -28,7 +28,7 @@ The outer set of circles are artists with few or no connections, such that they 
 
 #### Motivations
 
-As I stated [before](https://nathankim.name/portfolio/map_month/7_newtool/), I've become a huge fan of Korean music over the past few months, especially Korean R&B, Korean hip-hop, and Korean indie. There's something super exciting about seeing artistic expression of any kind, and especially if artists try new genres or push on societal standards. Korean music has come a long way in the past twenty or even past ten years, with one result being a huge growth in diversity of genre. 
+As I stated [before](https://nathankim.name/projects/map_month/7_newtool/), I've become a huge fan of Korean music over the past few months, especially Korean R&B, Korean hip-hop, and Korean indie. There's something super exciting about seeing artistic expression of any kind, and especially if artists try new genres or push on societal standards. Korean music has come a long way in the past twenty or even past ten years, with one result being a huge growth in diversity of genre. 
 
 This map is an attempt to represent that diversity in Korean music. As much as I am a fan of BTS and BigBang, I often feel that pop musicians under large companies are able to succeed internationally because of giant marketing campaigns, connections made to other media sectors like advertisements and TV shows, and of course years of training made by the investment of their company. Again, this is in no way a criticism of successful pop groups and idols, many of whom I listen to on a daily basis. I only wanted to show that Korean music is so much more diverse than what the forces of capital might have us believe. 
 
