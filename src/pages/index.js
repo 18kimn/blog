@@ -19,7 +19,6 @@ const IndexPage = () => {
   const resizeTimer = () => setTimeout(() => setIsResized(true), 500)
   const timerID = resizeTimer()
   useEffect(() => {
-    console.log(window)
     window && window.addEventListener('resize', () => {
       clearTimeout(timerID)
       resizeTimer()
@@ -65,17 +64,23 @@ const IndexPage = () => {
     </animated.div>
   )) 
 
+  const staticComponents = anims.map((d,i) => 
+    <div className = {`${classes.cardcontainer} ${d.className}`}
+      style= {{transform: isLargeScreen ? d.transform : d.transformSmall, 
+        zIndex: d.z}} key={i}>
+      {createElement(d.component)}
+    </div>)
+
   return (
     <>
       { // only run the animation if it's the first visit to the page, or if the page is being resized
         // since it gets a little annoying otherwise
-        pageLoadCount < 1 || isResized ? 
-          animatedComponents : 
-          anims.map((d,i) => <div className = {`${classes.cardcontainer} ${d.className}`}
-            style= {{transform: isLargeScreen ? d.transform : d.transformSmall, 
-              zIndex: d.z}} key={i}>
-            {createElement(d.component)}
-          </div>)
+        // don't render anything at all if window isn't defined, since this causes some weird things with SSR
+        window && (
+          pageLoadCount < 1 || isResized ? 
+            animatedComponents : 
+            staticComponents
+        )
       }
     </>
   )
