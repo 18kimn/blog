@@ -1,8 +1,10 @@
 /* eslint-disable max-len */
 import React from 'react'
-import { Grid, Typography, useMediaQuery} from '@material-ui/core'
+import { Grid, Typography} from '@material-ui/core'
 import PageContainer from '../components/PageContainer'
 import { Link } from '@gatsbyjs/reach-router'
+import { useBreakpoint } from 'gatsby-plugin-breakpoints'
+
 
 const links = [
   {name: 'Resume', value: '/files/resume.html'},
@@ -11,11 +13,12 @@ const links = [
 ]
 const IndexPage = () => {
 
-  const isLargeScreen = useMediaQuery('(min-width:800px)')
+  const isLargeScreen = !useBreakpoint().md
+  console.log(isLargeScreen)
 
   return (
     <PageContainer>
-      <Grid container direction='row' spacing={2} style={{height: isLargeScreen ? '100%' : 'auto'}}>
+      <Grid container direction='row' justifyContent='center' spacing={2} style={{height: isLargeScreen ? '100%' : 'auto'}}>
         <Grid item xs={12} md={5}>
           <Grid container direction='column' justifyContent='center' alignItems='center' style={{textAlign: 'center'}}>
             <Typography variant='h1'>Nathan Kim</Typography>

@@ -13,6 +13,7 @@ module.exports = {
     'gatsby-plugin-mdx',
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
+    'gatsby-plugin-breakpoints',
     'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-transformer-remark',

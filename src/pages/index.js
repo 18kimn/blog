@@ -1,11 +1,11 @@
 /* eslint-disable max-len */
-import React, {createElement, useContext } from 'react'
+import React, {createElement, useContext, useState, useEffect } from 'react'
 import BasicInfo from '../components/HomePageCards/BasicInfo.js'
 import About from '../components/HomePageCards/About.js'
 import Projects from '../components/HomePageCards/Projects.js'
 import { useSpring, useSprings, useSpringRef, 
   useChain, animated } from '@react-spring/web'
-import useMediaQuery from '@material-ui/core/useMediaQuery'
+import { useBreakpoint } from 'gatsby-plugin-breakpoints'
 import { useTheme } from '@material-ui/core/styles'
 import useStyles from '../styles/CardStyles.js'
 import { PageLoadContext } from '../components/Layout.js'
@@ -15,8 +15,19 @@ const IndexPage = () => {
   const theme = useTheme()
   const classes = useStyles(theme)
 
+  const [isResized, setIsResized] = useState(false)
+  const resizeTimer = () => setTimeout(() => setIsResized(true), 500)
+  const timerID = resizeTimer()
+  useEffect(() => {
+    console.log(window)
+    window && window.addEventListener('resize', () => {
+      clearTimeout(timerID)
+      resizeTimer()
+    })
+  }, [timerID])
+
   const pageLoadCount = useContext(PageLoadContext)
-  const isLargeScreen = useMediaQuery('(min-width:800px)')
+  const isLargeScreen = !useBreakpoint().md
   const anims = [
     {transform: 'translate(-50%, -105%)', transformSmall: 'translate(-50%, -50%)',
       z: 2, component: BasicInfo, 
@@ -37,29 +48,32 @@ const IndexPage = () => {
   })
 
   const animStyles = useSprings(anims.length, 
-    anims.map(item => (
-      {from: {transform: 'translate(-50%, -50%)'}, 
+    anims.map(item => {
+      return {from: {transform: 'translate(-50%, -50%)'}, 
         to: {transform: isLargeScreen ? item.transform : item.transformSmall},
-        ref: item.ref}))
+        ref: item.ref}})
   )
 
   useChain([fadeinRef, ...anims.map(d => d.ref)], [0, .2])
   
+  const animatedComponents = animStyles.map((styles, index) => (
+    <animated.div key = {index} 
+      className={`${classes.cardcontainer} ${anims[index].className}`}
+      style={{...styles, ...fadeinStyles,
+        zIndex: anims[index].z}} >
+      {createElement(anims[index].component)}
+    </animated.div>
+  )) 
+
   return (
     <>
-      { // only run the animation if it's the first visit to the page
-        // since it gets a little annoying after that
-        pageLoadCount === 1 ? 
-          animStyles.map((styles, index) => (
-            <animated.div key = {index} 
-              className={`${classes.cardcontainer} ${anims[index].className}`}
-              style={{...styles, ...fadeinStyles,
-                zIndex: anims[index].z}} >
-              {createElement(anims[index].component)}
-            </animated.div>
-          )) : 
+      { // only run the animation if it's the first visit to the page, or if the page is being resized
+        // since it gets a little annoying otherwise
+        pageLoadCount < 1 || isResized ? 
+          animatedComponents : 
           anims.map((d,i) => <div className = {`${classes.cardcontainer} ${d.className}`}
-            style= {{transform: d.transform, zIndex: d.z}} key={i}>
+            style= {{transform: isLargeScreen ? d.transform : d.transformSmall, 
+              zIndex: d.z}} key={i}>
             {createElement(d.component)}
           </div>)
       }
