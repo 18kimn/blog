@@ -76,7 +76,7 @@ const IndexPage = () => {
       { // only run the animation if it's the first visit to the page, or if the page is being resized
         // since it gets a little annoying otherwise
         // don't render anything at all if window isn't defined, since this causes some weird things with SSR
-        window && (
+        typeof window != 'undefined' && (
           pageLoadCount < 1 || isResized ? 
             animatedComponents : 
             staticComponents
