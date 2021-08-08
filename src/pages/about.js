@@ -3,6 +3,12 @@ import React from 'react'
 import { Grid, Typography, useMediaQuery} from '@material-ui/core'
 import PageContainer from '../components/PageContainer'
 import { Link } from '@gatsbyjs/reach-router'
+
+const links = [
+  {name: 'Resume', value: '/files/resume.html'},
+  {name: 'Projects', value: '/projects/'},
+  {name: 'Making this site', value: '/writing/about/'}
+]
 const IndexPage = () => {
 
   const isLargeScreen = useMediaQuery('(min-width:800px)')
@@ -17,33 +23,26 @@ const IndexPage = () => {
           </Grid>
         </Grid>
         <Grid item xs>
-          <Grid container direction='column' >
-            { isLargeScreen && 
-              <Grid item xs={1}></Grid>
-            }
-            <Grid item xs={12} md>
-              <Grid container xs={12} direction='column' alignItems='center' style={{height: 'auto'}}>
-                <Typography variant='body1'>
+          <Grid container direction='column' alignItems='center' justifyContent='center'>
+            <Typography variant='body1'>
             I’m a senior at Yale College double majoring in Ethnicity, Race, & Migration as well as Statistics & Data Science.
             I am broadly interested in a critical study of space and race, especially in how actions along these dimensions can destroy or advance global imperialism.
-            I have related interests in data visualization and interactive presentations. My strengths are in the R tidyverse, and I am also familiar
-            with the data.table, Shiny, sf, and spatstat packages. I also have experience working in Python, Stata, Tableau, and Excel.
-                </Typography>
-                <br/>
-                <Typography variant='body1'>
+            I have related interests in data visualization and interactive presentations. My strengths are in the R tidyverse and d3.js, and I also have experience working in Python, Stata, Tableau, and Excel.
+            </Typography>
+            <br/>
+            <Typography variant='body1'>
             This summer, I&apos;m working with the <Link to='https://antievictionmap.com/'>Anti-Eviction Mapping Project,</Link> a tenant organizing collective 
             and digital cartography group based out of San Francisco. I&apos;m also continuing research with Professor Emma 
-            Zang of Yale Sociology and work with local New Haven nonprofit DataHaven. On campus, I am part of the Asian Students for Ethnic Studies group (formerly the
-            Asian American Studies Task Force) and perform with Korean drum troup UNITY. Previously, I served as Programming Chair for the Asian American Students Alliance,
-            was a Social Chair for the Korean American Students at Yale and was a Dwight Hall Urban Fellow, through which I worked at local nonprofit LEAP.
-                </Typography>
-                <br/>
-                <Typography variant='body1'>
-            You can find more information of my other activities in my <Link to='/files/resume.html'>resume</Link>,
-            some of my work under the <Link to='/projects'>Projects</Link> page, and some writing about the making of this blog <Link to='/writing/about'>here</Link>.
-                </Typography>
-              </Grid>
-            </Grid>
+            Zang of Yale Sociology and work with local New Haven nonprofit DataHaven. 
+            </Typography>
+            <br/>
+            <Typography variant='body1'>
+                Useful links:<br/>
+              {links.map((info, i) => 
+                <Link key={i} to={info.value}>
+                  {info.name}<br/>
+                </Link>)}
+            </Typography>
           </Grid>
         </Grid>
       </Grid>

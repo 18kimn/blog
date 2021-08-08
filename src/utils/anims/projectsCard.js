@@ -1,7 +1,7 @@
 import * as d3 from 'd3'
 import theme from '../../styles/Theme'
 
-const runPortfolioCardAnim = () => {
+const runProjectsCardAnim = () => {
 
   const data = {
     nodes: Array(20).fill(1).map(() => ({})),
@@ -85,4 +85,4 @@ const runPortfolioCardAnim = () => {
     .on('tick', ticked)
 }
 
-export default runPortfolioCardAnim
+export default runProjectsCardAnim

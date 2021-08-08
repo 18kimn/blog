@@ -3,15 +3,15 @@ import { Card, CardContent, CardActionArea, Typography } from '@material-ui/core
 import { useTheme } from '@material-ui/core/styles'
 import useStyles from '../../styles/CardStyles.js'
 import PropTypes from 'prop-types'
-import runPortfolioCardAnim from '../../utils/anims/projectsCard.js'
+import runProjectsCardAnim from '../../utils/anims/projectsCard.js'
 import expandNavigate from '../../utils/anims/expandNavigate'
 
-const Portfolio = ({style}) => {
+const Projects = ({style}) => {
   const theme = useTheme()
   const classes = useStyles(theme)
   
   useEffect(() => {
-    runPortfolioCardAnim()
+    runProjectsCardAnim()
   }, [])
   //using hard-coded className for d3 interaction
   return (
@@ -28,8 +28,8 @@ const Portfolio = ({style}) => {
   )
 }
 
-Portfolio.propTypes = {
+Projects.propTypes = {
   style: PropTypes.object
 }
 
-export default Portfolio
+export default Projects

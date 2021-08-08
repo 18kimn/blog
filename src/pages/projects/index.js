@@ -45,7 +45,7 @@ const IndexPage = ({
 
   return (
     <PageContainer>
-      <Typography variant='h1'>Portfolio</Typography>
+      <Typography variant='h1'>Projects</Typography>
       <Grid container justifyContent='center'>
         {Posts}
       </Grid>

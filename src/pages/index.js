@@ -1,20 +1,21 @@
 /* eslint-disable max-len */
-import React, {createElement} from 'react'
+import React, {createElement, useContext } from 'react'
 import BasicInfo from '../components/HomePageCards/BasicInfo.js'
 import About from '../components/HomePageCards/About.js'
-import Portfolio from '../components/HomePageCards/Portfolio.js'
+import Projects from '../components/HomePageCards/Projects.js'
 import { useSpring, useSprings, useSpringRef, 
   useChain, animated } from '@react-spring/web'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 import { useTheme } from '@material-ui/core/styles'
 import useStyles from '../styles/CardStyles.js'
-import { useLocation } from '@gatsbyjs/reach-router'
+import { PageLoadContext } from '../components/Layout.js'
 
 const IndexPage = () => {
 
   const theme = useTheme()
   const classes = useStyles(theme)
 
+  const pageLoadCount = useContext(PageLoadContext)
   const isLargeScreen = useMediaQuery('(min-width:800px)')
   const anims = [
     {transform: 'translate(-50%, -105%)', transformSmall: 'translate(-50%, -50%)',
@@ -24,7 +25,7 @@ const IndexPage = () => {
       z: 1, component: About,
       className: 'about', ref: useSpringRef()},
     {transform: 'translate(5%,  5%)', transformSmall: 'translate(-50%, 55%)',
-      z: 1, component: Portfolio,
+      z: 1, component: Projects,
       className: 'projects', ref: useSpringRef()}
   ]
   
@@ -44,13 +45,11 @@ const IndexPage = () => {
 
   useChain([fadeinRef, ...anims.map(d => d.ref)], [0, .2])
   
-  const isFirstLoad = !useLocation().state
-
   return (
     <>
       { // only run the animation if it's the first visit to the page
         // since it gets a little annoying after that
-        isFirstLoad ? 
+        pageLoadCount === 1 ? 
           animStyles.map((styles, index) => (
             <animated.div key = {index} 
               className={`${classes.cardcontainer} ${anims[index].className}`}
@@ -64,7 +63,6 @@ const IndexPage = () => {
             {createElement(d.component)}
           </div>)
       }
-      
     </>
   )
 }
