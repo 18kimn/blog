@@ -31,6 +31,7 @@ const Layout = ({content}) => {
     <ThemeProvider theme={Theme}>
       <CssBaseline />
       <Helmet>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel='preconnect' href='https://fonts.googleapis.com'/>
         <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin/>
         <link rel='preload' as='style' href='https://fonts.googleapis.com/css2?family=Fira+Code:ital,wght@0,300;0,400;0,700;1,300&display=swap'/>
