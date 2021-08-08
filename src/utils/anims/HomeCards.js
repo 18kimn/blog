@@ -1,9 +1,9 @@
 import React, { createElement } from 'react'
-import BasicInfo from '../components/HomePageCards/BasicInfo.js'
-import About from '../components/HomePageCards/About.js'
-import Projects from '../components/HomePageCards/Projects.js'
+import BasicInfo from '../../components/HomePageCards/BasicInfo.js'
+import About from '../../components/HomePageCards/About.js'
+import Projects from '../../components/HomePageCards/Projects.js'
 import { useTheme } from '@material-ui/core/styles'
-import useStyles from '../styles/CardStyles.js'
+import useStyles from '../../styles/CardStyles.js'
 import { useSpring, useSprings, useSpringRef, 
   useChain, animated } from '@react-spring/web'
 
