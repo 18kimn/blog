@@ -39,10 +39,24 @@ const Layout = ({content}) => {
     pageLoadCount += 1
   })
   
+  const title = 'Nathan Kim'
+  const description = 'Nathan Kim is an student at Yale University, and an aspiring researcher, web developer, and digital humanist.'
+  const meta = [
+    {property: 'og:title', content: title},
+    {property: 'og:site_name', content: title},
+    {name: 'description', content: description},
+    {property: 'og:description', content: description},
+    {property: 'og:type', content: 'website'},
+    {name: 'twitter:card', content: 'summary'},
+    {name: 'twitter:creator', content: '@nathanckim'},
+    {name: 'twitter:title', content: title},
+    {name: 'twitter:description', content: description},
+  ]
+
   return (
     <ThemeProvider theme={Theme}>
       <CssBaseline />
-      <Helmet>
+      <Helmet meta={meta}>
         <link rel='preconnect' href='https://fonts.googleapis.com'/>
         <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin/>
         <link rel='preload' as='style' href='https://fonts.googleapis.com/css2?family=Fira+Code:ital,wght@0,300;0,400;0,700;1,300&display=swap'/>
