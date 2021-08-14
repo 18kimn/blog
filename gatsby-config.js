@@ -3,12 +3,6 @@ module.exports = {
     title: 'nathan kim',
   },
   plugins: [
-    {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        trackingId: 'UA-126105673-1',
-      },
-    },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-mdx',
     'gatsby-plugin-image',
