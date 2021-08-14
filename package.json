@@ -46,6 +46,7 @@
     "topojson-client": "^3.0.0"
   },
   "devDependencies": {
+    "@netlify/plugin-gatsby": "^1.0.3",
     "eslint": "^7.30.0",
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",
