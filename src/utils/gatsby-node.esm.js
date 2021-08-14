@@ -43,7 +43,7 @@ const createPages = async ({ actions, graphql, reporter }) => {
     return
   }
 
-  
+
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
     const slug = node.frontmatter.slug
     const formattedSlug = slug ? slug : generateSlug(node.fileAbsolutePath)
@@ -51,7 +51,7 @@ const createPages = async ({ actions, graphql, reporter }) => {
     createPage({
       path: formattedSlug,
       component: blogPostTemplate,
-      context: {formattedSlug: formattedSlug, id: node.id} 
+      context: {formattedSlug: formattedSlug, id: node.id},
     })
   })
 }

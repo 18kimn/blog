@@ -12,33 +12,35 @@ let pageLoadCount = 0
 
 const SiteMedia = createMedia({
   breakpoints: {
-    sm: 0, 
-    md: 768, 
-    lg: 1024, 
-    xl: 1192
-  }
+    sm: 0,
+    md: 768,
+    lg: 1024,
+    xl: 1192,
+  },
 })
 
 const mediaStyle = SiteMedia.createMediaStyle()
 const { Media, MediaContextProvider } = SiteMedia
 
-// this will be wrapped by gatsby-ssr around everything the site renders 
+// this will be wrapped by gatsby-ssr around everything the site renders
 const Layout = ({content}) => {
-
-  /* this is only run on the very first load of Layout, which is when the first load of the site */
+  /* this is only run on the very first load of Layout,
+    which is when the first load of the site */
   useEffect(() => {
     runBackgroundMap()
     drawEllipses()
   }, [])
 
-  /* this is run on every rerender of Layout, which is whenever the children update, 
-      e.g. whenever a different page is navigated to 
-      this way we can keep track of whether this is the first page visited to or not 
-  */ 
+  /* this is run on every rerender of Layout,
+    which is whenever the children update,
+      e.g. whenever a different page is navigated to
+      this way we can keep track of whether this is
+      the first page visited to or not
+  */
   useEffect(() => {
     pageLoadCount += 1
   })
-  
+
   const title = 'Nathan Kim'
   const description = 'Nathan Kim is an student at Yale University, and an aspiring researcher, web developer, and digital humanist.'
   const meta = [
@@ -75,12 +77,12 @@ const Layout = ({content}) => {
 Layout.propTypes = {
   content: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.element),
-    PropTypes.element
+    PropTypes.element,
   ]).isRequired,
   location: PropTypes.shape({
-    pathname: PropTypes.string.isRequired
-  })
+    pathname: PropTypes.string.isRequired,
+  }),
 }
 
-export { PageLoadContext, Media } 
+export { PageLoadContext, Media }
 export default Layout

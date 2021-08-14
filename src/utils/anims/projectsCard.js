@@ -2,13 +2,12 @@ import * as d3 from 'd3'
 import theme from '../../styles/Theme'
 
 const runProjectsCardAnim = () => {
-
   const data = {
     nodes: Array(20).fill(1).map(() => ({})),
     links: [
-      {'source': 0, 'target': 1}, 
-      {'source': 2, 'target': 0}, 
-      {'source': 2, 'target': 1}, 
+      {'source': 0, 'target': 1},
+      {'source': 2, 'target': 0},
+      {'source': 2, 'target': 1},
       {'source': 2, 'target': 3},
       {'source': 4, 'target': 3},
       {'source': 4, 'target': 7},
@@ -30,12 +29,12 @@ const runProjectsCardAnim = () => {
       {'source': 17, 'target': 15},
       {'source': 18, 'target': 16},
       {'source': 19, 'target': 17},
-    ]    
+    ],
   }
 
 
   const pxtoNum = (str) => {
-    return Number(str.substring(0,str.match('px').index))
+    return Number(str.substring(0, str.match('px').index))
   }
   const width = pxtoNum(d3.select('.projectsCard').style('width'))
   const height = pxtoNum(d3.select('.projectsCard').style('height'))
@@ -47,7 +46,7 @@ const runProjectsCardAnim = () => {
     .attr('width', '100%')
     .attr('height', '100%')
     .style('position', 'absolute')
-    .style('pointer-events', 'none') //so that users can still click on the card itself
+    .style('pointer-events', 'none') // so that users can still click on the card itself
 
   const links = svg.append('g')
     .selectAll('line')
@@ -69,13 +68,13 @@ const runProjectsCardAnim = () => {
 
   const ticked = () => {
     links
-      .attr('x1', d => d.source.x)
-      .attr('y1', d => d.source.y)
-      .attr('x2', d => d.target.x)
-      .attr('y2', d => d.target.y)
+      .attr('x1', (d) => d.source.x)
+      .attr('y1', (d) => d.source.y)
+      .attr('x2', (d) => d.target.x)
+      .attr('y2', (d) => d.target.y)
 
-    nodes.attr('cx', d => Math.max(0, Math.min(d.x, width)))
-      .attr('cy', d => Math.max(0,Math.min(d.y, height)))
+    nodes.attr('cx', (d) => Math.max(0, Math.min(d.x, width)))
+      .attr('cy', (d) => Math.max(0, Math.min(d.y, height)))
   }
 
   d3.forceSimulation(data.nodes)

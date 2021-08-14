@@ -9,16 +9,18 @@ import expandNavigate from '../../utils/anims/expandNavigate'
 const Projects = ({style}) => {
   const theme = useTheme()
   const classes = useStyles(theme)
-  
+
   useEffect(() => {
     runProjectsCardAnim()
   }, [])
-  //using hard-coded className for d3 interaction
+  // using hard-coded className for d3 interaction
   return (
     <div className={`${classes.card} projectsCard`}>
       <Card style={{...style, position: 'absolute'}} className={classes.card} raised={true}>
-        <CardActionArea style={{height: '100%'}} 
-          onClick={() => {expandNavigate('projects')}}>
+        <CardActionArea style={{height: '100%'}}
+          onClick={() => {
+            expandNavigate('projects')
+          }}>
           <CardContent className={classes.cardcontent}>
             <Typography variant='h2'>Projects</Typography>
           </CardContent>
@@ -29,7 +31,7 @@ const Projects = ({style}) => {
 }
 
 Projects.propTypes = {
-  style: PropTypes.object
+  style: PropTypes.object,
 }
 
 export default Projects

@@ -2,18 +2,18 @@ import * as d3 from 'd3'
 import theme from '../../styles/Theme'
 
 const drawEllipses = () => {
-
   // document setup and mouse tracking
-  let lastCoord = [0,0]
+  let lastCoord = [0, 0]
   // the svg is mounted by Backgroundmap.js
   const svg = d3.select('.background')
   d3.select('body').on('mousemove', (event) => {
     const coords = d3.pointer(event)
-    // only draw if there's been sufficient distance from the previous mouse tracking point
+    // only draw if there's been sufficient distance
+    //  from the previous mouse tracking point
     // this spreads the circles out and helps w/ performance
     const dist = Math.pow(coords[0] - lastCoord[0], 2) +
        Math.pow(coords[1] - lastCoord[1], 2)
-    if(dist > 20000) drawEllipse(coords)
+    if (dist > 20000) drawEllipse(coords)
   })
 
 
@@ -35,14 +35,15 @@ const drawEllipses = () => {
   const colors = theme.palette.solarized
   const colorPicker = (n) => {
     return d3.piecewise(
-      d3.interpolateRgb.gamma(2.2), 
+      d3.interpolateRgb.gamma(2.2),
       [colors.violet, colors.blue, colors.cyan, colors.base02])(n / 25)
   }
 
   const drawEllipse = (coords) => {
-    // if there are too many circles, take off until we have 25, starting from the ones placed first on the DOM
+    // if there are too many circles, take off until we have 25,
+    //  starting from the ones placed first on the DOM
     const nCircles = g.selectAll('circle').size()
-    if(nCircles > 25) {
+    if (nCircles > 25) {
       g.selectAll('circle').filter((_, i) => i < (nCircles - 25)).remove()
     }
     g.append('circle')
@@ -55,7 +56,8 @@ const drawEllipses = () => {
       .transition().duration(3000)
       .style('fill-opacity', 0).remove()
     lastCoord = coords
-    circleCounter = (circleCounter + 1) % 25 //circlecounter should be between 0 and 25
+    circleCounter = (circleCounter + 1) % 25
+    // circlecounter should be between 0 and 25
   }
 }
 

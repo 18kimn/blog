@@ -3,11 +3,10 @@ import React, {useContext} from 'react'
 import { PageLoadContext, Media } from '../components/Layout.js'
 import { StaticCards, AnimCards } from '../utils/anims/HomeCards.js'
 
-/* the control flow for the home page animations is a little lengthy and awkward, so it's been 
-exported to its own file */ 
+/* the control flow for the home page animations is a little lengthy and awkward, so it's been
+exported to its own file */
 
 const IndexPage = () => {
-
   const pageLoadCount = useContext(PageLoadContext)
 
   return (

@@ -9,12 +9,10 @@ import { useBreakpoint } from 'gatsby-plugin-breakpoints'
 const links = [
   {name: 'Resume', value: '/files/resume.html'},
   {name: 'Projects', value: '/projects/'},
-  {name: 'Making this site', value: '/writing/about/'}
+  {name: 'Making this site', value: '/writing/about/'},
 ]
 const IndexPage = () => {
-
   const isLargeScreen = !useBreakpoint().md
-  console.log(isLargeScreen)
 
   return (
     <PageContainer>
@@ -34,14 +32,14 @@ const IndexPage = () => {
             </Typography>
             <br/>
             <Typography variant='body1'>
-            This summer, I&apos;m working with the <Link to='https://antievictionmap.com/'>Anti-Eviction Mapping Project,</Link> a tenant organizing collective 
-            and digital cartography group based out of San Francisco. I&apos;m also continuing research with Professor Emma 
-            Zang of Yale Sociology and work with local New Haven nonprofit DataHaven. 
+            This summer, I&apos;m working with the <Link to='https://antievictionmap.com/'>Anti-Eviction Mapping Project,</Link> a tenant organizing collective
+            and digital cartography group based out of San Francisco. I&apos;m also continuing research with Professor Emma
+            Zang of Yale Sociology and work with local New Haven nonprofit DataHaven.
             </Typography>
             <br/>
             <Typography variant='body1'>
                 Useful links:<br/>
-              {links.map((info, i) => 
+              {links.map((info, i) =>
                 <Link key={i} to={info.value}>
                   {info.name}<br/>
                 </Link>)}

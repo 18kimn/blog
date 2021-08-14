@@ -4,8 +4,8 @@ import { navigate } from 'gatsby'
 const expandNavigate = (x) => {
   const container = d3.select(`.${x}`)
   const duration = 500
-  // transitions: 
-  // from: 350px wide 200px tall and translated 
+  // transitions:
+  // from: 350px wide 200px tall and translated
   // to: 80vw wide calc(100% - 40px) tall, translate(0,0), with top: 0, left:0
 
   container.append('div')
@@ -20,24 +20,28 @@ const expandNavigate = (x) => {
     .delay(duration * .4)
     .duration(duration)
     .style('opacity', 1)
-  
+
   container.style('z-index', 2)
     .transition()
     .duration(duration)
-    .styleTween('transform',() => {
+    .styleTween('transform', () => {
       const transform = container.style('transform')
       const pcts = [...transform.matchAll(/%/g)]
-      const transformX = transform.substring(transform.match(/[-]?[0-9]/).index, pcts[0].index)
-      const transformY = transform.substring(transform.match(/,/).index + 2, pcts[1].index)
+      const transformX = transform.substring(
+        transform.match(/[-]?[0-9]/).index,
+        pcts[0].index)
+      const transformY = transform.substring(
+        transform.match(/,/).index + 2, pcts[1].index,
+      )
       const interX = d3.interpolateNumber(transformX, -50)
       const interY = d3.interpolateNumber(transformY, -50)
-      
-      return (tRaw) =>  {
+
+      return (tRaw) => {
         const t = Math.min(tRaw * 4, 1)
         return `translate(${interX(t)}%, ${interY(t)}%)`
       }
     })
-    .styleTween('width', () => {//first converting from px to vw
+    .styleTween('width', () => {// first converting from px to vw
       const startingWidth = 100 * parseInt(container.style('width')) / window.innerWidth
       const inter = d3.interpolateNumber(startingWidth, 80)
       return (t) => inter(t) + 'vw'

@@ -13,29 +13,30 @@ const IndexPage = ({
     allMarkdownRemark: { edges},
   },
 }) => {
-
   const classes = useStyles()
   const Posts = edges
-    .filter(edge => /projects/.test(edge.node.fileAbsolutePath))
-    .map(edge => {
-      const node = edge.node 
+    .filter((edge) => /projects/.test(edge.node.fileAbsolutePath))
+    .map((edge) => {
+      const node = edge.node
       const frontmatter = node.frontmatter
       const img = frontmatter?.banner?.childImageSharp?.gatsbyImageData
 
       return <Grid item className={classes.projectsCard} key={node.id}>
-        <Box width='100%' height='100%'>
-          <Card elevation={2} style={{width: '100%', height: 'calc(min(70vw, 350px) - 25px)'}}>
-            <CardActionArea style={{width: '100%', height: '100%'}} onClick={() => {navigate(generateSlug(node.fileAbsolutePath))}}>
-              <CardContent style={{width: '100%', height: '100%'}}>
-                { img && 
-                <GatsbyImage image={img} style={{height: '100%'}} aspectRatio={1} alt={`Image preview for ${frontmatter.title} post.`} />
+        <Box width='100%' height='100%' marginBottom='40px'>
+          <Card elevation={2} style={{width: '100%', height: 'calc(min(70vw, 250px) - 25px)'}}>
+            <CardActionArea style={{width: '100%', height: '100%'}}
+              onClick={() => navigate(generateSlug(node.fileAbsolutePath))}>
+              <CardContent style={{width: '100%', height: '100%', padding: '0'}}>
+                { img &&
+                <GatsbyImage image={img} style={{height: '100%'}}
+                  alt={`Image preview for ${frontmatter.title} post.`} />
                 }
               </CardContent>
             </CardActionArea>
           </Card>
           <div className={classes.projectsCardContent}>
             <Typography variant='h5'>{frontmatter.title}</Typography>
-            { frontmatter.subtitle && 
+            { frontmatter.subtitle &&
                 <Typography variant='h6'>{frontmatter.subtitle}</Typography>
             }
           </div>
@@ -62,7 +63,6 @@ export const pageQuery = graphql`
         node {
           id
           fileAbsolutePath
-          excerpt(pruneLength: 250)
           frontmatter {
             title
             subtitle

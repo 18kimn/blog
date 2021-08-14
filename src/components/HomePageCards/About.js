@@ -21,7 +21,7 @@ const About = ({style}) => {
 }
 
 About.propTypes = {
-  style: PropTypes.object
+  style: PropTypes.object,
 }
 
 export default About

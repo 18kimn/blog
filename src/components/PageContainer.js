@@ -7,20 +7,25 @@ import {HomeOutlined, ArrowBackOutlined} from '@material-ui/icons'
 import { navigate } from 'gatsby'
 import { useLocation } from '@gatsbyjs/reach-router'
 
-// this component is a layout component -- it makes sure content is centered on the page, 
-// on a MUI paper component with a decent amount of shadow
-// it also helps save a few lines of nesting elements everywhere
-
+/*
+  this component is a layout component --
+  it makes sure content is centered on the page,
+  on a MUI paper component with a decent amount of shadow
+  it also helps save a few lines of nesting elements everywhere
+*/
 const PageContainer = ({children}) => {
   const theme = useTheme()
   const classes = useStyles(theme)
   const location = useLocation()
 
   const goBack = () => {
-    // location.state isn't present if the page was loaded from a different domain 
-    // in other words this logic ensures that hitting the back button won't make the user leave the site
+    // location.state isn't present if the
+    //  page was loaded from a different domain
+    // in other words this logic ensures that hitting the
+    //  back button won't make the user leave the site
     location.state ? navigate(-1, {state: {backPressed: true}}) : navigate('/')
-    // passing a dummy field into the state for navigate so that the home page recognizes to only render once
+    // passing a dummy field into the state for navigate
+    //  so that the home page recognizes to only render once
   }
 
   const goHome = () => {
@@ -53,7 +58,7 @@ const PageContainer = ({children}) => {
 PageContainer.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.element),
-    PropTypes.element
+    PropTypes.element,
   ]).isRequired,
 }
 

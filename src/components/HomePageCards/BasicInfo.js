@@ -12,7 +12,7 @@ const BasicInfo = () => {
 
   return (
     <Card raised={true} className={classes.card} >
-      <CardContent  className={classes.cardcontent}>
+      <CardContent className={classes.cardcontent}>
         <Typography variant='h1'>Nathan Kim</Typography>
         <Typography variant='body1'>nathan.kim@yale.edu</Typography>
         <Row justifyContent='center' style={{height: 'auto'}}>
@@ -31,7 +31,7 @@ const BasicInfo = () => {
 }
 
 BasicInfo.propTypes = {
-  style: PropTypes.object
+  style: PropTypes.object,
 }
 
 export default BasicInfo
