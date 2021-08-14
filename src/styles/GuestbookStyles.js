@@ -1,0 +1,25 @@
+import {makeStyles} from '@material-ui/core/styles'
+
+export default makeStyles(() => ({
+  card: {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    zIndex: 10,
+    padding: '20px',
+  },
+  cardElement: {
+    width: '100%',
+    height: '100%',
+  },
+  icon: {
+    position: 'relative',
+    top: '5%',
+    left: '5%',
+  },
+  button: {
+    background: 'none',
+    border: 'none',
+  },
+}))
