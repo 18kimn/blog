@@ -1,4 +1,4 @@
-// import React from 'react'
+import React from 'react'
 
 // const bioInfo = [
 //   {date, title, info, category},
@@ -14,3 +14,9 @@
 // }
 
 // export default Bio
+
+const placeHolder = () => {
+  return <div>placeholder</div>
+}
+
+export default placeHolder

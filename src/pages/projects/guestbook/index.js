@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'
 import {initializeApp} from 'firebase/app'
-import {} from 'firebase/analytics'
 import {
   getFirestore,
   collection,

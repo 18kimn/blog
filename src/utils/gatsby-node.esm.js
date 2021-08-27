@@ -2,27 +2,36 @@ import {generateSlug} from './stringUtils.js'
 import ESLintPlugin from 'eslint-webpack-plugin'
 import path from 'path'
 
-const onCreateWebpackConfig = ({stage, actions, getConfig}) => {
-  actions.setWebpackConfig({
+const onCreateWebpackConfig = ({stage, loaders, actions, getConfig}) => {
+  const externals =
+    stage === 'build-html' &&
+    getConfig().externals.concat(({context, request}, callback) => {
+      const regex = /^@?firebase(\/(.+))?/
+      // exclude firebase products from being bundled
+      // so they will be loaded using require() at runtime.
+      if (regex.test(request)) {
+        console.log(request)
+        return callback(null, 'commonjs ' + request)
+      }
+      callback()
+    })
+
+  const config = {
     plugins: [
       new ESLintPlugin({
         files: 'src/**/*.js',
       }),
     ],
-  })
-  if (stage === 'build-html') {
-    actions.setWebpackConfig({
-      externals: getConfig().externals.concat((context, request, callback) => {
-        const regex = /^@?firebase(\/(.+))?/
-        // exclude firebase products from being bundled
-        // so they will be loaded using require() at runtime.
-        if (regex.test(request)) {
-          return callback(null, 'umd ' + request)
-        }
-        callback()
-      }),
-    })
+    module: {
+      rules: [
+        {
+          test: /firebase/,
+          use: loaders.null(),
+        },
+      ],
+    },
   }
+  actions.setWebpackConfig(externals ? {...config, externals} : config)
 }
 
 const createPages = async ({actions, graphql, reporter}) => {
