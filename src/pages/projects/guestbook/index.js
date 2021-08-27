@@ -93,3 +93,5 @@ const Guestbook = () => {
 }
 
 export default Guestbook
+
+export const pageQuery = graphql``
