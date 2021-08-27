@@ -8,6 +8,8 @@ export default makeStyles(() => ({
     transform: 'translate(-50%, -50%)',
     zIndex: 10,
     padding: '20px',
+    cursor: 'grab',
+    overflow: 'hidden',
   },
   cardElement: {
     width: '100%',
@@ -19,7 +21,9 @@ export default makeStyles(() => ({
     left: '5%',
   },
   button: {
+    padding: '2%',
     background: 'none',
     border: 'none',
+    cursor: 'pointer',
   },
 }))

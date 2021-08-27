@@ -1,15 +1,16 @@
-import React, { useState, useEffect} from 'react'
-import { initializeApp } from 'firebase/app'
-import { Card, TextField} from '@material-ui/core'
+import React, {useState, useEffect} from 'react'
+import {initializeApp} from 'firebase/app'
 import {} from 'firebase/analytics'
-import { getFirestore, collection, onSnapshot,
-  doc, addDoc, updateDoc, deleteDoc } from 'firebase/firestore'
-import useStyles from '../../../styles/GuestbookStyles.js'
-import { Icon } from '@iconify/react'
-import pushpinFilled from '@iconify/icons-ant-design/pushpin-filled'
-import pushpinOutlined from '@iconify/icons-ant-design/pushpin-outlined'
-import closeBig from '@iconify/icons-ci/close-big'
-import PropTypes from 'prop-types'
+import {
+  getFirestore,
+  collection,
+  onSnapshot,
+  doc,
+  addDoc,
+  updateDoc,
+  deleteDoc,
+} from 'firebase/firestore'
+import Postcard from './Postcard'
 
 const firebaseConfig = {
   apiKey: 'AIzaSyB1UUFi6J3-_2BRE06qTVbxrw3TZgXC874',
@@ -25,132 +26,68 @@ initializeApp(firebaseConfig)
 const gb = getFirestore()
 const messageCollection = collection(gb, 'messages')
 
-
-// create post-it surfaces
-// clicking 'pin' submits the data to firestore and brings in a new post-it
-// dragging any surface to the trash can area deletes it from the database
-// show little popup saying 'message submitted'!
-
-// surface for the guestbook actions
-// has a state of either editable or not editable
-const Postcard = (props) => {
-  const classes = useStyles()
-
-  const [isDragged, setIsDragged ] = useState(false)
-  const [isEditable, setIsEditable] = useState(props.editable)
-  const [ x, setX ] = useState(props.x)
-  const [ y, setY ] = useState(props.y)
-
-  const [ message, setMessage ] = useState(props.message)
-
-  const cardRef = props.id && doc(gb, 'messages', props.id)
-
-  const handleInput = (e) => {
-    if (!isEditable) return
-    setMessage(e.target.value)
-  }
-
-  const handleDrag = (e) => {
-    if (!isDragged || !isEditable) return
-    setY(e.pageY)
-    setX(e.pageX)
-  }
-
-  const handleSubmit = () => {
-    if (typeof props.id === 'undefined') {
-      addDoc(messageCollection, {x, y, message})
-    } else {
-      updateDoc(cardRef, {x, y, message})
-    }
-
-    setIsEditable(!isEditable) // state update at end because async
-  }
-
-  const deleteCard = () => {
-    if (typeof props.id === 'undefined') {
-      //
-      console.log('props.id is undefined')
-    } else {
-      deleteDoc(cardRef)
-      // the listener to the remote archive
-      // in the parent should hopefully update and rerender
-    }
-  }
-
-  return (
-    <Card onMouseDown={() => setIsDragged(true)}
-      onMouseUp={() => setIsDragged(false)}
-      onMouseMove={handleDrag} className={classes.card}
-      style={{top: `${y}px`, left: `${x}px`}}>
-      {/* this is undefined in the beginning, that's ok*/}
-      <button onClick={handleSubmit} className={classes.button}>
-        <Icon icon={isEditable ? pushpinOutlined : pushpinFilled}
-          className={classes.icon}/>
-      </button>
-      <button onClick={deleteCard} className={classes.button}>
-        <Icon icon={closeBig} className={classes.icon} />
-      </button>
-      <TextField className={classes.cardElement}
-        disabled={!isEditable}
-        label='type a message here'
-        onKeyPress={handleInput}
-        onChange={handleInput}
-        multiline
-        rows={6}
-        value={message} />
-    </Card>
-  )
-}
-
-Postcard.propTypes = {
-  id: PropTypes.string,
-  x: PropTypes.number,
-  y: PropTypes.number,
-  editable: PropTypes.bool,
-  message: PropTypes.string,
-}
-
-
 const Guestbook = () => {
   const [archive, setArchive] = useState(undefined)
 
   // the following block listens for snapshots
   //    on the first pass, archive is undefined, so its value is set to docs
   //    on every subsequent pass, the
-  //  archive should be updated with the changed data
-  const unsubscribe = onSnapshot(messageCollection, (snapshot) => {
-    console.log('snapshot taken', snapshot.docChanges())
-    if (typeof archive === 'undefined') {
-      setArchive(snapshot.docs)
-      return
+  const updater = ({x, y, message, id}) => {
+    if (typeof id === 'undefined') {
+      addDoc(messageCollection, {x, y, message})
+    } else {
+      updateDoc(doc(gb, 'messages', id), {x, y, message})
     }
+  }
+  const deleter = (id, editable) => {
+    if (!editable) deleteDoc(doc(gb, 'messages', id))
+  }
 
-    snapshot.docChanges().forEach((change) => {
-      const index = archive.map((d) => d.id).indexOf(change.doc.id)
-      const archiveCopy = [...archive]
+  //  archive should be updated with the changed data
+  useEffect(() => {
+    const unsubscribe = onSnapshot(messageCollection, (snapshot) => {
+      snapshot.docChanges().forEach((change) => {
+        const {doc, type} = change
 
-      if (change.type === 'added') prevArchive.push(change.doc)
-      if (change.type === 'modified') archiveCopy[index] = change.doc
-      if (change.type === 'removed') archiveCopy.splice(index, 1)
+        setArchive((prevArchive) => {
+          console.log({prevArchive, doc, type})
 
-      setArchive(archiveCopy)
+          if (typeof prevArchive === 'undefined') return snapshot.docs
+          const archiveCopy = [...prevArchive] // to force a reference change
+          const index = archiveCopy.map((d) => d.id).indexOf(doc.id)
+          if (type === 'added') {
+            archiveCopy.push(doc)
+          } else if (type === 'modified') {
+            archiveCopy[index] = doc
+          } else if (type === 'removed') {
+            console.log('deletion detected, state updating')
+            archiveCopy.splice(index, 1)
+            console.log(archiveCopy)
+          }
+          return archiveCopy
+        })
+      })
     })
-  })
-  useEffect(() => unsubscribe, [unsubscribe]) // cleanup for event listener
-
-  useEffect(() => console.log(archive))
-  const archiveCards = archive && archive.map((doc) => {
-    const {x, y, message} = doc.data()
-    return <Postcard
-      key={doc.id} id={doc.id}
-      x={x} y={y}
-      message={message} />
-  })
+    return () => unsubscribe()
+  }, [])
 
   return (
     <>
-      <Postcard editable />
-      {typeof archive != 'undefined' && archiveCards}
+      <Postcard editable update={updater} delete={deleter} />
+      {typeof archive != 'undefined' &&
+        archive.map((doc) => {
+          const {x, y, message} = doc.data()
+          return (
+            <Postcard
+              key={doc.id}
+              id={doc.id}
+              position={[x, y]}
+              message={message}
+              update={updater}
+              delete={deleter}
+            />
+          )
+        })}
     </>
   )
 }
