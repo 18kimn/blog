@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
   eslint error (and I guess to be a better coder,,...) */
 const dataPropTypes = {
   data: PropTypes.shape({
-    markdownRemark: PropTypes.shape({
+    mdx: PropTypes.shape({
       frontmatter: PropTypes.shape({
         title: PropTypes.string,
         date: PropTypes.string,
@@ -14,10 +14,10 @@ const dataPropTypes = {
       edges: PropTypes.array,
       html: PropTypes.string,
     }),
-    allMarkdownRemark: PropTypes.shape({
+    allMdx: PropTypes.shape({
       edges: PropTypes.array,
     }),
   }).isRequired,
 }
 
-export { dataPropTypes }
+export {dataPropTypes}

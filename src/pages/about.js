@@ -49,7 +49,7 @@ const IndexPage = () => {
               imperialism. I have related interests in data visualization and
               interactive presentations. My strengths are in the R tidyverse and
               d3.js, and I also have experience working in Python, Stata,
-              Tableau, and Excel.
+              Tableau, and Excel VBA.
             </Typography>
             <br />
             <Typography variant="body1">

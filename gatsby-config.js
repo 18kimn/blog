@@ -4,25 +4,27 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-mdx',
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     'gatsby-plugin-breakpoints',
     'gatsby-transformer-sharp',
     {
-      resolve: 'gatsby-transformer-remark',
+      resolve: 'gatsby-plugin-mdx',
       options: {
-        plugins: [
+        extensions: ['.mdx', '.md'],
+        gatsbyRemarkPlugins: [
           {
             resolve: 'gatsby-remark-copy-linked-files',
           },
           {
             resolve: 'gatsby-remark-images',
-            options: {
-              maxWidth: 800,
-            },
+            options: {maxWidth: 800},
           },
-          'gatsby-remark-autolink-headers',
+          {
+            resolve: 'gatsby-remark-autolink-headers',
+            options: {icon: false},
+          },
+          'gatsby-remark-prismjs',
         ],
       },
     },
@@ -34,8 +36,17 @@ module.exports = {
       },
       __key: 'pages',
     },
-    {resolve: 'gatsby-theme-material-ui',
-      options: {stylesProvider: {injectFirst: true }},
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'content',
+        path: './src/content/',
+      },
+      __key: 'content',
+    },
+    {
+      resolve: 'gatsby-theme-material-ui',
+      options: {stylesProvider: {injectFirst: true}},
     },
   ],
 }

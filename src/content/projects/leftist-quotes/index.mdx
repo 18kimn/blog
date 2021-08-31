@@ -5,13 +5,18 @@ date: 2021-08-30
 banner: preview.png
 ---
 
+import Quote from './Quote.js'
+import Codeblock from '../../../components/Codeblock.js'
+
+## Intro
+
 As a celebration for the end of summer (joke), I threw together a super, super simple API to interact with 778 communist/leftist quotes, all from marxists.org.
 
 There are three endpoints:
 
 **/** (the root): returns a random quote
 
-**/daily** : returns a single quote every day, matches with the marxists.org quote-a-day page
+**/daily** : returns a single quote every day, matches with the [marxists.org quote-a-day page](https://www.marxists.org/subject/quotes/index.htm).
 
 **/all-quotes** : returns all quotes.
 
@@ -25,7 +30,51 @@ The first two routes return a single object, and the last route returns an array
 
 Source code is hosted at [github.con/18kimn/leftist-quotes](https://www.github.con/18kimn/leftist-quotes)
 
-### notes
+## An example
+
+Click the card below to refresh the shown quote. Clicking the attribution takes you to the associated reading on [marxists.org](https://www.marxists.org).
+
+<div style={{display: 'flex', justifyContent: 'center'}}>
+  <Quote></Quote>
+</div>
+
+<Codeblock>
+
+```javascript
+import React, {useState, useCallback, useEffect} from 'react'
+import {Card, CardActionArea} from '@material-ui/core'
+// some styling is skipped
+const Quote = () => {
+  const [quote, setQuote] = useState()
+  const fetchQuote = useCallback(() => {
+    fetch('https://www.leftist-quotes.com/')
+      .then((response) => response.json())
+      .then((data) => setQuote(data))
+      .catch((err) => console.log(err))
+  }, [])
+
+  useEffect(() => {
+    fetchQuote()
+  }, [fetchQuote])
+
+  if (!quote) return null
+  return (
+    <Card style={styles.card}>
+      <CardActionArea onClick={fetchQuote}>
+        <p>{quote.body}</p>
+        <br />
+      </CardActionArea>
+      <a href={quote.link}>
+        <p>{quote.attribution}</p>
+      </a>
+    </Card>
+  )
+}
+```
+
+</Codeblock>
+
+## on learning
 
 This tool was built through express.js, with the data preprocessed through R and the entire site hosted on Heroku. It's incredibly simple, so I just threw everything in the root directory instead of creating src/ or static/ folders and so on.
 
@@ -37,3 +86,7 @@ This is my first API that I've built, which was exciting and definitely a learni
 The second point was especially confusing and tedious, as I had to reroute https://leftist-quotes.com, www.leftist-quotes.com, and so on all to the same root site.
 
 The other thing I realized while scraping the marxists.org webpage was that the marxists.org website was built in the stone ages. Every single quote was placed inside of a `document.write(<p>...</p>)` statement, and the entire page was essentially a single `switch` statement that was nearly eight hundred clauses long. On one hand, that must have taken a ridiculously long time to make since every quote had to be manually coded and formatted. On the other hand, it's not performant as the page has to load a few megabytes more than it needs and anyone editing it in the future would probably be extremely frustrated.
+
+## Next steps
+
+I hope to add more quotes eventually,
