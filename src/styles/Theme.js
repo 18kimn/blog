@@ -21,10 +21,7 @@ const solarizedPalette = {
 
 const Theme = createTheme({
   typography: {
-    fontFamily: [
-      'Lato',
-      'Roboto',
-    ].join(','),
+    fontFamily: ['Lato', 'Roboto'].join(','),
     h1: {
       fontWeight: 400,
       fontSize: '2rem',
@@ -60,12 +57,12 @@ const Theme = createTheme({
   overrides: {
     MuiCssBaseline: {
       '@global': {
-        'html': {
+        html: {
           height: '100%',
           width: '100%',
           position: 'relative',
         },
-        'body': {
+        body: {
           height: '100%',
           width: '100%',
           position: 'relative',
@@ -88,6 +85,5 @@ const Theme = createTheme({
     },
   },
 })
-
 
 export default Theme

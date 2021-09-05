@@ -1,11 +1,11 @@
 import React from 'react'
-import { Grid, Paper, Card, CardActionArea } from '@material-ui/core'
+import {Grid, Paper, Card, CardActionArea} from '@material-ui/core'
 import useStyles from '../styles/PageStyles'
-import { useTheme } from '@material-ui/core/styles'
+import {useTheme} from '@material-ui/core/styles'
 import PropTypes from 'prop-types'
 import {HomeOutlined, ArrowBackOutlined} from '@material-ui/icons'
-import { navigate } from 'gatsby'
-import { useLocation } from '@gatsbyjs/reach-router'
+import {navigate} from 'gatsby'
+import {useLocation} from '@gatsbyjs/reach-router'
 
 /*
   this component is a layout component --
@@ -23,7 +23,9 @@ const PageContainer = ({children}) => {
     //  page was loaded from a different domain
     // in other words this logic ensures that hitting the
     //  back button won't make the user leave the site
-    location.state ? navigate(-1, {state: {backPressed: true}}) : navigate('/')
+    location.state
+      ? navigate(-1, {state: {backPressed: true}})
+      : navigate('/')
     // passing a dummy field into the state for navigate
     //  so that the home page recognizes to only render once
   }
@@ -33,16 +35,35 @@ const PageContainer = ({children}) => {
   }
 
   return (
-    <Grid container alignItems='center' justifyContent='center' className={classes.pageContainer}>
+    <Grid
+      container
+      alignItems="center"
+      justifyContent="center"
+      className={classes.pageContainer}
+    >
       <Grid item className={classes.page}>
         <Paper elevation={5} className={classes.pageContent}>
-          <Grid container style={{position: 'absolute', top: '24px', left: 'calc(100% - 64px)', height: 'auto'}}>
-            <Card elevation={0} style={{height: 'auto', width: 'auto'}}>
+          <Grid
+            container
+            style={{
+              position: 'absolute',
+              top: '24px',
+              left: 'calc(100% - 64px)',
+              height: 'auto',
+            }}
+          >
+            <Card
+              elevation={0}
+              style={{height: 'auto', width: 'auto'}}
+            >
               <CardActionArea onClick={goBack}>
                 <ArrowBackOutlined />
               </CardActionArea>
             </Card>
-            <Card elevation={0} style={{height: 'auto', width: 'auto'}}>
+            <Card
+              elevation={0}
+              style={{height: 'auto', width: 'auto'}}
+            >
               <CardActionArea onClick={goHome}>
                 <HomeOutlined />
               </CardActionArea>
@@ -61,6 +82,5 @@ PageContainer.propTypes = {
     PropTypes.element,
   ]).isRequired,
 }
-
 
 export default PageContainer

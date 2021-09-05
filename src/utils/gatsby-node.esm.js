@@ -12,15 +12,17 @@ const onCreateWebpackConfig = ({stage, actions, getConfig}) => {
   })
   if (stage === 'build-html') {
     actions.setWebpackConfig({
-      externals: getConfig().externals.concat((_, request, callback) => {
-        const regex = /^@?firebase(\/(.+))?/
-        // exclude firebase products from being bundled
-        // so they will be loaded using require() at runtime.
-        if (regex.test(request)) {
-          return callback(null, 'umd ' + request)
-        }
-        callback()
-      }),
+      externals: getConfig().externals.concat(
+        (_, request, callback) => {
+          const regex = /^@?firebase(\/(.+))?/
+          // exclude firebase products from being bundled
+          // so they will be loaded using require() at runtime.
+          if (regex.test(request)) {
+            return callback(null, 'umd ' + request)
+          }
+          callback()
+        },
+      ),
     })
   }
 }
@@ -31,7 +33,10 @@ const createPages = async ({actions, graphql, reporter}) => {
   const blogPostTemplate = path.resolve('src/templates/blog-post.js')
   const result = await graphql(`
     {
-      allMdx(sort: {order: DESC, fields: [frontmatter___date]}, limit: 1000) {
+      allMdx(
+        sort: {order: DESC, fields: [frontmatter___date]}
+        limit: 1000
+      ) {
         edges {
           node {
             id
@@ -49,7 +54,9 @@ const createPages = async ({actions, graphql, reporter}) => {
   result.data.allMdx.edges.forEach(({node}) => {
     // optional chaining not supported for some reason..
     const slug = node.frontmatter && node.frontmatter.customSlug
-    const formattedSlug = slug ? slug : generateSlug(node.fileAbsolutePath)
+    const formattedSlug = slug
+      ? slug
+      : generateSlug(node.fileAbsolutePath)
     createPage({
       path: formattedSlug,
       component: blogPostTemplate,

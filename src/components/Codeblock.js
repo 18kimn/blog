@@ -18,7 +18,9 @@ const Codeblock = ({id, preopen, children}) => {
       .getBoundingClientRect().height
 
     setOpened((prevState) => {
-      const targetHeight = prevState ? '0px' : `calc(${fullHeight}px + 2em)`
+      const targetHeight = prevState
+        ? '0px'
+        : `calc(${fullHeight}px + 2em)`
       const targetPadding = prevState ? '0em' : '1em'
       d3.select(`#${id} > .gatsby-highlight > pre`)
         .transition()

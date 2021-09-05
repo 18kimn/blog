@@ -62,7 +62,11 @@ const Layout = ({content}) => {
       <CssBaseline />
       <Helmet meta={meta}>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin
+        />
         <link
           rel="preload"
           as="style"

@@ -31,7 +31,9 @@ const IndexPage = () => {
             style={{textAlign: 'center'}}
           >
             <Typography variant="h1">Nathan Kim</Typography>
-            <Typography variant="h2">Yale College Class of 2022</Typography>
+            <Typography variant="h2">
+              Yale College Class of 2022
+            </Typography>
           </Grid>
         </Grid>
         <Grid item xs>
@@ -42,14 +44,16 @@ const IndexPage = () => {
             justifyContent="center"
           >
             <Typography variant="body1">
-              I’m a senior at Yale College double majoring in Ethnicity, Race, &
-              Migration as well as Statistics & Data Science. I am broadly
-              interested in a critical study of space and race, especially in
-              how actions along these dimensions can destroy or advance global
-              imperialism. I have related interests in data visualization and
-              interactive presentations. My strengths are in the R tidyverse and
-              d3.js, and I also have experience working in Python, Stata,
-              Tableau, and Excel VBA.
+              I’m a senior at Yale College double majoring in
+              Ethnicity, Race, & Migration as well as Statistics &
+              Data Science. I am broadly interested in a critical
+              study of space and race, especially in how actions along
+              these dimensions can destroy or advance global
+              imperialism. I have related interests in data
+              visualization and interactive presentations. My
+              strengths are in the R tidyverse and d3.js, and I also
+              have experience working in Python, Stata, Tableau, and
+              Excel VBA.
             </Typography>
             <br />
             <Typography variant="body1">
@@ -57,10 +61,11 @@ const IndexPage = () => {
               <Link to="https://antievictionmap.com/">
                 Anti-Eviction Mapping Project,
               </Link>{' '}
-              a tenant organizing collective and digital cartography group based
-              out of San Francisco. I&apos;m also continuing research with
-              Professor Emma Zang of Yale Sociology and work with local New
-              Haven nonprofit DataHaven.
+              a tenant organizing collective and digital cartography
+              group based out of San Francisco. I&apos;m also
+              continuing research with Professor Emma Zang of Yale
+              Sociology and work with local New Haven nonprofit
+              DataHaven.
             </Typography>
             <br />
             <Typography variant="body1">
