@@ -55,7 +55,6 @@ const createPages = async ({actions, graphql, reporter}) => {
       component: blogPostTemplate,
       context: {formattedSlug: formattedSlug, id: node.id},
     })
-    console.log({formattedSlug: formattedSlug, id: node.id})
   })
 }
 
