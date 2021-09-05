@@ -1,4 +1,4 @@
-import React, {useCallback, useState} from 'react'
+import React, {useCallback, useState, useEffect} from 'react'
 import {Paper} from '@material-ui/core'
 import PropTypes from 'prop-types'
 import * as d3 from 'd3'
@@ -6,41 +6,42 @@ import useStyles from '../styles/PageStyles'
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown'
 import ArrowRightIcon from '@material-ui/icons/ArrowRight'
 
-const Codeblock = ({id, children}) => {
+const Codeblock = ({id, preopen, children}) => {
   const classes = useStyles()
   const [opened, setOpened] = useState(false)
-  const [msg, setMsg] = useState('show')
 
-  const showCode = useCallback(() => {
+  const toggleShow = useCallback(() => {
+    console.log('toggleShow running')
     const fullHeight = d3
       .select(`#${id} > .gatsby-highlight > pre > code`)
       .node()
       .getBoundingClientRect().height
 
-    const targetHeight = opened ? '0px' : `calc(${fullHeight}px + 2em)`
-    const targetPadding = opened ? '0em' : '1em'
-    const targetMsg = opened ? 'show' : 'hide'
+    setOpened((prevState) => {
+      const targetHeight = prevState ? '0px' : `calc(${fullHeight}px + 2em)`
+      const targetPadding = prevState ? '0em' : '1em'
+      d3.select(`#${id} > .gatsby-highlight > pre`)
+        .transition()
+        .duration(100)
+        .style('height', targetHeight)
+        .style('padding', targetPadding)
+      return !prevState
+    })
+  }, [id])
 
-    d3.select(`#${id} > .gatsby-highlight > pre`)
-      .transition()
-      .duration(100)
-      .style('height', targetHeight)
-      .style('padding', targetPadding)
-      .on('end', () => {
-        setOpened((prevState) => !prevState)
-        setMsg(targetMsg)
-      })
-  }, [id, opened])
-
+  useEffect(() => {
+    if (preopen) toggleShow()
+  }, [preopen, toggleShow])
+  console.log(opened)
   return (
     <div className="codeBlock">
       <button
         id={'button' + id}
-        onClick={showCode}
+        onClick={toggleShow}
         className={classes.codeButton}
       >
         {opened ? <ArrowDropDownIcon /> : <ArrowRightIcon />}
-        {`click to ${msg} code`}
+        {`click to ${opened ? 'hide' : 'show'} code`}
       </button>
       <Paper
         square={true}
@@ -61,6 +62,7 @@ Codeblock.propTypes = {
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
   ]).isRequired,
+  preopen: PropTypes.bool,
 }
 
 export default Codeblock

@@ -90,6 +90,8 @@ by:
 
 Those steps as code:
 
+<Codeblock preopen={true} id='intro'>
+
 ``` r
 p()[0]
 #> character(0)
@@ -99,15 +101,19 @@ s(d(p()[0]))
 #> [1] "c"
 ```
 
+</Codeblock>
+
 Next, we’d want to turn this string into the R expression `c(0, 1)`. To
 do this, we can:
 
 1.  Force R to interpret “c” as the native function `c`, by using
-    `parse` and then `eval` in R, or using the `x` function[1] in reso.
+    `parse` and then `eval` in R, or using the `x` function[^1] in reso.
 2.  Generate 1 by coercing 0 to `TRUE` with `!0`, and combining `TRUE`
     with `numeric(0)` to force `TRUE` to be numeric (or 1). This
     requires our new version of `c()`.
 3.  Combine all of our above steps with a set of parens and a 0!
+
+<Codeblock preopen={true} id='cfunc'>
 
 ``` r
 x(s(d(p()[0])))
@@ -117,6 +123,8 @@ x(s(d(p()[0])))(!0,0[0])
 x(s(d(p()[0])))(0,x(s(d(p()[0])))(!0,0[0]))
 #> [1] 0 1
 ```
+
+</Codeblock>
 
 Yay!
 
@@ -138,10 +146,12 @@ To get it, we need:
 3.  Two “t”s, from `integer(0)`
 4.  One “r”, from `integer(0)`
 5.  One “s”, from the eleventh letter of the deparse function expression
-    for `s()`.[2]
+    for `s()`.[^2]
 
 The code representation of this is below. `c()` and numbers are used
-instead of their `reso` equivalents for readability.[3]
+instead of their `reso` equivalents for readability.[^3]
+
+<Codeblock preopen={true} id='letters'>
 
 ``` r
 s(d(!0[0])) # the first letter of "logical(0)", or "l"
@@ -170,6 +180,9 @@ x(p(
 #>  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q" "r" "s" "t" "u" "v" "w" "x" "y" "z"
 ```
 
+</Codeblock>
+
+
 We can subset letters from here in order to form arbitrary words, and
 thus nearly all R commands.
 
@@ -185,7 +198,7 @@ array for these, which would then unlock the door to almost all of R.
 
 This is not meant to be a useful or practical programming tool. It is
 meant to show the opposite, that being esoteric is useless and using
-simpler, abstracted logic can be way more helpful.[4]
+simpler, abstracted logic can be way more helpful.[^4]
 
 Compared to languages like JavaScript, R stands out in being more
 accessible and friendly. Sometimes programmers attempt to be as concise
@@ -205,11 +218,11 @@ Of course, R still has lots of room to improve in becoming accessible.
 Let’s help each other get there by making the R community welcoming and
 fun!
 
-[1] for “execute”, or “expression.” Your choice :)
+[^1] for “execute”, or “expression.” Your choice :)
 
-[2] If you can think of a better way, let me know :’)
+[^2] If you can think of a better way, let me know :’)
 
-[3] LOL
+[^3] LOL
 
-[4] of course, it was also just a fun/silly little side project for
+[^4] of course, it was also just a fun/silly little side project for
 myself.
