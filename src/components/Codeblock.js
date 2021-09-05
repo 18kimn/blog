@@ -32,7 +32,7 @@ const Codeblock = ({id, preopen, children}) => {
   useEffect(() => {
     if (preopen) toggleShow()
   }, [preopen, toggleShow])
-  console.log(opened)
+
   return (
     <div className="codeBlock">
       <button
