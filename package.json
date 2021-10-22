@@ -10,10 +10,10 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "start": "npm run develop",
+    "start": "yarn develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "hardstart": "npm run clean && npm run start"
+    "hardstart": "yarn clean && npm run start"
   },
   "dependencies": {
     "@artsy/fresnel": "^1.9.0",
@@ -40,11 +40,12 @@
     "gatsby-theme-material-ui": "^2.0.1",
     "gatsby-transformer-remark": "^4.5.0",
     "gatsby-transformer-sharp": "^3.8.0",
+    "prismjs": "^1.25.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
-    "topojson-client": "^3.0.0"
+    "topojson-client": "^3.1.0"
   },
   "devDependencies": {
     "@netlify/plugin-gatsby": "^1.0.3",

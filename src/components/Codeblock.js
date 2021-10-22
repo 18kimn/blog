@@ -11,16 +11,13 @@ const Codeblock = ({id, preopen, children}) => {
   const [opened, setOpened] = useState(false)
 
   const toggleShow = useCallback(() => {
-    console.log('toggleShow running')
     const fullHeight = d3
       .select(`#${id} > .gatsby-highlight > pre > code`)
       .node()
       .getBoundingClientRect().height
 
     setOpened((prevState) => {
-      const targetHeight = prevState
-        ? '0px'
-        : `calc(${fullHeight}px + 2em)`
+      const targetHeight = prevState ? '0px' : `calc(${fullHeight}px + 2em)`
       const targetPadding = prevState ? '0em' : '1em'
       d3.select(`#${id} > .gatsby-highlight > pre`)
         .transition()
@@ -56,6 +53,7 @@ const Codeblock = ({id, preopen, children}) => {
     </div>
   )
 }
+
 
 Codeblock.propTypes = {
   msg: PropTypes.string,

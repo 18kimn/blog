@@ -33,41 +33,9 @@ const runBackgroundMap = () => {
 
   const path = d3.geoPath().projection(projection)
 
-  // make a little loading indicator in bottom left
-  const loading = d3
-    .select('#gatsby-focus-wrapper')
-    .append('div')
-    .style('position', 'absolute')
-    .style('bottom', 0)
-    .style('left', 0)
-    .style('font-style', 'italic')
-    .style('font-size', '1rem')
-    .style('opacity', 0.3)
-
-  const loadingDots = () => {
-    loading
-      .transition()
-      .duration(1000)
-      .tween(
-        'text',
-        () =>
-          function (t) {
-            // says loading... with dots dependent on time
-            const expr = `loading background animation${'.'.repeat(
-              Math.round(t * 4),
-            )}`
-            this.textContent = expr
-          },
-      )
-      .on('end', loadingDots)
-  }
-
-  loadingDots()
-
   // async data load so content can be loaded before the animation
   d3.json('/nhv_blocks.json')
     .then((nhvBlocks) => {
-      loading.remove()
       // adding and styling data
       const backgroundMap = svg
         .append('path')

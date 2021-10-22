@@ -23,9 +23,7 @@ const PageContainer = ({children}) => {
     //  page was loaded from a different domain
     // in other words this logic ensures that hitting the
     //  back button won't make the user leave the site
-    location.state
-      ? navigate(-1, {state: {backPressed: true}})
-      : navigate('/')
+    location.state ? navigate(-1, {state: {backPressed: true}}) : navigate('/')
     // passing a dummy field into the state for navigate
     //  so that the home page recognizes to only render once
   }
@@ -42,7 +40,7 @@ const PageContainer = ({children}) => {
       className={classes.pageContainer}
     >
       <Grid item className={classes.page}>
-        <Paper elevation={5} className={classes.pageContent}>
+        <Paper elevation={5} id="pageContent" className={classes.pageContent}>
           <Grid
             container
             style={{
@@ -52,18 +50,12 @@ const PageContainer = ({children}) => {
               height: 'auto',
             }}
           >
-            <Card
-              elevation={0}
-              style={{height: 'auto', width: 'auto'}}
-            >
+            <Card elevation={0} style={{height: 'auto', width: 'auto'}}>
               <CardActionArea onClick={goBack}>
                 <ArrowBackOutlined />
               </CardActionArea>
             </Card>
-            <Card
-              elevation={0}
-              style={{height: 'auto', width: 'auto'}}
-            >
+            <Card elevation={0} style={{height: 'auto', width: 'auto'}}>
               <CardActionArea onClick={goHome}>
                 <HomeOutlined />
               </CardActionArea>
