@@ -62,11 +62,7 @@ const Layout = ({content}) => {
       <CssBaseline />
       <Helmet meta={meta}>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin
-        />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
         <link
           rel="preload"
           as="style"
@@ -77,6 +73,10 @@ const Layout = ({content}) => {
           href="https://fonts.googleapis.com/css2?family=Fira+Code:ital,wght@0,300;0,400;0,700;1,300&display=swap"
           media="print"
           onLoad='this.media="all"'
+        />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,300&display=swap"
         />
         <style type="text/css">{mediaStyle}</style>
       </Helmet>

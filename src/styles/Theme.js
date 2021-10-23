@@ -19,6 +19,13 @@ const solarizedPalette = {
   green: '#859900',
 }
 
+/*
+  One thing I realized is that MUI typography specified
+  here is only applied to MUI elements, not to native HTML elements
+  generate from MDX or .md files
+
+  So this needs to be put in as a global override in the MUI stylehseet ?
+*/
 const Theme = createTheme({
   typography: {
     fontFamily: ['Lato', 'Roboto'].join(','),
@@ -47,8 +54,11 @@ const Theme = createTheme({
       fontSize: '.9rem',
     },
     body1: {
-      maxWidth: '62ch',
+      maxWidth: '70ch',
       fontSize: '.9rem',
+    },
+    p: {
+      maxWidth: '70ch',
     },
   },
   palette: {
@@ -74,6 +84,10 @@ const Theme = createTheme({
         },
         '#___gatsby, #gatsby-focus-wrapper': {
           height: '100%',
+        },
+        'p': {
+          maxWidth: '70ch',
+          fontSize: '1rem',
         },
       },
     },
