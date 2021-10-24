@@ -35,6 +35,9 @@ The actual PDF generation is done with
 [html-pdf](https://github.com/marcbachmann/node-html-pdf/issues) with some
 processing done in [pdf-parse](https://www.npmjs.com/package/pdf-parse).
 
+**View an example PDF of what this tool can make
+[here](https://nathankim.name/files/codexer.pdf).**
+
 ### Usage (CLI)
 
 Install with `npm install --global codexer`.
@@ -44,7 +47,6 @@ If you're new to Node, feel free to check out
 
 ```
 codexer [options]
-
 
 Options:
   -V, --version               output the version number
@@ -58,10 +60,12 @@ Options:
   -dh --dryHTML               Like the dry run option, but produces just HTML output. No page numbers though :(
   -s --stylePath <path>       Path to a HTML file with configurations that will be used to style the PDF.
   -q --quietly                Suppress all debugging messages
+  -w --width <length>         Page width
+  -h --height <length>        Page height
   -e --exclude <patterns...>  Specify regex patterns for files to exclude. Default excludes node_modules,
                               .git, yarn.lock and package-lock.json, and .env files.
                               Codexer also excludes any non-text encoded files; this cannot be altered.
-  -h, --help                  display help for command
+  --help                      display help for command
 ```
 
 ### Usage (as a Node module)
