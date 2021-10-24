@@ -60,22 +60,15 @@ calling for help. I helped her add NFC tags to the book itself, so that when
 users hold a phone to certain pages of the book, sounds begin playing -- a
 person dialing in mayday, or the SOS Morse Code emergency distress signal.
 
-<div className="video">
-  <iframe
-    src={Video}
-    allow="accelerometer; encrypted-media; picture-in-picture"
-    frameBorder="0"
-    webkitallowfullscreen="true"
-    mozallowfullscreen="true"
-    allowFullScreen
-  />
-</div>
+<video width="320" height="240" controls>
+  <source src={Video} type="video/mp4" />
+</video>
 
 Here again, the NFC tags themselves are very simple, just containing a string
 ("mayday", "sweep up", etc). They produce sounds only when the user is on the
 website and scans the tag, and the website can then begin to interpret and
 produce a response to the signal of the NFC tag.
 
-[Corresponding Github repository](https://github.com/18kimn/distress-signals)
+[Github repository](https://github.com/18kimn/distress-signals)
 
 [The website](https://distres-signals.org)

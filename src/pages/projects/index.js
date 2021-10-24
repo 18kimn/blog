@@ -26,8 +26,7 @@ const IndexPage = ({
     .map((edge) => {
       const node = edge.node
       const frontmatter = node.frontmatter
-      const img =
-        frontmatter?.banner?.childImageSharp?.gatsbyImageData
+      const img = frontmatter?.banner?.childImageSharp?.gatsbyImageData
 
       return (
         <Grid item className={classes.projectsCard} key={node.id}>
@@ -41,9 +40,7 @@ const IndexPage = ({
             >
               <CardActionArea
                 style={{width: '100%', height: '100%'}}
-                onClick={() =>
-                  navigate(generateSlug(node.fileAbsolutePath))
-                }
+                onClick={() => navigate(generateSlug(node.fileAbsolutePath))}
               >
                 <CardContent
                   style={{
@@ -63,11 +60,9 @@ const IndexPage = ({
               </CardActionArea>
             </Card>
             <div className={classes.projectsCardContent}>
-              <Typography variant="h5">
-                {frontmatter.title}
-              </Typography>
+              <Typography variant="h5">{frontmatter.title}</Typography>
               {frontmatter.subtitle && (
-                <Typography variant="h6">
+                <Typography variant="h5" style={{opacity: 0.7}}>
                   {frontmatter.subtitle}
                 </Typography>
               )}
