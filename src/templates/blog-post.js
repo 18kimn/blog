@@ -5,7 +5,7 @@ import PageContainer from '../components/PageContainer'
 import {MDXRenderer} from 'gatsby-plugin-mdx'
 import {MDXProvider} from '@mdx-js/react'
 import Codeblock from './../components/Codeblock'
-
+import Box from '@material-ui/core/Box'
 const shortcodes = {Codeblock}
 
 const Template = (props) => {
@@ -13,11 +13,15 @@ const Template = (props) => {
   const {frontmatter, body} = data.mdx
   return (
     <PageContainer>
-      <h1>{frontmatter.title}</h1>
-      <h4>{frontmatter.date}</h4>
-      <MDXProvider components={shortcodes}>
-        <MDXRenderer>{body}</MDXRenderer>
-      </MDXProvider>
+      <Box display="flex" flexDirection="column" style={{placeItems: 'center'}}>
+        <Box maxWidth="90ch">
+          <h1>{frontmatter.title}</h1>
+          <h4>{frontmatter.date}</h4>
+          <MDXProvider components={shortcodes}>
+            <MDXRenderer>{body}</MDXRenderer>
+          </MDXProvider>
+        </Box>
+      </Box>
     </PageContainer>
   )
 }

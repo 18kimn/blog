@@ -57,9 +57,6 @@ const Theme = createTheme({
       maxWidth: '70ch',
       fontSize: '.9rem',
     },
-    p: {
-      maxWidth: '70ch',
-    },
   },
   palette: {
     solarized: solarizedPalette,
@@ -86,8 +83,8 @@ const Theme = createTheme({
           height: '100%',
         },
         'p': {
-          maxWidth: '70ch',
-          fontSize: '1rem',
+          fontSize: '1.1rem',
+          margin: '0.5rem 0',
         },
       },
     },
