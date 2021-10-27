@@ -23,17 +23,8 @@ export default makeStyles(
       alignItems: 'center',
       flexDirection: 'column',
     },
-    projectsCard: {
-      width: 'min(70vw, 250px)',
-      height: 'min(70vw, 250px)',
-      margin: '30px 20px 30px 20px',
-    },
     projectsCardContent: {
       position: 'relative',
-      width: '250px',
-      height: '25px',
-      marginTop: '10px',
-      marginBottom: '20px',
     },
   }),
   {index: 1},

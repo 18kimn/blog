@@ -15,8 +15,6 @@ export default makeStyles(
       '&::-webkit-scrollbar': {
         display: 'none',
       },
-      'display': 'flex',
-      'alignItems': 'center',
     },
     'pageContent': {
       'width': '80vw',
