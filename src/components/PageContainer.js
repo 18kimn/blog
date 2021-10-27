@@ -6,6 +6,7 @@ import PropTypes from 'prop-types'
 import {HomeOutlined, ArrowBackOutlined} from '@material-ui/icons'
 import {navigate} from 'gatsby'
 import {useLocation} from '@gatsbyjs/reach-router'
+import {Media} from './Layout.js'
 
 /*
   this component is a layout component --
@@ -13,9 +14,7 @@ import {useLocation} from '@gatsbyjs/reach-router'
   on a MUI paper component with a decent amount of shadow
   it also helps save a few lines of nesting elements everywhere
 */
-const PageContainer = ({children}) => {
-  const theme = useTheme()
-  const classes = useStyles(theme)
+const Content = ({children}) => {
   const location = useLocation()
 
   const goBack = () => {
@@ -33,6 +32,37 @@ const PageContainer = ({children}) => {
   }
 
   return (
+    <>
+      <Grid
+        container
+        style={{
+          position: 'absolute',
+          top: '24px',
+          left: 'calc(100% - 64px)',
+          height: 'auto',
+        }}
+      >
+        <Card elevation={0} style={{height: 'auto', width: 'auto'}}>
+          <CardActionArea onClick={goBack}>
+            <ArrowBackOutlined />
+          </CardActionArea>
+        </Card>
+        <Card elevation={0} style={{height: 'auto', width: 'auto'}}>
+          <CardActionArea onClick={goHome}>
+            <HomeOutlined />
+          </CardActionArea>
+        </Card>
+      </Grid>
+      {children}
+    </>
+  )
+}
+
+const PageContainer = ({children}) => {
+  const theme = useTheme()
+  const classes = useStyles(theme)
+
+  return (
     <Grid
       container
       alignItems="center"
@@ -40,35 +70,34 @@ const PageContainer = ({children}) => {
       className={classes.pageContainer}
     >
       <Grid item className={classes.page}>
-        <Paper elevation={5} id="pageContent" className={classes.pageContent}>
-          <Grid
-            container
-            style={{
-              position: 'absolute',
-              top: '24px',
-              left: 'calc(100% - 64px)',
-              height: 'auto',
-            }}
+        <Media greaterThanOrEqual="md">
+          <Paper elevation={5} id="pageContent" className={classes.pageContent}>
+            <Content>{children}</Content>
+          </Paper>
+        </Media>
+        <Media lessThan="md">
+          <Paper
+            elevation={5}
+            id="pageContent"
+            className={classes.pageContent}
+            style={{padding: '1.5rem'}}
           >
-            <Card elevation={0} style={{height: 'auto', width: 'auto'}}>
-              <CardActionArea onClick={goBack}>
-                <ArrowBackOutlined />
-              </CardActionArea>
-            </Card>
-            <Card elevation={0} style={{height: 'auto', width: 'auto'}}>
-              <CardActionArea onClick={goHome}>
-                <HomeOutlined />
-              </CardActionArea>
-            </Card>
-          </Grid>
-          {children}
-        </Paper>
+            <Content>{children}</Content>
+          </Paper>
+        </Media>
       </Grid>
     </Grid>
   )
 }
 
 PageContainer.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.element),
+    PropTypes.element,
+  ]).isRequired,
+}
+
+Content.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.element),
     PropTypes.element,
