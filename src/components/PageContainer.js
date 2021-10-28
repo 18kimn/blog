@@ -37,19 +37,19 @@ const Content = ({children}) => {
         container
         style={{
           position: 'absolute',
-          top: '24px',
-          left: 'calc(100% - 64px)',
+          top: '1rem',
+          left: 'calc(100% - 5rem)',
           height: 'auto',
         }}
       >
         <Card elevation={0} style={{height: 'auto', width: 'auto'}}>
           <CardActionArea onClick={goBack}>
-            <ArrowBackOutlined />
+            <ArrowBackOutlined style={{width: '2rem', height: '2rem'}} />
           </CardActionArea>
         </Card>
         <Card elevation={0} style={{height: 'auto', width: 'auto'}}>
           <CardActionArea onClick={goHome}>
-            <HomeOutlined />
+            <HomeOutlined style={{width: '2rem', height: '2rem'}} />
           </CardActionArea>
         </Card>
       </Grid>

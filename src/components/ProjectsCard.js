@@ -35,10 +35,10 @@ const ProjectsCard = forwardRef((props, ref) => {
     >
       <MotionCard
         elevation={2}
+        initial={{height: isGrid ? 'calc(min(70vw, 250px) - 25px)' : 0}}
         style={{
           width: 'fit-content',
           opacity: 1,
-          height: 'calc(min(70vw, 250px) - 25px)',
           marginBottom: '1rem',
         }}
         square={true}
@@ -67,10 +67,10 @@ const ProjectsCard = forwardRef((props, ref) => {
       </MotionCard>
       <div className={classes.projectsCardContent}>
         <div style={{display: 'flex', flexDirection: 'row'}}>
-          {!isGrid && <Typography variant="h5">{date}:&nbsp;</Typography>}
+          {!isGrid && <Typography variant="body1">{date}:&nbsp;</Typography>}
           <Typography
             onClick={() => navigate(generateSlug(fileAbsolutePath))}
-            variant="h5"
+            variant="body1"
             style={{
               cursor: 'pointer',
               textDecoration: 'underline',
@@ -80,7 +80,7 @@ const ProjectsCard = forwardRef((props, ref) => {
           </Typography>
         </div>
         {subtitle && (
-          <Typography variant="h5" style={{opacity: 0.7}}>
+          <Typography variant="body1" style={{opacity: 0.7}}>
             {subtitle}
           </Typography>
         )}

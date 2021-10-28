@@ -26,36 +26,29 @@ const solarizedPalette = {
 
   So this needs to be put in as a global override in the MUI stylehseet ?
 */
+const shared = {
+  h1: {
+    fontWeight: 'bold',
+    fontSize: '2.5rem',
+  },
+  h2: {
+    fontSize: '2rem',
+  },
+  h3: {
+    fontSize: '1.5rem',
+  },
+  h4: {
+    fontSize: '1rem',
+  },
+}
+
 const Theme = createTheme({
   typography: {
     fontFamily: ['Lato', 'Roboto'].join(','),
-    h1: {
-      fontWeight: 400,
-      fontSize: '2rem',
-    },
-    h2: {
-      fontWeight: 300,
-      fontSize: '2rem',
-    },
-    h3: {
-      fontWeight: 400,
-      fontSize: '1.5rem',
-    },
-    h4: {
-      fontWeight: 300,
-      fontSize: '1rem',
-    },
-    h5: {
-      fontWeight: 400,
-      fontSize: '1rem',
-    },
-    h6: {
-      fontWeight: 300,
-      fontSize: '.9rem',
-    },
+    ...shared,
     body1: {
       maxWidth: '70ch',
-      fontSize: '.9rem',
+      fontSize: '1rem',
     },
   },
   palette: {
@@ -79,12 +72,19 @@ const Theme = createTheme({
           backgroundColor: solarizedPalette.base3,
           fontWeight: 400,
         },
+        ':root': {
+          fontSize: '14pt',
+        },
         '#___gatsby, #gatsby-focus-wrapper': {
           height: '100%',
         },
+        ...shared,
         'p': {
-          fontSize: '1.1rem',
+          fontSize: '1rem',
           margin: '0.5rem 0',
+        },
+        'li': {
+          fontSize: '1rem',
         },
       },
     },

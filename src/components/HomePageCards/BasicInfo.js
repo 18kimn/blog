@@ -1,11 +1,5 @@
 import React from 'react'
-import {
-  Card,
-  CardContent,
-  Typography,
-  Link,
-  SvgIcon,
-} from '@material-ui/core'
+import {Card, CardContent, Typography, Link, SvgIcon} from '@material-ui/core'
 import {Twitter} from '@material-ui/icons'
 import {useTheme} from '@material-ui/core/styles'
 import useStyles from '../../styles/CardStyles.js'
@@ -19,7 +13,7 @@ const BasicInfo = () => {
   return (
     <Card raised={true} className={classes.card}>
       <CardContent className={classes.cardcontent}>
-        <Typography variant="h1">Nathan Kim</Typography>
+        <Typography variant="h2">Nathan Kim</Typography>
         <Typography variant="body1">nathan.kim@yale.edu</Typography>
         <Row justifyContent="center" style={{height: 'auto'}}>
           <Twitter />

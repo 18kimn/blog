@@ -42,6 +42,7 @@ const IndexPage = ({
     const allPosts = edges.filter((edge) =>
       /projects/.test(edge.node.fileAbsolutePath),
     )
+
     setAllPosts(allPosts)
     setPosts(allPosts)
   }, [controls, edges])
@@ -65,7 +66,7 @@ const IndexPage = ({
       return newPosts
     })
     // const filteredPosts
-  }, [allPosts, debouncedSearch])
+  }, [allPosts, debouncedSearch, isGrid])
   const animate = async (isGrid) => {
     await controls.start({
       opacity: isGrid ? 1 : 0,
@@ -81,7 +82,7 @@ const IndexPage = ({
 
   return (
     <PageContainer>
-      <Typography variant="h1">Projects</Typography>
+      <Typography variant="h2">Projects</Typography>
       <ToggleButtonGroup
         {...buttonControl}
         style={{padding: 0, marginTop: '1rem'}}
@@ -121,8 +122,7 @@ const IndexPage = ({
             {...node}
             key={node.id}
             layoutId="post"
-            isGrid={isGrid}
-            controls={controls}
+            {...{isGrid, controls}}
           />
         ))}
       </motion.div>
