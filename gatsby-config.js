@@ -3,6 +3,7 @@ module.exports = {
     title: 'nathan kim',
   },
   plugins: [
+    'gatsby-plugin-webpack-bundle-analyser-v2',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',

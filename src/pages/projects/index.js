@@ -57,15 +57,13 @@ const IndexPage = ({
 
     setPosts((posts) => {
       if (!debouncedSearch || !posts[0]?.node?.frontmatter) return allPosts
-      const newPosts = allPosts.filter(({node}) =>
+      return allPosts.filter(({node}) =>
         Object.values(node.frontmatter)
           .join(' ')
           .toLowerCase()
           .match(searchRegex),
       )
-      return newPosts
     })
-    // const filteredPosts
   }, [allPosts, debouncedSearch, isGrid])
   const animate = async (isGrid) => {
     await controls.start({
@@ -142,7 +140,7 @@ export const pageQuery = graphql`
             subtitle
             banner {
               childImageSharp {
-                gatsbyImageData(layout: CONSTRAINED)
+                gatsbyImageData(width: 250, height: 250, layout: CONSTRAINED)
               }
             }
             date(formatString: "YYYY-MM-DD")
