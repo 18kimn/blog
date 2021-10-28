@@ -37,8 +37,8 @@ const ProjectsCard = forwardRef((props, ref) => {
         elevation={2}
         initial={{height: isGrid ? 'calc(min(70vw, 250px) - 25px)' : 0}}
         style={{
-          width: 'fit-content',
           width: '-moz-fit-content',
+          width: 'fit-content',
           opacity: 1,
           marginBottom: '1rem',
         }}
