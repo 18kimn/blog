@@ -1,7 +1,10 @@
 import React, {useCallback, useState, useEffect} from 'react'
 import {Paper} from '@material-ui/core'
 import PropTypes from 'prop-types'
-import * as d3 from 'd3'
+// horrendous syntax
+// but can't figure out the correct way to do this re:bundle size
+import {select} from 'd3-transition'
+import 'd3-transition'
 import useStyles from '../styles/PageStyles'
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown'
 import ArrowRightIcon from '@material-ui/icons/ArrowRight'
@@ -11,15 +14,14 @@ const Codeblock = ({id, preopen, children}) => {
   const [opened, setOpened] = useState(false)
 
   const toggleShow = useCallback(() => {
-    const fullHeight = d3
-      .select(`#${id} > .gatsby-highlight > pre > code`)
+    const fullHeight = select(`#${id} > .gatsby-highlight > pre > code`)
       .node()
       .getBoundingClientRect().height
 
     setOpened((prevState) => {
       const targetHeight = prevState ? '0px' : `calc(${fullHeight}px + 2em)`
       const targetPadding = prevState ? '0em' : '1em'
-      d3.select(`#${id} > .gatsby-highlight > pre`)
+      select(`#${id} > .gatsby-highlight > pre`)
         .transition()
         .duration(100)
         .style('height', targetHeight)
@@ -53,7 +55,6 @@ const Codeblock = ({id, preopen, children}) => {
     </div>
   )
 }
-
 
 Codeblock.propTypes = {
   msg: PropTypes.string,

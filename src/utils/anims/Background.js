@@ -1,4 +1,8 @@
-import * as d3 from 'd3'
+import {geoEquirectangular, geoPath} from 'd3-geo'
+import {timer} from 'd3-timer'
+import {json} from 'd3-fetch'
+import {select} from 'd3-selection'
+import 'd3-transition'
 import * as topojson from 'topojson-client'
 import theme from '../../styles/Theme'
 
@@ -6,9 +10,8 @@ const runBackgroundMap = () => {
   // setup
   let dims = [window.innerWidth, window.innerHeight]
 
-  d3.select('.background').remove()
-  const svg = d3
-    .select('#gatsby-focus-wrapper')
+  select('.background').remove()
+  const svg = select('#gatsby-focus-wrapper')
     .append('svg')
     .attr('width', dims[0])
     .attr('height', dims[1])
@@ -19,8 +22,7 @@ const runBackgroundMap = () => {
     .style('background-color', theme.palette.solarized.base3)
     .style('z-index', 0)
 
-  const projection = d3
-    .geoEquirectangular()
+  const projection = geoEquirectangular()
     .center([-72.9279, 41.3083])
     .scale(2000000) // kinda ridiculous!
     .translate([dims[0] / 2, dims[1] / 2])
@@ -31,10 +33,10 @@ const runBackgroundMap = () => {
     projection.translate([dims[0] / 2, dims[1] / 2])
   })
 
-  const path = d3.geoPath().projection(projection)
+  const path = geoPath().projection(projection)
 
   // async data load so content can be loaded before the animation
-  d3.json('/nhv_blocks.json')
+  json('/nhv_blocks.json')
     .then((nhvBlocks) => {
       // adding and styling data
       const backgroundMap = svg
@@ -50,7 +52,7 @@ const runBackgroundMap = () => {
 
       backgroundMap.transition().duration(500).style('opacity', 0.1)
 
-      d3.timer((elapsed) => {
+      timer((elapsed) => {
         backgroundMap.style('stroke-dashoffset', elapsed / 75)
       })
     })

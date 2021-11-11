@@ -28,6 +28,7 @@ const ProjectsCard = forwardRef((props, ref) => {
       height="100%"
       margin="1rem"
       minWidth="min(70vw, 250px)"
+      maxWidth="250px"
       width="fit-content"
       // maxWidth={isGrid ? 'min(70vw, 250px)' : '1000px'}
       // width={isGrid ? 'min(70vw, 250px)' : 'unset'}

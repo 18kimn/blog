@@ -1,13 +1,14 @@
-import * as d3 from 'd3'
+import {select, pointer} from 'd3-selection'
+import {piecewise, interpolateRgb} from 'd3-interpolate'
 import theme from '../../styles/Theme'
 
 const drawEllipses = () => {
   // document setup and mouse tracking
   let lastCoord = [0, 0]
   // the svg is mounted by Backgroundmap.js
-  const svg = d3.select('.background')
-  d3.select('body').on('mousemove', (event) => {
-    const coords = d3.pointer(event)
+  const svg = select('.background')
+  select('body').on('mousemove', (event) => {
+    const coords = pointer(event)
     // only draw if there's been sufficient distance
     //  from the previous mouse tracking point
     // this spreads the circles out and helps w/ performance
@@ -35,7 +36,7 @@ const drawEllipses = () => {
   let circleCounter = 0
   const colors = theme.palette.solarized
   const colorPicker = (n) => {
-    return d3.piecewise(d3.interpolateRgb.gamma(2.2), [
+    return piecewise(interpolateRgb.gamma(2.2), [
       colors.violet,
       colors.blue,
       colors.cyan,

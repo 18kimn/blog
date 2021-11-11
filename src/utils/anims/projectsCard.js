@@ -1,4 +1,5 @@
-import * as d3 from 'd3'
+import {select, selectAll} from 'd3-selection'
+import {forceSimulation, forceLink, forceManyBody, forceCenter} from 'd3-force'
 import theme from '../../styles/Theme'
 
 const runProjectsCardAnim = () => {
@@ -37,12 +38,11 @@ const runProjectsCardAnim = () => {
   const pxtoNum = (str) => {
     return Number(str.substring(0, str.match('px').index))
   }
-  const width = pxtoNum(d3.select('.projectsCard').style('width'))
-  const height = pxtoNum(d3.select('.projectsCard').style('height'))
+  const width = pxtoNum(select('.projectsCard').style('width'))
+  const height = pxtoNum(select('.projectsCard').style('height'))
 
-  d3.selectAll('.projectsCardAnim').remove()
-  const svg = d3
-    .select('.projectsCard')
+  selectAll('.projectsCardAnim').remove()
+  const svg = select('.projectsCard')
     .append('svg')
     .attr('class', 'projectsCardAnim')
     .attr('width', '100%')
@@ -82,10 +82,10 @@ const runProjectsCardAnim = () => {
       .attr('cy', (d) => Math.max(0, Math.min(d.y, height)))
   }
 
-  d3.forceSimulation(data.nodes)
-    .force('link', d3.forceLink(data.links))
-    .force('charge', d3.forceManyBody(1000))
-    .force('center', d3.forceCenter(width / 2, height / 2))
+  forceSimulation(data.nodes)
+    .force('link', forceLink(data.links))
+    .force('charge', forceManyBody(1000))
+    .force('center', forceCenter(width / 2, height / 2))
     .on('tick', ticked)
 }
 

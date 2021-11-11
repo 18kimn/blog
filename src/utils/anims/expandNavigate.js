@@ -1,8 +1,9 @@
-import * as d3 from 'd3'
+import {select} from 'd3-selection'
+import {interpolateNumber} from 'd3-interpolate'
 import {navigate} from 'gatsby'
 
 const expandNavigate = (x) => {
-  const container = d3.select(`.${x}`)
+  const container = select(`.${x}`)
   const duration = 500
   // transitions:
   // from: 350px wide 200px tall and translated
@@ -37,8 +38,8 @@ const expandNavigate = (x) => {
         transform.match(/,/).index + 2,
         pcts[1].index,
       )
-      const interX = d3.interpolateNumber(transformX, -50)
-      const interY = d3.interpolateNumber(transformY, -50)
+      const interX = interpolateNumber(transformX, -50)
+      const interY = interpolateNumber(transformY, -50)
 
       return (tRaw) => {
         const t = Math.min(tRaw * 4, 1)
@@ -49,13 +50,13 @@ const expandNavigate = (x) => {
       // first converting from px to vw
       const startingWidth =
         (100 * parseInt(container.style('width'))) / window.innerWidth
-      const inter = d3.interpolateNumber(startingWidth, 80)
+      const inter = interpolateNumber(startingWidth, 80)
       return (t) => inter(t) + 'vw'
     })
     .styleTween('height', () => {
       const endHeight = window.innerHeight - 40
       const startHeight = parseInt(container.style('height'))
-      const inter = d3.interpolateNumber(startHeight, endHeight)
+      const inter = interpolateNumber(startHeight, endHeight)
       return (t) => inter(t) + 'px'
     })
     .on('end', () => navigate('/' + x + '/'))
