@@ -3,11 +3,7 @@ module.exports = {
     'browser': true,
     'es2021': true,
   },
-  'extends': [
-    'google',
-    'plugin:react/recommended',
-    'plugin:jsx-a11y/recommended',
-  ],
+  'extends': ['google'],
   'settings': {
     'react': {
       'version': 'detect',
@@ -20,15 +16,19 @@ module.exports = {
     'ecmaVersion': 12,
     'sourceType': 'module',
   },
-  'plugins': [
-    'react',
-    'react-hooks',
-    'jsx-a11y',
-  ],
+  'plugins': ['svelte3'],
+  'overrides': [{files: ['*.svelte'], processor: 'svelte3/svelte3'}],
+  'parserOptions': {
+    sourceType: 'module',
+    ecmaVersion: 2019,
+  },
+  'env': {
+    browser: true,
+    es2017: true,
+    node: true,
+  },
   'rules': {
-    'react/prop-types': 'warn',
-    'react-hooks/exhaustive-deps': 'warn',
-    'indent': ['warn', 2, { 'SwitchCase': 1 }],
+    'indent': ['warn', 2, {'SwitchCase': 1}],
     'semi': ['warn', 'never'],
     'object-curly-spacing': ['off', 'always'],
     'array-bracket-spacing': ['off', 'always'],
@@ -36,7 +36,7 @@ module.exports = {
     'space-infix-ops': ['warn', {'int32Hint': false}],
     'no-unused-vars': 'warn',
     'linebreak-style': 'off',
-    'max-len': ['error', { 'ignoreStrings': true }],
+    'max-len': ['error', {'ignoreStrings': true}],
     'no-invalid-this': 'off',
   },
 }
