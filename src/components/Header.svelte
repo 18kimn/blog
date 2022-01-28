@@ -22,6 +22,7 @@
 
 <style>
   nav {
+    margin: 1rem;
     width: 100%;
     position: relative;
     margin-bottom: 2rem;
@@ -33,7 +34,6 @@
   .selected {
     font-weight: bold;
   }
-
 
   nav::after {
     bottom: -1rem;

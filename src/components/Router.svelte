@@ -3,7 +3,7 @@
   let props = {}
 
   let LoadRoute = () => null
-
+  /** see https://javascript.plainenglish.io/how-to-create-a-router-in-svelte-ce66c10275fe */
   /** Useful for variable paths of form /:post
    * @returns Array of form {path, component, segments: {name, variable}}
    */
@@ -23,6 +23,7 @@
 
   const getRoute = (path) => {
     const segments = path.replace(/^\/+|\/+$/g, '').split('/')
+    console.log({segments, path, _routes})
     return _routes.find((route) => {
       if (route.segments.length !== segments.length) return false
       return segments.every(

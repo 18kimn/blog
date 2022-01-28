@@ -58,7 +58,7 @@ async function build(path: string) {
         targetPath,
         JSON.stringify({data, content: marked(content)}),
       )
-      return {...prev, [startPath]: data}
+      return {...prev, [dirname(startPath)]: data}
     } else {
       await fs.copyFile(startPath, targetPath)
     }
