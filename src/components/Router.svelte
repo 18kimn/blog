@@ -33,9 +33,7 @@
     })
   }
 
-  /** retrieve the correct set of props passed to the component
-   * (mostly unnecessary)
-   */
+  /** translate a URL to props */
   function getProps(path: string, routeSegments) {
     let props = {}
     const segments = path.replace(/^\/+|\/+$/g, '').split('/')
@@ -92,8 +90,19 @@
 <style>
   .component {
     display: grid;
-    place-content: center;
+    place-items: center;
     grid-column: 1/2;
     grid-row: 1/2;
+    max-height: 100vh;
+  }
+
+  main {
+    place-content: center;
+    place-items: center;
+    width: 60ch;
+    max-width: 100vw;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
   }
 </style>

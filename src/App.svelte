@@ -6,6 +6,8 @@
   import Projects from './pages/Projects.svelte'
   import Post from './pages/Post.svelte'
 
+  import Circles from './components/Circles.svelte'
+
   onMount(() => {
     /* don't let browser do a full reload */
     document.addEventListener('click', (event) => {
@@ -25,4 +27,5 @@
   }
 </script>
 
+<Circles />
 <Router {routes} />

@@ -10,7 +10,10 @@
   "overrides": [
     {"files": ["*.svelte"], "processor": "svelte3/svelte3"}
   ],
-  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
   "settings": {
     "svelte3/typescript": true
   },

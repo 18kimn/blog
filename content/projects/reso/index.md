@@ -102,8 +102,6 @@ do by:
 
 Those steps as code:
 
-<Codeblock preopen={true} id='intro'>
-
 ```r
 p()[0]
 #> character(0)
@@ -112,8 +110,6 @@ d(0[0])
 s(d(p()[0]))
 #> [1] "c"
 ```
-
-</Codeblock>
 
 Next, we’d want to turn this string into the R expression `c(0, 1)`.
 To do this, we can:
@@ -126,8 +122,6 @@ To do this, we can:
     requires our new version of `c()`.
 3.  Combine all of our above steps with a set of parens and a 0!
 
-<Codeblock preopen={true} id='cfunc'>
-
 ```r
 x(s(d(p()[0])))
 #> function (...)  .Primitive("c")
@@ -136,8 +130,6 @@ x(s(d(p()[0])))(!0,0[0])
 x(s(d(p()[0])))(0,x(s(d(p()[0])))(!0,0[0]))
 #> [1] 0 1
 ```
-
-</Codeblock>
 
 Yay!
 
@@ -163,8 +155,6 @@ To get it, we need:
 
 The code representation of this is below. `c()` and numbers are used
 instead of their `reso` equivalents for readability.[^3]
-
-<Codeblock preopen={true} id='letters'>
 
 ```r
 s(d(!0[0])) # the first letter of "logical(0)", or "l"
@@ -192,8 +182,6 @@ x(p(
 ))
 #>  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q" "r" "s" "t" "u" "v" "w" "x" "y" "z"
 ```
-
-</Codeblock>
 
 We can subset letters from here in order to form arbitrary words, and
 thus nearly all R commands.

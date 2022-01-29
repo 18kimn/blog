@@ -21,16 +21,20 @@
       <td>Work</td>
       <td>
         <ul>
-          <li><a href="https://www.ctdatahaven.org">DataHaven</a></li>
           <li>
-            <a href="https://antievictionmap.com"
-              >The Anti-Eviction Mapping Project</a
-            >
+            <a target="_blank" href="https://www.ctdatahaven.org">
+              DataHaven
+            </a>
           </li>
           <li>
-            <a href="http://www.emmazang.net"
-              >Research with Prof. Emma Zang (Sociology)</a
-            >
+            <a target="_blank" href="https://antievictionmap.com">
+              The Anti-Eviction Mapping Project
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="http://www.emmazang.net">
+              Research with Prof. Emma Zang (Sociology)
+            </a>
           </li>
         </ul>
       </td>

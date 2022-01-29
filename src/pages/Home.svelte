@@ -19,4 +19,12 @@
   h1 {
     margin: 0;
   }
+
+  a {
+    transition: all ease-in-out 400ms;
+  }
+
+  a:hover {
+    opacity: 0.6;
+  }
 </style>

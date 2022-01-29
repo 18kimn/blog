@@ -5,8 +5,6 @@ date: 2021-08-30
 banner: preview.png
 ---
 
-import Quote from './Quote.js'
-
 ## Intro
 
 As a celebration for the end of summer (joke), I threw together a
@@ -34,52 +32,6 @@ returns an array of objects.
 
 Source code is hosted at
 [github.com/18kimn/leftist-quotes](https://www.github.com/18kimn/leftist-quotes)
-
-## An example
-
-Click the card below to refresh the shown quote. Clicking the
-attribution takes you to the associated reading on
-[marxists.org](https://www.marxists.org).
-
-<div style={{display: 'flex', justifyContent: 'center'}}>
-  <Quote></Quote>
-</div>
-
-<Codeblock id='leftist-quotes'>
-
-```jsx
-import React, {useState, useCallback, useEffect} from 'react'
-import {Card, CardActionArea} from '@material-ui/core'
-// some styling is skipped
-const Quote = () => {
-  const [quote, setQuote] = useState()
-  const fetchQuote = useCallback(() => {
-    fetch('https://www.leftist-quotes.com/')
-      .then((response) => response.json())
-      .then((data) => setQuote(data))
-      .catch((err) => console.log(err))
-  }, [])
-
-  useEffect(() => {
-    fetchQuote()
-  }, [fetchQuote])
-
-  if (!quote) return null
-  return (
-    <Card style={styles.card}>
-      <CardActionArea onClick={fetchQuote}>
-        <p>{quote.body}</p>
-        <br />
-      </CardActionArea>
-      <a href={quote.link}>
-        <p>{quote.attribution}</p>
-      </a>
-    </Card>
-  )
-}
-```
-
-</Codeblock>
 
 ## on learning
 

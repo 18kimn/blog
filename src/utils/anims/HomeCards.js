@@ -55,7 +55,9 @@ const AnimCards = ({largeScreen}) => {
       return {
         from: {transform: 'translate(-50%, -50%)'},
         to: {
-          transform: largeScreen ? item.transform : item.transformSmall,
+          transform: largeScreen
+            ? item.transform
+            : item.transformSmall,
         },
         ref: refs[i],
       }

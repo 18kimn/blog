@@ -1,5 +1,10 @@
 import {select, selectAll} from 'd3-selection'
-import {forceSimulation, forceLink, forceManyBody, forceCenter} from 'd3-force'
+import {
+  forceSimulation,
+  forceLink,
+  forceManyBody,
+  forceCenter,
+} from 'd3-force'
 import theme from '../../styles/Theme'
 
 const runProjectsCardAnim = () => {

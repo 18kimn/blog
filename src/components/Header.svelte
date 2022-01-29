@@ -22,27 +22,22 @@
 
 <style>
   nav {
-    margin: 1rem;
     width: 100%;
     position: relative;
-    margin-bottom: 2rem;
+    margin: 2rem 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
   }
 
   .selected {
     font-weight: bold;
   }
 
-  nav::after {
-    bottom: -1rem;
-    left: 10%;
-    width: 80%;
-  }
-
   #home {
-    font-size: 1.5rem;
     font-weight: bold;
   }
 
@@ -58,7 +53,26 @@
     opacity: 0.4;
   }
 
+  nav::after,
+  a::after {
+    position: absolute;
+    bottom: -5px;
+    height: 1px;
+    background-color: gray;
+    content: '';
+    left: 50%;
+    width: 0%;
+    transition: all ease-in-out 0.2s;
+  }
+
   a:hover::after {
+    left: 10%;
+    width: 80%;
+  }
+
+  nav::after {
+    position: absolute;
+    bottom: -1rem;
     left: 10%;
     width: 80%;
   }

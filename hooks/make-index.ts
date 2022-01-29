@@ -1,7 +1,7 @@
 import {promises as fs} from 'fs'
 import {dirname, resolve, join, extname} from 'path'
 import {fileURLToPath} from 'url'
-import {marked} from 'marked'
+import {marked, Renderer} from 'marked'
 import matter from 'gray-matter'
 import hljs from 'highlight.js'
 import sharp from 'sharp'
@@ -9,9 +9,37 @@ import sharp from 'sharp'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 process.chdir(resolve(__dirname, '..'))
 
-marked.setOptions({
-  highlight: (code: string) => hljs.highlightAuto(code).value,
-})
+const escapeMap = {
+  '&': '&amp;',
+  '<': '&lt;',
+  '>': '&gt;',
+  '"': '&quot;',
+  '\'': '&#39;',
+}
+
+const escapeForHTML = (input: string) => {
+  return input.replace(
+    /([&<>'"])/g,
+    (char: string) => escapeMap[char],
+  )
+}
+
+// Create your custom renderer.
+const renderer = new Renderer()
+renderer.code = (code, language) => {
+  const validLang = !!(language && hljs.getLanguage(language))
+
+  // Highlight only if the language is valid; otherwise
+  // treat is as need-to-escape stuff (preformatted)
+  const highlighted = validLang
+    ? hljs.highlightAuto(code).value
+    : escapeForHTML(code)
+
+  return `<pre><code class="hljs ${language}">${highlighted}</code></pre>`
+}
+
+// Set the renderer to marked.
+marked.setOptions({renderer})
 
 const TARGET = 'public/'
 const BASE = 'content/'
@@ -32,7 +60,7 @@ async function build(path: string) {
     const startPath = join(path, file)
     const targetPath = join(TARGET, startPath)
     const isFolder = (await fs.lstat(startPath)).isDirectory()
-    if (isFolder) return {...prev, ...(await build(startPath))}
+    if (isFolder) return [...prev, ...(await build(startPath))]
     const ext = extname(file)
     if (['.png', '.jpg'].includes(ext)) {
       const imageBuffer = await sharp(resolve(path, file))
@@ -58,12 +86,12 @@ async function build(path: string) {
         targetPath,
         JSON.stringify({data, content: marked(content)}),
       )
-      return {...prev, [dirname(startPath)]: data}
+      return [...prev, {name: dirname(startPath), ...data}]
     } else {
       await fs.copyFile(startPath, targetPath)
     }
     return prev
-  }, Promise.resolve({}))
+  }, Promise.resolve([]))
 
   return promises
 }
