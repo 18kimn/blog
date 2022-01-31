@@ -72,10 +72,6 @@
 </div>
 
 <style>
-  div {
-    max-width: 65ch;
-  }
-
   p,
   ul {
     margin: 0;

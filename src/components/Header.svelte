@@ -10,8 +10,10 @@
 </script>
 
 <nav>
-  <span id="home">Nathan Kim</span>
-  <div>
+  <div id="home">
+    <span>Nathan Kim</span>
+  </div>
+  <div id="links">
     {#each routes as route}
       <a class:selected={route.path === selected} href={route.path}
         >{route.label}</a
@@ -26,7 +28,8 @@
     position: relative;
     margin: 2rem 0;
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: space-around;
     align-items: center;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -39,6 +42,13 @@
 
   #home {
     font-weight: bold;
+  }
+
+  #links {
+    flex: 1;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
   }
 
   a {

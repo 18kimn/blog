@@ -6,13 +6,11 @@
   import Projects from './pages/Projects.svelte'
   import Post from './pages/Post.svelte'
 
-  import Circles from './components/Circles.svelte'
-
   onMount(() => {
     /* don't let browser do a full reload */
-    document.addEventListener('click', (event) => {
-      const target = event.target || event.srcElement
-      if (!target.tagName === 'A') return
+    document.addEventListener('click', (event: MouseEvent) => {
+      const target = event.target as HTMLAnchorElement
+      if (target.tagName !== 'A') return
       if (target.host !== window.location.host) return
       event.preventDefault()
       navigate(target.pathname)
@@ -27,5 +25,4 @@
   }
 </script>
 
-<Circles />
 <Router {routes} />
