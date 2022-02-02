@@ -3,19 +3,19 @@
   import palette from '../utils/colors'
   let circles = []
 
-  let canvas: HTMLCanvasElement
-  $: context = canvas && canvas.getContext('2d')
+  let clickCanvas: HTMLCanvasElement
+  let hoverCanvas: HTMLCanvasElement
+  $: clickContext = clickCanvas && clickCanvas.getContext('2d')
+  $: hoverContext = hoverCanvas && hoverCanvas.getContext('2d')
 
-  $: width = canvas && canvas.offsetWidth
-  $: height = canvas && canvas.offsetHeight
+  $: width = clickCanvas && clickCanvas.offsetWidth
+  $: height = clickCanvas && clickCanvas.offsetHeight
 
   /** triggered on mousemove, updates circle data */
   function updateCircles(event: MouseEvent) {
-    const notOverMain = event
-      .composedPath()
-      .every((element: HTMLElement) => element.tagName !== 'MAIN')
-    if (!notOverMain) return
-    const dims = [event.offsetX, event.offsetY]
+    const isOverCanvas = event.target === hoverCanvas
+    if (!isOverCanvas) return
+    const dims = [event.pageX, event.pageY]
     const last = circles[circles.length - 1]
     if (!last) return circles.push(dims)
     const dist = (last[0] - dims[0]) ** 2 + (last[1] - dims[1]) ** 2
@@ -35,27 +35,30 @@
   }
 
   let clicks = []
-  let background = {color: 'white'}
+  const background = {color: 'white'}
   /** checks if the circle should be added to the clicks */
   function updateClicks(event: MouseEvent) {
-    const notOverMain = event.path.every(
-      (element: HTMLElement) => element.tagName !== 'MAIN',
-    )
-    if (!notOverMain) return
-    const dims = [event.offsetX, event.offsetY]
-    clicks.push(dims)
+    const isOverCanvas = event.target === hoverCanvas
+    if (!isOverCanvas) return
+    const dims = {x: event.pageX, y: event.pageY}
+    clicks.push({...dims})
   }
 
   let lastUsedColor = 'white'
   /** draws an expanding circle animation */
   function drawCircles(time: number) {
-    if (!canvas || !context) return requestAnimationFrame(drawCircles)
-    context.save()
+    if (!clickCanvas || !hoverContext)
+      return requestAnimationFrame(drawCircles)
 
-    context.fillStyle = background ? background.color : 'white'
-    context.fillRect(0, 0, width, height)
+    hoverContext.save()
+    clickContext.save()
 
     clicks.forEach((click, i) => {
+      if (click.shouldDelete) {
+        clickCanvas.style.background = background.color
+        clicks.splice(i, 1)
+        return
+      }
       if (!click.startTime) {
         click.startTime = time
         const lastIndex = colors.findIndex(
@@ -67,38 +70,45 @@
         ]
         click.color = randomColor(unusedColors)
         lastUsedColor = click.color
-        console.log({lastIndex, unusedColors, click})
-        const r1 =
-          ((width - click[0]) ** 2 + (height - click[1]) ** 2) ** 0.5
-        const r2 = (width ** 2 + height ** 2) ** 0.5
-        click.maxR = Math.max(r1, r2)
+        const rs = [
+          [width - click.x, height - click.y],
+          [click.x, click.y],
+          [width - click.x, click.y],
+          [click.x, height - click.y],
+        ]
+          .map((pts) => (pts[0] ** 2 + pts[1] ** 2) ** 0.5)
+          .reduce((prev, curr) => (curr > prev ? curr : prev), 0)
+
+        click.maxR = rs
       }
-      context.beginPath()
+
+      clickContext.beginPath()
       const radius = (2000 * (time - click.startTime)) / 1000
-      context.arc(click[0], click[1], radius, 0, 2 * Math.PI)
-      context.lineWidth = 5
-      context.fillStyle = click.color
-      context.fill()
+      clickContext.arc(click.x, click.y, radius, 0, 2 * Math.PI)
+      clickContext.lineWidth = 5
+      clickContext.fillStyle = click.color
+      clickContext.fill()
       if (click.maxR < radius) {
-        clicks.splice(i, 1)
-        background = click
+        background.color = click.color
+        click.shouldDelete = true
       }
     })
 
+    hoverContext.clearRect(0, 0, width, height)
     circles.forEach((circle, i) => {
       if (!circle.startTime) {
         circle.startTime = time
         circle.color = randomColor(colors)
       }
-      context.beginPath()
-      context.arc(circle[0], circle[1], 80, 0, 2 * Math.PI)
-      context.fillStyle = circle.color
+      hoverContext.beginPath()
+      hoverContext.arc(circle[0], circle[1], 80, 0, 2 * Math.PI)
+      hoverContext.fillStyle = circle.color
       const alpha = 0.2 * (1 - (time - circle.startTime) / 1000)
-      context.globalAlpha = Math.max(0, alpha)
-      context.fill()
+      hoverContext.globalAlpha = Math.max(0, alpha)
+      hoverContext.fill()
       if (Math.max(0, alpha) === 0) circles.splice(i, 1)
     })
-    context.restore()
+    hoverContext.restore()
 
     requestAnimationFrame(drawCircles)
   }
@@ -106,16 +116,18 @@
   onMount(() => {
     document.addEventListener('mousemove', updateCircles)
     document.addEventListener('click', updateClicks)
-    canvas.addEventListener('resize', () => {
-      width = canvas.offsetWidth
-      height = canvas.offsetHeight
+    const ro = new ResizeObserver(() => {
+      width = clickCanvas.offsetWidth
+      height = clickCanvas.offsetHeight
     })
+    ro.observe(clickCanvas)
 
     drawCircles(0)
   })
 </script>
 
-<canvas bind:this={canvas} {width} {height} />
+<canvas bind:this={clickCanvas} {width} {height} />
+<canvas bind:this={hoverCanvas} {width} {height} />
 
 <style>
   canvas {

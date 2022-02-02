@@ -72,17 +72,37 @@
 <script lang="ts">
   import {onMount} from 'svelte'
   import type {SvelteComponent} from 'svelte/internal'
-  import {fade} from 'svelte/transition'
   import Circles from './Circles.svelte'
 
-  let component: SvelteComponent
   export let routes = {}
+  let onScreen: SvelteComponent
+  let wrapper: HTMLElement
+
+  /** short wrapper for delaying async-awaitly */
+  async function delay(ms: number) {
+    return new Promise((resolve) => setTimeout(resolve, ms))
+  }
 
   LoadRoute = async (path: string) => {
     const current = getRoute(path)
-    component = current.component()
-    console.log(current)
+
+    if (!wrapper) {
+      onScreen = current.component()
+      props = getProps(path, current.segments)
+      return
+    }
+
+    wrapper.classList.remove('intro')
+    wrapper.classList.add('outro')
+    await delay(200)
+
+    wrapper.classList.remove('outro')
+    wrapper.classList.add('intro')
+    onScreen = current.component()
     props = getProps(path, current.segments)
+    await delay(200)
+
+    wrapper.classList.remove('intro')
   }
 
   onMount(() => {
@@ -93,46 +113,52 @@
 
 <div id="container">
   <Circles />
-  {#key component}
-    <div
-      class="component"
-      in:fade={{duration: 150, delay: 150}}
-      out:fade={{duration: 150, delay: 0}}
-    >
-      <main>
-        <svelte:component this={component} {...props} />
-      </main>
-    </div>
-  {/key}
+  <div id="component" class="outro intro" bind:this={wrapper}>
+    <main>
+      {#key onScreen}
+        <svelte:component this={onScreen} {...props} />
+      {/key}
+    </main>
+  </div>
 </div>
 
 <style>
-  .component,
+  #component,
   #container {
     position: relative;
     display: grid;
     place-items: center;
     grid-column: 1/2;
     grid-row: 1/2;
-    width: 100%;
-    height: 100%;
+  }
+
+  #component {
+    width: fit-content;
+    height: fit-content;
+    margin: 2rem;
+    transition: opacity ease-in-out 200ms;
+  }
+
+  .outro {
+    opacity: 0;
+  }
+
+  .intro {
+    opacity: 1;
   }
 
   main {
     position: relative;
     z-index: 1;
     background: white;
+    border: solid 2px black;
+    padding: 2rem;
     box-shadow: 10px 10px;
-    border: black solid 1px;
     border-radius: 0.5rem;
-    place-content: center;
-    place-items: center;
-    height: unset;
+    height: fit-content;
     width: fit-content;
     max-width: min(100vw, 65ch);
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
-    padding: 1rem;
+    overflow: auto;
   }
 </style>

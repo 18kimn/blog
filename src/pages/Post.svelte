@@ -21,9 +21,9 @@
   $: ({data, content} = markup)
 </script>
 
-<Header />
-<div id="content">
-  {#if markup.content}
+{#if markup.content}
+  <Header />
+  <div id="content">
     <div id="frontmatter">
       <h1>{data?.title}</h1>
       {#if data.subtitle}
@@ -32,14 +32,15 @@
       <span id="date">{date}</span>
     </div>
     {@html markup.content}
-  {:else}
-    Loading content...
-  {/if}
-</div>
+  </div>
+{:else}
+  <Header selected="/" />
+  Loading content...
+{/if}
 
 <style>
   #content {
-    max-width: 100%;
+    width: 100%;
   }
 
   #content :global(pre) {

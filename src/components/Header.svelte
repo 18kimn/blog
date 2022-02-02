@@ -15,9 +15,9 @@
   </div>
   <div id="links">
     {#each routes as route}
-      <a class:selected={route.path === selected} href={route.path}
-        >{route.label}</a
-      >
+      <a class:selected={route.path === selected} href={route.path}>
+        {route.label}
+      </a>
     {/each}
   </div>
 </nav>
@@ -42,6 +42,7 @@
 
   #home {
     font-weight: bold;
+    margin-right: 0.5rem;
   }
 
   #links {
@@ -52,7 +53,7 @@
   }
 
   a {
-    margin-right: 1rem;
+    margin: 0 0.5rem;
     color: black;
     text-decoration: none;
     transition: all ease-in-out 0.4s;
