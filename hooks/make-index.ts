@@ -1,5 +1,5 @@
 import {promises as fs} from 'fs'
-import {dirname, resolve, join, extname} from 'path'
+import {dirname, resolve, join, extname, basename} from 'path'
 import {fileURLToPath} from 'url'
 import {marked, Renderer} from 'marked'
 import matter from 'gray-matter'
@@ -24,13 +24,12 @@ const escapeForHTML = (input: string) => {
   )
 }
 
-// Create your custom renderer.
 const renderer = new Renderer()
 renderer.code = (code, language) => {
   const validLang = !!(language && hljs.getLanguage(language))
 
   // Highlight only if the language is valid; otherwise
-  // treat is as need-to-escape stuff (preformatted)
+  // treat as need-to-escape stuff (preformatted)
   const highlighted = validLang
     ? hljs.highlightAuto(code).value
     : escapeForHTML(code)
@@ -64,7 +63,7 @@ async function build(path: string) {
     const ext = extname(file)
     if (['.png', '.jpg'].includes(ext)) {
       const imageBuffer = await sharp(resolve(path, file))
-        .resize(400)
+        .resize(600)
         .jpeg({
           progressive: true,
           mozjpeg: true,
@@ -82,9 +81,15 @@ async function build(path: string) {
     } else if (ext === '.md') {
       const text = await fs.readFile(startPath, 'utf-8')
       const {data, content} = matter(text)
+
       await fs.writeFile(
         targetPath,
-        JSON.stringify({data, content: marked(content)}),
+        JSON.stringify({
+          data,
+          content: marked(content, {
+            baseUrl: basename(dirname(targetPath)) + '/',
+          }),
+        }),
       )
       return [...prev, {name: dirname(startPath), ...data}]
     } else {
@@ -97,5 +102,10 @@ async function build(path: string) {
 }
 
 await fs.rm(join(TARGET, BASE), {recursive: true, force: true})
-const index = await build(BASE)
-await fs.writeFile('public/projects.json', JSON.stringify(index))
+const projects = await build('content/projects')
+const writing = await build('content/writing')
+const index = {
+  projects,
+  writing,
+}
+await fs.writeFile('public/posts.json', JSON.stringify(index))

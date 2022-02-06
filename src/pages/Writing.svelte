@@ -2,4 +2,4 @@
   import List from '../components/List.svelte'
 </script>
 
-<List type="projects" />
+<List type="writing" />

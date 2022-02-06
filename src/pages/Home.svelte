@@ -7,7 +7,7 @@
   <nav>
     <a href="/about">About</a>
     <a href="/projects">Projects</a>
-    <a href="/writing">Blog</a>
+    <a href="/writing">Writing</a>
   </nav>
 </div>
 
