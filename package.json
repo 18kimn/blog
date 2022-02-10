@@ -8,7 +8,7 @@
   "scripts": {
     "run-ts": "node --loader ts-node/esm --experimental-specifier-resolution=node",
     "run-index": "npm run run-ts hooks/make-index.ts",
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",

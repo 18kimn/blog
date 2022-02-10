@@ -19,7 +19,7 @@
     const last = circles[circles.length - 1]
     if (!last) return circles.push(dims)
     const dist = (last[0] - dims[0]) ** 2 + (last[1] - dims[1]) ** 2
-    if (dist > 20000) circles.push(dims)
+    if (dist > 15000) circles.push(dims)
     if (circles.length > 20) circles.splice(0, 1)
   }
   const colors = [

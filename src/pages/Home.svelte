@@ -1,7 +1,7 @@
 <script lang="ts">
 </script>
 
-<div>
+<div class="container">
   <h1>Nathan Kim</h1>
   <p>Towards better tools for a better world.</p>
   <nav>
@@ -12,8 +12,9 @@
 </div>
 
 <style>
-  :root {
-    font-family: Lato, sans-serif;
+  .container {
+    font-size: 20pt;
+    padding: 1rem;
   }
 
   h1 {

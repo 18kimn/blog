@@ -1,54 +1,19 @@
 import {promises as fs} from 'fs'
 import {dirname, resolve, join, extname, basename} from 'path'
 import {fileURLToPath} from 'url'
-import {marked, Renderer} from 'marked'
 import matter from 'gray-matter'
-import hljs from 'highlight.js'
 import sharp from 'sharp'
+import renderMarkdown from './renderer'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 process.chdir(resolve(__dirname, '..'))
-
-const escapeMap = {
-  '&': '&amp;',
-  '<': '&lt;',
-  '>': '&gt;',
-  '"': '&quot;',
-  '\'': '&#39;',
-}
-
-const escapeForHTML = (input: string) => {
-  return input.replace(
-    /([&<>'"])/g,
-    (char: string) => escapeMap[char],
-  )
-}
-
-const renderer = new Renderer()
-renderer.code = (code, language) => {
-  const validLang = !!(language && hljs.getLanguage(language))
-
-  // Highlight only if the language is valid; otherwise
-  // treat as need-to-escape stuff (preformatted)
-  const highlighted = validLang
-    ? hljs.highlightAuto(code).value
-    : escapeForHTML(code)
-
-  return `<pre><code class="hljs ${language}">${highlighted}</code></pre>`
-}
-
-// Set the renderer to marked.
-marked.setOptions({renderer})
 
 const TARGET = 'public/'
 const BASE = 'content/'
 
 /** traverses the content directory and moves stuff over to public
  * In the process:
- * - renders markdown with marked
- * - frontmatter parsing with gray-matter
- * - syntax highlighting with hljs
- * - prefixing to make image linking work correctly (in progress)
+ * - renders markdown with custom options (see ./renderer.ts)
  * - resizes/compresses images with sharp
  * */
 async function build(path: string) {
@@ -81,14 +46,16 @@ async function build(path: string) {
     } else if (ext === '.md') {
       const text = await fs.readFile(startPath, 'utf-8')
       const {data, content} = matter(text)
-
+      const {toc, html} = renderMarkdown(
+        content,
+        basename(dirname(targetPath)) + '/',
+      )
       await fs.writeFile(
         targetPath,
         JSON.stringify({
           data,
-          content: marked(content, {
-            baseUrl: basename(dirname(targetPath)) + '/',
-          }),
+          toc,
+          content: html,
         }),
       )
       return [...prev, {name: dirname(startPath), ...data}]

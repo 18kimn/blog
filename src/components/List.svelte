@@ -16,11 +16,11 @@
   pages.subscribe((fetched) => {
     if (!fetched || !fetched[type]) return
     items = fetched[type]
-      .map((item) => {
+      .map((item: Item) => {
         item.date = new Date(item.date)
         return item
       })
-      .sort((a, b) => b.date.getTime() - a.date.getTime())
+      .sort((a: Item, b: Item) => b.date.getTime() - a.date.getTime())
   })
 </script>
 
@@ -53,7 +53,6 @@
 
 <style>
   #container {
-    overflow: auto;
     width: 100%;
   }
 
@@ -64,8 +63,9 @@
   }
 
   #list {
-    width: min(100vw, 47ch);
+    width: min(100%, 47ch);
     display: grid;
+    overflow-wrap: break-word;
   }
 
   p {

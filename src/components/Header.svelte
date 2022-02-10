@@ -14,11 +14,13 @@
     <span>Nathan Kim</span>
   </div>
   <div id="links">
-    {#each routes as route}
-      <a class:selected={route.path === selected} href={route.path}>
-        {route.label}
-      </a>
-    {/each}
+    <div class="link-container">
+      {#each routes as route}
+        <a class:selected={route.path === selected} href={route.path}>
+          {route.label}
+        </a>
+      {/each}
+    </div>
   </div>
 </nav>
 
@@ -43,13 +45,21 @@
   #home {
     font-weight: bold;
     margin-right: 0.5rem;
+    display: flex;
+    place-content: center;
   }
 
   #links {
-    flex: 1;
     display: flex;
     flex-wrap: nowrap;
     justify-content: flex-end;
+  }
+
+  .link-container {
+    display: flex;
+    flex-wrap: nowrap;
+    flex: 1;
+    place-content: center;
   }
 
   a {

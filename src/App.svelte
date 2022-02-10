@@ -13,8 +13,8 @@
     /* don't let browser do a full reload */
     document.addEventListener('click', (event: MouseEvent) => {
       const target = event.target as HTMLAnchorElement
-      if (target.tagName !== 'A') return
-      if (target.host !== window.location.host) return
+      const {tagName, hash, host} = target
+      if (tagName !== 'A' || hash || host !== location.host) return
       event.preventDefault()
       navigate(target.pathname)
     })

@@ -19,23 +19,24 @@ Some sources of inspiration:
 ### Overview
 
 The de-facto way of looking at code is as a dry, machine-like,
-monospaced, almost monotonous form of giving instructions to the
-computer. But I think code is just as creative, colorful, vivid, and
-_textual_ as all of the other forms of information we consume. Our
-unconscious perception of a divide between computer programs and other
-forms of text prevents us from critiquing the actual language of code,
-down to its individual variables and functions.
+monospaced, almost monotonous form of giving instructions to
+the computer. But I think code is just as creative, colorful,
+vivid, and _textual_ as all of the other forms of information
+we consume. Our unconscious perception of a divide between
+computer programs and other forms of text prevents us from
+critiquing the actual language of code, down to its individual
+variables and functions.
 
-This (small) project tries to push back on that by providing a method
-to make folders of code into books -- or really, just printable PDFs.
-It features syntax highlighting with
-[highlight.js](https://highlightjs.org/), automagical formatting with
-[prettier](https://prettier.io/), and a table of contents with page
-numbers from my own hacky coding.
+This (small) project tries to push back on that by providing a
+method to make folders of code into books -- or really, just
+printable PDFs. It features syntax highlighting with
+[highlight.js](https://highlightjs.org/), automagical
+formatting with [prettier](https://prettier.io/), and a table
+of contents with page numbers from my own hacky coding.
 
 The actual PDF generation is done with
-[html-pdf](https://github.com/marcbachmann/node-html-pdf/issues) with
-some processing done in
+[html-pdf](https://github.com/marcbachmann/node-html-pdf/issues)
+with some processing done in
 [pdf-parse](https://www.npmjs.com/package/pdf-parse).
 
 **View an example PDF of what this tool can make
@@ -74,9 +75,9 @@ Options:
 ### Usage (as a Node module)
 
 You should probably stick to using it as a CLI tool or for just
-messing around, as it's not really ready for production. But if you
-want, you can install with `npm install codexer` in your Node project.
-Then use it as follows:
+messing around, as it's not really ready for production. But if
+you want, you can install with `npm install codexer` in your
+Node project. Then use it as follows:
 
 ```js
 const codexer = require('codexer')
@@ -90,35 +91,36 @@ codexer('.', {outPath: 'output.pdf'})
 // Finished! PDF is located at [path to your directory].pdf
 ```
 
-All of the CLI options are available for use in the npm version.
+All of the CLI options are available for use in the npm
+version.
 
 ### npx?
 
-You can also call it as a single-use tool with npx if you have Node
-installed by prefixing npx to the codexer commands, e.g. by running
-`npx codexer .`.
+You can also call it as a single-use tool with npx if you have
+Node installed by prefixing npx to the codexer commands, e.g.
+by running `npx codexer .`.
 
-The problem is that phantomJS and pdf-parse, which this tool depends
-on, are incredibly large (the local node_modules/ folder on my machine
-comes out to 184Mb). Download, load, and install times are quite long
-because of this.
+The problem is that phantomJS and pdf-parse, which this tool
+depends on, are incredibly large (the local node_modules/
+folder on my machine comes out to 184Mb). Download, load, and
+install times are quite long because of this.
 
-If you intend on using this tool more than once, I'd recommend just
-installing it globally.
+If you intend on using this tool more than once, I'd recommend
+just installing it globally.
 
 ### If this doesn't fit your use case
 
-All in all, it probably doesn't! Please, please feel free to download
-and alter it if you want an adjustment.
+All in all, it probably doesn't! Please, please feel free to
+download and alter it if you want an adjustment.
 
 ### Personal notes
 
 Honestly, this is just one of those cool-but-not-that-cool side
-projects I've feel like I've distracted myself with these days. But it
-is cool!
+projects I've feel like I've distracted myself with these days.
+But it is cool!
 
-I'm looking for more tangible ways to hold and digest code, and more
-than anything else critically analyze code itself (e.g. rather than
-its periphery -- the funders, the things it is used for, etc.). If you
-know of any links on this or have creative ideas, please send them my
-way!!
+I'm looking for more tangible ways to hold and digest code, and
+more than anything else critically analyze code itself (e.g.
+rather than its periphery -- the funders, the things it is used
+for, etc.). If you know of any links on this or have creative
+ideas, please send them my way!!

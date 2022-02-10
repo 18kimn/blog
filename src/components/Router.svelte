@@ -16,6 +16,7 @@
 
   let LoadRoute = async (path: string) => {
     path
+    console.log('test')
   }
   /** see https://javascript.plainenglish.io/how-to-create-a-router-in-svelte-ce66c10275fe */
   /** Useful for variable paths of form /:post
@@ -66,7 +67,11 @@
     window.history.pushState(null, null, path)
     LoadRoute(path)
   }
-  window.onpopstate = () => LoadRoute(location.pathname)
+
+  window.onpopstate = () => {
+    if (location.hash) return
+    LoadRoute(location.pathname)
+  }
 </script>
 
 <script lang="ts">
@@ -85,7 +90,6 @@
 
   LoadRoute = async (path: string) => {
     const current = getRoute(path)
-
     if (!wrapper) {
       onScreen = current.component()
       props = getProps(path, current.segments)
@@ -134,9 +138,11 @@
 
   #component {
     width: fit-content;
+    max-width: min(100%, 65ch);
     height: fit-content;
-    margin: 2rem;
+    margin: 3%;
     transition: opacity ease-in-out 200ms;
+    box-sizing: border-box;
   }
 
   .outro {
@@ -151,14 +157,11 @@
     position: relative;
     z-index: 1;
     background: white;
-    border: solid 2px black;
-    padding: 2rem;
-    box-shadow: 10px 10px;
+    border: solid 1px black;
+    padding: 5%;
+    box-shadow: 5px 5px;
     border-radius: 0.5rem;
     height: fit-content;
-    width: fit-content;
-    max-width: min(100vw, 65ch);
     box-sizing: border-box;
-    overflow: auto;
   }
 </style>
