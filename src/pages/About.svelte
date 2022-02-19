@@ -62,8 +62,8 @@
           <li>Svelte, React, Vue</li>
           <li>d3.js</li>
           <li>
-            Maps: Leaflet, Mapbox GL, the sf package in R, OpenSdiv
-            class="row"eetMap, ESRI, QGIS
+            Maps: Leaflet, Mapbox GL, the sf package in R,
+            OpenStreetMap, ESRI, QGIS
           </li>
           <li>Data handling: the R tidyverse, plus some NodeJS</li>
           <li>Linear modeling</li>

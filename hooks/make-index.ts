@@ -21,6 +21,7 @@ async function build(path: string) {
   const files = await fs.readdir(path)
   const promises = files.reduce(async (prevPromise, file) => {
     const prev = await prevPromise
+    if (file.match('unpublished')) return prev
     const startPath = join(path, file)
     const targetPath = join(TARGET, startPath)
     const isFolder = (await fs.lstat(startPath)).isDirectory()

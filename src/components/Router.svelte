@@ -138,7 +138,7 @@
 
   #component {
     width: fit-content;
-    max-width: min(100%, 65ch);
+    max-width: min(100%, 75ch);
     height: fit-content;
     margin: 3%;
     transition: opacity ease-in-out 200ms;
@@ -158,7 +158,7 @@
     z-index: 1;
     background: white;
     border: solid 1px black;
-    padding: 5%;
+    padding: 2% 7%;
     box-shadow: 5px 5px;
     border-radius: 0.5rem;
     height: fit-content;

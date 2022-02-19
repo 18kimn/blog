@@ -1,21 +1,13 @@
 ---
-title: 'NULL: Prison gerrymandering and migration'
+title: Prison gerrymandering and migration
+subtitle: Using cartograms in R
 date: 2021-01-18
 banner: assembled.png
 ---
 
-This past winter break, I made a few maps inspired by the
-[30 day map challenge](https://github.com/tjukanovt/30DayMapChallenge).
-This is one of them, responding to the prompt of "NULL." The
-maps in response to the challenge aren't too polished or
-meaningful, but they were a fun chance to quickly create things
-and try to learn some new technical skills.
-
-Here's another map that took a few days to make and is still
-unfinished as it is. For the theme of `NULL`, I created a map
-to represents prison gerrymandering, or the practice of
-counting incarcerated individuals in their location of
-imprisonment rather than in their home communities for the
+This is a map representing prison gerrymandering, or the
+practice of counting incarcerated individuals in their location
+of imprisonment rather than in their home communities for the
 Census and for legislative redistricting. With prison
 gerrymandering, population and political power are artificially
 inflated in an exo-cartographic manuever: without drawing any
@@ -23,18 +15,12 @@ new lines on a map, districts of imprisonment gain
 representative power and districts hit most heavily by the
 pandemic of mass incarceration lose representative power.
 
-The theme of `NULL` in the Month of Maps series fits this
-pattern well. Some individuals are effectively erased from the
-hegemonic sphere of political influence (prisoners in nearly
-every state lose their right to vote), creating a void or a
-`NULL` space.
-
-My response was an animated cartogram that shows some
-congressional districts increasing in size due to this
+My representation of this uses an animated cartogram that shows
+some congressional districts increasing in size due to this
 usurpation of political power and others decreasing or
 disappearing as a result.
 
-<img src= "assembled.gif" alt="GIF of prison gerrymandering and migration." style="width: 70%; position: relative; left: 50%; transform: translate(-50%, 0)"/>
+<img src= "8_null/assembled.gif" alt="GIF of prison gerrymandering and migration." style="width: 70%; position: relative; left: 50%; transform: translate(-50%, 0)"/>
 
 This was challenging to make on two fronts. Firstly, there is
 no authoritative source for the net increases and decreases due
@@ -85,27 +71,35 @@ especially misleading in counties that encompass cities.
 The second front I was challenged on were the technical and
 aesthetic problems in creating the visualization. I had never
 made a cartogram before, and my home language of R proved a bit
-tedious and unwieldy for doing so.[^1] The only guides I could
-find along for the task in R were a bit outdated and didn't use
-the `sf` grammar of spatial data in R that has emerged as the
-cleanest and most sensible paradigm for manipulating
-geometries. Perhaps due to my inexperience and lack of
-foresight, I realized too late that the U.S. has several
-hundred too many congressional districts to make for an
-attractive cartogram -- although we see expansion and
-contraction, it's too crowded to highlight strong trends in the
-data. Animating the graphic also proved to be challenging. The
-`transformr` package in R had recently been released to produce
-animation frames for spatial data, but bugs here prevented me
-from making a clean set of frames. I eventually had to delete
-the problem state of Montana entirely as a workaround. I never
-found out why Montana specifically kept returning errors, and
-if it was an issue with how `cartogram` assembles `sf` objects
-or with how `transformr` manipulates them.
+tedious and unwieldy for doing so.^[Coming into the project, I
+had thought that R would be well-suited for creating cartograms
+as a more computational/statistical/technical/flexible medium
+than other popular software like QGIS or ArcGIS. I've realized
+that the ecosystem of cartography in R isn't as developed as in
+other software (even the `cartogram` package I used is no
+longer maintained by its creator), and perhaps I was also
+mistaken that GUI-based software wouldn't be flexible enough to
+manipulate geometries.] The only guides I could find along for
+the task in R were a bit outdated and didn't use the `sf`
+grammar of spatial data in R that has emerged as the cleanest
+and most sensible paradigm for manipulating geometries. Perhaps
+due to my inexperience and lack of foresight, I realized too
+late that the U.S. has several hundred too many congressional
+districts to make for an attractive cartogram -- although we
+see expansion and contraction, it's too crowded to highlight
+strong trends in the data. Animating the graphic also proved to
+be challenging. The `transformr` package in R had recently been
+released to produce animation frames for spatial data, but bugs
+here prevented me from making a clean set of frames. I
+eventually had to delete the problem state of Montana entirely
+as a workaround. I never found out why Montana specifically
+kept returning errors, and if it was an issue with how
+`cartogram` assembles `sf` objects or with how `transformr`
+manipulates them.
 
-Still, like all items in this series, making this graphic was a
-learning process, and each problem illuminated just as much as
-it obfuscated. Some key takeaways for a better graphic:
+Still, making this graphic was a learning process, and each
+problem illuminated just as much as it obfuscated. Some key
+takeaways for a better graphic:
 
 1. Localize. Focus on a state with a substantial number of
    counties, one with large enough population to have a
@@ -129,14 +123,3 @@ it obfuscated. Some key takeaways for a better graphic:
 
 Hopefully I can clean this up and upload a cleaner graphic when
 I have the chance.
-
-[^1]:
-    Coming into the project, I had thought that R would be
-    well-suited for creating cartograms as a more
-    computational/statistical/technical/flexible medium than
-    other popular software like QGIS or ArcGIS. I've realized
-    that the ecosystem of cartography in R isn't as developed
-    as in other software (even the `cartogram` package I used
-    is no longer maintained by its creator), and perhaps I was
-    also mistaken that GUI-based software wouldn't be flexible
-    enough to manipulate geometries.

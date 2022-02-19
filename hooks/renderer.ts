@@ -76,6 +76,13 @@ function renderMarkdown(text: string, baseUrl: string) {
       return link.replace('<a', '<a target=\'_blank\' ')
     },
     heading(text: string, level: number) {
+      if (level === 1)
+        throw new Error(
+          `h1 detected in ${baseUrl}! 
+      There should be only one h1 element per page semantically,
+      and for these posts this is the title meta attribute. Please start headings at 
+      level two in markdown files!`,
+        )
       const slug = text.toLowerCase().replace(/[^\w]+/g, '-')
       toc.push({
         level: level,

@@ -14,7 +14,7 @@ date: 2022-02-07
  Click to view the site.
 </a>
 
-# About
+## About
 
 For the past few months I've been working with some friends on
 a project we've been calling the Yale Detour. The project is an
@@ -54,7 +54,7 @@ of the Yale Critical History Tour in 2020. This digital version
 was eventually continued by myself (Nathan Kim), Resty Fufunan,
 Dora Guo, Amy Kim, and Jose Garcia as the Yale Detour.
 
-# Implementation
+## Implementation
 
 My main contribution to this project was building out the
 technical architecture used for the site.^[I also served as a

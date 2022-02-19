@@ -149,7 +149,7 @@
   }
 
   #content :global(img) {
-    max-width: 100%;
+    width: 100%;
   }
 
   #content :global(iframe) {
