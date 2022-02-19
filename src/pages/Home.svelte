@@ -23,9 +23,15 @@
 
   a {
     transition: all ease-in-out 400ms;
+    margin: 0.5rem;
   }
 
   a:hover {
     opacity: 0.6;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
   }
 </style>
