@@ -1,16 +1,7 @@
 <script lang="ts">
-  import {onMount} from 'svelte'
-  import {pages} from '../store'
   import type {SvelteComponent} from 'svelte/internal'
   import Circles from '$lib/Circles.svelte'
 
-  onMount(async () => {
-    pages.set(
-      await fetch('/posts.json')
-        .then((res) => res.json())
-        .catch((err) => err),
-    )
-  })
   let onScreen: SvelteComponent
   let wrapper: HTMLElement
 

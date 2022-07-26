@@ -1,4 +1,4 @@
-import type {PostMeta} from '../types'
+import type {Post} from '../utils/types'
 /**
   import.meta.glob has to receive a static string
   luckily we have only two cases
@@ -12,20 +12,19 @@ function getPosts(type: 'projects' | 'writing') {
   }
 }
 
-/** @type {import('./__types/[postType]').RequestHandler} */
 export const get = async ({params}) => {
   const posts = getPosts(params.postType)
   if (!posts) return {body: '', status: 404}
 
   const info = await Promise.all(
     Object.entries(posts).map(async ([path, resolver]) => {
-      const meta: PostMeta = (await resolver()).metadata
+      const meta = (await resolver()).metadata
       // the '.' at beginning and 'index.md' at end need to be chopped off
       const postPath = path.slice(1, 0 - 'index.md'.length)
 
       return {
         ...meta,
-        name: postPath,
+        path: postPath,
       }
     }),
   )
@@ -35,6 +34,6 @@ export const get = async ({params}) => {
   })
 
   return {
-    body: sorted,
+    body: sorted as Post[],
   }
 }

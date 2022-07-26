@@ -1,7 +1,9 @@
 <script lang="ts">
   import {onMount} from 'svelte'
   import palette from '../utils/colors'
-  let circles = []
+
+  type Circle = [number, number]
+  let circles: Circle[] = []
 
   let clickCanvas: HTMLCanvasElement
   let hoverCanvas: HTMLCanvasElement
@@ -15,9 +17,10 @@
   function updateCircles(event: MouseEvent) {
     const isOverCanvas = event.target === hoverCanvas
     if (!isOverCanvas) return
-    const dims = [event.pageX, event.pageY]
+    const dims: [number, number] = [event.pageX, event.pageY]
     const last = circles[circles.length - 1]
     if (!last) return circles.push(dims)
+
     const dist = (last[0] - dims[0]) ** 2 + (last[1] - dims[1]) ** 2
     if (dist > 15000) circles.push(dims)
     if (circles.length > 20) circles.splice(0, 1)
@@ -34,7 +37,11 @@
     return array[Math.floor(Math.random() * array.length)]
   }
 
-  let clicks = []
+  interface Click {
+    x: number
+    y: number
+  }
+  let clicks: Click[]
   const background = {color: 'white'}
   /** checks if the circle should be added to the clicks */
   function updateClicks(event: MouseEvent) {
@@ -51,9 +58,9 @@
       return requestAnimationFrame(drawCircles)
 
     hoverContext.save()
-    clickContext.save()
+    clickContext?.save()
 
-    clicks.forEach((click, i) => {
+    clicks.forEach((click: Click, i: number) => {
       if (click.shouldDelete) {
         clickCanvas.style.background = background.color
         clicks.splice(i, 1)
@@ -82,6 +89,7 @@
         click.maxR = rs
       }
 
+      if (!clickContext) return
       clickContext.beginPath()
       const radius = (2000 * (time - click.startTime)) / 1000
       clickContext.arc(click.x, click.y, radius, 0, 2 * Math.PI)

@@ -1,26 +1,19 @@
 <script lang="ts">
   import Header from '$lib/Header.svelte'
   import {onMount} from 'svelte'
+  import type {Post} from '../utils/types'
 
   export let type: 'projects' | 'writing'
 
-  interface Item {
-    name: string
-    title: string
-    subtitle: string
-    content: string
-    date: Date
-  }
-  let items: Item[]
+  let items: Post[]
 
   onMount(async () => {
     items = await fetch(`/${type}.json`).then((res) => res.json())
-    console.log(items)
   })
 </script>
 
 <div id="container">
-  <Header selected="/items" />
+  <Header selected={`/${type}`} />
 
   <div id="list">
     {#if !items}

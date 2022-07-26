@@ -1,12 +1,12 @@
 <script lang="ts">
-  import type {PostMeta} from '../types'
+  import type {Post} from '../utils/types'
   import Header from './Header.svelte'
 
   export let type: '/projects' | '/writing'
-  export let data: PostMeta
+  export let data: Post
 </script>
 
-<Header {type} />
+<Header selected={type} />
 <div id="content">
   <div id="frontmatter">
     <h1>{data?.title}</h1>

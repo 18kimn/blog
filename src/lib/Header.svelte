@@ -1,5 +1,5 @@
-<script>
-  export let selected = '/'
+<script lang="ts">
+  export let selected: '/' | '/about' | '/projects' | '/writing'
 
   const routes = [
     {path: '/', label: 'Home'},
