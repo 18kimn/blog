@@ -28,6 +28,7 @@ const config = {
   extensions: ['.svelte', '.md'],
   kit: {
     adapter: adapter(),
+    outDir: 'server/build',
   },
 }
 
