@@ -1,11 +1,16 @@
 <script lang="ts">
-  export let selected: '/' | '/about' | '/projects' | '/writing'
+  export let selected:
+    | '/'
+    | '/about'
+    | '/projects'
+    | '/writing'
 
   const routes = [
     {path: '/', label: 'Home'},
     {path: '/about', label: 'About'},
     {path: '/projects', label: 'Projects'},
     {path: '/writing', label: 'Writing'},
+    {path: '/thoughts', label: 'Thoughts'},
   ]
 </script>
 
@@ -16,7 +21,10 @@
   <div id="links">
     <div class="link-container">
       {#each routes as route}
-        <a class:selected={route.path === selected} href={route.path}>
+        <a
+          class:selected={route.path === selected}
+          href={route.path}
+        >
           {route.label}
         </a>
       {/each}

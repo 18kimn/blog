@@ -1,0 +1,3 @@
+[submodule "src/routes/thoughts"]
+	path = src/routes/thoughts
+	url = git@gitlab.com:18kimn-personal/thoughts.git

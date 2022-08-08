@@ -5,6 +5,6 @@
   "trailingComma": "all",
   "semi": false,
   "proseWrap": "always",
-  "printWidth": 70,
+  "printWidth": 60,
   "plugins": ["prettier-plugin-svelte"]
 }

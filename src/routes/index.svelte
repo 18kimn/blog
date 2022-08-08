@@ -1,6 +1,6 @@
 <div class="container">
   <h1>Nathan Kim</h1>
-  <p>Towards better tools for a better world.</p>
+  <p>communist tech person</p>
   <nav>
     <a href="/about">About</a>
     <a href="/projects">Projects</a>
@@ -16,6 +16,7 @@
 
   h1 {
     margin: 0;
+    white-space: nowrap;
   }
 
   a {

@@ -8,13 +8,16 @@
   let items: Post[]
 
   onMount(async () => {
-    items = await fetch(`/${type}.json`).then((res) => res.json())
+    items = await fetch(`/${type}.json`).then((res) =>
+      res.json(),
+    )
+    console.log(items)
   })
 </script>
 
 <div id="container">
   <Header selected={`/${type}`} />
-
+  <slot />
   <div id="list">
     {#if !items}
       Loading...
@@ -22,16 +25,20 @@
       {#each items as item}
         <p>
           <span class="date">
-            {new Date(item.date).toISOString().slice(0, 10)}:
+            {new Date(item.date)
+              .toISOString()
+              .slice(0, 10)}:
           </span>
           <span class="content">
-            <a id={item.name} href={item.name}>
+            <a id={item.path} href={item.path}>
               {item.title}
             </a>
             <br />
-            <span class="subtitle">
-              {item.subtitle || ''}
-            </span>
+            {#if item.subtitle}
+              <span class="subtitle">
+                {item.subtitle}
+              </span>
+            {/if}
           </span>
         </p>
       {/each}

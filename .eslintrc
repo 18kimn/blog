@@ -26,15 +26,6 @@
     "linebreak-style": ["error", "unix"],
     "quotes": ["error", "single"],
     "semi": ["error", "never"],
-    "require-jsdoc": [
-      "warn",
-      {
-        "require": {
-          "FunctionDeclaration": true
-        }
-      }
-    ],
-    "valid-jsdoc": "off",
     "no-unused-vars": ["error", {"varsIgnorePattern": "_"}],
     "no-multi-spaces": "error",
     "no-invalid-this": "error",

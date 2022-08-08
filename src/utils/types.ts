@@ -3,5 +3,7 @@ export interface Post {
   title: string
   subtitle: string
   path: string
+  modified?: string[]
+  tags?: string[]
   content?: string
 }

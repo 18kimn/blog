@@ -2,13 +2,29 @@
   import {onMount} from 'svelte'
   import palette from '../utils/colors'
 
-  type Circle = [number, number]
+  interface Circle {
+    dims: [number, number]
+    startTime?: number
+    color?: string
+  }
+
+  interface Click {
+    x: number
+    y: number
+    shouldDelete?: boolean
+    startTime?: number
+    color?: string
+    maxR?: number
+  }
+
   let circles: Circle[] = []
 
   let clickCanvas: HTMLCanvasElement
   let hoverCanvas: HTMLCanvasElement
-  $: clickContext = clickCanvas && clickCanvas.getContext('2d')
-  $: hoverContext = hoverCanvas && hoverCanvas.getContext('2d')
+  $: clickContext =
+    clickCanvas && clickCanvas.getContext('2d')
+  $: hoverContext =
+    hoverCanvas && hoverCanvas.getContext('2d')
 
   $: width = clickCanvas && clickCanvas.offsetWidth
   $: height = clickCanvas && clickCanvas.offsetHeight
@@ -17,12 +33,16 @@
   function updateCircles(event: MouseEvent) {
     const isOverCanvas = event.target === hoverCanvas
     if (!isOverCanvas) return
-    const dims: [number, number] = [event.pageX, event.pageY]
-    const last = circles[circles.length - 1]
-    if (!last) return circles.push(dims)
+    const dims: [number, number] = [
+      event.pageX,
+      event.pageY,
+    ]
+    const last = circles[circles.length - 1]?.dims
+    if (!last) return circles.push({dims})
 
-    const dist = (last[0] - dims[0]) ** 2 + (last[1] - dims[1]) ** 2
-    if (dist > 15000) circles.push(dims)
+    const dist =
+      (last[0] - dims[0]) ** 2 + (last[1] - dims[1]) ** 2
+    if (dist > 15000) circles.push({dims})
     if (circles.length > 20) circles.splice(0, 1)
   }
   const colors = [
@@ -37,18 +57,14 @@
     return array[Math.floor(Math.random() * array.length)]
   }
 
-  interface Click {
-    x: number
-    y: number
-  }
-  let clicks: Click[]
+  let clicks: Click[] = []
   const background = {color: 'white'}
   /** checks if the circle should be added to the clicks */
   function updateClicks(event: MouseEvent) {
     const isOverCanvas = event.target === hoverCanvas
     if (!isOverCanvas) return
     const dims = {x: event.pageX, y: event.pageY}
-    clicks.push({...dims})
+    clicks?.push({...dims})
   }
 
   let lastUsedColor = 'white'
@@ -60,7 +76,7 @@
     hoverContext.save()
     clickContext?.save()
 
-    clicks.forEach((click: Click, i: number) => {
+    clicks?.forEach((click: Click, i: number) => {
       if (click.shouldDelete) {
         clickCanvas.style.background = background.color
         clicks.splice(i, 1)
@@ -84,20 +100,30 @@
           [click.x, height - click.y],
         ]
           .map((pts) => (pts[0] ** 2 + pts[1] ** 2) ** 0.5)
-          .reduce((prev, curr) => (curr > prev ? curr : prev), 0)
+          .reduce(
+            (prev, curr) => (curr > prev ? curr : prev),
+            0,
+          )
 
         click.maxR = rs
       }
 
       if (!clickContext) return
       clickContext.beginPath()
-      const radius = (2000 * (time - click.startTime)) / 1000
-      clickContext.arc(click.x, click.y, radius, 0, 2 * Math.PI)
+      const radius =
+        (2000 * (time - click.startTime)) / 1000
+      clickContext.arc(
+        click.x,
+        click.y,
+        radius,
+        0,
+        2 * Math.PI,
+      )
       clickContext.lineWidth = 5
-      clickContext.fillStyle = click.color
+      clickContext.fillStyle = click.color || ''
       clickContext.fill()
-      if (click.maxR < radius) {
-        background.color = click.color
+      if ((click.maxR || 0) < radius) {
+        background.color = click.color || ''
         click.shouldDelete = true
       }
     })
@@ -108,10 +134,18 @@
         circle.startTime = time
         circle.color = randomColor(colors)
       }
+      if (!hoverContext) return
       hoverContext.beginPath()
-      hoverContext.arc(circle[0], circle[1], 80, 0, 2 * Math.PI)
-      hoverContext.fillStyle = circle.color
-      const alpha = 0.2 * (1 - (time - circle.startTime) / 1000)
+      hoverContext.arc(
+        circle.dims[0],
+        circle.dims[1],
+        80,
+        0,
+        2 * Math.PI,
+      )
+      hoverContext.fillStyle = circle.color || ''
+      const alpha =
+        0.2 * (1 - (time - circle.startTime) / 1000)
       hoverContext.globalAlpha = Math.max(0, alpha)
       hoverContext.fill()
       if (Math.max(0, alpha) === 0) circles.splice(i, 1)

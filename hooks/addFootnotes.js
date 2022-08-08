@@ -1,11 +1,16 @@
 /** the bulk of the action*/
 function transformer(tree, footnotes, parent, index) {
   if (tree.type === 'linkReference') {
+    // if index === 0, not a footnote
+    if (index === 0) {
+      return
+    }
     footnotes.push(tree.label)
-    const link = `<a href="#note-${footnotes.length}">${footnotes.length}</a>`
+    const link = `<a class="footnote-link" href="#note-${footnotes.length}">${footnotes.length}</a>`
     const sup = `<sup id="fn-${footnotes.length}">${link}</sup>`
 
     // delete the opening carat from the previous node
+
     parent.children[index - 1].value = parent.children[
       index - 1
     ].value.replace(/\^$/, '')
@@ -33,7 +38,7 @@ export default function addFootnotes() {
     const renderedFootnotes = footnotes
       .map(
         (note, i) =>
-          `<li id="note-${
+          `<li class="footnote" id="note-${
             i + 1
           }">${note} <a class="backlink" href="#fn-${
             i + 1
@@ -41,8 +46,11 @@ export default function addFootnotes() {
       )
       .join('')
     const footer = renderedFootnotes
-      ? `<hr/><ol>${renderedFootnotes}</ol>`
+      ? `<hr/><ol class="footnotes">${renderedFootnotes}</ol>`
       : ''
-    tree.children = [...tree.children, {type: 'html', value: footer}]
+    tree.children = [
+      ...tree.children,
+      {type: 'html', value: footer},
+    ]
   }
 }
