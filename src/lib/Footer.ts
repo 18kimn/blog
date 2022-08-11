@@ -26,8 +26,7 @@ export default function updateFloater(
   ]
     .filter((link) => {
       const top = link.getBoundingClientRect().top
-      // should be innerHeight - height of footnote show area
-      return top > 0 && top < 0.7 * innerHeight
+      return top > 0 && top < window.innerHeight * 0.8
     })
     .map((link) =>
       (link as HTMLLinkElement).href.replace(/.*#/, ''),

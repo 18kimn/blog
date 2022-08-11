@@ -1,4 +1,5 @@
 export type Position = {
+  type: 'position'
   name: string
   date: string
   description: string
@@ -6,20 +7,25 @@ export type Position = {
 }
 
 export type Other = {
+  type: 'other'
   markdown: string
 }
 
 export type Ref =
   | {
+      type: 'ref'
       doi: string
     }
   | {
+      type: 'ref'
       bibjson: string
     }
 
 // subset of return obj from new Cite().data in citation-js
 export type CSL = {
+  type: 'csl'
   csl: {[prop: string]: any}
+  markup?: string
 }
 
 export type Entry =
@@ -28,7 +34,12 @@ export type Entry =
   | CSL
   | Other
   | {
+      type: 'markup'
       markup: string
+    }
+  | {
+      type: 'markdown'
+      markdown: string
     }
 
 export interface CV {

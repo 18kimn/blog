@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-static'
+import adapter from '@sveltejs/adapter-node'
 import preprocess from 'svelte-preprocess'
 import resolveLinks from './hooks/resolveLinks.js'
 import addFootnotes from './hooks/addFootnotes.js'
@@ -29,8 +29,7 @@ const config = {
     preprocess(),
   ],
   kit: {
-    adapter: adapter(),
-    outDir: 'server/build',
+    adapter: adapter({out: 'server/ui'}),
   },
 }
 

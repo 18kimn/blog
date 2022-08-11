@@ -8,8 +8,10 @@
   let items: Post[]
 
   onMount(async () => {
-    items = await fetch(`/${type}.json`).then((res) =>
-      res.json(),
+    items = (
+      await fetch(`/${type}.json`).then((res) => res.json())
+    ).filter(
+      (item: Post) => typeof item.date !== 'undefined',
     )
     console.log(items)
   })

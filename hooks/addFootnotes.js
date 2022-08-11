@@ -7,7 +7,6 @@ function transformer(tree, footnotes, parent, index) {
     }
     footnotes.push(tree.label)
     const link = `<a class="footnote-link" href="#note-${footnotes.length}">${footnotes.length}</a>`
-    const sup = `<sup id="fn-${footnotes.length}">${link}</sup>`
 
     // delete the opening carat from the previous node
 
@@ -15,6 +14,7 @@ function transformer(tree, footnotes, parent, index) {
       index - 1
     ].value.replace(/\^$/, '')
 
+    const sup = `<sup id="fn-${footnotes.length}">${link}</sup>`
     // replace the note as HTML
     parent.children[index] = {
       type: 'html',

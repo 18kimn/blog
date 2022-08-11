@@ -9,6 +9,14 @@ the world of Linux and more broadly the process of making
 your computer truly your own. This post describes my
 experiences and hopefully encourages you to do so as well.
 
+**TLDR**: making your computer your own is hugely fun and
+rewarding, both in the sense of personal satisfaction and
+growth, and in the sense of time gained back down the road.
+The tradeoff between time spent customizing and time gained
+through workflow is often not "worth it." But so what if you
+waste time on something that is both enjoyable and
+meaningful?
+
 Most of the language here is geared towards people who
 aren't experts in the Linux world or are fluent in
 tech-speak, so I'm a little verbose on explanations. It also
@@ -17,13 +25,7 @@ it will not be useful for you to read a particular section.
 Feel free to skip around and use the provided navigation
 tools to glean what is useful.
 
-**TLDR**: making your computer your own is hugely fun and
-rewarding, both in the sense of personal satisfaction and
-growth, and in the sense of time gained back down the road.
-The tradeoff between time spent customizing and time gained
-through workflow is often not "worth it." But so what if you
-waste time on something that is both enjoyable and
-meaningful?
+---
 
 ## Why?
 
@@ -55,6 +57,8 @@ computer? The answer falls into three categories:
    on your computer. This is probably the biggest immediate
    motivator and the reason I set up many of the below
    features.
+
+---
 
 ## The operating system
 
@@ -89,7 +93,7 @@ managers, addons like Bluetooth, or a web browser. The
 upside is that you can make all of these choices yourself,
 resulting in (usually) a much more lightweight computer.
 Having choice in all of these steps feels good; you feel
-like you own your computer and are rewarded with knowledge
+like you _own_ your computer and are rewarded with knowledge
 of things that were simply hidden from you before. The
 downside is that you have to make all of these choices
 yourself, often a tedious and time-consuming process. The
@@ -153,6 +157,15 @@ above footnote.]
 > systems will usually simply be ignored unless they can be
 > reproduced on non-Gentoo systems.
 
+In any case, **TLDR the OS**: use something that fits you
+and doesn't leave a bad taste in your mouth for both ethical
+and technical reasons, but try not to spend too much time
+jumping around or "distro hopping." I think Arch is a good
+compromise here, as it gave me lots of freedoms and only a
+few headaches; I recommend it.
+
+---
+
 ## Terminal
 
 I use the xterm terminal. I used the rxvt-unicode (or
@@ -177,13 +190,38 @@ standards behind the terminal itself, very friendly
 relationship with the Kitty community, and the creation of
 the Calibre eBook viewer.
 
-Anyhow, in general, I'd say just get something sensible that
-works for you and doesn't make you feel weird about
+I haven't really customized XTerm to be that strange, but I
+did put in a "day/night" mode for my terminal colors, which
+resides in both CRON jobs and scripts that execute whenever
+new terminals open. The "day" mode looks like this:
+
+![Day mode on XTerm](./light-terminal.png)
+
+And the "night" mode looks like this:
+
+![Dark mode on XTerm](./dark-terminal.png)
+
+The colors themselves come from the
+[Ayu theme](https://github.com/ayu-theme), with slight
+adjustments made by myself for higher contrast on day mode
+and softer colors on night mode. I chose Ayu because it is
+beautiful and clean, and because it is far more readable
+than themes like Solarized that I also find beautiful.^[The
+Solarized theme seems to be either loved or hated, and if
+anything more often hated. I love Solarized, in both light
+and dark flavors.] The code and colors for this
+configuration can be found in this
+[subfolder in my dotfiles repo](https://gitlab.com/18kimn-personal/utils/-/tree/main/day-night).
+
+Anyhow, in general, I'd say just get/make something sensible
+that works for you and doesn't make you feel weird about
 supporting it. I happen to use xterm because it's the
 standard one for the X Window System, which my computer (and
 many others) run.
 
-## Window management
+---
+
+## Desktop environment and window management: "ricing"
 
 Arch doesn't come with a way to display applications or
 manage a graphical interface, so you have to pick and use
@@ -209,17 +247,20 @@ editors, audio/video/photo editing -- all things that are
 indeed useful at large and make a case for others to use
 KDE, but not for me. I wanted a system that gave me none of
 these by default, and also allowed me to have a painless
-exploration of further tools.
+exploration of further tools.^[Some of these are eliminated
+from a more minimal KDE setup that Arch provides as a
+package. However, I find even that setup has way too many
+things that I don't use on a day-to-day basis.]
 
 So I turned to i3 instead. i3 is a window manager, and not a
 desktop environment, which means that it provides ways for
 your applications to be displayed and managed but does not
-provide any of the extra fluff of desktop environments, from
-docks and application launchers to even a settings interface
-where you can change basic things like volume or screen
-brightness. These must be installed separately and then
-attached through i3's keyboard shortcuts or manually edited
-on the command line.
+provide any extra features necessary to run a working
+desktop. i3 does not provide docks or application launchers,
+or even a settings interface where you can change basic
+things like volume or screen brightness. These must be
+installed separately and then attached through i3's keyboard
+shortcuts or manually launched on the command line.
 
 This is a long, tedious, and honestly ongoing process. Just
 last week I finally got fed up of going to the command line
@@ -265,9 +306,64 @@ Here are a few.
 
   They change a bit depending on what I have open.
 
-Other people have different preferences and these features
-make for a terrible design for use on a commercial platform,
-but I'm very, very happy with this setup.
+- **Daily updating wallpaper.** Using
+  [`feh`](https://wiki.archlinux.org/title/Feh),
+  [ImageMagick](https://imagemagick.org), and some more Cron
+  jobs and startup scripts, I created a daily-updating
+  wallpaper that shows the date, a quote from my
+  `leftist-quotes` API, and one of seven fairly calm
+  background images.
+
+  ![Example of daily updating wallpaper](./wallpaper.png)
+
+If you have spent any time on the crudely-named subreddit
+[r/unixporn](https://www.reddit.com/r/unixporn/wiki/index/)
+or other customization-focused communities, you'll know that
+this is a fairly moderate amount of customization and
+doesn't really have any of the traditional "ricing"
+("customizing") goals, that center around a sort of imagined
+cyberpunk hacker aesthetic:
+
+- I don't use any terminal UI-based applications, like
+  [`spotify-tui`](https://github.com/Rigellute/spotify-tui)
+- I don't have transparency, rounded corners, or gaps on any
+  of my windows^[Many Redditors use `i3-gaps`, Which is just
+  i3 but places gaps between windows, an aesthetic value
+  that a surprising amount of Redditors seem to hold. I find
+  this gets rid of too much screen space for me, and screen
+  space is an asset that I generally find lacking even on my
+  decently-sized 15-inch laptop and 23-inch secondary
+  monitor.]
+- I use Fira Code, which is a standard font in this
+  aesthetic and especially valued in this aesthetic for its
+  ligatures that transform the aesthetics of certain
+  character combinations. But the ligatures that Fira Code
+  provides don't work on my terminal (xterm), so I just roll
+  without them
+- my system font is the ultra-readable Source Sans Pro
+  instead of a display or monospaced font
+- I have no animations or transitions
+- My terminal font size is 15, which seems a click larger
+  than other users' sizes according to
+  [this post](https://www.reddit.com/r/unixporn/comments/uh9htg/twm_whats_your_ideal_terminal_font_size/)^[It's
+  a bit of a stretch to consider small font sizes as part of
+  a "hacker/cyberpunk aesthetic." You can throw this point
+  out if you'd like.]
+- I use only the built-in Linux console for login, instead
+  of something like the
+  [Plymouth](https://wiki.archlinux.org/title/plymouth)
+  startup animation package or even a display manager to
+  show a screensaver on the login screen.
+
+I actually tried many of these out but quickly reverted. I'm
+not really sure why, as I do consider myself a person that
+cares about aesthetics and meaningful design. Perhaps it's
+only that my preferences fall a different way. Other people
+have different preferences, and the customizations I put in
+are terrible for a commercial platform, but I'm very, very
+happy with this setup.
+
+---
 
 ### Memory usage
 
@@ -311,6 +407,8 @@ powerful machines that can be crippled by too much software;
 making effective use of that power means making it available
 to users rather than having the underlying system consume
 it.
+
+---
 
 ## Personal applets
 
@@ -359,47 +457,55 @@ want from a computer. Organized chronologically, they are:
   across the next few projects below.
 
   Some notable features here: the feeds are fetched
-  concurrently through constant async code and
-  `Promise.allSettled`-reliant functions. The feeds are
-  passed to the UI through the server-sent events web
-  standard, which lets items be displayed as soon as a
-  single website's code is fetched. On the UI side, there
-  are some nice hover effects, each post is colored
-  according to the site it came from, and the `localStorage`
-  web API is used to cache previously fetched feed entries.
+  concurrently through heavy reliance on async code and
+  `Promise.allSettled`-based functions. The feeds are passed
+  to the UI through the server-sent events web standard,
+  which lets items be displayed as soon as a single
+  website's code is fetched. On the UI side, there are some
+  nice hover effects, each post is colored according to the
+  site it came from, and the `localStorage` web API is used
+  to cache previously fetched feed entries.
 
   The last thing I'll say about this is that the server was
   actually my first venture into Rust, and for a while the
   server was a simple Rocket-based Rust application. Rust is
   great and I miss some of its features when writing
   JavaScript or Typescript, for example in requiring
-  explicit error handling. But web server frameworks in Rust
-  are a bit underdeveloped in my opinion -- and to be
-  honest, they likely will always appear to lag a bit behind
-  JavaScript-based web utilities. Rocket and Actix Web are
-  very performant frameworks, but (for example) Rocket's
-  server-sent events interface didn't let me pass in premade
-  streams so that sites could both be fetched by the server
-  and passed to the client in an async way. So I switched
-  back to Typescript-based NodeJS, where development was
-  magically easy if a bit chaotic. I think I'll continue
-  using one language (Typescript) for most future projects,
-  instead of switching languages for the server and frontend
-  code.
+  explicit error handling and in having friendly and
+  intuitive reporting of syntax errors. But web server
+  frameworks in Rust are a bit underdeveloped in my opinion
+  -- and to be honest, they likely will always appear to lag
+  a bit behind JavaScript-based web utilities. Rocket and
+  Actix Web are very performant frameworks, but (for
+  example) Rocket's server-sent events interface didn't let
+  me pass in premade streams so that sites could both be
+  fetched by the server and passed to the client in an async
+  way. So I switched back to Typescript-based NodeJS, where
+  development was magically easy if a bit chaotic. I think
+  I'll continue using one language (Typescript) for most
+  future projects, instead of switching languages for the
+  server and frontend code.
 
-- **Kanban boards.** I have an ongoing tasklist always kept
-  in my journal entries, but in one particularly busy period
-  I found I needed something slightly more complex. So I
-  came up with a UI for Kanban boards:
+- **Task boards.** I have an ongoing tasklist always kept in
+  my journal entries, but in one particularly busy period I
+  found I needed something slightly more complex. So I came
+  up with a UI for task managing, or "kanban" boards:
 
-  ![My work items kanban collection.](./kanban.png)
+  ![My work items collection.](./kanban.png)
 
   A "kanban board" in American software engineering
   colloquial usage refers to a rectangle holding three (or
-  more) columns. The three columns can be named many
-  different things, but from right to left are used for
+  more) columns.^[I feel strange about the appropriation of
+  the Japanese term from its history and how it is swept up
+  into American hype trains. In this spirit I'll just refer
+  to them as "task boards."] The three columns can be named
+  many different things, but from right to left are used for
   tasks waiting to be worked on, tasks currently being
-  worked on, and completed tasks. The idea is that you
+  worked on, and completed tasks. A board like this helps
+  firstly with keeping track of necessary tasks, but also
+  helps prioritize which tasks to tackle, reminds one of
+  accomplishments and progress, and encourages one to take
+  on only a few tasks at a time.
 
   I expanded on this a bit with two dimensions. The first
   dimension lies in having multiple boards, where each board
@@ -407,7 +513,7 @@ want from a computer. Organized chronologically, they are:
   on multiple projects at a time, even within a single job
   or organization, so keeping track of tasks for each of
   them has been helpful for me. The second layer in the same
-  tune is separating groups of kanban boards into
+  tune is separating groups of these boards into
   collections. I have just two collections right now, one
   for personal projects and one for work, but I am planning
   a few personal projects that might require their own
@@ -415,20 +521,21 @@ want from a computer. Organized chronologically, they are:
   semester of college and grad school applications that
   start soon.
 
-  I'm pretty happy with this! I've implemented
-  drag-and-drop, some animations/transitions, loading
-  indicators, error messages, keyboard navigation, and (to
-  me) coolest of all, a markdown-kanban converter and sync
-  system. In other words, all of my kanban collections are
-  synced with plaintext, syntactically valid Markdown
-  documents. The kanban collection in the above screenshot
-  looks like this as Markdown:^["Syntactically valid"
-  Markdown plus YAML metadata. The CommonMark specification
-  for Markdown, which is the closest thing we have for a
-  canonical ruleset for Markdown, leaves out many features
-  developers often want. The only one I've used in this
-  setup is YAML headers that add metadata to these markdown
-  files.]
+  I'm pretty happy with this! I've implemented some
+  quality-of-life features like drag-and-drop, animations
+  and transitions, loading indicators, error messages,
+  keyboard navigation, and (to me) coolest of all, a
+  markdown-tasklist converter and sync system. In other
+  words, all of my tasklist collections are synced with
+  plaintext, syntactically valid Markdown documents. The
+  tasklist collection in the above screenshot looks like
+  this as Markdown (scroll horizontally to view overflowing
+  content):^["Syntactically valid" Markdown plus YAML
+  metadata. The CommonMark specification for Markdown, which
+  is the closest thing we have for a canonical ruleset for
+  Markdown, leaves out many features developers often want.
+  The only one I've used in this setup is YAML headers that
+  add metadata to these markdown files.]
 
   ```
   ---
@@ -456,21 +563,22 @@ want from a computer. Organized chronologically, they are:
 
   This turned out to be much easier than I thought, praise
   be to the beautifully simple syntax of Markdown and the
-  magical function of API routes in SvelteKit.^[SvelteKit is
-  a web development environment built on top of the Svelte
+  magic of API routes in SvelteKit.^[SvelteKit is a web
+  development environment built on top of the Svelte
   framework. I love it for many reasons, including managing
   the state of applications very nicely and lending itself
   to easy styling.] I was even able to put in debouncing for
   the updates to these documents, used the `localStorage`
-  API to remember which kanban collections are in which
-  documents, and used the Prettier library in JavaScript to
-  automagically format Markdown tables.^["Debouncing" refers
-  to having an action happen a bit later than its trigger.
-  In this scenario, I could have the documents updated
-  whenever I make a change, but I put in a debouncer to have
-  the document updater wait for a little bit after I stop
-  making changes to the UI to update the underlying
-  documents. This lets me saving more than necessary.]
+  API to remember across tab sessions which collections are
+  in which documents, and used the Prettier library in
+  JavaScript to automagically format Markdown
+  tables.^["Debouncing" refers to having an action happen a
+  bit later than its trigger. In this scenario, I could have
+  the documents updated whenever I make a change, but I put
+  in a debouncer to have the document updater wait for a
+  little bit after I stop making changes to the UI to update
+  the underlying documents. This lets me saving more than
+  necessary.]
 
   There are still some rough edges, like some layout shifts
   when I drag tasks, or putting in a "confirm" feature for
@@ -533,33 +641,35 @@ workflow or something like that, these aren't for you.
 They're really just fun projects that make me happy building
 and using!
 
+---
+
 ## Writing
 
-I use NeoVim as my writing tool. At the beginning of
-college, I wrote and took notes by hand. Wanting to be more
-organized and work in a more portable format, I used Google
-Docs. Wanting to be a bit more principled about that, I used
-Obsidian and wrote in Markdown.
+At the beginning of college, I wrote and took notes by hand.
+Wanting to be more organized and work in a more portable
+format, I used Google Docs. Wanting to be a bit more
+principled about that, I used Obsidian and wrote in
+Markdown.
 
 Obsidian is a great note-taking app, and it fits well for
-people who like Notion but take pride in any of slightly
-more technical prowess, a locally-stored note repository, or
-the Zettelkasten note-taking system.^[The Zettelkasten
-system is a somewhat popular style of taking notes, that
-believes in notes as small documents with identifiers that
-can link to and be linked from other notes. People get
-pretty excited about it, I encourage you to look it up if
-you have any interest.] It also has a very developed plugin
-interface and correspondingly rich ecosystem of plugins, and
-also has ways for users to style or customize their own
-instances. In general, Obsidian has a lot of thought put
-into its design, from its philosophy to the UI aesthetics
-and software architecture. Because of this, no matter how
-much customization you add, you still have a very well-built
-tool at its core. I highly recommend checking it out if
-you're interested in it, I think the developers (Erica Xu
-and Shida Li) are creating something fantastic and deserve
-all of the support they have received.
+people who like Notion (another great app) but take pride in
+any of slightly more technical prowess, a locally-stored
+note repository, or the Zettelkasten note-taking
+system.^[The Zettelkasten system is a somewhat popular style
+of taking notes, that believes in notes as small documents
+with identifiers that can link to and be linked from other
+notes. People get pretty excited about it, I encourage you
+to look it up if you have any interest.] It also has a very
+developed plugin interface and correspondingly rich
+ecosystem of plugins, and also has ways for users to style
+or customize their own instances. In general, Obsidian has a
+lot of thought put into its design, from its philosophy to
+the UI aesthetics and software architecture. Because of
+this, no matter how much customization you add, you still
+have a very well-built tool at its core. I highly recommend
+checking it out if you're interested in it, I think the
+developers (Erica Xu and Shida Li) are creating something
+fantastic and deserve all of the support they have received.
 
 However, Obsidian works best when you have solely a vault of
 plaintext notes, and not if (as in my case) you want to use
@@ -573,7 +683,22 @@ resulted in long startup times and awkward use of the
 built-in graph viewer. Rather than simply adjust my
 note-taking patterns, I felt again that I'd rather go for
 something that I could tailor to my needs and would be a bit
-more performant. For me, that was Neovim.
+more performant.^[A secondary reason I switched was because
+Obsidian is still closed-source. The developers are trying
+to build a viable business and feel that diverting energy of
+their two-person team towards documentation and maintenance
+of an open source project is not reasonable. See more at
+their co-lead developer's comment on the matter:
+https://forum.obsidian.md/t/open-sourcing-of-obsidian/1515/11.
+I have tons of respect for them and don't want to criticize
+this at all, because they are not the tech giants that
+withhold knowledge and software through restrictive
+licenses. But a small reason I switched was because it's
+still personally reassuring to have and use completely
+public utilities.] For me, that was Neovim.^[Just to avoid
+any disambiguities, Vim-based syntax is actually also
+available inside Vim, making for a few amazing Tweets (see
+https://twitter.com/chigbarg/status/1448817993329250334).]
 
 If you've never used Vim or Neovim (hereafter when I say
 "Vim," I mean the Neovim successor), you are blessed. They
@@ -636,8 +761,8 @@ believe in the usefulness of linking notes together, so I
 also use some functions to help me insert links. These
 helpers are written on top of the
 [fzf.vim](https://github.com/junegunn/fzf.vim)
-utility.^["fzf" stands for "`f`u`z`zy `f`inder". fzf.vim is
-the Vim plugin for fzf.] The developer of fzf.vim,
+utility.^["fzf" stands for "fuzzy finder". fzf.vim is the
+Vim plugin for fzf.] The developer of fzf.vim,
 [Junegunn Choi](https://github.com/junegunn), has developed
 many useful open-source tools including and beyond fzf, and
 I encourage you to check out their work and/or sponsor them
@@ -746,7 +871,7 @@ The Python script also fills in three things:
   These tasks are sort of an informal and incomplete list,
   usually having around five to seven tasks of each kind.
   Other tasks, for example project-specific items, I manage
-  through the aforementioned kanban board system.
+  through the aforementioned task board system.
 
   To give credit where it is due, this feature was inspired
   by the
@@ -792,6 +917,8 @@ could even type or handwrite a template manually, or not use
 a strict template at all -- I just believe that it's good to
 journal and to work a bit on how you journal so that it
 makes you happy and the habit sustainable.
+
+---
 
 ## The end and more
 

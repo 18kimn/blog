@@ -3,14 +3,11 @@ import '@citation-js/plugin-bibtex'
 import {promises as fs} from 'fs'
 import {fileURLToPath} from 'url'
 import {dirname} from 'path'
-import type {Entry} from '../../src/lib/CV/types'
+import type {CV, Entry} from '../../src/lib/CV/types'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
 export default async function importZotero(): Promise<
-  {
-    name: string
-    entries: Entry[]
-  }[]
+  CV['sections']
   > {
   const zotbib = await fs.readFile(
     __dirname + '/personal.bib',
@@ -25,13 +22,13 @@ export default async function importZotero(): Promise<
       name: 'Publications',
       entries: references
         .filter((ref) => ref.type === 'article-journal')
-        .map((ref) => ({csl: ref})) as Entry[],
+        .map((ref) => ({type: 'csl', csl: ref})) as Entry[],
     },
     {
       name: 'Presentations',
       entries: references
-        .filter((ref) => ref.type === 'conference-paper')
-        .map((ref) => ({csl: ref})) as Entry[],
+        .filter((ref) => ref.type === 'paper-conference')
+        .map((ref) => ({type: 'csl', csl: ref})) as Entry[],
     },
     {
       name: 'Misc. Work',
@@ -43,7 +40,7 @@ export default async function importZotero(): Promise<
               'paper-conference',
             ].includes(ref.type),
         )
-        .map((ref) => ({csl: ref})) as Entry[],
+        .map((ref) => ({type: 'csl', csl: ref})) as Entry[],
     },
   ]
 }

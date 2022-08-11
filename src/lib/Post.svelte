@@ -9,7 +9,7 @@
   import type {Footnote} from './Footer'
   import {prettyDate} from '../utils/string'
   import {last} from '../utils/misc'
-  import {onMount} from 'svelte'
+  import {tick, onMount} from 'svelte'
 
   export let type: '/projects' | '/writing'
   export let data = {} as Post
@@ -17,6 +17,7 @@
   let visibleFootnotes: Footnote[] = []
   let headings: Footnote[] = []
   let visibleHeading: number
+  let shouldHideFloater = false
   let width = 0
   onMount(() => {
     const footnotes = getFootnotes()
@@ -114,11 +115,38 @@
   </div>
   {#if visibleFootnotes.length}
     <div style={`width: ${width}px`} class="footer">
-      {#each visibleFootnotes as footnote}
-        <li class="footnote">
-          {footnote.index}. {@html footnote.html}
-        </li>
-      {/each}
+      {#if !shouldHideFloater}
+        <button on:click={() => (shouldHideFloater = true)}>
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M18 6.41 16.59 5 12 9.58 7.41 5 6 6.41l6 6z"
+            />
+            <path
+              d="m18 13-1.41-1.41L12 16.17l-4.59-4.58L6 13l6 6z"
+            />
+          </svg>
+        </button>
+        <div class="footnotes">
+          {#each visibleFootnotes as footnote}
+            <li class="footnote">
+              {footnote.index + 1}. {@html footnote.html}
+            </li>
+          {/each}
+        </div>
+      {:else}
+        <button
+          on:click={() => (shouldHideFloater = false)}
+        >
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M6 17.59 7.41 19 12 14.42 16.59 19 18 17.59l-6-6z"
+            />
+            <path
+              d="m6 11 1.41 1.41L12 7.83l4.59 4.58L18 11l-6-6z"
+            />
+          </svg>
+        </button>
+      {/if}
     </div>
   {/if}
 {/if}
@@ -140,12 +168,25 @@
     width: 100%;
     margin: 0 -3rem;
     box-sizing: border-box;
-    border: var(--border);
+    border-top: solid 1px rgba(0 0 0 / 30%);
+    border-bottom: solid 1px rgba(0 0 0 / 30%);
     background: white;
   }
 
   .footer {
     bottom: 0;
+    padding: 0.5rem;
+    display: flex;
+  }
+
+  svg {
+    width: 1.5em;
+    height: 1.5em;
+  }
+
+  .footer button {
+    padding: 0 1rem;
+    align-self: flex-start;
   }
 
   .header {
@@ -156,8 +197,9 @@
     justify-content: space-between;
   }
 
-  .header button {
+  button {
     margin: 0;
+    box-shadow: none;
     background: white;
     border: none;
     cursor: pointer;
@@ -173,6 +215,13 @@
     overflow-wrap: break-word;
   }
 
+  .content :global(.heading-link) {
+    width: 100%;
+  }
+  .content :global(.heading-link:hover) {
+    background: gray;
+  }
+
   .content :global(h2) {
     font-size: 1.5rem;
   }
@@ -182,7 +231,7 @@
   }
 
   .content :global(a),
-  .header button {
+  button {
     font-family: var(--font);
     font-size: 1rem;
     margin: 0rem;
@@ -191,12 +240,12 @@
     transition: all ease-in-out 200ms;
   }
 
-  .header button {
+  button {
     font-size: 0.8rem;
   }
 
   .content :global(a:hover),
-  .header button:hover {
+  button:hover {
     color: red;
     text-decoration: underline;
   }

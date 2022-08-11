@@ -34,6 +34,8 @@
     "object-curly-spacing": "error",
     "camelcase": ["error", {"properties": "never"}],
     "comma-spacing": "error",
-    "comma-style": "error"
+    "comma-style": "error",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-extra-semi": "off"
   }
 }

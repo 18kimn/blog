@@ -78,7 +78,7 @@
     background: white;
     border: solid 1px black;
     padding: 1rem 3rem;
-    box-shadow: 5px 5px;
+    box-shadow: var(--box-shadow);
     border-radius: 0.5rem;
     height: fit-content;
     box-sizing: border-box;

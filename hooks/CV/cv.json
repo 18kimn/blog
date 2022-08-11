@@ -10,17 +10,18 @@
       "name": "Education",
       "entries": [
         {
+          "type": "position",
           "name": "Yale University",
           "date": "Graduating Fall 2022",
           "description": "<strong>Majors:</strong> Statistics and Data Science; Ethnicity, Race, and Migration. GPA: 3.90/4.0."
         },
         {
-          "name": "",
-          "description": "<strong>Relevant Coursework:</strong> Multivariate Statistics for Social Science. Intermediate Methods for Quantitative Sociology (graduate course). Applied Spatial Statistics. Data Analysis. Third World Studies."
+          "type": "markup",
+          "markup": "<strong>Relevant Coursework:</strong> Multivariate Statistics for Social Science. Intermediate Methods for Quantitative Sociology (graduate course). Applied Spatial Statistics. Data Analysis. Third World Studies."
         },
         {
-          "name": "",
-          "description": "<strong>Awards></strong>The Light Fellowship for Language Study, The Dwight Hall Urban Fellowship, The Yale Asian American Cultural Center First-Year Award, The Panel Survey for Income Dynamics Small Grant."
+          "type": "markup",
+          "markup": "<strong>Awards></strong>The Light Fellowship for Language Study, The Dwight Hall Urban Fellowship, The Yale Asian American Cultural Center First-Year Award, The Panel Survey for Income Dynamics Small Grant."
         }
       ]
     },
@@ -28,18 +29,21 @@
       "name": "Work Experience",
       "entries": [
         {
+          "type": "position",
           "name": "Asian American Studies Task Force",
           "role": "Secretary",
           "date": "Spring 2019 – December 2020",
           "description": "Hosted workshops on Asian American and Asian diasporic history."
         },
         {
+          "type": "position",
           "name": "Matriculate",
           "role": "Advising Fellow",
           "date": "September 2018 – May 2020",
           "description": "Guided first-generation, low-income high school students through the college admissions process."
         },
         {
+          "type": "position",
           "name": "Asian American Students Alliance",
           "role": "Programming Chair",
           "date": "January 2019 – December 2019",
@@ -48,19 +52,11 @@
       ]
     },
     {
-      "name": "Technical skills",
+      "name": "Technical Skills",
       "entries": [
         {
-          "markdown": "- **Web development** through the Svelte, React, and Vue frameworks in JavaScript. Familiar with Typescript, and the NodeJS and Rust environments for backend server programming."
-        },
-        {
-          "markdown": "- **Data visualization** through the ggplot2 ecosystem in R, as well as the d3.js ecosystem in JavaScript and the plotly library in Python."
-        },
-        {
-          "markdown": "- Expertise in **data pipeline creation and data cleaning** through the R programming language, especially through the renv and targets frameworks for reproducible development."
-        },
-        {
-          "markdown": "- **Web server architecture** in the Linux world. Familiar with the Arch, Debian, and Gentoo families of Linux distros. Familiar with Docker development and abstractions over these architectures."
+          "type": "markdown",
+          "markdown": "- **Web development** through the Svelte, React, and Vue frameworks in JavaScript. Familiar with Typescript, and the NodeJS and Rust environments for backend server programming. \n - **Data visualization** through the ggplot2 ecosystem in R, as well as the d3.js ecosystem in JavaScript and the plotly library in Python. \n- Expertise in **data pipeline creation and data cleaning** through the R programming language, especially through the renv and targets frameworks for reproducible development. \n - **Web server architecture** in the Linux world. Familiar with the Arch, Debian, and Gentoo families of Linux distros. Familiar with Docker development and abstractions over these architectures."
         }
       ]
     }

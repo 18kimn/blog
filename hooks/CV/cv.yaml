@@ -1,0 +1,148 @@
+meta:
+  name: Nathan Kim
+  email: nathanckim18@gmail.com
+  website: nathan-kim.org
+  twitter: nathanckim
+sections:
+  - name: Education
+    entries:
+      - type: position
+        name: Yale University
+        date: Graduating Fall 2022
+        description:
+          '<strong>Majors:</strong> Statistics and Data
+          Science; Ethnicity Race and Migration. GPA:
+          3.90/4.0.'
+      - type: markup
+        markup:
+          <strong>Relevant Coursework:</strong> Multivariate
+          Statistics for Social Science. Intermediate
+          Methods for Quantitative Sociology (graduate
+          course). Applied Spatial Statistics. Data
+          Analysis. Third World Studies.
+      - type: markup
+        markup:
+          <strong>Awards:</strong>The Light Fellowship for
+          Language Study The Dwight Hall Urban Fellowship
+          The Yale Asian American Cultural Center First-Year
+          Award The Panel Survey for Income Dynamics Small
+          Grant.
+  - name: Work Experience
+    entries:
+      - type: position
+        name: The Distributed AI Research Institute
+        role: Quantitative Research Assistant
+        date: July 2021 — July 2022
+        description:
+          Creating a data pipeline and conducting
+          time-series analyses for the Student and Campus
+          Protest Events Project.
+      - type: position
+        name:
+          Yale University Department of Statistics & Data
+          Science
+        role: Undergraduate Learning Assistant
+        date: Fall 2021, Fall 2022
+        description: |
+          Guided students through <em>S&DS230: Data
+          Exploration and Analysis</em> during weekly hours.
+          Assisted in creation of midterm and final exams.
+      - type: position
+        name: The Anti-Eviction Mapping Project
+        role: Member
+        date: Summer 2021 — Present
+        description:
+          Active web developer and researcher in the
+          Anti-Eviction Mapping Project, a digital
+          cartography and tenant organizing collective.
+      - type: position
+        name: DataHaven
+        role: Research Intern
+        date: Summer 2020 — Present
+        description:
+          Currently writing reports and performing data
+          analysis for DataHaven, a community
+          action-oriented nonprofit creating reports and
+          data analyses for the Greater New Haven community.
+      - type: position
+        name: Yale Institution for Social and Policy Studies
+        role: Research Assistant
+        date: September 2018 – May 2022
+        description:
+          Wrote all data cleaning and modeling code for
+          three papers on social mobility and health with
+          Professor Emma Zang.
+      - type: position
+        name:
+          University of Pennsylvania Population Studies
+          Center
+        role: Research Intern
+        date: Summer 2019
+        description:
+          Worked with Professor Irma Elo on describing U.S.
+          county-level predictors of mortality. Created a
+          database and Shiny visualization app of
+          demographic county-level indicators.
+      - type: position
+        name:
+          Leadership, Athletics, and Education in
+          Partnership
+        role: Development Intern
+        date: September 2018 – December 2019
+        description:
+          Worked in the Development Office to analyze recent
+          donor data, with the aim of finding relationships
+          between donation time, donation amount, LEAP
+          activities such as segmenting letters, and donor
+          identity.
+  - name: Activities and Leadership
+    entries:
+      - type: position
+        name: Asian American Studies Task Force
+        role: Secretary
+        date: Spring 2019 – December 2020
+        description:
+          Hosted workshops on Asian American and Asian
+          diasporic history.
+      - type: position
+        name: Matriculate
+        role: Advising Fellow
+        date: September 2018 – May 2020
+        description:
+          Guided first-generation low-income high school
+          students through the college admissions process.
+      - type: position
+        name: Asian American Students Alliance
+        role: Programming Chair
+        date: January 2019 – December 2019
+        description:
+          Spearheaded a task force on data disaggregation
+          activism to host several political education
+          workshopson the 2020 Census citizenship question
+          and political representation. Invited and hosted
+          playwright-activist Dimo Kim cartoonist Dami Lee
+          and political activist Rita Pin Ahrens to discuss
+          various forms of community organizing.
+  - name: Technical Skills
+    entries:
+      - type: markdown
+        markdown: |
+          - **Web development** through the Svelte React and
+            Vue frameworks in JavaScript. Familiar with
+            Typescript and the NodeJS and Rust environments
+            for backend server programming.
+          - **Data visualization** through the
+            ggplot2 ecosystem in R as well as the d3.js
+            ecosystem in JavaScript and the plotly library
+            in Python.
+          - Expertise in **data pipeline creation and data
+            cleaning** through the R programming language,
+            especially through the renv and targets
+          frameworks
+            for reproducible development.
+          - **Web server architecture** in the Linux world.
+            Familiar with the Arch, Debian, and Gentoo
+          families
+            of Linux distros. Familiar with Docker
+          development
+            and abstractions over these architectures.
