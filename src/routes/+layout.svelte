@@ -26,6 +26,7 @@
 
   .page {
     width: 100%;
+    max-width: 100vw;
     height: 100%;
     padding: 0 2rem;
     box-sizing: border-box;

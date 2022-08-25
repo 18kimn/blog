@@ -1,7 +1,8 @@
 @import './prism.css';
 
 :root {
-  font-size: 16pt;
+  /* easiest font-size scaling solution */
+  font-size: max(1.8vh, 6pt);
   transition: font-size ease-in-out 200ms;
   --font: Lora, Cambria, Cochin, Georgia, Times,
     'Times New Roman', serif;
