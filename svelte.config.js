@@ -12,12 +12,8 @@ import {mdsvex} from 'mdsvex'
 const config = {
   extensions: ['.svelte', '.md'],
   preprocess: [
+    preprocess(),
     mdsvex({
-      layout: {
-        projects: 'src/routes/projects/_template.svelte',
-        writing: 'src/routes/writing/_template.svelte',
-        thoughts: 'src/routes/_thoughts_template.svelte',
-      },
       extensions: ['.md'],
       remarkPlugins: [resolveLinks, addFootnotes, makeTOC],
       rehypePlugins: [
@@ -26,7 +22,6 @@ const config = {
         rehypeAutolinkHeadings,
       ],
     }),
-    preprocess(),
   ],
   kit: {
     adapter: adapter({out: 'server/ui'}),

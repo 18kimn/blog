@@ -3,7 +3,7 @@ import '@citation-js/plugin-bibtex'
 import {promises as fs} from 'fs'
 import {fileURLToPath} from 'url'
 import {dirname} from 'path'
-import type {CV, Entry} from '../../src/lib/CV/types'
+import type {CV, Entry} from '../../src/routes/cv/types'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
 export default async function importZotero(): Promise<

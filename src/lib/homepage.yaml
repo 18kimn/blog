@@ -1,0 +1,62 @@
+affiliations:
+  - display: Yale College, Class of 2022
+    info:
+      Double majoring in Statistics & Data Science and
+      Ethnicity, Race, & Migration. Graduating December
+      2022.
+  - display: the Anti-Eviction Mapping Project
+    info:
+      A tenant organizing, housing justice, critical
+      cartography collective. I'm working on the Evictorbook
+      landlord lookup tool, a site profiling the "Worst
+      Evictors" of San Francisco and Oakland, and the
+      organization website.
+    link: https://antievictionmap.com
+  - display: DataHaven
+    info:
+      Websites, data wrangling, and graphics for DataHaven,
+      a New Haven nonprofit using data for community action.
+    link: https://ctdatahaven.org/
+  - display: the Distributed AI Research Institute
+    info:
+      Building data processing and analysis pipelines for
+      the Student and Campus Protest Events Project, with
+      Dr. Alex Hanna.
+works:
+  - display: The Yale Detour
+    info:
+      An alternative history tour of Yale. My role editing,
+      coordinating, coding.
+    link: https://yale-detour.org
+  - display: Evictorbook
+    info:
+      A tool for tenant organizing. My role front-end
+      coding.
+    link: https://evictorbook.com
+  - display: No more paywalls!
+    info:
+      Tiny site on accessing paywalled academic resources.
+    link: https://no-more-paywalls.org
+skills:
+  - display: Web development
+    info:
+      Frontend work through the Svelte(Kit), React, Vue
+      frameworks. Familiarity with Node and streaming APIs.
+  - display: Data wrangling and pipelining
+    info:
+      Strengths are in demographic data processing, chiefly
+      through the R tidyverse familiy of packages. Also
+      familiar with the tidycensus, ipumsr, tigris, and
+      other frameworks for demographic data wrangling, and
+      spatial manipulation through the sf, spdep, raster,
+      and others.
+  - display: Modeling
+    info:
+      Time series, fixed-effects with clustering, spatial
+      autoregression.
+  - display: Linux and servers
+    info:
+      Hobbyist level of expertise with Ubuntu, Gentoo, Arch
+      Linux distros. I run an Nginx-based server that hosts
+      serveral of my websites (including this one) from a
+      machine I keep at my parents' home.

@@ -1,12 +1,13 @@
 @import './prism.css';
 
 :root {
-  font-size: 14pt;
+  font-size: 16pt;
   transition: font-size ease-in-out 200ms;
-  --font: 'Lato', 'Source Sans Pro', 'Segoe UI', Tahoma,
-    Geneva, Verdana, sans-serif;
+  --font: Lora, Cambria, Cochin, Georgia, Times,
+    'Times New Roman', serif;
   --border: solid 1px black;
-  --box-shadow: 5px 5px;
+  --bg: linear-gradient(to right, #e8f8ff 0%, #ffeaea 100%);
+  --color: #1100d9;
   font-family: var(--font);
 }
 
@@ -21,6 +22,10 @@ main {
   display: grid;
   grid-column: 1/2;
   grid-row: 1/2;
+}
+
+body {
+  background: var(--bg);
 }
 
 #app {
@@ -47,12 +52,33 @@ button {
   font-family: var(--font);
   font-size: 1rem;
   margin: 0rem;
-  background: white;
-  box-shadow: 2px 2px;
   border: var(--border);
   cursor: pointer;
   text-decoration: none;
   transition: all ease-in-out 200ms;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  white-space: nowrap;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2rem;
 }
 
 /** fonts */

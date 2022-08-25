@@ -1,5 +1,6 @@
 <script lang="ts">
   import {onMount} from 'svelte'
+  import {fade} from 'svelte/transition'
   import type {CV} from './types'
   import renderCSL from './renderCSL'
   import filterEntries from './filterEntries'
@@ -19,6 +20,7 @@
   export let csl: string
   export let isCompact: boolean
   export let fontsize = 14
+  export let loaded: boolean
   let meta: CV['meta']
   let sections: CV['sections']
 
@@ -35,6 +37,7 @@
       )
       return aInd - bInd
     })
+    loaded = true
   })
 
   $: sections = renderCSL(sections, csl)
@@ -46,78 +49,84 @@
     ? 0.5
     : 1}"
 >
-  {#if meta}
-    <div class="meta">
-      <h1>{meta.name}</h1>
-      <div class="links">
-        <span>{meta.email}</span> |
-        <a
-          href={`https://${meta.website}`}
-          rel="noopener"
-          target="_blank">{meta.website}</a
-        >
-        |
-        <a
-          href={`https://twitter.com/${meta.twitter}`}
-          rel="noopener"
-          target="_blank"
-        >
-          @{meta.twitter}
-        </a>
+  <div>
+    {#if loaded}
+      <div class="meta">
+        <div class="links">
+          <span>{meta.email}</span> |
+          <a
+            href={`https://${meta.website}`}
+            rel="noopener"
+            target="_blank">{meta.website}</a
+          >
+          |
+          <a
+            href={`https://twitter.com/${meta.twitter}`}
+            rel="noopener"
+            target="_blank"
+          >
+            @{meta.twitter}
+          </a>
+        </div>
       </div>
-    </div>
-  {/if}
-  {#if sections}
-    {#each filterEntries(search, sections) as section}
-      <h2 class="section-name">{section.name}</h2>
-      <hr />
-      {#each section.entries as entry}
-        <div class="entry">
-          {#if entry.type === 'position'}
-            <div class="position-meta">
-              <span class="position-title">
-                <strong>{entry.name}</strong>
-                {#if entry.role}
-                  <em class="role">{@html entry.role}</em>
+      {#each filterEntries(search, sections) as section, index}
+        <section
+          in:fade={{delay: 100 * index, duration: 300}}
+        >
+          <h2 class="section-name">{section.name}</h2>
+          <hr />
+          {#each section.entries as entry}
+            <div class="entry">
+              {#if entry.type === 'position'}
+                <div class="position-meta">
+                  <span class="position-title">
+                    <strong>{entry.name}</strong>
+                    {#if entry.role}
+                      <em class="role"
+                        >{@html entry.role}</em
+                      >
+                    {/if}
+                  </span>
+                  {#if entry.date}
+                    <span class="date"
+                      >{@html entry.date}</span
+                    >
+                  {/if}
+                </div>
+                {#if !isCompact}
+                  <div class="entry-description">
+                    {@html entry.description}
+                  </div>
                 {/if}
-              </span>
-              {#if entry.date}
-                <span class="date">{@html entry.date}</span>
+              {:else if entry.type === 'markup'}
+                {@html entry.markup}
+              {:else if entry.type === 'csl'}
+                {@html entry.markup || ''}
               {/if}
             </div>
-            {#if !isCompact}
-              <div class="entry-description">
-                {@html entry.description}
-              </div>
-            {/if}
-          {:else if entry.type === 'markup'}
-            {@html entry.markup}
-          {:else if entry.type === 'csl'}
-            {@html entry.markup || ''}
-          {/if}
-        </div>
+          {/each}
+        </section>
       {/each}
-    {/each}
-  {/if}
+    {/if}
+  </div>
 </div>
 
 <style>
+  /* margin-multi(plier) refers to a constant by which
+     other margins should be scaled by
+    --marg below is just a convenience variable
+   */
   .cv {
     --marg: calc(var(--margin-multi) * 0.5em);
     margin: calc(var(--marg) - 0.5em)
       calc(var(--marg) - 0.8em);
+    width: min(100%, 80ch);
   }
 
   .meta {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  h1 {
-    white-space: nowrap;
-    margin-top: calc(var(--margin-multi) * 1em);
-    margin-bottom: calc(var(--margin-multi) * 0.5em);
   }
 
   .links {

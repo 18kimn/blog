@@ -2,7 +2,7 @@
   import List from '$lib/List.svelte'
 </script>
 
-<List type="thoughts">
+<List type="notebook">
   <h1>My notes</h1>
   <p>
     This is my notebook, just things I jot into vim as I go
@@ -16,7 +16,7 @@
   </p>
   <p>
     For more developed thoughts please see <a
-      href="/writing">/writing</a
+      href="/writing">/writing.</a
     >
   </p>
 </List>

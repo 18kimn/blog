@@ -1,6 +1,5 @@
 <script lang="ts">
   import type {Post} from '../utils/types'
-  import Header from './Header.svelte'
   import updateFloater, {
     getFootnotes,
     getHeadings,
@@ -9,15 +8,15 @@
   import type {Footnote} from './Footer'
   import {prettyDate} from '../utils/string'
   import {last} from '../utils/misc'
-  import {tick, onMount} from 'svelte'
+  import {onMount} from 'svelte'
 
-  export let type: '/projects' | '/writing'
   export let data = {} as Post
 
   let visibleFootnotes: Footnote[] = []
   let headings: Footnote[] = []
   let visibleHeading: number
   let shouldHideFloater = false
+  let content: HTMLDivElement
   let width = 0
   onMount(() => {
     const footnotes = getFootnotes()
@@ -32,13 +31,12 @@
         newHeading > -1 ? newHeading : visibleHeading
     })
 
-    const main = document.querySelector('main')
-    if (!main) return
-    width = main.clientWidth
+    if (!content) return
+    width = content.clientWidth
     const ro = new ResizeObserver(() => {
-      width = main.clientWidth
+      width = content.clientWidth
     })
-    ro.observe(main)
+    ro.observe(content)
   })
 
   function scrollToHeading(index: number) {
@@ -51,111 +49,135 @@
   $: ({title, subtitle, modified, date, tags} = data)
 </script>
 
-<Header selected={type} />
-{#if data.title}
-  {#if visibleHeading >= 1}
-    <div style={`width: ${width}px`} class="header">
-      {#if headings[visibleHeading - 1]}
-        <span>
-          Prev.:
-          <button
-            aria-label={`Navigate to ${
-              headings[visibleHeading - 1]
-            }`}
-            on:click={() =>
-              scrollToHeading(visibleHeading - 1)}
-          >
-            {headings[visibleHeading - 1]?.html}
-          </button>
-        </span>
-      {/if}
-      <span>{headings[visibleHeading].html}</span>
-      {#if headings[visibleHeading + 1]}
-        <span>
-          Next:
-          <button
-            aria-label={`Navigate to ${
-              headings[visibleHeading + 1]
-            }`}
-            on:click={() =>
-              scrollToHeading(visibleHeading + 1)}
-          >
-            {headings[visibleHeading + 1]?.html}
-          </button>
-        </span>
-      {/if}
-    </div>
-  {/if}
-  <div class="content">
-    <div id="frontmatter">
-      <h1>{title}</h1>
-      {#if subtitle}<h2>{subtitle}</h2>{/if}
-      <div class="meta">
-        <span id="date">
-          {#if modified?.length && last(modified) !== date}
-            <em>Created:</em>
-          {/if}
-          {prettyDate(date)}
-        </span>
-        {#if modified?.length && last(modified) !== date}
-          <span id="modified">
-            <em>Last modified: </em>
-            {prettyDate(last(modified))}
+<div class="container">
+  {#if data.title}
+    {#if visibleHeading >= 1}
+      <div
+        style={`width: ${width}px; min-width: ${width}px;`}
+        class="header"
+      >
+        {#if headings[visibleHeading - 1]}
+          <span>
+            Prev.:
+            <button
+              aria-label={`Navigate to ${
+                headings[visibleHeading - 1]
+              }`}
+              on:click={() =>
+                scrollToHeading(visibleHeading - 1)}
+            >
+              {headings[visibleHeading - 1]?.html}
+            </button>
           </span>
         {/if}
-        {#if tags?.length}
-          <span id="tags">
-            <em> Tagged with: </em>
-            <code>{tags.join(', ')}</code>
+        <span>{headings[visibleHeading].html}</span>
+        {#if headings[visibleHeading + 1]}
+          <span>
+            Next:
+            <button
+              aria-label={`Navigate to ${
+                headings[visibleHeading + 1]
+              }`}
+              on:click={() =>
+                scrollToHeading(visibleHeading + 1)}
+            >
+              {headings[visibleHeading + 1]?.html}
+            </button>
           </span>
         {/if}
       </div>
-    </div>
-    <slot />
-  </div>
-  {#if visibleFootnotes.length}
-    <div style={`width: ${width}px`} class="footer">
-      {#if !shouldHideFloater}
-        <button on:click={() => (shouldHideFloater = true)}>
-          <svg viewBox="0 0 24 24">
-            <path
-              d="M18 6.41 16.59 5 12 9.58 7.41 5 6 6.41l6 6z"
-            />
-            <path
-              d="m18 13-1.41-1.41L12 16.17l-4.59-4.58L6 13l6 6z"
-            />
-          </svg>
-        </button>
-        <div class="footnotes">
-          {#each visibleFootnotes as footnote}
-            <li class="footnote">
-              {footnote.index + 1}. {@html footnote.html}
-            </li>
-          {/each}
+    {/if}
+    <div class="content" bind:this={content}>
+      <div id="frontmatter">
+        <h1>{title}</h1>
+        {#if subtitle}<h2>{subtitle}</h2>{/if}
+        <div class="meta">
+          <span id="date">
+            {#if modified?.length && last(modified) !== date}
+              <em>Created:</em>
+            {/if}
+            {prettyDate(date)}
+          </span>
+          {#if modified?.length && last(modified) !== date}
+            <span id="modified">
+              <em>Last modified: </em>
+              {prettyDate(last(modified))}
+            </span>
+          {/if}
+          {#if tags?.length}
+            <span id="tags">
+              <em> Tagged with: </em>
+              <code>{tags.join(', ')}</code>
+            </span>
+          {/if}
         </div>
-      {:else}
-        <button
-          on:click={() => (shouldHideFloater = false)}
-        >
-          <svg viewBox="0 0 24 24">
-            <path
-              d="M6 17.59 7.41 19 12 14.42 16.59 19 18 17.59l-6-6z"
-            />
-            <path
-              d="m6 11 1.41 1.41L12 7.83l4.59 4.58L18 11l-6-6z"
-            />
-          </svg>
-        </button>
-      {/if}
+      </div>
+      <slot />
     </div>
+    {#if visibleFootnotes.length}
+      <div
+        style={`width: ${width}px; min-width: ${width}px;`}
+        class="footer"
+      >
+        {#if !shouldHideFloater}
+          <button
+            on:click={() => (shouldHideFloater = true)}
+          >
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M18 6.41 16.59 5 12 9.58 7.41 5 6 6.41l6 6z"
+              />
+              <path
+                d="m18 13-1.41-1.41L12 16.17l-4.59-4.58L6 13l6 6z"
+              />
+            </svg>
+          </button>
+          <div class="footnotes">
+            {#each visibleFootnotes as footnote}
+              <li class="footnote">
+                {footnote.index + 1}. {@html footnote.html}
+              </li>
+            {/each}
+          </div>
+        {:else}
+          <button
+            on:click={() => (shouldHideFloater = false)}
+          >
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M6 17.59 7.41 19 12 14.42 16.59 19 18 17.59l-6-6z"
+              />
+              <path
+                d="m6 11 1.41 1.41L12 7.83l4.59 4.58L18 11l-6-6z"
+              />
+            </svg>
+          </button>
+        {/if}
+      </div>
+    {/if}
   {/if}
-{/if}
+</div>
 
 <style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+  }
+
+  .header,
+  .content {
+    max-width: 82ch;
+  }
+
   .meta {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  h1 {
+    white-space: normal;
   }
 
   .footer,

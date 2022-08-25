@@ -22,11 +22,11 @@ sections:
           Analysis. Third World Studies.
       - type: markup
         markup:
-          <strong>Awards:</strong>The Light Fellowship for
-          Language Study The Dwight Hall Urban Fellowship
+          '<strong>Awards: </strong>The Light Fellowship for
+          Language Study, The Dwight Hall Urban Fellowship,
           The Yale Asian American Cultural Center First-Year
-          Award The Panel Survey for Income Dynamics Small
-          Grant.
+          Award, The Panel Survey for Income Dynamics Small
+          Grant.'
   - name: Work Experience
     entries:
       - type: position

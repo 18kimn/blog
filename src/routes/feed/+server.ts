@@ -1,4 +1,4 @@
-import type {Post} from '../utils/types'
+import type {Post} from '../../utils/types'
 const siteURL = 'https://nathan-kim.org/'
 const siteTitle = 'Nathan Kim'
 const siteDescription = 'Nathan Kim\'s Personal Website'
@@ -12,7 +12,11 @@ function render(posts: Post[]) {
         <guid isPermaLink="true">${siteURL}${path}</guid>
         <title>${title}</title>
         <link>${siteURL}${path}</link>
-        ${subtitle ? `<description>${subtitle}</description>` : ''}
+        ${
+  subtitle
+    ? `<description>${subtitle}</description>`
+    : ''
+}
         <pubDate>${new Date(date).toUTCString()}</pubDate>
       </item>
       `,
@@ -32,12 +36,15 @@ function render(posts: Post[]) {
 }
 
 /** on request, imports and delivers all of the markdown files */
-export async function get() {
+export async function GET() {
   const posts: Post[] = await Promise.all(
-    Object.entries(import.meta.glob('./*/*/*.md')).map(
+    Object.entries(import.meta.glob('../*/*/*.md')).map(
       async ([fullPath, resolver]) => {
         const {metadata} = await resolver()
-        const path = fullPath.slice(2, 0 - 'index.md'.length)
+        const path = fullPath.slice(
+          2,
+          0 - 'index.md'.length,
+        )
         return {...metadata, path}
       },
     ),
@@ -53,8 +60,5 @@ export async function get() {
     'Content-Type': 'application/xml',
   }
 
-  return {
-    body,
-    headers,
-  }
+  return new Response(body, {headers})
 }
