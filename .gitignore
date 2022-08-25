@@ -3,6 +3,8 @@ node_modules/
 
 currently.yaml
 
+.pnpm-debug.log
+
 .DS_Store
 /build
 /.svelte-kit

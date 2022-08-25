@@ -10,7 +10,7 @@ import {mdsvex} from 'mdsvex'
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-  extensions: ['.svelte', '.md'],
+  extensions: ['.svelte', '.md', '.yaml'],
   preprocess: [
     preprocess(),
     mdsvex({
@@ -24,7 +24,8 @@ const config = {
     }),
   ],
   kit: {
-    adapter: adapter({out: 'server/ui'}),
+    adapter: adapter(),
+    prerender: {default: true},
   },
 }
 
