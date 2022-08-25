@@ -67,6 +67,7 @@
   .contact {
     display: flex;
     place-items: center;
+    place-content: center;
     font-size: 1.2rem;
     flex-wrap: wrap;
   }

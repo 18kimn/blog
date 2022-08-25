@@ -133,11 +133,13 @@
     justify-content: space-between;
     place-items: center;
     flex-wrap: wrap;
+    gap: 1rem;
   }
 
   .tagline {
     font-style: italic;
     font-size: 1.2rem;
+    text-align: center;
   }
 
   .info {
@@ -171,7 +173,6 @@
 
   .item {
     font-size: 1.2rem;
-    white-space: nowrap;
     cursor: pointer;
     background-color: #ededed;
     transition: all ease-in-out 400ms;

@@ -17,7 +17,7 @@
     {:else}
       <h2>Nathan Kim</h2>
     {/if}
-    <nav>
+    <nav class="links">
       {#each routes as route}
         <a
           class={$page.routeId === route && 'selected'}
@@ -63,6 +63,12 @@
   h1,
   h2 {
     font-size: 3rem;
+  }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    place-content: center;
   }
 
   a {
