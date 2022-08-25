@@ -16,14 +16,12 @@ export default function renderCSL(
   sections: CV['sections'],
   csl: string,
 ): CV['sections'] {
-  console.log('executing renderer', sections, csl)
   if (!csl || !sections) return sections
   return sections.map((section) => ({
     ...section,
     entries: section.entries.map((entry) => {
       if (entry.type !== 'csl') return entry
       const cite = new Cite(entry.csl)
-    console.log(cite)
       return {
         ...entry,
         markup: reprocessHTML(

@@ -3,6 +3,7 @@
   import {fade} from 'svelte/transition'
   import type {CV} from './types'
   import filterEntries from './filterEntries'
+  import renderCSL from './renderCSL'
 
   // need a better way
   const order = [
@@ -23,11 +24,8 @@
   let meta: CV['meta']
   let sections: CV['sections']
 
-  let renderCSL: Function
-
   onMount(async () => {
     // @ts-ignore
-    import('./renderCSL').then(renderer => {renderCSL = renderer.default})
     ;({meta, sections} = await fetch('/cv.json').then(
       (res) => res.json(),
     ))
@@ -43,7 +41,7 @@
     loaded = true
   })
 
-  $: renderCSL && (sections = renderCSL(sections, csl))
+  $: sections = renderCSL(sections, csl)
 </script>
 
 <div
@@ -121,15 +119,17 @@
    */
   .cv {
     --marg: calc(var(--margin-multi) * 0.5em);
-    margin: calc(var(--marg) - 0.5em)
+    padding: calc(var(--marg) - 0.5em)
       calc(var(--marg) - 0.8em);
-    width: min(100%, 80ch);
+    box-sizing: border-box;
+    flex: 1;
+    overflow-x: hidden;
   }
 
   .meta {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: flex-end;
   }
 
   .links {
@@ -138,6 +138,7 @@
 
   .section-name {
     margin: calc(var(--margin-multi) * 0.5em) 0 0 0;
+    white-space: break-word;
   }
 
   hr {

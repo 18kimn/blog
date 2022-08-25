@@ -44,6 +44,7 @@
   #component {
     transition: opacity ease-in-out 200ms;
     box-sizing: border-box;
+    overflow-x: hidden;
   }
 
   main {
@@ -51,5 +52,6 @@
     z-index: 1;
     height: fit-content;
     box-sizing: border-box;
+    overflow-x: hidden;
   }
 </style>
