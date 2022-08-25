@@ -24,13 +24,13 @@ affiliations:
       Dr. Alex Hanna.
 works:
   - display: The Yale Detour
-    info:
-      An alternative history tour of Yale. My role editing,
-      coordinating, coding.
+    info:  
+      "An alternative history tour of Yale. My role: editing,
+      coordinating, coding."
     link: https://yale-detour.org
   - display: Evictorbook
-    info:
-      A tool for tenant organizing. My role front-end
+    info: >-
+      A tool for tenant organizing. My role: front-end
       coding.
     link: https://evictorbook.com
   - display: No more paywalls!

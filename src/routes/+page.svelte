@@ -77,11 +77,12 @@
                   }
                 }}
                 class="item"
-                >{item.display}
+              >
+                {item.display}
               </span>
             {/each}
           </div>
-          <ResizingBox content={showing[index]?.info} />
+          <ResizingBox content={showing[index]} />
         </section>
       {/each}
       <section
@@ -153,7 +154,7 @@
 
   section {
     border-radius: 0.5rem;
-    max-width: 72ch;
+    max-width: 60ch;
     flex-grow: 1;
   }
 

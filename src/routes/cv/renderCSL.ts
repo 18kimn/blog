@@ -2,6 +2,8 @@ import {Cite} from '@citation-js/core'
 import '@citation-js/plugin-csl'
 import type {CV} from './types'
 
+// dynamic/async
+
 function reprocessHTML(html: string) {
   return html.replace(
     // basic url matching
@@ -14,12 +16,14 @@ export default function renderCSL(
   sections: CV['sections'],
   csl: string,
 ): CV['sections'] {
+  console.log('executing renderer', sections, csl)
   if (!csl || !sections) return sections
   return sections.map((section) => ({
     ...section,
     entries: section.entries.map((entry) => {
       if (entry.type !== 'csl') return entry
       const cite = new Cite(entry.csl)
+    console.log(cite)
       return {
         ...entry,
         markup: reprocessHTML(

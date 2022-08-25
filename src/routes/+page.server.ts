@@ -1,5 +1,4 @@
 import yaml from 'yaml'
-import {promises as fs} from 'fs'
 import {browser} from '$app/env'
 import currentlyFile from '../lib/currently.yaml'
 import infoFile from '../lib/homepage.yaml'
@@ -10,14 +9,18 @@ type Info = {
   link?: string
 }
 
+function processYaml(file: any){
+  const unescaped = file.render().html.replaceAll('&gt;', '>').replaceAll('&quot;', '"')
+
+  return yaml.parse(unescaped)
+}
+
 export const load = async () => {
   if (browser) return
 
   //for some reason this works?
-  const info: {[type: string]: Info[]} = yaml.parse(
-    infoFile.render().html,
-  )
+  const info: {[type: string]: Info[]} = processYaml(infoFile)
 
-  const currently = yaml.parse(currentlyFile.render().html)
+  const currently = processYaml(currentlyFile)
   return {currently, info}
 }

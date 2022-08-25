@@ -14,7 +14,7 @@ of this same blog post, minus the notes here on learning
 code.
 
 <p align="center">
-  <iframe src="https://imfdispossession.info" width="90%" height={800}>
+  <iframe title="Website for senior project" src="https://imfdispossession.info" width="90%" height={800}>
   </iframe>
   <br />
   <a href="https://imfdispossession.info"> To view the full visualization, click here.</a>

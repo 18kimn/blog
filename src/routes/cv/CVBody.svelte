@@ -2,7 +2,6 @@
   import {onMount} from 'svelte'
   import {fade} from 'svelte/transition'
   import type {CV} from './types'
-  import renderCSL from './renderCSL'
   import filterEntries from './filterEntries'
 
   // need a better way
@@ -24,7 +23,11 @@
   let meta: CV['meta']
   let sections: CV['sections']
 
+  let renderCSL: Function
+
   onMount(async () => {
+    // @ts-ignore
+    import('./renderCSL').then(renderer => {renderCSL = renderer.default})
     ;({meta, sections} = await fetch('/cv.json').then(
       (res) => res.json(),
     ))
@@ -40,7 +43,7 @@
     loaded = true
   })
 
-  $: sections = renderCSL(sections, csl)
+  $: renderCSL && (sections = renderCSL(sections, csl))
 </script>
 
 <div

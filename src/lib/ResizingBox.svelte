@@ -1,7 +1,7 @@
 <script lang="ts">
   /* when content inside changes, resizes height
   with transition */
-  export let content: string
+  export let content: {info: string; link?: string}
 
   let height = 0
   let inner: HTMLSpanElement
@@ -16,7 +16,18 @@
 </script>
 
 <div class="box" style="height: {height}px">
-  <span bind:this={inner}>{content || ''}</span>
+  <span bind:this={inner}
+    >{content?.info || ''}
+    {#if content?.link}
+      <a
+        href={content.link}
+        target="_blank"
+        rel="noreferrer"
+      >
+        {content.link}
+      </a>
+    {/if}
+  </span>
 </div>
 
 <style>
