@@ -89,7 +89,7 @@
     {/if}
     <div class="content" bind:this={content}>
       <div id="frontmatter">
-        <h1>{title}</h1>
+        <h1>{@html title}</h1>
         {#if subtitle}<h2>{subtitle}</h2>{/if}
         <div class="meta">
           <span id="date">
@@ -163,6 +163,7 @@
     display: flex;
     flex-direction: column;
     place-items: center;
+    overflow-x: hidden;
   }
 
   .header,

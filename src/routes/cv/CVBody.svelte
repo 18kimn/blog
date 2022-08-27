@@ -20,9 +20,9 @@
   export let csl: string
   export let isCompact: boolean
   export let fontsize = 14
-  export let loaded: boolean
   let meta: CV['meta']
   let sections: CV['sections']
+  let loaded: boolean
 
   onMount(async () => {
     // @ts-ignore
@@ -53,6 +53,7 @@
   <div>
     {#if loaded}
       <div class="meta">
+        <slot />
         <div class="links">
           <span>{meta.email}</span> |
           <a

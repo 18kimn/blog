@@ -1,5 +1,5 @@
 ---
-title: leftist-quotes
+title: <code>leftist-quotes</code>
 subtitle: an API for interacting with communist quotes
 date: 2021-08-30
 banner: preview.png

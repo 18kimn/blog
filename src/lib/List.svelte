@@ -34,7 +34,7 @@
             </span>
             <span class="content">
               <a id={item.path} href={item.path}>
-                {item.title}
+                <span>{@html item.title}</span>
               </a>
               <br />
               {#if item.subtitle}
@@ -83,8 +83,8 @@
 
   a {
     color: black;
-    text-decoration: underline;
     cursor: pointer;
+    text-decoration: none;
   }
 
   a:hover {
@@ -98,5 +98,9 @@
   /** force empty spans to still have height */
   .subtitle:before {
     content: '\200b';
+  }
+
+  .content :global(code) {
+    color: #7c00aa;
   }
 </style>

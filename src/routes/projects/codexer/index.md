@@ -1,5 +1,5 @@
 ---
-title: 'codexer'
+title: <code>codexer</code>
 subtitle: 'a tool for turning code into books'
 date: 2021-10-21
 banner: codexer-example.png

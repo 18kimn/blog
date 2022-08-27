@@ -1,5 +1,5 @@
 ---
-title: reso
+title: <code>reso</code>
 subtitle: An esoteric R-based programming style
 date: 2021-09-05
 banner: banner.png
