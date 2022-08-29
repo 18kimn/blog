@@ -156,7 +156,7 @@
 
   section {
     border-radius: 0.5rem;
-    max-width: 60ch;
+    max-width: 50ch;
     flex-grow: 1;
   }
 
