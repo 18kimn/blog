@@ -125,12 +125,14 @@
     box-sizing: border-box;
     flex: 1;
     overflow-x: hidden;
+    max-width: min(100%, 70ch);
   }
 
   .meta {
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .links {

@@ -5,9 +5,20 @@
 
   export let type: 'projects' | 'writing' | 'notebook'
 
+  function isHTML(str: string) {
+    const doc = new DOMParser().parseFromString(
+      str,
+      'text/html',
+    )
+    return Array.from(doc.body.childNodes).some(
+      (node) => node.nodeType === 1,
+    )
+  }
+
   let items: Post[]
 
   onMount(async () => {
+    // move this to load()
     items = (
       await fetch(`/${type}-posts`).then((res) =>
         res.json(),
@@ -34,7 +45,11 @@
             </span>
             <span class="content">
               <a id={item.path} href={item.path}>
-                <span>{@html item.title}</span>
+                {#if isHTML(item.title)}
+                  {@html item.title}
+                {:else}
+                  <span>{item.title}</span>
+                {/if}
               </a>
               <br />
               {#if item.subtitle}
@@ -89,6 +104,14 @@
 
   a:hover {
     font-weight: bold;
+  }
+
+  a span {
+    text-decoration: underline;
+  }
+
+  a :global(*) {
+    text-decoration: none;
   }
 
   .subtitle {

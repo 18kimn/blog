@@ -150,7 +150,6 @@
     display: flex;
     place-content: center;
     overflow-x: hidden;
-    width: min(100%, 80ch);
   }
 
   .opener {

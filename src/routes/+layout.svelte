@@ -1,15 +1,13 @@
 <script lang="ts">
-  import {onMount} from 'svelte'
+  import {page} from '$app/stores'
   import Nav from '$lib/Nav.svelte'
-
-  onMount(() => {
-    /* below is for header ::after animation */
-    ;(
-      document.querySelector('.header') as HTMLElement
-    )?.style?.setProperty('--header-border-width', '100%')
-  })
 </script>
 
+<svelte:head>
+  {#if $page.data?.title}
+    <title>{$page.data.title} ⋅ Nathan Kim</title>
+  {/if}
+</svelte:head>
 <div class="page">
   <Nav />
   <div id="container">

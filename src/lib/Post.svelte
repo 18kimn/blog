@@ -34,7 +34,7 @@
     if (!content) return
     width = content.clientWidth
     const ro = new ResizeObserver(() => {
-      width = content.clientWidth
+      width = content?.clientWidth
     })
     ro.observe(content)
   })
@@ -168,7 +168,7 @@
 
   .header,
   .content {
-    max-width: 82ch;
+    max-width: 70ch;
   }
 
   .meta {
@@ -179,6 +179,10 @@
 
   h1 {
     white-space: normal;
+  }
+
+  h1 :global(code) {
+    background: none;
   }
 
   .footer,

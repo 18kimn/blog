@@ -1,4 +1,5 @@
-<script>
+<script lang="ts">
+  import {onMount} from 'svelte'
   import {page} from '$app/stores'
 
   const routes = [
@@ -8,6 +9,13 @@
     'cv',
     'notebook',
   ]
+
+  onMount(() => {
+    /* below is for header ::after animation */
+    ;(
+      document.querySelector('.header') as HTMLElement
+    )?.style?.setProperty('--header-border-width', '100%')
+  })
 </script>
 
 <div class="header-container">
