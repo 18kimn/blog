@@ -75,7 +75,7 @@
   }
 
   .content {
-    width: min(100%, 80ch);
+    width: 60ch;
     max-width: max-content;
   }
 

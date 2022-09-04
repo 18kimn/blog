@@ -1,9 +1,8 @@
 affiliations:
-  - display: Yale College, Class of 2022
+  - display: Yale College, Class of 2023
     info:
       Double majoring in Statistics & Data Science and
-      Ethnicity, Race, & Migration. Graduating December
-      2022.
+      Ethnicity, Race, & Migration.
   - display: the Anti-Eviction Mapping Project
     info:
       A tenant organizing, housing justice, critical
@@ -23,40 +22,45 @@ affiliations:
       the Student and Campus Protest Events Project, with
       Dr. Alex Hanna.
 works:
-  - display: The Yale Detour
-    info:  
-      "An alternative history tour of Yale. My role: editing,
-      coordinating, coding."
+  - display: the Yale Detour
+    info:
+      'An alternative history tour of Yale. My role:
+      editing, coordinating, coding.'
     link: https://yale-detour.org
   - display: Evictorbook
     info: >-
       A tool for tenant organizing. My role: front-end
       coding.
     link: https://evictorbook.com
-  - display: No more paywalls!
+  - display: no more paywalls!
     info:
       Tiny site on accessing paywalled academic resources.
     link: https://no-more-paywalls.org
-skills:
-  - display: Web development
+  - display: <code>leftist-quotes</code>
+    info:
+      Simple API for accessing 776 leftist and communist
+      quotes.
+    link: http://lefitst-quotes.com
+technical skills:
+  - display: web development
     info:
       Frontend work through the Svelte(Kit), React, Vue
       frameworks. Familiarity with Node and streaming APIs.
-  - display: Data wrangling and pipelining
+  - display: data wrangling and pipelining
     info:
       Strengths are in demographic data processing, chiefly
       through the R tidyverse familiy of packages. Also
       familiar with the tidycensus, ipumsr, tigris, and
       other frameworks for demographic data wrangling, and
-      spatial manipulation through the sf, spdep, raster,
-      and others.
-  - display: Modeling
+      spatial manipulation through frameworks like sf,
+      spdep, raster.
+  - display: modeling
     info:
-      Time series, fixed-effects with clustering, spatial
-      autoregression.
+      Time series, fixed-effects, clustering, spatial
+      autoregression, spatial diffusion modeling.
   - display: Linux and servers
     info:
-      Hobbyist level of expertise with Ubuntu, Gentoo, Arch
+      Modest level of expertise with Ubuntu, Gentoo, Arch
       Linux distros. I run an Nginx-based server that hosts
       serveral of my websites (including this one) from a
       machine I keep at my parents' home.

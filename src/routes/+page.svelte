@@ -33,7 +33,8 @@
   const tagline = [
     'anti-imperialist',
     'web developer',
-    'data person',
+    'data analyst',
+    'researcher',
     'student',
   ].join(', ')
 
@@ -56,7 +57,7 @@
 </div>
 {#if showInfo}
   <div class="info">
-    <div class="info">
+    <div class="section-container">
       {#each Object.entries(info) as section, index}
         <section
           in:fade={{
@@ -78,7 +79,7 @@
                 }}
                 class="item"
               >
-                {item.display}
+                {@html item.display}
               </span>
             {/each}
           </div>
@@ -122,7 +123,7 @@
       </section>
     </div>
   </div>
-  <em class="guide">Click on any keyword to reveal more.</em
+  <em class="guide">click on any keyword to reveal more.</em
   >
 {/if}
 
@@ -138,16 +139,21 @@
 
   .tagline {
     font-style: italic;
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-align: center;
   }
 
-  .info {
+  .info,
+  .section-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 1rem 2rem;
+    gap: 3rem 2rem;
     flex-grow: 1;
+  }
+
+  .section-container {
+    justify-content: space-between;
   }
 
   .info div {
@@ -158,6 +164,12 @@
     border-radius: 0.5rem;
     max-width: 50ch;
     flex-grow: 1;
+    /* to control when wraps */
+    flex-basis: 40%;
+  }
+
+  h2 {
+    font-size: 2em;
   }
 
   .guide {
@@ -172,7 +184,6 @@
   }
 
   .item {
-    font-size: 1.2rem;
     cursor: pointer;
     background-color: #ededed;
     transition: all ease-in-out 400ms;
@@ -180,6 +191,7 @@
     border-radius: 0.5rem;
     padding: 0.3rem;
     margin: 0.3rem;
+    box-sizing: border-box;
     position: relative;
     user-select: none;
   }
@@ -196,7 +208,7 @@
 
   .currently li {
     display: block;
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin: 0.3rem 0;
   }
 

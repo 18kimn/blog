@@ -142,6 +142,7 @@
   .section-name {
     margin: calc(var(--margin-multi) * 0.5em) 0 0 0;
     white-space: break-word;
+    font-size: 2em;
   }
 
   hr {

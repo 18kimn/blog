@@ -1,7 +1,7 @@
 import yaml from 'yaml'
 import {browser} from '$app/env'
-import currentlyFile from '../lib/currently.yaml'
-import infoFile from '../lib/homepage.yaml'
+import currentlyFile from '../lib/currently.yaml?raw'
+import infoFile from '../lib/homepage.yaml?raw'
 
 type Info = {
   display: string
@@ -9,18 +9,13 @@ type Info = {
   link?: string
 }
 
-function processYaml(file: any){
-  const unescaped = file.render().html.replaceAll('&gt;', '>').replaceAll('&quot;', '"')
-
-  return yaml.parse(unescaped)
-}
-
 export const load = async () => {
   if (browser) return
 
   //for some reason this works?
-  const info: {[type: string]: Info[]} = processYaml(infoFile)
+  const info: {[type: string]: Info[]} =
+    yaml.parse(infoFile)
 
-  const currently = processYaml(currentlyFile)
+  const currently = yaml.parse(currentlyFile)
   return {currently, info}
 }

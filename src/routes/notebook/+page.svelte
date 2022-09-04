@@ -3,7 +3,7 @@
 </script>
 
 <List type="notebook">
-  <h1>My notes</h1>
+  <h2>My notes</h2>
   <p>
     This is my notebook, just things I jot into vim as I go
     throughout my day and want to keep thinking about later.
