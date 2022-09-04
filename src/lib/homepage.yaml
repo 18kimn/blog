@@ -64,3 +64,9 @@ technical skills:
       Linux distros. I run an Nginx-based server that hosts
       serveral of my websites (including this one) from a
       machine I keep at my parents' home.
+  - display: programming languages
+    info:
+      'In order of expertise and love for the language: R,
+      Typescript/Javascript, C++, Python, Rust, Stata.
+      Currently working on a compiler for R as a side
+      project.'

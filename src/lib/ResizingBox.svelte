@@ -7,6 +7,7 @@
   let inner: HTMLSpanElement
 
   function resize() {
+    // setTimeout forces it to happen after a paint
     setTimeout(() => {
       height = inner.offsetHeight
     }, 0)
@@ -16,8 +17,8 @@
 </script>
 
 <div class="box" style="height: {height}px">
-  <span bind:this={inner}
-    >{content?.info || ''}
+  <span bind:this={inner}>
+    {content?.info || ''}
     {#if content?.link}
       <a
         href={content.link}

@@ -7,7 +7,7 @@
   --font: Lora, Cambria, Cochin, Georgia, Times,
     'Times New Roman', serif;
   --border: solid 1px black;
-  --bg: linear-gradient(to right, #e8f8ff 0%, #ffeaea 100%);
+  --bg: linear-gradient(to right, #e8f8ff 0%, #fff2f2 100%);
   --color: #1100d9;
   font-family: var(--font);
 }

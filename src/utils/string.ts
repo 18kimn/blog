@@ -15,7 +15,7 @@ export function nth(d: number): string {
   }
 }
 
-export function prettyDate(date: string | Date) {
+export function prettyDate(date: number | string | Date) {
   const asDate = new Date(date)
   const year = asDate.getFullYear()
   const month = new Intl.DateTimeFormat('en-US', {
