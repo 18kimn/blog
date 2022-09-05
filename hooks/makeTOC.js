@@ -30,7 +30,7 @@ function transformer(tree, toc, parent, index) {
       and for these posts this is the title meta attribute. Please start headings at 
       level two in markdown files!`,
     )
-  console.log(tree.children)
+
   const text = tree.children
     .map((child) => child.value)
     .join('')
