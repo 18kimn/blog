@@ -1,23 +1,27 @@
+import {error} from '@sveltejs/kit'
+import type {Post} from '../../utils/types'
+import type {PageServerLoad} from './$types'
 /**
+ *
   import.meta.glob has to receive a static string
-  luckily we have only two cases
+  luckily we have only three cases
  */
 function getPosts(
   type: 'projects' | 'writing' | 'notebook',
 ) {
   switch (type) {
   case 'projects':
-    return import.meta.glob('../projects/*/*md')
+    return import.meta.glob('./projects/*/*md')
   case 'writing':
-    return import.meta.glob('../writing/*/*md')
+    return import.meta.glob('./writing/*/*md')
   case 'notebook':
-    return import.meta.glob('../notebook/thoughts/*md')
+    return import.meta.glob('./notebook/thoughts/*md')
   }
 }
 
-export const GET = async ({params}) => {
+export const load: PageServerLoad = async ({params}) => {
   const posts = getPosts(params.postType)
-  if (!posts) return {body: '', status: 404}
+  if (!posts) throw error(404, 'post not found')
 
   const info = await Promise.all(
     Object.entries(posts).map(async ([path, resolver]) => {
@@ -46,9 +50,15 @@ export const GET = async ({params}) => {
     }),
   )
 
-  const sorted = info.sort((a, b) => {
-    return Date.parse(b.date) - Date.parse(a.date)
-  })
+  const sorted = info
+    .filter(
+      (item: Post) => typeof item.date !== 'undefined',
+    )
+    .sort((a, b) => {
+      return Date.parse(b.date) - Date.parse(a.date)
+    })
 
-  return new Response(JSON.stringify(sorted))
+  return {sorted}
 }
+
+export const prerender = true

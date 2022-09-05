@@ -3,29 +3,22 @@
   import type {Post} from '../utils/types'
   import {fade} from 'svelte/transition'
 
-  export let type: 'projects' | 'writing' | 'notebook'
+  export let items: Post[]
 
-  function isHTML(str: string) {
-    const doc = new DOMParser().parseFromString(
-      str,
-      'text/html',
-    )
-    return Array.from(doc.body.childNodes).some(
-      (node) => node.nodeType === 1,
-    )
-  }
-
-  let items: Post[]
-
-  onMount(async () => {
-    // move this to load()
-    items = (
-      await fetch(`/${type}-posts`).then((res) =>
-        res.json(),
+  let isHTML: (str: string) => boolean
+  onMount(() => {
+    /* HTML-rendered markup can't be done server-side
+    unless I use an additional library, which I don't want
+    */
+    isHTML = (str: string) => {
+      const doc = new DOMParser().parseFromString(
+        str,
+        'text/html',
       )
-    ).filter(
-      (item: Post) => typeof item.date !== 'undefined',
-    )
+      return Array.from(doc.body.childNodes).some(
+        (node) => node.nodeType === 1,
+      )
+    }
   })
 </script>
 
@@ -45,7 +38,7 @@
             </span>
             <span class="content">
               <a id={item.path} href={item.path}>
-                {#if isHTML(item.title)}
+                {#if isHTML && isHTML(item.title)}
                   {@html item.title}
                 {:else}
                   <span>{item.title}</span>

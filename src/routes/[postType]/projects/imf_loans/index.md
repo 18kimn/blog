@@ -71,9 +71,9 @@ through the slider at the top of the page.
 
 This project represented a challenge for me. I had
 previously worked in d3.js (see a project
-[here](korean-music-map.info)), but this project still meant
-overcoming both technical and academic hurdles to turn
-something coherent in:
+[here](https://korean-music-map.info)), but this project
+still meant overcoming both technical and academic hurdles
+to turn something coherent in:
 
 - **The enter-update-exit paradigm and selection
   paradigms:** I previously wrote that these essential

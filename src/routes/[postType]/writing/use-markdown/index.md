@@ -153,8 +153,8 @@ people work together without any profit incentive or
 corporate directive. But this has also resulted in many
 different "flavors" or Markdown that have their own quirks
 and slightly different rendering mechanisms. For instance,
-the popular note-taking app [Obsidian](obsidian.md/) uses
-double brackets to represent a link from one file to
+the popular note-taking app [Obsidian](https://obsidian.md)
+uses double brackets to represent a link from one file to
 another. Most implementations of Markdown don't use that
 idea, and one could be confused when switching from Obsidian
 to another Markdown editor.

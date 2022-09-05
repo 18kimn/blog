@@ -45,8 +45,8 @@ nearly every week to translate writer-friendly Markdown into
 reader-friendly HTML, but often run into frustrating issues
 that the creators are hesitant to implement. How should
 marked.js render content like footnotes, which aren't part
-of the [CommonMark specification](commonmark.org/) that
-marked.js implements? How should marked.js handle YAML
+of the [CommonMark specification](https://commonmark.org/)
+that marked.js implements? How should marked.js handle YAML
 metadata, which are used ubiquitously with Markdown
 documents despite not being part of the Markdown language?
 Should marked.js stick to the Unix philosophy by restricting

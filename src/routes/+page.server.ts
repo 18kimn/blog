@@ -19,3 +19,5 @@ export const load = async () => {
   const currently = yaml.parse(currentlyFile)
   return {currently, info}
 }
+
+export const prerender = true
