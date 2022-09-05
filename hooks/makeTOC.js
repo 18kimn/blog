@@ -30,7 +30,10 @@ function transformer(tree, toc, parent, index) {
       and for these posts this is the title meta attribute. Please start headings at 
       level two in markdown files!`,
     )
-  const text = tree.children[0]?.value
+  console.log(tree.children)
+  const text = tree.children
+    .map((child) => child.value)
+    .join('')
   const slug = text.toLowerCase().replace(/[^\w]+/g, '-')
   toc.push({
     level,

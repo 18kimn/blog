@@ -35,7 +35,9 @@ responsible ways to get your story out there!
 
 _These tips are organized "chronologically:" from the steps
 your (potential) server uses to give data to the actual user
-experience._
+experience. They're also non-authoritative,
+non-comprehensive, and brief -- tips to give you food for
+thought, with linked resources for further reading._
 
 ## Slim and reshape your data
 
@@ -64,9 +66,10 @@ or Topological Arc Encoding (TAE), each of which can help
 reduce verbosity and repetition but which must be considered
 on a case-by-case basis.
 
-Geographic data is used as an example of where data files
-are simply too large, but there are many other scenarios
-when data must be compressed or reworked to reduce size.
+Geographic data is used as an example here for where data
+files are simply too large, but there are many other
+scenarios when data must be compressed or reworked to reduce
+size.
 
 Secondly, you can shift time-intensive tasks to build-time
 and save the results. This helps firstly so that client
@@ -396,19 +399,22 @@ Of course, "magical silver bullet" is a bit of a stretch.
 Code using the canvas is often more difficult to read or
 write since it does not use any of the traditional DOM APIs
 that web developers know. The accessibility benefits of SVG
-(although they don't apply as much to larger visualizations)
-are lost immediately once you transition. These two points
-make an undeniably high price to transition to canvas code.
-And you should be most cautious of all of the fact that
-_canvas might not solve your problem_; canvas helps with
-rendering in a browser, but if your user becomes impatient
-while waiting for a model, or they are staring at a blank
-page while data loads, or you simply aren't displaying a lot
-of data at once, then rendering is not the issue you need to
-solve in the first place. Some diagnostic profiling in the
-developer tools panel will help you answer this question to
-a good degree of confidence and can help you avoid sinking
-hours into a potentially unhelpful change to your codebase.
+are lost immediately once you transition.^[This is a bit of
+a stretch, since large SVG visualizations lose the "freebie"
+accesssilbity hints they gain from being part of the DOM,
+and thus are pretty much on par with canvas-based
+visualizations.] These two points make an undeniably high
+price to transition to canvas code. And you should be most
+cautious of all of the fact that _canvas might not solve
+your problem_; canvas helps with rendering in a browser, but
+if your user becomes impatient while waiting for a model, or
+they are staring at a blank page while data loads, or you
+simply aren't displaying a lot of data at once, then
+rendering is not the issue you need to solve in the first
+place. Some diagnostic profiling in the developer tools
+panel will help you answer this question to a good degree of
+confidence and can help you avoid sinking hours into a
+potentially unhelpful change to your codebase.
 
 That being said, canvas is not that difficult to use once
 you learn it -- just as many would say for the SVG model of
@@ -425,12 +431,12 @@ However, if the Web GPU ecosystem turns out anything like
 WebGL, I'll say they're a little too complicated for the
 pragmatists this post is aimed at.
 
-## Use `requestAnimationFrame()`
+## Use requestAnimationFrame()
 
-Okay, this piece of advice is even simpler. You, or the
-animation library you use, might already be doing this. It
-might not even apply to you if you use CSS transitions, or
-rely on `d3`'s
+This last piece of advice is perhaps also the simplest. You,
+or the animation library you use, might already be doing
+this. And it might not even apply to you if you use CSS
+transitions, or rely on `d3`'s
 [transition API](https://github.com/d3/d3-transition) for
 your animations. But this tip is so simple and effective
 that it deserves a mention. Use `requestAnimationFrame`.
@@ -442,17 +448,17 @@ to run **before the next repaint cycle**.] That's all it
 does -- it's not even limited to animations alone. But
 laying just underneath that simple appearance is an
 extremely valuable offering -- a consistent timing API, and
-effectively asynchronous code.
+what is effectively asynchronous code.
 
 Asynchronous animations are useful and necessary because
-they allow your animation cycles to run at the same time as
-all of your other site's interactions, without interfering
-with them in any way. You probably hate it when you can't
-click a button on a screen for some reason, or when clicking
-it doesn't do what it usually does -- that's often because
-code that could be asynchronous isn't, and the browser has
-to finish that non-asynchronous task before it could respond
-to the button press.
+they allow your animation cycles to without interfering with
+your site's other functionality, from scroll behavior to
+button clicks. You probably hate it when you can't click a
+button on a screen for some reason, or when clicking it
+doesn't do what it usually does -- that's often because code
+that could be asynchronous isn't, and the browser has to
+finish that non-asynchronous task before it could respond to
+the button press.
 
 You can actually build your own asynchronously-run chains
 simply with a bit of `async` or `Promise` syntax. But the
@@ -464,7 +470,13 @@ Accurate timing is actually a nontrivial problem, with
 `setTimeout` in particular; you can even incur drift over
 time that makes all of your animations
 [inconsistent and delayed](https://blog.bitsrc.io/how-to-get-an-accurate-setinterval-in-javascript-ca7623d1d26a).
-`requestAnimationFrame` solves that.
+`requestAnimationFrame` solves that. Although your modified
+code won't exactly run faster, and it's not even truly
+"asynchronous"^[It just runs immediately before the next
+repaint cycle and thus allows your synchronous code to run
+unblocked until then.], it will allow your site to function
+without blocking any other functionality and while giving
+you accurate timing.
 
 This addition can be as simple as:
 
@@ -477,6 +489,6 @@ function animate(time){
 animate(0)
 ```
 
-And there you have it! A simple implementatoin to conclude
+And there you have it! A simple implementation to conclude
 what were hopefully seven simple and pragmatic tips for data
 websites.
