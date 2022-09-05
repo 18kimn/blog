@@ -58,8 +58,9 @@
       >
         {#if headings[visibleHeading - 1]}
           <span>
-            Prev.:
+            <em>Prev.:</em>
             <button
+              style="text-align: left;"
               aria-label={`Navigate to ${
                 headings[visibleHeading - 1]
               }`}
@@ -70,13 +71,16 @@
             </button>
           </span>
         {/if}
-        <span>{headings[visibleHeading].html}</span>
+        <span style="text-align: center;">
+          {headings[visibleHeading].html}
+        </span>
         {#if headings[visibleHeading + 1]}
-          <span>
-            Next:
+          <span style="text-align: end;">
+            <em>Next:</em>
             <button
+              style="text-align: end;"
               aria-label={`Navigate to ${
-                headings[visibleHeading + 1]
+                headings[visibleHeading + 1]?.html
               }`}
               on:click={() =>
                 scrollToHeading(visibleHeading + 1)}
@@ -179,10 +183,19 @@
 
   h1 {
     white-space: normal;
+    font-size: 3rem;
   }
 
   h1 :global(code) {
     background: none;
+  }
+
+  .header span {
+    flex-basis: 50%;
+  }
+
+  .header button {
+    padding: 0;
   }
 
   .footer,

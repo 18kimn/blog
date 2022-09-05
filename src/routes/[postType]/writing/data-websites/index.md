@@ -332,9 +332,9 @@ to avoid overloading either the browser or the server.
 So far all of those tips have focused on technical problems
 and technical solutions. But data-heavy websites aren't only
 technically difficult, in the end, and the solutions we
-offer can't just rely on code either. So allow me to comment
-on design decisions to help your site overcome the "bulky
-and slow" perception.
+offer can't just rely on code either. So it's also important
+to think about design decisions to help your site overcome
+the "bulky and slow" perception.
 
 Firstly, _be verbose_. Lots of times in designing websites,
 it does well to be terse and concise, communicating through

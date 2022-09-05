@@ -228,7 +228,7 @@
   }
 
   h2 {
-    font-size: 2em;
+    font-size: 2.5em;
   }
 
   .guide {
@@ -243,6 +243,7 @@
   }
 
   .item {
+    font-size: 1.2em;
     cursor: pointer;
     background-color: #ededed;
     transition: all ease-in-out 400ms;
