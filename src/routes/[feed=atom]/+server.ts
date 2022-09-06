@@ -38,8 +38,11 @@ function render(posts: Post[]) {
 
 /** on request, imports and delivers all of the markdown files */
 export async function GET() {
+  const paths = import.meta.glob(
+    '../[postType]/*/*/index.md',
+  )
   const posts: Post[] = await Promise.all(
-    Object.entries(import.meta.glob('../*/*/*.md')).map(
+    Object.entries(paths).map(
       async ([fullPath, resolver]) => {
         const {metadata} = await resolver()
         const path = fullPath.slice(
