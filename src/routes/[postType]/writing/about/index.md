@@ -2,6 +2,7 @@
 title: About this site
 subtitle: And my web development values
 date: 2022-09-04
+tags: [technical, personal]
 ---
 
 I seem to be redesigning my website every few months, so in

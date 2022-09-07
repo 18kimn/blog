@@ -1,6 +1,7 @@
 ---
 title: 'Documentation: Git as archive'
 date: 2022-02-10
+tags: [technical, qualitative]
 ---
 
 _This post is the first in a series on documentation.

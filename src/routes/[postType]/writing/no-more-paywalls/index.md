@@ -1,6 +1,7 @@
 ---
 title: 'How to read paywalls resources for free'
 date: 2022-02-03
+tags: [qualitative, other]
 ---
 
 _This post was first published as a small website at

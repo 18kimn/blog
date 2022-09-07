@@ -24,3 +24,12 @@ export function prettyDate(date: number | string | Date) {
   const day = asDate.getDate()
   return `${month} ${nth(day)}, ${year}`
 }
+
+const tag = /<.*?>/g
+export function isHTML(str: string): boolean {
+  return !!str.match(tag)
+}
+
+export function stripHTML(str: string): string {
+  return str.replaceAll(tag, '')
+}

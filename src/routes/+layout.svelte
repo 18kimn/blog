@@ -1,17 +1,18 @@
 <script lang="ts">
   import {page} from '$app/stores'
   import Nav from '$lib/Nav.svelte'
+  import {stripHTML} from '$lib/utils/string'
+
+  $: title = stripHTML($page.data.title || '')
 </script>
 
 <svelte:head>
-  {#if $page.data?.title}
-    <title>{$page.data.title} ⋅ Nathan Kim</title>
-  {/if}
+  <title>{title} ⋅ Nathan Kim</title>
 </svelte:head>
 <div class="page">
   <Nav />
-  <div id="container">
-    <div id="component">
+  <div class="container">
+    <div class="component">
       <main>
         <slot />
       </main>
@@ -30,8 +31,8 @@
     box-sizing: border-box;
   }
 
-  #component,
-  #container {
+  .component,
+  .container {
     position: relative;
     display: grid;
     grid-column: 1/2;
@@ -39,7 +40,7 @@
     width: 100%;
   }
 
-  #component {
+  .component {
     transition: opacity ease-in-out 200ms;
     box-sizing: border-box;
     overflow-x: hidden;

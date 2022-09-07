@@ -1,5 +1,5 @@
 <h2>Writing</h2>
 <p>
-  Tending towards the explanatory or analytical, rather than
-  creative or exploratory.
+  Of all kinds. I'd love to hear of any feedback or
+  comments!
 </p>

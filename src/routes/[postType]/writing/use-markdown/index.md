@@ -4,6 +4,7 @@ date: 2022-02-05
 subtitle:
   Because it is simple, powerful, and represents a better
   future.
+tags: [meta]
 ---
 
 ## What is markdown?

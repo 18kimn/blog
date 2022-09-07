@@ -1,6 +1,7 @@
 ---
 title: Seven performance tips for data viz websites
 date: 2022-07-15
+tags: [technical]
 ---
 
 **The scenario**: you are an academic, journalist, artist,

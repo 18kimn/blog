@@ -4,7 +4,7 @@
   import {firstRender} from '../store'
   import Icons from '$lib/Icons.svelte'
   import ResizingBox from '$lib/ResizingBox.svelte'
-  import {prettyDate} from '../utils/string'
+  import {prettyDate} from '$lib/utils/string'
 
   type Info = {
     display: string

@@ -1,31 +1,14 @@
 <script lang="ts">
-  import {onMount} from 'svelte'
-  import type {Post} from '../utils/types'
+  import type {Post} from '$lib/utils/types'
   import {fade} from 'svelte/transition'
 
   export let items: Post[]
-
-  let isHTML: (str: string) => boolean
-  onMount(() => {
-    /* HTML-rendered markup can't be done server-side
-    unless I use an additional library, which I don't want
-    */
-    isHTML = (str: string) => {
-      const doc = new DOMParser().parseFromString(
-        str,
-        'text/html',
-      )
-      return Array.from(doc.body.childNodes).some(
-        (node) => node.nodeType === 1,
-      )
-    }
-  })
 </script>
 
-<div id="container">
+<div class="container">
   <div class="content">
     <slot />
-    <div id="list">
+    <div class="list">
       {#if !items}
         Loading...
       {:else}
@@ -37,12 +20,8 @@
                 .slice(0, 10)}:
             </span>
             <span class="content">
-              <a id={item.path} href={item.path}>
-                {#if isHTML && isHTML(item.title)}
-                  {@html item.title}
-                {:else}
-                  <span>{item.title}</span>
-                {/if}
+              <a href={item.path}>
+                {@html item.title}
               </a>
               <br />
               {#if item.subtitle}
@@ -59,7 +38,7 @@
 </div>
 
 <style>
-  #container {
+  .container {
     font-size: 1.2rem;
     width: 100%;
     display: flex;
@@ -78,7 +57,7 @@
     text-align: right;
   }
 
-  #list {
+  .list {
     display: grid;
     overflow-wrap: break-word;
   }
@@ -92,19 +71,10 @@
   a {
     color: black;
     cursor: pointer;
-    text-decoration: none;
   }
 
   a:hover {
     font-weight: bold;
-  }
-
-  a span {
-    text-decoration: underline;
-  }
-
-  a :global(*) {
-    text-decoration: none;
   }
 
   .subtitle {

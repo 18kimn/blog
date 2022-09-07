@@ -1,4 +1,4 @@
-import type {Post} from '../../utils/types'
+import type {Post} from '$lib/utils/types'
 const siteURL = 'https://nathan-kim.org/'
 const siteTitle = 'Nathan Kim'
 const siteDescription = 'Nathan Kim\'s Personal Website'

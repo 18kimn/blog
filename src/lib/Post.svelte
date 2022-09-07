@@ -1,13 +1,13 @@
 <script lang="ts">
-  import type {Post} from '../utils/types'
+  import type {Post} from '$lib/utils/types'
   import updateFloater, {
     getFootnotes,
     getHeadings,
     updateHeadings,
   } from './Footer'
   import type {Footnote} from './Footer'
-  import {prettyDate} from '../utils/string'
-  import {last} from '../utils/misc'
+  import {prettyDate} from '$lib/utils/string'
+  import {last} from '$lib/utils/misc'
   import {onMount} from 'svelte'
 
   export let data = {} as Post
@@ -183,7 +183,7 @@
 
   h1 {
     white-space: normal;
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
   h1 :global(code) {
@@ -302,10 +302,11 @@
 
   .content :global(sup a),
   .content :global(.backlink) {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
 
   .content :global(pre) {
+    font-size: 0.8rem;
     white-space: pre-wrap;
   }
 

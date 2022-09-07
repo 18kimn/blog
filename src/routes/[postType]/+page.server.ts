@@ -1,5 +1,5 @@
 import {error} from '@sveltejs/kit'
-import type {Post} from '../../utils/types'
+import type {Post} from '$lib/utils/types'
 import type {PageServerLoad} from './$types'
 /**
  *

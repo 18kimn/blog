@@ -2,6 +2,7 @@
 title: Unix against the world
 subtitle: Two perspectives on writing software
 date: 2022-02-17
+tags: [technical, meta]
 ---
 
 ## Two perspectives

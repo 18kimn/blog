@@ -1,6 +1,7 @@
 ---
 title: Writing code, writing values
 date: 2022-02-17
+tags: [meta]
 ---
 
 Usually we think of code in pretty dry, limited, functional

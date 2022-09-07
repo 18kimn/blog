@@ -1,6 +1,7 @@
 ---
 title: The modules pattern in R
 date: 2022-01-10
+tags: [technical]
 ---
 
 ## What are modules?

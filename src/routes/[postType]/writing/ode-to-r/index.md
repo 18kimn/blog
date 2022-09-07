@@ -1,6 +1,7 @@
 ---
 title: A love letter to R
 date: 2022-02-09
+tags: [meta]
 ---
 
 I love R. R was the first programming language I've ever
