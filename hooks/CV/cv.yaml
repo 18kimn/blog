@@ -138,11 +138,8 @@ sections:
           - Expertise in **data pipeline creation and data
             cleaning** through the R programming language,
             especially through the renv and targets
-          frameworks
-            for reproducible development.
+            frameworks for reproducible development.
           - **Web server architecture** in the Linux world.
-            Familiar with the Arch, Debian, and Gentoo
-          families
-            of Linux distros. Familiar with Docker
-          development
-            and abstractions over these architectures.
+            Familiar with the Arch, NixOS, Debian, and Gentoo
+            families of Linux distros. Familiar with Docker
+            development and abstractions over these architectures.

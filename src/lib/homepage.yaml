@@ -53,7 +53,7 @@ technical skills:
       familiar with the tidycensus, ipumsr, tigris, and
       other frameworks for demographic data wrangling, and
       spatial manipulation through frameworks like sf,
-      spdep, raster.
+      spdep, and raster.
   - display: modeling
     info:
       Time series, fixed-effects, clustering, spatial

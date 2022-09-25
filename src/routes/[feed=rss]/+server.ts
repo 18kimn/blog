@@ -1,4 +1,5 @@
 import type {Post} from '$lib/utils/types'
+import {dirname, basename} from 'path'
 const siteURL = 'https://nathan-kim.org/'
 const siteTitle = 'Nathan Kim'
 const siteDescription = 'Nathan Kim\'s Personal Website'
@@ -6,12 +7,14 @@ const siteDescription = 'Nathan Kim\'s Personal Website'
 /** produces formatted XML string for rss feed */
 function render(posts: Post[]) {
   const postXML = posts
-    .map(
-      ({path, title, subtitle, date}) => `
+    .map(({path, title, subtitle, date}) => {
+      const formattedPath = `${basename(
+        dirname(path),
+      )}/${basename(path)}``
       <item>
-        <guid isPermaLink="true">${siteURL}${path}</guid>
+        <guid isPermaLink="true">${siteURL}${formattedPath}</guid>
         <title>${title}</title>
-        <link>${siteURL}${path}</link>
+        <link>${siteURL}${formattedPath}</link>
         ${
   subtitle
     ? `<description>${subtitle}</description>`
@@ -19,8 +22,8 @@ function render(posts: Post[]) {
 }
         <pubDate>${new Date(date).toUTCString()}</pubDate>
       </item>
-      `,
-    )
+      `
+    })
     .join('')
   return `<?xml version="1.0" encoding="UTF-8" ?>
   <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">

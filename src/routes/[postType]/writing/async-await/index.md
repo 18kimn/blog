@@ -14,10 +14,12 @@ asynchronous code as if it were synchronous.
 In JavaScript, the syntax lets you take:
 
 ```js
-let data
 fetch("/endpoint-with-data")
   .then(res => res.json())
-  .then(...x amount of preprocessing code...)
+  .then(json => {
+    ...x amount of preprocessing code...
+    return finalResult
+  })
   .then(animate)
 
 function animate(data){
