@@ -67,10 +67,11 @@
   let dialog: HTMLDialogElement
   let bubble: HTMLOutputElement
 
+  let node: HTMLElement
+  let search: string
   let csl: string
   let isCompact = false
   let fontsize = 14
-  let search: string
 
   /*
   - search
@@ -119,7 +120,7 @@
       <input id="search" bind:value={search} />
     </div>
   </dialog>
-  <CVBody {search} {csl} {isCompact} {fontsize}>
+  <CVBody bind:node {search} {csl} {isCompact} {fontsize}>
     <svg
       viewBox="0 0 24 24"
       class="opener"

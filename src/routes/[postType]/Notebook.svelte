@@ -9,6 +9,15 @@
   unfinished and run-on sentences, and missing citations.
 </p>
 <p>
+  I've removed links to this page from elsewhere on the
+  site, as these thoughts aren't really presentation-ready.
+  At the same time, I'll keep all of them public because I
+  do think it's fun to keep a piece of scrap paper out in
+  the wild. Fully formed thoughts are more useful than
+  half-formed ones, but the unfinished thoughts offer us
+  some beauty too.
+</p>
+<p>
   For more developed thoughts please see <a href="/writing"
     >/writing.</a
   >

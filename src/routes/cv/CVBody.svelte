@@ -16,6 +16,7 @@
     'Technical Skills',
   ]
 
+  export let node: HTMLElement
   export let search: string
   export let csl: string
   export let isCompact: boolean
@@ -49,6 +50,7 @@
   style="font-size: {fontsize}pt; --margin-multi: {isCompact
     ? 0.5
     : 1}"
+  bind:this={node}
 >
   <div>
     {#if loaded}
