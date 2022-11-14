@@ -7,7 +7,7 @@
     'projects',
     'writing',
     'cv',
-    'notebook',
+    // 'notebook',
   ]
 
   onMount(() => {
