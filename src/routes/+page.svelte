@@ -22,6 +22,7 @@
     reading: {
       author: string
       title: string
+      url: string
     }
     thinking: string
     time: number
@@ -136,7 +137,17 @@
             {#if currently.reading}
               <li>
                 reading
-                <em>{currently.reading.title}</em>
+                {#if currently.reading.url}
+                  <a
+                    href={currently.reading.url}
+                    target="__blank"
+                    rel="noreferrer"
+                  >
+                    <em>{currently.reading.title}</em>
+                  </a>
+                {:else}
+                  <em>{currently.reading.title}</em>
+                {/if}
                 by {currently.reading.author}
               </li>
             {/if}
