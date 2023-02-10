@@ -1,5 +1,3 @@
-export const prerender = true
-
 export async function load({params, data}) {
   const {slug, postType} = params
   const postPath =
