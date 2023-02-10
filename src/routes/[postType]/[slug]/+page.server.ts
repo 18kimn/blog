@@ -1,5 +1,6 @@
 import {promises as fs, existsSync} from 'fs'
 
+export const prerender = true
 export async function load({params}) {
   const {slug, postType} = params
   const postDir =
