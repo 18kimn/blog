@@ -15,6 +15,14 @@ export function nth(d: number): string {
   }
 }
 
+export function adjustDate(date: string): Date {
+  const asDate = new Date(date)
+  const adjDate = new Date(
+    asDate.getTime() - asDate.getTimezoneOffset() * -60000,
+  )
+  return adjDate
+}
+
 export function prettyDate(date: number | string | Date) {
   const asDate = new Date(date)
   const year = asDate.getFullYear()
