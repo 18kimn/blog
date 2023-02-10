@@ -1,8 +1,6 @@
 import {error} from '@sveltejs/kit'
 import type {Post} from '$lib/utils/types'
 import type {PageServerLoad} from './$types'
-import {dirname} from 'path'
-import {promises as fs, existsSync} from 'fs'
 
 /**
  *
