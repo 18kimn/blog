@@ -6,4 +6,12 @@ export interface Post {
   modified?: string[]
   tags?: string[]
   content?: string
+  postData: any
+}
+
+export interface RSSSource {
+  rssUrl: string
+  contentUrl: string
+  description: string
+  title: string
 }

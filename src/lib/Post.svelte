@@ -6,11 +6,13 @@
     updateHeadings,
   } from './Footer'
   import type {Footnote} from './Footer'
-  import {prettyDate} from '$lib/utils/string'
+  import {prettyDate, adjustDate} from '$lib/utils/string'
   import {last} from '$lib/utils/misc'
-  import {onMount} from 'svelte'
+  import {onMount, setContext} from 'svelte'
+  import {postDataKey} from '../store'
 
   export let data = {} as Post
+  setContext(postDataKey, data.postData)
 
   let visibleFootnotes: Footnote[] = []
   let headings: Footnote[] = []
@@ -100,12 +102,12 @@
             {#if modified?.length && last(modified) !== date}
               <em>Created:</em>
             {/if}
-            {prettyDate(date)}
+            {prettyDate(adjustDate(date))}
           </span>
           {#if modified?.length && last(modified) !== date}
             <span id="modified">
               <em>Last modified: </em>
-              {prettyDate(last(modified))}
+              {prettyDate(adjustDate(last(modified)))}
             </span>
           {/if}
           {#if tags?.length}
