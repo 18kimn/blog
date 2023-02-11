@@ -27,11 +27,13 @@
         target="__blank"
         rel="noreferrer">Link to feed</a
       >
-      <a
-        href={source.contentUrl}
-        target="__blank"
-        rel="noreferrer">Link to content</a
-      >
+      {#if source.contentUrl}
+        <a
+          href={source.contentUrl}
+          target="__blank"
+          rel="noreferrer">Link to content</a
+        >
+      {/if}
     </div>
   </div>
 {:else}
