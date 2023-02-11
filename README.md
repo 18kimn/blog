@@ -8,7 +8,7 @@ Hosted at [nathan-kim.org](https://nathan-kim.org). You can
 tinker with this by:
 
 ```
-git clone https://github.com/18kimn/blog
+git clone https://git.nathan-kim.org/18kimn/blog
 cd blog
 npm install
 npm run dev
