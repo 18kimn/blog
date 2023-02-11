@@ -102,7 +102,7 @@ Markdown) doesn't allow -- MDSvex, I believe, doesn't allow
 props at all in posts.
 
 So my solution was to have the layout component for my posts
-handle the data fetch and have the post retrieve it
+handle the data fetch and have the post retrieve it via the
 [Svelte Context API](https://svelte.dev/tutorial/context-api).
 This strategy also has the benefit of providing a mechanism
 for any other post to retrieve JSON data, with no additional
