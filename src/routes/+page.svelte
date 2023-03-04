@@ -33,14 +33,6 @@
     currently: Currently
   }
 
-  const tagline = [
-    'anti-imperialist',
-    'web developer',
-    'data analyst',
-    'researcher',
-    'student',
-  ].join(', ')
-
   let showing: Info[] = []
 
   let audio: HTMLAudioElement
@@ -90,7 +82,9 @@
 
 <div class="meta">
   <span class="tagline">
-    {tagline}
+    I work on building digital tools for organizers and
+    their communities. I study the infrastructure of
+    scientific and technical processes.
   </span>
   <Icons />
 </div>
@@ -208,9 +202,8 @@
   }
 
   .tagline {
-    font-style: italic;
     font-size: 1rem;
-    text-align: center;
+    max-width: 65ch;
   }
 
   .info,
@@ -239,7 +232,7 @@
   }
 
   h2 {
-    font-size: 2.5em;
+    font-size: 2rem;
   }
 
   .guide {
@@ -254,7 +247,7 @@
   }
 
   .item {
-    font-size: 1.2em;
+    font-size: 1rem;
     cursor: pointer;
     background-color: #ededed;
     transition: all ease-in-out 400ms;

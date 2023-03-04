@@ -20,11 +20,13 @@
 
 <div class="header-container">
   <div class="header">
-    {#if $page.routeId === ''}
-      <h1>Nathan Kim</h1>
-    {:else}
-      <h2>Nathan Kim</h2>
-    {/if}
+    <a href="/">
+      {#if $page.routeId === ''}
+        <h1>Nathan Kim</h1>
+      {:else}
+        <h2>Nathan Kim</h2>
+      {/if}
+    </a>
     <nav class="links">
       {#each routes as route}
         <a
@@ -55,6 +57,10 @@
     position: relative;
     gap: 1rem;
     --header-border-width: 0;
+  }
+
+  .header a {
+    text-decoration: none;
   }
 
   .header::after {

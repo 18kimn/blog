@@ -12,7 +12,7 @@
 
 <nav>
   <div id="home">
-    <span>Nathan Kim</span>
+    <a href="/"> Nathan Kim </a>
   </div>
   <div id="links">
     <div class="link-container">

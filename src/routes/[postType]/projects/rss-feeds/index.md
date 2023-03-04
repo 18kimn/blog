@@ -74,10 +74,10 @@ I'm happy to hear of suggestions or more links.
 If any titles or descriptions appear to have an awkward
 wording, that's because these were scraped from each RSS
 Feed's `title` and `description` (or `subtitle`) properties
-without only minor modification on my part. In some cases
-the authors appear to have accepted the defaults given by
-their hosting platform (e.g. Wordpress or Squarespace).
-Please excuse the haphazard nature of all of this.
+with only minor modification on my part. In some cases the
+authors appear to have accepted the defaults given by their
+hosting platform (e.g. Wordpress or Squarespace). Please
+excuse the haphazard nature of all of this.
 
 <ol>
   {#each sources as source}
