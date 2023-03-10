@@ -2,7 +2,7 @@
   /* easiest font-size scaling solution 
    * 12pt min; 3vh otherwise; 16pt max
    */
-  font-size: min(max(3vh, 12pt), 16pt);
+  font-size: min(max(2.5vh, 12pt), 16pt);
   transition: font-size ease-in-out 200ms;
   --font: Lora, Cambria, Cochin, Georgia, Times,
     'Times New Roman', serif;

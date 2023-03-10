@@ -72,11 +72,16 @@
     place-content: center;
     font-size: 1rem;
     flex-wrap: wrap;
+    margin: 0.5rem;
   }
 
   .icons {
     display: flex;
     place-items: center;
+  }
+
+  .icons a {
+    margin: 0.5rem 0;
   }
 
   svg {
