@@ -15,7 +15,7 @@ export function nth(d: number): string {
   }
 }
 
-export function adjustDate(date: string): Date {
+export function adjustDate(date: string | Date): Date {
   const asDate = new Date(date)
   const adjDate = new Date(
     asDate.getTime() - asDate.getTimezoneOffset() * -60000,
