@@ -81,7 +81,7 @@
           <div class="section-container">
             <div
               class="section-wrapper"
-              in:fade={{delay: index * 150}}
+              in:fade={{delay: index * 50}}
             >
               <div class="section">
                 {@html row.node.outerHTML}
@@ -92,7 +92,7 @@
             {#if row.footnotes}
               <div
                 class="footnotes"
-                in:fade={{delay: index * 150 + 150}}
+                in:fade={{delay: index * 50 + 100}}
               >
                 {#each row.footnotes as footnote}
                   <div class="footnote">
@@ -135,13 +135,13 @@
 
   @media (max-width: 1250px) {
     .article {
-      /* min of 100%, max of 68ch */
-      grid-template-columns: minmax(100%, 68ch);
+      /* min of 100%, max of 65ch */
+      grid-template-columns: minmax(100%, 65ch);
     }
   }
 
   .section-container {
-    width: 68ch;
+    width: 65ch;
     max-width: 100%;
     overflow: hidden;
   }

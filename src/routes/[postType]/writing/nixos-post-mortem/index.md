@@ -26,7 +26,7 @@ one of those people.
 
 ## The system
 
-NixOS is a bit of a different take on the Linux operating
+NixOS is a bit of a unique take on the Linux operating
 system. Most Linux distributions ("distros") use a
 centralized store of apps and libraries, and calculate a
 dependency graph to understand which tool needs another.
@@ -40,19 +40,20 @@ file `/etc/nixos/configuration.nix` or files in the
 `~/.config/nixpkgs` directory. And unlike configuration
 files in most other distros that have a discrete number of
 options and possibilities, the files NixOS draws from are
-written in the Nix programming language. By insisiting on
+written in the Nix programming language. By insisting on
 this kind of programmatic configuration, augmented by
 strategies like the storage of packages by their hashes^[A
 "hash" essentially means assigning an ID to a piece of
 content based on its identity. Different pieces of content
 can almost always be expected to have different hashes, so
 hashes are often used as a content identity verification
-tool.] and the functional programming paradigm Nix adhers
+tool.] and the functional programming paradigm Nix adheres
 to, NixOS promises the ability to reproduce a package or
 system configuration anywhere.
 
 In addition to all of its promised practical benefits, the
-emphasis on the computer as a programming environment a very
+emphasis on the infrastructure of the computer as a
+programming environment in and of itself is a very
 attractive aesthetic approach to how we use computers. It
 invites an expansive imagination of the computer as an area
 to tinker with, that in turn can contain uniquely configured
