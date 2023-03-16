@@ -267,4 +267,15 @@
   .content :global(blockquote > h1) {
     font-size: 1.3rem;
   }
+
+  .content :global(hr) {
+    height: 1px;
+  }
+
+  /* hacky; necessary to have line show up separating footnotes from contnet */
+  :last-child(.section-container)
+    .section-wrapper
+    .section {
+    width: 100%;
+  }
 </style>
