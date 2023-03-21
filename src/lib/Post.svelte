@@ -18,11 +18,8 @@
   }[] = []
   let headings: Footnote[] = []
   let visibleHeading: number
-  let content: HTMLDivElement
-  let width = 0
   onMount(() => {
     rows = setupSidebar()
-    console.log(rows)
 
     headings = getHeadings()
     visibleHeading = updateHeadings(headings)
@@ -31,24 +28,16 @@
       visibleHeading =
         newHeading > -1 ? newHeading : visibleHeading
     })
-
-    if (!content) return
-    width = content.clientWidth
-    const ro = new ResizeObserver(() => {
-      width = content?.clientWidth
-    })
-    ro.observe(content)
   })
 
   let windowWidth: number
   $: ({title, subtitle, modified, date, tags} = data)
-  $: console.log(windowWidth)
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />
 <div class="container">
   {#if data.title}
-    <div class="content" bind:this={content}>
+    <div class="content">
       <div class="article">
         <div class="section-container">
           <div class="section-wrapper">
