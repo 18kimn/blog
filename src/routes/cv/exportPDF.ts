@@ -27,7 +27,7 @@ export default async function exportPDF(node: HTMLElement) {
   })
   doc.setLineHeightFactor(1)
   doc.setFontSize(10)
-  console.log(doc.getFontList())
+  // console.log(doc.getFontList())
 
   const text = 'some bold text'
   doc.setFont('Lora', 'bold')
