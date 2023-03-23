@@ -72,9 +72,7 @@
               class="section-wrapper"
               in:fade={{delay: index * 50}}
             >
-              <div class="section">
-                {@html row.node.outerHTML}
-              </div>
+              {@html row.node.outerHTML}
             </div>
           </div>
           {#if windowWidth > 1250}
@@ -120,17 +118,21 @@
     grid-template-columns: 3fr 1fr;
     place-items: center;
     overflow: hidden;
+    --section-width: 65ch;
   }
 
   @media (max-width: 1250px) {
     .article {
       /* min of 100%, max of 65ch */
-      grid-template-columns: minmax(100%, 65ch);
+      grid-template-columns: minmax(
+        100%,
+        var(--section-width)
+      );
     }
   }
 
   .section-container {
-    width: 65ch;
+    width: var(--section-width);
     max-width: 100%;
     overflow: hidden;
   }
@@ -140,11 +142,6 @@
     display: flex;
     flex-direction: column;
     align-items: start;
-  }
-
-  .section {
-    overflow: hidden;
-    overflow-wrap: break-word;
   }
 
   .footnotes {
@@ -228,6 +225,8 @@
   .content :global(pre) {
     font-size: 0.8rem;
     white-space: pre-wrap;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .content :global(.caption) {
