@@ -80,7 +80,7 @@ hosting platform (e.g. Wordpress or Squarespace). Please
 excuse the haphazard nature of all of this.
 
 <ol>
-  {#each sources as source}
+  {#each sources.sort((a,b) => a.title.trim().localeCompare(b.title.trim())) as source}
     <li>
       <Source {source} />
     </li>

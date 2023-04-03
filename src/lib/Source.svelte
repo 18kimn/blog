@@ -40,6 +40,7 @@
   <div
     class="default"
     on:click={() => {
+      console.log('default clicked')
       shouldExpand = true
     }}
     in:slide={{delay: 500}}

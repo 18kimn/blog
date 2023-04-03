@@ -37,13 +37,13 @@ my_model <- scrape_data() %>%
 
 `scrape_data.R`, `clean_string.R`, `clean_numeric.R`, and
 `run_model.R` don't run any actual analysis or process data.
-Instead, they express _logic_ to run code by defining a
-single function. When you import them with `source`, you
-assign those functions to functions you can use in an
-assembler or index file.
+Instead, they express high-level _logic_ to run code by
+defining a single function. When you import them with
+`source`, you assign those functions to functions you can
+use in an assembler or index file.
 
 There are two benefits here: readability and
-reproducability.
+reproduciblility.
 
 ### Readability
 
@@ -89,8 +89,8 @@ know how to explain it other than that.
 
 But this pattern offers more reproducible code with two
 items: scoped environments and pipe-able code. Let's take a
-look at a contrived example of how a novice programmer might
-write code with and without the tidyverse:
+look at a contrived example of how a programmer might write
+code with and without the tidyverse:
 
 ```r
 dta <- read.csv("path_to_data.csv")
@@ -114,11 +114,11 @@ together and connecting logic. The pipe is like the word
 in ways we can more easily understand.
 
 But it also makes code more _reproducible_ because it forces
-there to be only one way to run the code. If you were the
-novice programmer ran `dta <- read.csv(..)`, then
-immediately ran `dta <- dta["new_col"]`, things would break;
-R doesn't recognize "new_col". Even worse, if you forgot to
-run `dta[new_col > 5]` before running `dta["new_col"]`, your
+there to be only one way to run the code. If the programmer
+ran `dta <- read.csv(..)`, then immediately ran
+`dta <- dta["new_col"]`, things would break; R doesn't
+recognize "new_col". Even worse, if you forgot to run
+`dta[new_col > 5]` before running `dta["new_col"]`, your
 code would run but not in the way you meant it to. Your data
 would have more rows without telling you anything went
 wrong, maybe leading to more difficult problems later.
@@ -150,12 +150,12 @@ models, endlessly overwriting variablaes called `dta` or
 messier, with the creation of variables like
 `mod_with_controls_propensity_weights_logged`.
 
-The general rule is this: the more intermediary objects you
+A crude rule of thumb: the more intermediary objects you
 have in your global environment, the less likely it is for
 your code to be reproducible.
 
-Two items help with this. The first is the pipe, as shown
-above. But the second are _scoped environments_, where
+Two devices help with this issue. The first is the pipe, as
+shown above. But the second are _scoped environments_, where
 variables created do not modify the global environment.
 Here's an example:
 
@@ -193,13 +193,13 @@ sees only these functions,
 
 ### Reusability
 
-A common reason people advocate for this style of coding is
-because it means one piece of code can be reused many times.
-To some extent this is also useful in R; for example, if you
-are writing a report and want to have a consistent style,
-it's useful to have a theme defined somewhere. This way, you
-can change the styling for many graphics with a single
-change:
+A common reason people advocate for this style of coding in
+programming in general is because it means one piece of code
+can be reused many times. To some extent this is also useful
+in R; for example, if you are writing a report and want to
+have a consistent style, it's useful to have a theme defined
+somewhere. This way, you can change the styling for many
+graphics with a single change:
 
 ```r
 theme_report <- function(base_size = 12, base_family = "Lato"){
@@ -250,12 +250,12 @@ their first argument and return a data.frame. To fit
 tidyverse conventions, you can name the first argument
 `.data`.
 
-You can also think about the generalizability or the
-specificity of your code. If you are writing logic that may
-be repeated several times elsewhere, you might want to add
-additional parameters to your functions so that they can be
-used in different and flexible ways. If you don't want to,
-this step can take less than a minute.
+At this stage, you can also think about the generalizability
+or the specificity of your code. If you are writing logic
+that may be repeated several times elsewhere, you might want
+to add additional parameters to your functions so that they
+can be used in different and flexible ways. If you don't
+want to, this step can take less than a minute.
 
 ### Step two: give each file their own scope
 

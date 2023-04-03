@@ -29,6 +29,12 @@
         newHeading > -1 ? newHeading : visibleHeading
     })
   })
+  function insertElement(target, {elm, pos = 'afterend'}) {
+    if (!Array.isArray(elm)) elm = [elm]
+    elm.forEach((el) =>
+      target.insertAdjacentElement(pos, el),
+    )
+  }
 
   let windowWidth: number
   $: ({title, subtitle, modified, date, tags} = data)
@@ -72,7 +78,12 @@
               class="section-wrapper"
               in:fade={{delay: index * 50}}
             >
-              {@html row.node.outerHTML}
+              <div
+                use:insertElement={{
+                  elm: row.node,
+                  pos: 'afterbegin',
+                }}
+              />
             </div>
           </div>
           {#if windowWidth > 1250}
@@ -96,7 +107,7 @@
       </div>
     </div>
   {/if}
-  <div class="article-shadow">
+  <div class="content article-shadow">
     <slot />
   </div>
 </div>
@@ -261,9 +272,7 @@
   }
 
   /* hacky; necessary to have line show up separating footnotes from contnet */
-  :last-child(.section-container)
-    .section-wrapper
-    .section {
+  :last-child(.section-container) .section-wrapper {
     width: 100%;
   }
 </style>
