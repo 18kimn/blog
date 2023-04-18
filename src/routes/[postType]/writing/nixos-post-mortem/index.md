@@ -117,7 +117,7 @@ But this is basically also what NixOS does with its own
 package system, in a way that cannot interface at all with
 `renv`. Nix wants you to install libraries for programming
 projects straight from Nix itself, instead of from CRAN or
-PyPi or anywhere else.^[ This is fairly unique in terms of
+PyPi or anywhere else.^[This is fairly unique in terms of
 Linux distributions. This decision, and similar decisions
 like keeping a separate copy of Python packages for
 different versions of Python, contribute much to NixOS's
@@ -125,26 +125,27 @@ claims that it is the largest package repository in
 existence. The size of the package repository is impressive,
 but it comes from some 12,000 Haskell packages, 19,307 R
 packages, and so on. See more discussion of this framing at
-the following link
-https://discourse.nixos.org/t/nixpkgs-has-been-the-largest-repository-for-months/10667/12
-] `renv` has a recorded set of packages that Nix cannot
-parse out-of-the-box, so to use these tools alongside each
-other, you would have to record this set of packages
+this
+[link](https://discourse.nixos.org/t/nixpkgs-has-been-the-largest-repository-for-months/10667/12)]
+`renv` has a recorded set of packages that Nix cannot parse
+out-of-the-box, so to use these tools alongside each other,
+you would have to record this set of packages
 twice.^[Someone has suggested an `renv2nix` project to
 convert between the two, but it does not exist yet. See
-https://discourse.nixos.org/t/r-packages-the-renv-library-manager/5881/2
-] I wanted to avoid the nightmare of manually listing each
-set of packages in two different locations, one for `renv`
-and one for Nix. So I was faced with a dilemma: either
-choose the NixOS way and risk alienating collaborators who
-know the industry standard, or abandon NixOS and its promise
-of complete, integrated, and reproducible system management.
-The decision is fairly easy here, as preserving ease of
-collaboration for almost anyone is much more valuable than
-adherence to an esoteric programming religion. But it still
-pained me a bit to have to abandon the NixOS methods, for a
-use case that seems extremely typical. Surely there should
-be a "Nix way" to handle this.^[There is not.]
+[asdf](https://discourse.nixos.org/t/r-packages-the-renv-library-manager/5881/2)
+here ] I wanted to avoid the nightmare of manually listing
+each set of packages in two different locations, one for
+`renv` and one for Nix. So I was faced with a dilemma:
+either choose the NixOS way and risk alienating
+collaborators who know the industry standard, or abandon
+NixOS and its promise of complete, integrated, and
+reproducible system management. The decision is fairly easy
+here, as preserving ease of collaboration for almost anyone
+is much more valuable than adherence to an esoteric
+programming religion. But it still pained me a bit to have
+to abandon the NixOS methods, for a use case that seems
+extremely typical. Surely there should be a "Nix way" to
+handle this.^[There is not.]
 
 The problem continues. `renv` on a NixOS system cannot
 install packages, because it searches for system libraries

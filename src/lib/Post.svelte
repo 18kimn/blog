@@ -29,10 +29,14 @@
         newHeading > -1 ? newHeading : visibleHeading
     })
   })
-  function insertElement(target, {elm, pos = 'afterend'}) {
+
+  function insertElement(
+    target: HTMLElement,
+    {elm}: {elm: HTMLElement | HTMLElement[]},
+  ) {
     if (!Array.isArray(elm)) elm = [elm]
     elm.forEach((el) =>
-      target.insertAdjacentElement(pos, el),
+      target.insertAdjacentElement('afterbegin', el),
     )
   }
 
@@ -81,7 +85,6 @@
               <div
                 use:insertElement={{
                   elm: row.node,
-                  pos: 'afterbegin',
                 }}
               />
             </div>
@@ -126,10 +129,11 @@
 
   .article {
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 3fr 2fr;
     place-items: center;
     overflow: hidden;
-    --section-width: 65ch;
+    --section-width: 70ch;
+    gap: 0 4rem;
   }
 
   @media (max-width: 1250px) {
@@ -143,6 +147,7 @@
   }
 
   .section-container {
+    justify-self: flex-end;
     width: var(--section-width);
     max-width: 100%;
     overflow: hidden;
@@ -156,6 +161,8 @@
   }
 
   .footnotes {
+    justify-self: flex-start;
+    max-width: 40ch;
     overflow: hidden;
   }
 
