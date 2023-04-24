@@ -721,7 +721,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.20.1
       '@types/raf': 3.4.0
-      core-js: 3.26.0
+      core-js: 3.30.1
       raf: 3.4.1
       regenerator-runtime: 0.13.10
       rgbcolor: 1.0.1
@@ -821,8 +821,8 @@ packages:
     engines: {node: '>= 0.6'}
     dev: true
 
-  /core-js/3.26.0:
-    resolution: {integrity: sha512-+DkDrhoR4Y0PxDz6rurahuB+I45OsEUv8E1maPTB6OuHRohMMcznBq9TMpdpDMm/hUPob/mJJS3PqgbHpMTQgw==}
+  /core-js/3.30.1:
+    resolution: {integrity: sha512-ZNS5nbiSwDTq4hFosEDqm65izl2CWmLz0hARJMyNQBgkUZMIF51cQiMvIQKA6hvuaeWxQDP3hEedM1JZIgTldQ==}
     requiresBuild: true
     dev: false
     optional: true
@@ -953,8 +953,8 @@ packages:
       esutils: 2.0.3
     dev: true
 
-  /dompurify/2.4.0:
-    resolution: {integrity: sha512-Be9tbQMZds4a3C6xTmz68NlMfeONA//4dOavl/1rNw50E+/QO0KVpbcU0PcaW0nsQxurXls9ZocqFxk8R2mWEA==}
+  /dompurify/2.4.5:
+    resolution: {integrity: sha512-jggCCd+8Iqp4Tsz0nIvpcb22InKEBrGz5dw3EQJMs8HPJDsKbFIO3STYtAvCfDx26Muevn1MHVI0XxjgFfmiSA==}
     requiresBuild: true
     dev: false
     optional: true
@@ -1811,8 +1811,8 @@ packages:
       fflate: 0.4.8
     optionalDependencies:
       canvg: 3.0.10
-      core-js: 3.26.0
-      dompurify: 2.4.0
+      core-js: 3.30.1
+      dompurify: 2.4.5
       html2canvas: 1.4.1
     dev: false
 

@@ -4,17 +4,18 @@
 export function nth(d: number): string {
   if (d > 3 && d < 21) return d.toString() + 'th'
   switch (d % 10) {
-  case 1:
-    return d.toString() + 'st'
-  case 2:
-    return d.toString() + 'nd'
-  case 3:
-    return d.toString() + 'rd'
-  default:
-    return d.toString() + 'th'
+    case 1:
+      return d.toString() + 'st'
+    case 2:
+      return d.toString() + 'nd'
+    case 3:
+      return d.toString() + 'rd'
+    default:
+      return d.toString() + 'th'
   }
 }
 
+/* Necessary when casting a string as a date to a specific time zone*/
 export function adjustDate(date: string | Date): Date {
   const asDate = new Date(date)
   const adjDate = new Date(
@@ -23,6 +24,7 @@ export function adjustDate(date: string | Date): Date {
   return adjDate
 }
 
+/* dates in the style of September 14th, 2014 */
 export function prettyDate(date: number | string | Date) {
   const asDate = new Date(date)
   const year = asDate.getFullYear()
@@ -40,4 +42,23 @@ export function isHTML(str: string): boolean {
 
 export function stripHTML(str: string): string {
   return str.replaceAll(tag, '')
+}
+
+export function printList(
+  list: string[],
+  isEtal = false,
+): string {
+  return list
+    .map((listItem, i) => {
+      if (isEtal && list.length >= 4 && i === 0) {
+        return `${listItem} et. al`
+      } else if (isEtal && list.length >= 4 && i > 0) {
+        return ''
+      }
+      const isLast = i === list.length - 1
+      const comma = list.length >= 3 && !isLast ? ',' : ''
+      const and = list.length >= 2 && isLast ? 'and' : ''
+      return `${and} ${listItem}${comma}`
+    })
+    .join(' ')
 }

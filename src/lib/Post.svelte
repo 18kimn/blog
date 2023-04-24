@@ -237,7 +237,7 @@
 
   .content :global(sup a),
   .content :global(.backlink) {
-    font-size: 0.8rem;
+    font-size: 0.5rem;
   }
 
   .content :global(pre) {
@@ -278,8 +278,14 @@
     height: 1px;
   }
 
+  .content :global(p) {
+    margin: 0.7rem 0 0 0;
+  }
+
   /* hacky; necessary to have line show up separating footnotes from contnet */
-  :last-child(.section-container) .section-wrapper {
+  .section-container:nth-last-child(2)
+    .section-wrapper
+    div {
     width: 100%;
   }
 </style>
