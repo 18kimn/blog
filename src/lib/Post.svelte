@@ -97,8 +97,7 @@
               >
                 {#each row.footnotes as footnote}
                   <div class="footnote">
-                    {footnote.index + 1}
-                    {@html footnote.html}
+                    {footnote.index + 1}. {@html footnote.html}
                   </div>
                 {/each}
               </div>
@@ -205,6 +204,7 @@
 
   .content :global(h2) {
     font-size: 1.5rem;
+    margin: 0.5rem 0 0 0;
   }
 
   .content :global(h3) {
@@ -279,13 +279,13 @@
   }
 
   .content :global(p) {
-    margin: 0.7rem 0 0 0;
+    margin: 0.5rem 0;
   }
 
   /* hacky; necessary to have line show up separating footnotes from contnet */
-  .section-container:nth-last-child(2)
-    .section-wrapper
-    div {
+  .section-container:nth-last-child(2) .section-wrapper,
+  .section-container:last-child .section-wrapper,
+  div {
     width: 100%;
   }
 </style>
