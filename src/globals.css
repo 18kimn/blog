@@ -5,7 +5,7 @@
   font-size: min(max(2.25vh, 12pt), 16pt);
   transition: font-size ease-in-out 200ms;
   --font: Lora, Cambria, Cochin, Georgia, Times,
-    'Times New Roman', serif;
+    'Times New Roman', Noto Emoji, serif;
   --border: solid 1px black;
   --bg: linear-gradient(to right, #e8f8ff 0%, #fff2f2 100%);
   --color: #1100d9;
