@@ -4,14 +4,14 @@
 export function nth(d: number): string {
   if (d > 3 && d < 21) return d.toString() + 'th'
   switch (d % 10) {
-    case 1:
-      return d.toString() + 'st'
-    case 2:
-      return d.toString() + 'nd'
-    case 3:
-      return d.toString() + 'rd'
-    default:
-      return d.toString() + 'th'
+  case 1:
+    return d.toString() + 'st'
+  case 2:
+    return d.toString() + 'nd'
+  case 3:
+    return d.toString() + 'rd'
+  default:
+    return d.toString() + 'th'
   }
 }
 
@@ -61,4 +61,9 @@ export function printList(
       return `${and} ${listItem}${comma}`
     })
     .join(' ')
+}
+
+/* imperfect, but good enough */
+export function countWords(str: string): number {
+  return str.split(/\n|\s/).length
 }

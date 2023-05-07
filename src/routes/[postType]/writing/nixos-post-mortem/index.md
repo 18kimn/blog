@@ -131,21 +131,21 @@ this
 out-of-the-box, so to use these tools alongside each other,
 you would have to record this set of packages
 twice.^[Someone has suggested an `renv2nix` project to
-convert between the two, but it does not exist yet. See
-[asdf](https://discourse.nixos.org/t/r-packages-the-renv-library-manager/5881/2)
-here ] I wanted to avoid the nightmare of manually listing
-each set of packages in two different locations, one for
-`renv` and one for Nix. So I was faced with a dilemma:
-either choose the NixOS way and risk alienating
-collaborators who know the industry standard, or abandon
-NixOS and its promise of complete, integrated, and
-reproducible system management. The decision is fairly easy
-here, as preserving ease of collaboration for almost anyone
-is much more valuable than adherence to an esoteric
-programming religion. But it still pained me a bit to have
-to abandon the NixOS methods, for a use case that seems
-extremely typical. Surely there should be a "Nix way" to
-handle this.^[There is not.]
+convert between the two, but it does not exist yet. See this
+link
+https://discourse.nixos.org/t/r-packages-the-renv-library-manager/5881/2.
+] I wanted to avoid the nightmare of manually listing each
+set of packages in two different locations, one for `renv`
+and one for Nix. So I was faced with a dilemma: either
+choose the NixOS way and risk alienating collaborators who
+know the industry standard, or abandon NixOS and its promise
+of complete, integrated, and reproducible system management.
+The decision is fairly easy here, as preserving ease of
+collaboration for almost anyone is much more valuable than
+adherence to an esoteric programming religion. But it still
+pained me a bit to have to abandon the NixOS methods, for a
+use case that seems extremely typical. Surely there should
+be a "Nix way" to handle this.^[There is not.]
 
 The problem continues. `renv` on a NixOS system cannot
 install packages, because it searches for system libraries

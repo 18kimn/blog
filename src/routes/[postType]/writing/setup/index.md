@@ -188,7 +188,10 @@ nothing but love for Kovid Goyal, the developer behind the
 Kitty terminal, for his rock-steady maintenance, extensible
 standards behind the terminal itself, very friendly
 relationship with the Kitty community, and the creation of
-the Calibre eBook viewer.
+the Calibre eBook viewer. Using Kitty is a great choice, I
+can't remember why I chose to use XTerm, but it was likely
+just the option I picked first and then encountered too much
+friction to port my configuration.
 
 I haven't really customized XTerm to be that strange, but I
 did put in a "day/night" mode for my terminal colors, which

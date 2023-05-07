@@ -32,7 +32,7 @@ sections:
       - type: position
         name: The Distributed AI Research Institute
         role: Quantitative Research Assistant
-        date: July 2021 — July 2022
+        date: July 2022 — Present
         description:
           Creating a data pipeline and conducting
           time-series analyses for the Student and Campus
@@ -49,21 +49,23 @@ sections:
           Assisted in creation of midterm and final exams.
       - type: position
         name: The Anti-Eviction Mapping Project
-        role: Member
+        role: Member, Coordinator
         date: Summer 2021 — Present
         description:
           Active web developer and researcher in the
           Anti-Eviction Mapping Project, a digital
           cartography and tenant organizing collective.
+          Began co-coordinating the Evictorbook project for
+          pay in March 2023.
       - type: position
         name: DataHaven
         role: Research Intern
-        date: Summer 2020 — Present
+        date: Summer 2020 — June 2022
         description:
-          Currently writing reports and performing data
-          analysis for DataHaven, a community
-          action-oriented nonprofit creating reports and
-          data analyses for the Greater New Haven community.
+          Wrote reports and performed data analysis for
+          DataHaven, a community action-oriented nonprofit
+          creating reports and data analyses for the Greater
+          New Haven community.
       - type: position
         name: Yale Institution for Social and Policy Studies
         role: Research Assistant
@@ -137,7 +139,7 @@ sections:
             in Python.
           - Expertise in **data pipeline creation and data
             cleaning** through the R programming language,
-            especially through the renv and targets
+            especially through the `renv` and `targets`
             frameworks for reproducible development.
           - **Web server architecture** in the Linux world.
             Familiar with the Arch, NixOS, Debian, and Gentoo

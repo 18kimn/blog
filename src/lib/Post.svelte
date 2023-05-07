@@ -3,7 +3,11 @@
   import {getHeadings, updateHeadings} from './footnotes'
   import type {Footnote} from './footnotes'
   import setupSidebar from './setupSidebar'
-  import {prettyDate, adjustDate} from '$lib/utils/string'
+  import {
+    countWords,
+    prettyDate,
+    adjustDate,
+  } from '$lib/utils/string'
   import {last} from '$lib/utils/misc'
   import {onMount, setContext} from 'svelte'
   import {fade} from 'svelte/transition'
@@ -18,6 +22,9 @@
   }[] = []
   let headings: Footnote[] = []
   let visibleHeading: number
+
+  let article: HTMLElement
+  let wordCount: number
   onMount(() => {
     rows = setupSidebar()
 
@@ -28,11 +35,16 @@
       visibleHeading =
         newHeading > -1 ? newHeading : visibleHeading
     })
+
+    const mo = new MutationObserver(() => {
+      wordCount = countWords(article.innerText)
+    })
+    mo.observe(article, {childList: true})
   })
 
   function insertElement(
-    target: HTMLElement,
-    {elm}: {elm: HTMLElement | HTMLElement[]},
+    target: Element,
+    {elm}: {elm: Element | Element[]},
   ) {
     if (!Array.isArray(elm)) elm = [elm]
     elm.forEach((el) =>
@@ -48,7 +60,7 @@
 <div class="container">
   {#if data.title}
     <div class="content">
-      <div class="article">
+      <div class="article" bind:this={article}>
         <div class="section-container">
           <div class="section-wrapper">
             <h1>{@html title}</h1>
@@ -66,9 +78,14 @@
                   {prettyDate(adjustDate(last(modified)))}
                 </span>
               {/if}
+              {#if wordCount}
+                <span class="word-count">
+                  {wordCount} words
+                </span>
+              {/if}
               {#if tags?.length}
                 <span id="tags">
-                  <em> Tagged with: </em>
+                  Tagged with:
                   <code>{tags.join(', ')}</code>
                 </span>
               {/if}
@@ -167,18 +184,19 @@
 
   .footnote {
     font-size: 0.8rem;
-    margin: 0 1rem;
+    margin: 1rem;
   }
 
   .meta {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin: 1rem 0;
   }
 
   h1 {
     white-space: normal;
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   h1 :global(code) {
@@ -203,12 +221,12 @@
   }
 
   .content :global(h2) {
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin: 0.5rem 0 0 0;
   }
 
   .content :global(h3) {
-    font-size: 1.2rem;
+    font-size: 1.8rem;
   }
 
   .content :global(a) {
@@ -282,10 +300,8 @@
     margin: 0.5rem 0;
   }
 
-  /* hacky; necessary to have line show up separating footnotes from contnet */
-  .section-container:nth-last-child(2) .section-wrapper,
-  .section-container:last-child .section-wrapper,
-  div {
+  /* thank god for :has */
+  :has(hr) {
     width: 100%;
   }
 </style>
