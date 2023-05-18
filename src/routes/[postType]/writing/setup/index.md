@@ -604,10 +604,6 @@ want from a computer. Organized chronologically, they are:
   somewhat headache-inducing. The preview is ommitted here
   because it is under a rewrite, and I also don't use it
   anymore as I use the Vivaldi browser for day-to-day use.
-- **Notes graph**. This also has a
-  [its own page](/projects/notes)! I made a d3 force network
-  graph to visualize how my files link together. It's kind
-  of a work in progress, to be honest.
 
 - **Homepage**. Each of the above processes are deployed on
   separate ports on my computer, and daemonized through
@@ -757,7 +753,7 @@ And I continue writing my thought below. This metadata is
 useful for programmatic access, for example the "visualizing
 my brain" project that I noted above or indexing into the
 list on this blog, see the
-[corresponding index file](/thoughts). I have some Vim
+[corresponding index file](/notebook). I have some Vim
 shortcuts that help me put in tags in this metadata section.
 Though I don't quite have a Zettelkasten system yet, I do
 believe in the usefulness of linking notes together, so I
