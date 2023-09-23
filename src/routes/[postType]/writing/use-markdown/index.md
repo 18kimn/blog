@@ -13,13 +13,14 @@ Markdown is a plaintext writing format created by John
 Gruber with help from Aaron Swartz.
 
 A file in "plaintext" format means that the content inside
-is just text, with no special algorithms needed to represent
-or make it readable. It is just text. Formats that are
-plaintext are most files of code, `.txt` files, HTML files,
-and many others. Formats that are not plaintext are
-Microsoft Word documents, videos, pictures, video games, and
-so on -- files that need special encoding and data
-structures to represent its content.
+is just text, encoded in the relatively basic UTF-8 or a
+derivative of it, with few special software (and definitely
+no proprietary ones) necessary to read or write with it. It
+is "just" text. Formats that are plaintext are most files of
+code, `.txt` files, HTML files, and many others. Formats
+that are not plaintext are Microsoft Word documents, videos,
+pictures, video games, and so on -- files that need special
+encoding and data structures to represent its content.
 
 In Markdown, formatting is represented by a string of
 characters. You can represent italic text with one asterisk
