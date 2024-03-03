@@ -13,31 +13,37 @@
   let csls: CSL[] = []
 
   onMount(async () => {
-    ;[
+    // doing this via Promise.all to preserve order
+    const fetchedCSLs = await Promise.all([
       {name: 'APA', me: 'N. Kim'},
       {
         name: 'Chicago',
         path: '/csl/chicago.csl',
-        me: 'N. Kim',
+        me: 'Nathan Kim',
       },
       {name: 'ASA', path: '/csl/asa.csl'},
       {name: 'MLA', path: '/csl/mla.csl'},
       {name: 'IEEE', path: '/csl/ieee.csl'},
       {name: 'Harvard', key: 'harvard1'},
-    ].forEach(async (csl) => {
+    ].map(async (csl) => ({
+        template: csl.path && await fetch(csl.path).then(res => res.text()),
+        name: csl.name,
+        path: csl.path,
+        me: csl.me
+    })))
+    console.log({fetchedCSLs})
+    
+    fetchedCSLs.forEach((csl) => {
       if (csl.path) {
-        const template = await fetch(csl.path).then((res) =>
-          res.text(),
-        )
         const config = plugins.config.get('@csl')
         config.templates.add(
           csl.name.toLowerCase(),
-          template,
+          csl.template,
         )
       }
       csls = [
         ...csls,
-        {...csl, key: csl.key || csl.name.toLowerCase()},
+        {...csl, key: ('key' in csl) ? (csl.key as string) : csl.name.toLowerCase()}
       ]
     })
     csl = csls[0].key
@@ -70,7 +76,7 @@
   let node: HTMLElement
   let search: string
   let csl: string
-  let isCompact = false
+  let isCompact = true
   let fontsize = 14
 
   /*

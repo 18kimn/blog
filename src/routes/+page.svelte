@@ -81,11 +81,18 @@
 </script>
 
 <div class="meta">
-  <span class="tagline">
-    I work on building digital tools for organizers and
-    their communities. I study the infrastructure of
-    scientific and technical processes.
-  </span>
+  <p class="tagline">
+    I am a PhD student at the University of Michigan School
+    of Information, where I am advised by <a href="https://matthewbui.com" target="_blank" rel="noreferrer">
+      Matthew Bui
+    </a> and
+    <a href="https://www.libbyh.com" target="_blank" rel="noreferrer">
+      Libby Hemphill
+    </a>. I work on digital tools for organizers
+    and their communities. I'm interested in critical
+    studies of race, finance, logistics, and tech
+    infrastructures.
+  </p>
   <Icons />
 </div>
 {#if showInfo}
@@ -102,21 +109,36 @@
           <h2>{section[0]}</h2>
           <div class="items">
             {#each section[1] as item}
-              <span
-                on:click={() => {
-                  if (showing[index] !== item) {
-                    showing[index] = item
-                  } else {
-                    showing[index] = undefined
-                  }
-                }}
-                class="item"
-              >
-                {@html item.display}
-              </span>
+              {#if item?.link && !item?.info}
+                <a
+                  class="item"
+                  href={item.link}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {@html item.display}
+                </a>
+              {:else}
+                <span
+                  on:click={() => {
+                    if (showing[index] !== item) {
+                      showing[index] = item
+                    } else {
+                      showing[index] = undefined
+                    }
+                  }}
+                  class="item"
+                >
+                  {@html item.display}
+                </span>
+              {/if}
             {/each}
           </div>
-          <ResizingBox content={showing[index]} />
+          {#if showing[index]?.link && !showing[index]?.info}
+            <!-- content here -->
+          {:else}
+            <ResizingBox content={showing[index]} />
+          {/if}
         </section>
       {/each}
       {#if currently}
@@ -196,14 +218,14 @@
     margin-bottom: 1rem;
     display: flex;
     justify-content: space-between;
-    place-items: center;
+    align-items: flex-start;
     flex-wrap: wrap;
     gap: 1rem;
   }
 
   .tagline {
     font-size: 1rem;
-    max-width: 65ch;
+    max-width: 72ch;
   }
 
   .info,
@@ -225,6 +247,7 @@
 
   section {
     border-radius: 0.5rem;
+    min-width: min(30ch, 100%);
     max-width: 50ch;
     flex-grow: 1;
     /* to control when wraps */
@@ -244,6 +267,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     place-items: center;
+    color: black;
   }
 
   .item {

@@ -1,8 +1,7 @@
-affiliations:
-  - display: Yale College, Class of 2023
-    info:
-      Double majoring in Statistics & Data Science and
-      Ethnicity, Race, & Migration.
+"with:":
+  - display: University of Michigan School of Information
+    info: 
+      PhD student; started August 2023. 
   - display: the Anti-Eviction Mapping Project
     info:
       A tenant organizing, housing justice, critical
@@ -11,17 +10,18 @@ affiliations:
       Evictors" of San Francisco and Oakland, and the
       organization website.
     link: https://antievictionmap.com
-  - display: DataHaven
-    info:
-      Websites, data wrangling, and graphics for DataHaven,
-      a New Haven nonprofit using data for community action.
-    link: https://ctdatahaven.org/
   - display: the Distributed AI Research Institute
     info:
       Building data processing and analysis pipelines for
       the Student and Campus Protest Events Project, with
-      Dr. Alex Hanna.
-creations:
+      Dr. Alex Hanna (DAIR Institute) and Dr. Ellen Berrey (UToronto).
+"worked on:":
+  - display: Property Ownership and Consolidation in Concord
+    link: https://antievictionmap.com/blog/2023/9/14/property-ownership-and-consolidation-in-concord-2023
+  - display: The University Endowment and the Genocide in Gaza
+    link: https://bit.ly/UMEndowmentGuide
+  - display: The Worst Evictors of San Francisco and Oakland
+    link: https://worstevictorsbayarea.org
   - display: the Yale Detour
     info:
       'An alternative history tour of Yale. My role:
@@ -36,12 +36,7 @@ creations:
     info:
       Tiny site on accessing paywalled academic resources.
     link: https://no-more-paywalls.org
-  - display: <code>leftist-quotes</code>
-    info:
-      Simple API for accessing 776 leftist and communist
-      quotes.
-    link: http://leftist-quotes.com
-technical skills:
+"technical skills:":
   - display: web development
     info:
       Frontend work through the Svelte(Kit), React, Vue

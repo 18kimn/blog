@@ -1,5 +1,4 @@
 export type Position = {
-  type: 'position'
   name: string
   date: string
   description: string

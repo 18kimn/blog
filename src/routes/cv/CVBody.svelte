@@ -5,17 +5,6 @@
   import filterEntries from './filterEntries'
   import renderCSL from './renderCSL'
 
-  // need a better way
-  const order = [
-    'Education',
-    'Publications',
-    'Presentations',
-    'Misc. Work',
-    'Work Experience',
-    'Activities and Leadership',
-    'Technical Skills',
-  ]
-
   export let node: HTMLElement
   export let search: string
   export let csl: string
@@ -30,15 +19,6 @@
     ;({meta, sections} = await fetch('/cv.json').then(
       (res) => res.json(),
     ))
-    sections = sections.sort((a, b) => {
-      const aInd = order.findIndex(
-        (item) => item === a.name,
-      )
-      const bInd = order.findIndex(
-        (item) => item === b.name,
-      )
-      return aInd - bInd
-    })
     loaded = true
   })
 
@@ -81,14 +61,17 @@
           <hr />
           {#each section.entries as entry}
             <div class="entry">
-              {#if entry.type === 'position'}
+              {#if !('type' in entry)}
                 <div class="position-meta">
                   <span class="position-title">
+                    {#if 'role' in entry}
+                       <!-- content here -->
                     <strong>{entry.name}</strong>
-                    {#if entry.role}
                       <em class="role"
                         >{@html entry.role}</em
                       >
+                    {:else}
+                      {entry.name}
                     {/if}
                   </span>
                   {#if entry.date}
@@ -97,7 +80,7 @@
                     >
                   {/if}
                 </div>
-                {#if !isCompact}
+                {#if !isCompact && entry.description}
                   <div class="entry-description">
                     {@html entry.description}
                   </div>

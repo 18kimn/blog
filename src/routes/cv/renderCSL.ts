@@ -20,6 +20,7 @@ export default function renderCSL(
   return sections.map((section) => ({
     ...section,
     entries: section.entries.map((entry) => {
+      if(!('type' in entry)) return entry
       if (entry.type !== 'csl') return entry
       const cite = new Cite(entry.csl)
       return {
