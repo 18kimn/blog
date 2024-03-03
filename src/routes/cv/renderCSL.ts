@@ -4,15 +4,22 @@ import type {CV, CSL} from './types'
 
 // dynamic/async
 
-function reprocessHTML(html: string, csl: CSL) {
-  return html
-    .replace(
-      // basic url matching
-      /http.*?(?=<)/,
-      '<a href="$&" rel="noopener" target="__blank">$&</a>',
-    )
-    .replaceAll('n.d.', '<strong>forthcoming.</strong>')
-    .replace(new RegExp(csl.me || '$'), '<strong>$&</strong>')
+function reprocessHTML(html: string){
+  return (
+    html
+      .replace(
+        // basic url matching
+        /http.*?(?=<)/,
+        '<a href="$&" rel="noopener" target="__blank">$&</a>',
+      )
+      // assume nd entries are forthcoming and display it as such
+      .replaceAll('n.d.', '<strong>forthcoming.</strong>')
+      // Bold "N. Kim" and so on
+      .replace(
+        new RegExp('(Nathan Kim)|(Kim, Nathan)|(Kim, N.)'),
+        '<strong>$&</strong>',
+      )
+  )
 }
 
 export default function renderCSL(
@@ -31,9 +38,8 @@ export default function renderCSL(
         markup: reprocessHTML(
           cite.format('bibliography', {
             format: 'html',
-            template: csl,
+            template: csl.key,
           }),
-          csl,
         ),
       }
     }),

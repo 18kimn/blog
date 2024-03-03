@@ -10,11 +10,10 @@
   onMount(async () => {
     // doing this via Promise.all to preserve order
     const fetchedCSLs = await Promise.all([
-      {name: 'APA', me: '(Nathan Kim)|(Kim, N.)'},
+      {name: 'APA'},
       {
         name: 'Chicago',
         path: '/csl/chicago.csl',
-        me: '(Nathan Kim)|(Kim, Nathan)|(Kim, N.)',
       },
       {name: 'ASA', path: '/csl/asa.csl'},
       {name: 'Harvard', key: 'harvard1'},
@@ -70,7 +69,7 @@
   let csl: CSL
   let isCompact = true
   let fontsize = 14
-
+  
   /*
   - search
   - show navigation header

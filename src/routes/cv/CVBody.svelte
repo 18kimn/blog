@@ -161,6 +161,7 @@
     white-space: nowrap;
   }
 
+  /* hanging indent */
   :global(.csl-entry) {
     margin-left: 2ch;
     text-indent: -2ch;
