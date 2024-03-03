@@ -2,28 +2,21 @@
   import {onMount} from 'svelte'
   import CVBody from './CVBody.svelte'
   import {plugins} from '@citation-js/core'
+  import type {CSL} from './types'
   import '@citation-js/plugin-csl'
 
-  type CSL = {
-    name: string
-    key: string
-    me?: string
-    path?: string
-  }
   let csls: CSL[] = []
 
   onMount(async () => {
     // doing this via Promise.all to preserve order
     const fetchedCSLs = await Promise.all([
-      {name: 'APA', me: 'N. Kim'},
+      {name: 'APA', me: '(Nathan Kim)|(Kim, N.)'},
       {
         name: 'Chicago',
         path: '/csl/chicago.csl',
-        me: 'Nathan Kim',
+        me: '(Nathan Kim)|(Kim, Nathan)|(Kim, N.)',
       },
       {name: 'ASA', path: '/csl/asa.csl'},
-      {name: 'MLA', path: '/csl/mla.csl'},
-      {name: 'IEEE', path: '/csl/ieee.csl'},
       {name: 'Harvard', key: 'harvard1'},
     ].map(async (csl) => ({
         template: csl.path && await fetch(csl.path).then(res => res.text()),
@@ -31,7 +24,6 @@
         path: csl.path,
         me: csl.me
     })))
-    console.log({fetchedCSLs})
     
     fetchedCSLs.forEach((csl) => {
       if (csl.path) {
@@ -46,7 +38,7 @@
         {...csl, key: ('key' in csl) ? (csl.key as string) : csl.name.toLowerCase()}
       ]
     })
-    csl = csls[0].key
+    csl = csls[0]
 
     // what a pain in the butt
     dialog.addEventListener('click', (e) => {
@@ -75,7 +67,7 @@
 
   let node: HTMLElement
   let search: string
-  let csl: string
+  let csl: CSL
   let isCompact = true
   let fontsize = 14
 
@@ -117,7 +109,7 @@
       <label for="csl">Citation style:</label>
       <select id="csl" name="citations" bind:value={csl}>
         {#each csls as csl}
-          <option value={csl.key}>{csl.name}</option>
+          <option value={csl}>{csl.name}</option>
         {/each}
       </select>
     </div>

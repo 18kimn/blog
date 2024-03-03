@@ -1,13 +1,13 @@
 <script lang="ts">
   import {onMount} from 'svelte'
   import {fade} from 'svelte/transition'
-  import type {CV} from './types'
+  import type {CSL, CV} from './types'
   import filterEntries from './filterEntries'
   import renderCSL from './renderCSL'
 
   export let node: HTMLElement
   export let search: string
-  export let csl: string
+  export let csl: CSL
   export let isCompact: boolean
   export let fontsize = 14
   let meta: CV['meta']
@@ -112,6 +112,10 @@
     overflow-x: hidden;
     max-width: min(100%, 70ch);
   }
+  
+  section {
+    margin: 1.5em 0;
+  }
 
   .meta {
     display: flex;
@@ -127,7 +131,7 @@
   .section-name {
     margin: calc(var(--margin-multi) * 0.5em) 0 0 0;
     white-space: break-word;
-    font-size: 2em;
+    font-size: 1.5em;
   }
 
   hr {

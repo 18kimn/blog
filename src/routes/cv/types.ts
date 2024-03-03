@@ -21,7 +21,7 @@ export type Ref =
     }
 
 // subset of return obj from new Cite().data in citation-js
-export type CSL = {
+export type Citation = {
   type: 'csl'
   csl: {[prop: string]: any}
   markup?: string
@@ -30,7 +30,7 @@ export type CSL = {
 export type Entry =
   | Position
   | Ref
-  | CSL
+  | Citation
   | Other
   | {
       type: 'markup'
@@ -53,4 +53,12 @@ export interface CV {
     name: string
     entries: Entry[]
   }[]
+}
+
+export type CSL = {
+  name: string
+  key: string
+  me?: string
+  path?: string
+  template?: string
 }
