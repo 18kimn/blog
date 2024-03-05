@@ -7,10 +7,10 @@ sections:
   - name: Education
     entries:
       - name: PhD in Information
-        description: University of Michigan School of Information
+        role: University of Michigan School of Information
         date: 2023-Present
       - name: B.A. in Ethnicity, Race, & Migration and Statistics & Data Science
-        description: Yale University
+        role: Yale University
         date: 2018-2022
   - name: Fellowships, Honors, and Awards
     entries:
