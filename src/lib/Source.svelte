@@ -1,9 +1,13 @@
 <script lang="ts">
   import type {RSSSource} from '$lib/utils/types'
   import {slide} from 'svelte/transition'
-  export let source: RSSSource = {rssUrl: ''}
+  interface Props {
+    source?: RSSSource;
+  }
 
-  let shouldExpand = false
+  let { source = {rssUrl: ''} }: Props = $props();
+
+  let shouldExpand = $state(false)
 </script>
 
 {#if shouldExpand}
@@ -11,7 +15,7 @@
     <div class="header">
       <h3>{source.title}</h3>
       <svg
-        on:click={() => {
+        onclick={() => {
           shouldExpand = false
         }}
         class="minimize"
@@ -39,7 +43,7 @@
 {:else}
   <div
     class="default"
-    on:click={() => {
+    onclick={() => {
       shouldExpand = true
     }}
     in:slide|global={{delay: 500}}

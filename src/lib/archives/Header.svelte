@@ -1,5 +1,9 @@
 <script lang="ts">
-  export let selected: '/' | '/about' | '/writing'
+  interface Props {
+    selected: '/' | '/about' | '/writing';
+  }
+
+  let { selected }: Props = $props();
 
   const routes = [
     {path: '/', label: 'Home'},

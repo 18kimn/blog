@@ -13,18 +13,18 @@
   import {fade} from 'svelte/transition'
   import {postDataKey} from '../store'
 
-  export let data = {} as Post
+  let { data = {} as Post, children } = $props();
   setContext(postDataKey, data.postData)
 
   let rows: {
     node: Element
     footnotes?: Footnote[]
-  }[] = []
+  }[] = $state([])
   let headings: Footnote[] = []
   let visibleHeading: number
 
-  let article: HTMLElement
-  let wordCount: number
+  let article: HTMLElement = $state()
+  let wordCount: number = $state()
   onMount(() => {
     rows = setupSidebar()
 
@@ -52,8 +52,8 @@
     )
   }
 
-  let windowWidth: number
-  $: ({title, subtitle, modified, date, tags} = data)
+  let windowWidth: number = $state()
+  let {title, subtitle, modified, date, tags} = $derived(data)
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />
@@ -92,7 +92,7 @@
             </div>
           </div>
         </div>
-        <div class="spacer" />
+        <div class="spacer"></div>
         {#each rows as row, index}
           <div class="section-container">
             <div
@@ -103,7 +103,7 @@
                 use:insertElement={{
                   elm: row.node,
                 }}
-              />
+></div>
             </div>
           </div>
           {#if windowWidth > 1250}
@@ -119,7 +119,7 @@
                 {/each}
               </div>
             {:else}
-              <div class="spacer" />
+              <div class="spacer"></div>
             {/if}
           {/if}
         {/each}
@@ -127,7 +127,7 @@
     </div>
   {/if}
   <div class="content article-shadow">
-    <slot />
+    {@render children?.()}
   </div>
 </div>
 
@@ -301,7 +301,7 @@
   }
 
   /* thank god for :has */
-  :has(hr) {
+  :has(:global(hr)) {
     width: 100%;
   }
 </style>

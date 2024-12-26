@@ -2,8 +2,13 @@
   import {page} from '$app/stores'
   import Nav from '$lib/Nav.svelte'
   import {stripHTML} from '$lib/utils/string'
+  interface Props {
+    children?: import('svelte').Snippet;
+  }
 
-  $: title = stripHTML($page.data.title || '')
+  let { children }: Props = $props();
+
+  let title = $derived(stripHTML($page.data.title || ''))
 </script>
 
 <svelte:head>
@@ -14,7 +19,7 @@
   <div class="container">
     <div class="component">
       <main>
-        <slot />
+        {@render children?.()}
       </main>
     </div>
   </div>

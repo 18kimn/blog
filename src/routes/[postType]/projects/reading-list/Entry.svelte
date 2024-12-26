@@ -1,4 +1,4 @@
-<script context="module" lang="ts">
+<script module lang="ts">
   export type Entry = {
     abstract: string
     collection: string
@@ -18,21 +18,25 @@
   import {prettyDate, printList} from '$lib/utils/string'
   import {onMount} from 'svelte'
 
-  export let entry: Entry
+  interface Props {
+    entry: Entry;
+  }
 
-  let shouldExpand = false
-  let isHover = false
-  let firstRender = true
+  let { entry }: Props = $props();
+
+  let shouldExpand = $state(false)
+  let isHover = $state(false)
+  let firstRender = $state(true)
 
   onMount(() => {
     firstRender = false
   })
 
-  $: ({title, subtitle, abstract, date, link, creators} =
-    entry)
-  $: names = creators.map(
+  let {title, subtitle, abstract, date, link, creators} =
+    $derived(entry)
+  let names = $derived(creators.map(
     (creator) => `${creator.firstName} ${creator.lastName}`,
-  )
+  ))
 </script>
 
 {#if entry}
@@ -52,7 +56,7 @@
           </span>
         </div>
         <svg
-          on:click={() => {
+          onclick={() => {
             shouldExpand = false
             isHover = false
           }}
@@ -75,16 +79,16 @@
   {:else}
     <div
       class="default"
-      on:click={() => {
+      onclick={() => {
         shouldExpand = true
       }}
-      on:mouseenter={() => {
+      onmouseenter={() => {
         isHover = true
       }}
-      on:mouseout={() => {
+      onmouseout={() => {
         isHover = false
       }}
-      on:blur={() => {
+      onblur={() => {
         isHover = false
       }}
       style={isHover ? 'background: violet;' : ''}

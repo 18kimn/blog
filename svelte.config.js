@@ -1,5 +1,5 @@
 import adapter from '@sveltejs/adapter-node'
-import preprocess from 'svelte-preprocess'
+import {sveltePreprocess} from 'svelte-preprocess'
 import resolveLinks from './hooks/resolveLinks.js'
 import addFootnotes from './hooks/addFootnotes.js'
 import makeTOC from './hooks/makeTOC.js'
@@ -12,7 +12,6 @@ import {mdsvex} from 'mdsvex'
 const config = {
   extensions: ['.svelte', '.md', '.yaml'],
   preprocess: [
-    preprocess(),
     mdsvex({
       extensions: ['.md'],
       remarkPlugins: [resolveLinks, addFootnotes, makeTOC],
@@ -22,6 +21,7 @@ const config = {
         rehypeAutolinkHeadings,
       ],
     }),
+    sveltePreprocess(),
   ],
   kit: {
     adapter: adapter(),

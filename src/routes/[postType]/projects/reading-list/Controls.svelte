@@ -1,12 +1,18 @@
 <script lang="ts">
+  import { run } from 'svelte/legacy';
+
   import type {Entry} from './Entry.svelte'
 
-  export let filteredEntries: Entry[]
-  export let entries: Entry[]
-  let option = ''
+  interface Props {
+    filteredEntries: Entry[];
+    entries: Entry[];
+  }
+
+  let { filteredEntries = $bindable(), entries }: Props = $props();
+  let option = $state('')
 
   /* sort */
-  $: {
+  run(() => {
     if (option !== '') {
       filteredEntries = filteredEntries.sort((a, b) => {
         switch (option) {
@@ -24,11 +30,11 @@
         }
       })
     }
-  }
+  });
 
-  let term = ''
+  let term = $state('')
   /* search */
-  $: {
+  run(() => {
     filteredEntries = entries.filter((entry) => {
       if (term === '') {
         return true
@@ -43,7 +49,7 @@
 
       return str.match(term.toLowerCase())
     })
-  }
+  });
 </script>
 
 <div class="controls">

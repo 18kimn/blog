@@ -5,9 +5,9 @@
     body: string
     link: string
     attribution: string
-  }
+  } = $state()
 
-  let animated = false
+  let animated = $state(false)
   function updateQuote() {
     animated = true
 
@@ -32,7 +32,7 @@
       <button
         class="refresh"
         class:animated
-        on:click={updateQuote}
+        onclick={updateQuote}
       >
         <em>Refresh quote</em>
       </button>

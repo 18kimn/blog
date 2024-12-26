@@ -2,12 +2,17 @@
   import type {Post} from '$lib/utils/types'
   import {fade} from 'svelte/transition'
 
-  export let items: Post[]
+  interface Props {
+    items: Post[];
+    children?: import('svelte').Snippet;
+  }
+
+  let { items, children }: Props = $props();
 </script>
 
 <div class="container">
   <div class="content">
-    <slot />
+    {@render children?.()}
     <div class="list">
       {#if !items}
         Loading...

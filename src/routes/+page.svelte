@@ -28,16 +28,20 @@
     time: number
   }
 
-  export let data: {
+  interface Props {
+    data: {
     info: {[type: string]: Info[]}
     currently: Currently
+  };
   }
 
-  let showing: Info[] = []
+  let { data }: Props = $props();
+
+  let showing: Info[] = $state([])
 
   let audio: HTMLAudioElement
-  let canPlayAudio = false
-  let showInfo = false
+  let canPlayAudio = $state(false)
+  let showInfo = $state(false)
   onMount(() => {
     showInfo = true
     setTimeout(() => firstRender.set(false), 1000)
@@ -51,7 +55,7 @@
     })
   })
 
-  let isPlayingAudio = false
+  let isPlayingAudio = $state(false)
   function handleAudio() {
     if (!canPlayAudio) return
 
@@ -77,7 +81,7 @@
     isPlayingAudio = !isPlayingAudio
   }
 
-  $: ({currently, info} = data)
+  let {currently, info} = $derived(data)
 </script>
 
 <div class="meta">
@@ -120,7 +124,7 @@
                 </a>
               {:else}
                 <span
-                  on:click={() => {
+                  onclick={() => {
                     if (showing[index] !== item) {
                       showing[index] = item
                     } else {
@@ -181,7 +185,7 @@
                 class="audio-button"
                 class:isPlayingAudio
                 class:canPlayAudio
-                on:click={handleAudio}
+                onclick={handleAudio}
                 viewBox="0 0 24 24"
               >
                 {#if isPlayingAudio}

@@ -1,11 +1,13 @@
 <script lang="ts">
+  import { run } from 'svelte/legacy';
+
   import {onMount} from 'svelte'
   import CVBody from './CVBody.svelte'
   import {plugins} from '@citation-js/core'
   import type {CSL} from './types'
   import '@citation-js/plugin-csl'
 
-  let csls: CSL[] = []
+  let csls: CSL[] = $state([])
 
   onMount(async () => {
     // doing this via Promise.all to preserve order
@@ -69,15 +71,15 @@
     })
   })
 
-  let opener: SVGElement
-  let dialog: HTMLDialogElement
-  let bubble: HTMLOutputElement
+  let opener: SVGElement = $state()
+  let dialog: HTMLDialogElement = $state()
+  let bubble: HTMLOutputElement = $state()
 
-  let node: HTMLElement
-  let search: string
-  let csl: CSL
-  let isCompact = true
-  let fontsize = 14
+  let node: HTMLElement = $state()
+  let search: string = $state()
+  let csl: CSL = $state()
+  let isCompact = $state(true)
+  let fontsize = $state(14)
 
   /*
   - search
@@ -87,9 +89,11 @@
   - preview for websites
   - search only for first-authored papers ?? not right now
   */
-  $: fontsize &&
-    bubble &&
-    (bubble.innerHTML = `${fontsize}pt`)
+  run(() => {
+    fontsize &&
+      bubble &&
+      (bubble.innerHTML = `${fontsize}pt`)
+  });
 </script>
 
 <div class="container">
@@ -132,7 +136,7 @@
       class="opener"
       bind:this={opener}
       aria-label="edit the CV settings"
-      on:click={() => {
+      onclick={() => {
         dialog.style.display = 'flex'
         /* to trigger a layout recalculation;
           otherwise the display flex

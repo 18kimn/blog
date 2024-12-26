@@ -1,18 +1,32 @@
 <script lang="ts">
+  import { run } from 'svelte/legacy';
+
   import {onMount} from 'svelte'
   import {fade} from 'svelte/transition'
   import type {CSL, CV} from './types'
   import filterEntries from './filterEntries'
   import renderCSL from './renderCSL'
 
-  export let node: HTMLElement
-  export let search: string
-  export let csl: CSL
-  export let isCompact: boolean
-  export let fontsize = 14
-  let meta: CV['meta']
-  let sections: CV['sections']
-  let loaded: boolean
+  interface Props {
+    node: HTMLElement;
+    search: string;
+    csl: CSL;
+    isCompact: boolean;
+    fontsize?: number;
+    children?: import('svelte').Snippet;
+  }
+
+  let {
+    node = $bindable(),
+    search,
+    csl,
+    isCompact,
+    fontsize = 14,
+    children
+  }: Props = $props();
+  let meta: CV['meta'] = $state()
+  let sections: CV['sections'] = $state()
+  let loaded: boolean = $state()
 
   onMount(async () => {
     // @ts-ignore
@@ -22,7 +36,9 @@
     loaded = true
   })
 
-  $: sections = renderCSL(sections, csl)
+  run(() => {
+    sections = renderCSL(sections, csl)
+  });
 </script>
 
 <div
@@ -35,7 +51,7 @@
   <div>
     {#if loaded}
       <div class="meta">
-        <slot />
+        {@render children?.()}
         <div class="links">
           <span>{meta.email}</span> |
           <a

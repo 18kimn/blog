@@ -5,7 +5,11 @@
   <span>nathanckim18[at]gmail.com</span>
   <span class="spacer">⋅</span>
   <div class="icons">
-    <a href="/feed" target="_blank">
+    <a
+      href="/feed"
+      target="_blank"
+      aria-label="link to this website's Atom feed"
+    >
       <svg
         aria-label="link to this website's Atom feed"
         viewBox="0 0 24 24"
@@ -21,6 +25,7 @@
       href="https://twitter.com/nathanckim"
       target="_blank"
       rel="noreferrer"
+      aria-label="link to twitter account"
     >
       <svg
         aria-label="link to twitter account"
@@ -35,6 +40,7 @@
       href="https://github.com/18kimn"
       target="_blank"
       rel="noreferrer"
+      aria-label="link to github account"
     >
       <svg
         aria-label="link to github account"
@@ -48,6 +54,7 @@
     <a
       target="_blank"
       rel="noreferrer"
+      aria-label="link to gitlab account"
       href="https://gitlab.com/18kimn"
     >
       <svg

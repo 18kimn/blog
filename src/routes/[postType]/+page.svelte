@@ -4,7 +4,7 @@
   import Writing from './Writing.svelte'
   import {page} from '$app/stores'
 
-  export let data
+  let { data } = $props();
 
   function getComponent(type: string) {
     switch (type) {
@@ -17,7 +17,7 @@
 </script>
 
 <List items={data.sorted}>
-  <svelte:component
-    this={getComponent($page.params.postType)}
+  {@const SvelteComponent = getComponent($page.params.postType)}
+  <SvelteComponent
   />
 </List>

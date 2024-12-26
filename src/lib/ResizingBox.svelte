@@ -1,10 +1,17 @@
 <script lang="ts">
-  /* when content inside changes, resizes height
-  with transition */
-  export let content: {info: string; link?: string}
+  import { run } from 'svelte/legacy';
 
-  let height = 0
-  let inner: HTMLSpanElement
+  
+  interface Props {
+    /* when content inside changes, resizes height
+  with transition */
+    content: {info: string; link?: string};
+  }
+
+  let { content }: Props = $props();
+
+  let height = $state(0)
+  let inner: HTMLSpanElement = $state()
 
   function resize() {
     // setTimeout forces it to happen after a paint
@@ -13,7 +20,9 @@
     }, 0)
   }
 
-  $: content !== null && resize()
+  run(() => {
+    content !== null && resize()
+  });
 </script>
 
 <div class="box" style="height: {height}px">

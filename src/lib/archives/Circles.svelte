@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { run } from 'svelte/legacy';
+
   import {onMount} from 'svelte'
   import palette from '../utils/colors'
 
@@ -19,15 +21,21 @@
 
   let circles: Circle[] = []
 
-  let clickCanvas: HTMLCanvasElement
-  let hoverCanvas: HTMLCanvasElement
-  $: clickContext =
-    clickCanvas && clickCanvas.getContext('2d')
-  $: hoverContext =
-    hoverCanvas && hoverCanvas.getContext('2d')
+  let clickCanvas: HTMLCanvasElement = $state()
+  let hoverCanvas: HTMLCanvasElement = $state()
+  let clickContext =
+    $derived(clickCanvas && clickCanvas.getContext('2d'))
+  let hoverContext =
+    $derived(hoverCanvas && hoverCanvas.getContext('2d'))
 
-  $: width = clickCanvas && clickCanvas.offsetWidth
-  $: height = clickCanvas && clickCanvas.offsetHeight
+  let width;
+  run(() => {
+    width = clickCanvas && clickCanvas.offsetWidth
+  });
+  let height;
+  run(() => {
+    height = clickCanvas && clickCanvas.offsetHeight
+  });
 
   /** triggered on mousemove, updates circle data */
   function updateCircles(event: MouseEvent) {
@@ -168,8 +176,8 @@
   })
 </script>
 
-<canvas bind:this={clickCanvas} {width} {height} />
-<canvas bind:this={hoverCanvas} {width} {height} />
+<canvas bind:this={clickCanvas} {width} {height}></canvas>
+<canvas bind:this={hoverCanvas} {width} {height}></canvas>
 
 <style>
   canvas {
