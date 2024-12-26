@@ -18,7 +18,7 @@ function getPosts(type: string) {
 
 export const load: PageServerLoad = async ({params}) => {
   const posts = getPosts(params.postType)
-  if (!posts) throw error(404, 'post not found')
+  if (!posts) error(404, 'post not found');
 
   const info = await Promise.all(
     Object.entries(posts).map(async ([path, resolver]) => {
