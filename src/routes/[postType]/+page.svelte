@@ -2,7 +2,6 @@
   import List from '$lib/List.svelte'
   import Projects from './Projects.svelte'
   import Writing from './Writing.svelte'
-  import Notebook from './Notebook.svelte'
   import {page} from '$app/stores'
 
   export let data
@@ -13,8 +12,6 @@
         return Projects
       case 'writing':
         return Writing
-      case 'notebook':
-        return Notebook
     }
   }
 </script>

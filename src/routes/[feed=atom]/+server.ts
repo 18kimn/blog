@@ -2,7 +2,7 @@ import type {Post} from '$lib/utils/types'
 import {dirname, basename} from 'path'
 const siteURL = 'https://nathan-kim.org/'
 const siteTitle = 'Nathan Kim'
-const siteDescription = 'Nathan Kim\'s Personal Website'
+const siteDescription = "Nathan Kim's Personal Website"
 
 /** produces formatted XML string for rss feed */
 function render(posts: Post[]) {
@@ -19,8 +19,8 @@ function render(posts: Post[]) {
         <id>${siteURL}${slug}</id>
         ${subtitle ? `<summary>${subtitle}</summary>` : ''}
         <published>${new Date(
-    date,
-  ).toUTCString()}</published>
+          date,
+        ).toUTCString()}</published>
       </entry>
       `
     })
@@ -49,7 +49,9 @@ export async function GET() {
   const posts: Post[] = await Promise.all(
     Object.entries(paths).map(
       async ([fullPath, resolver]) => {
-        const {metadata} = await resolver()
+        const {metadata} = await (resolver() as Promise<{
+          metadata: Post
+        }>)
         const path = fullPath.slice(
           2,
           0 - 'index.md'.length,
@@ -59,7 +61,9 @@ export async function GET() {
     ),
   ).then((posts) => {
     return posts.sort(
-      (a, b) => Date.parse(b.date) - Date.parse(a.date),
+      (a, b) =>
+        Date.parse(b.date as string) -
+        Date.parse(a.date as string),
     )
   })
 

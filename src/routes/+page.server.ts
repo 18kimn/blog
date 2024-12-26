@@ -1,5 +1,5 @@
 import yaml from 'yaml'
-import {browser} from '$app/env'
+import {browser} from '$app/environment'
 import currentlyFile from '../lib/currently.yaml?raw'
 import infoFile from '../lib/homepage.yaml?raw'
 

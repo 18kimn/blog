@@ -3,10 +3,7 @@ import {promises as fs, existsSync} from 'fs'
 export const prerender = true
 export async function load({params}) {
   const {slug, postType} = params
-  const postDir =
-    postType !== 'notebook'
-      ? `./src/routes/[postType]/${postType}/${slug}`
-      : `./src/routes/[postType]/${postType}/thoughts`
+  const postDir = `./src/routes/[postType]/${postType}/${slug}`
 
   const dataPath = `${postDir}/data.json`
   const dataExists = existsSync(dataPath)

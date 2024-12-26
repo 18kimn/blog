@@ -2,13 +2,7 @@
   import {onMount} from 'svelte'
   import {page} from '$app/stores'
 
-  const routes = [
-    '',
-    'projects',
-    'writing',
-    'cv',
-    // 'notebook',
-  ]
+  const routes = ['', 'projects', 'writing', 'cv']
 
   onMount(() => {
     /* below is for header ::after animation */
@@ -21,7 +15,7 @@
 <div class="header-container">
   <div class="header">
     <a href="/">
-      {#if $page.routeId === ''}
+      {#if $page.route.id === ''}
         <h1>Nathan Kim</h1>
       {:else}
         <h2>Nathan Kim</h2>
@@ -30,7 +24,7 @@
     <nav class="links">
       {#each routes as route}
         <a
-          class={$page.routeId === route && 'selected'}
+          class={$page.route.id === route && 'selected'}
           href="/{route}"
         >
           {route === '' ? 'home' : route}

@@ -55,7 +55,7 @@
       </div>
       {#each filterEntries(search, sections) as section, index}
         <section
-          in:fade={{delay: 100 * index, duration: 300}}
+          in:fade|global={{delay: 100 * index, duration: 300}}
         >
           <h2 class="section-name">{section.name}</h2>
           <hr />

@@ -37,7 +37,7 @@
 
 {#if entry}
   {#if shouldExpand}
-    <div class="expanded" transition:slide>
+    <div class="expanded" transition:slide|global>
       <div class="header">
         <div class="meta">
           <h3>{title}</h3>
@@ -88,7 +88,7 @@
         isHover = false
       }}
       style={isHover ? 'background: violet;' : ''}
-      in:slide={{delay: firstRender ? 0 : 500}}
+      in:slide|global={{delay: firstRender ? 0 : 500}}
     >
       <span style="font-weight: bold;">{title}</span>
       <div>

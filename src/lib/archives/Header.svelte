@@ -6,7 +6,6 @@
     {path: '/about', label: 'About'},
     {path: '/projects', label: 'Projects'},
     {path: '/writing', label: 'Writing'},
-    // {path: '/thoughts', label: 'Thoughts'},
   ]
 </script>
 

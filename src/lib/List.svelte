@@ -13,7 +13,7 @@
         Loading...
       {:else}
         {#each items as item, index}
-          <p in:fade={{delay: 10 * index}}>
+          <p in:fade|global={{delay: 10 * index}}>
             <span class="date">
               {new Date(item.date)
                 .toISOString()

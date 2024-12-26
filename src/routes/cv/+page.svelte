@@ -9,21 +9,24 @@
 
   onMount(async () => {
     // doing this via Promise.all to preserve order
-    const fetchedCSLs = await Promise.all([
-      {name: 'APA'},
-      {
-        name: 'Chicago',
-        path: '/csl/chicago.csl',
-      },
-      {name: 'ASA', path: '/csl/asa.csl'},
-      {name: 'Harvard', key: 'harvard1'},
-    ].map(async (csl) => ({
-        template: csl.path && await fetch(csl.path).then(res => res.text()),
+    const fetchedCSLs = await Promise.all(
+      [
+        {name: 'APA'},
+        {
+          name: 'Chicago',
+          path: '/csl/chicago.csl',
+        },
+        {name: 'ASA', path: '/csl/asa.csl'},
+        {name: 'Harvard', key: 'harvard1'},
+      ].map(async (csl) => ({
+        template:
+          csl.path &&
+          (await fetch(csl.path).then((res) => res.text())),
         name: csl.name,
         path: csl.path,
-        me: csl.me
-    })))
-    
+      })),
+    )
+
     fetchedCSLs.forEach((csl) => {
       if (csl.path) {
         const config = plugins.config.get('@csl')
@@ -34,7 +37,13 @@
       }
       csls = [
         ...csls,
-        {...csl, key: ('key' in csl) ? (csl.key as string) : csl.name.toLowerCase()}
+        {
+          ...csl,
+          key:
+            'key' in csl
+              ? (csl.key as string)
+              : csl.name.toLowerCase(),
+        },
       ]
     })
     csl = csls[0]
@@ -69,7 +78,7 @@
   let csl: CSL
   let isCompact = true
   let fontsize = 14
-  
+
   /*
   - search
   - show navigation header

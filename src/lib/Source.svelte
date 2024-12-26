@@ -7,7 +7,7 @@
 </script>
 
 {#if shouldExpand}
-  <div class="expanded" transition:slide>
+  <div class="expanded" transition:slide|global>
     <div class="header">
       <h3>{source.title}</h3>
       <svg
@@ -42,7 +42,7 @@
     on:click={() => {
       shouldExpand = true
     }}
-    in:slide={{delay: 500}}
+    in:slide|global={{delay: 500}}
   >
     {source.title}
   </div>

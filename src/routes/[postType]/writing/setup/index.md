@@ -751,9 +751,7 @@ author: Nathan
 
 And I continue writing my thought below. This metadata is
 useful for programmatic access, for example the "visualizing
-my brain" project that I noted above or indexing into the
-list on this blog, see the
-[corresponding index file](/notebook). I have some Vim
+my brain" project that I noted above. I have some Vim
 shortcuts that help me put in tags in this metadata section.
 Though I don't quite have a Zettelkasten system yet, I do
 believe in the usefulness of linking notes together, so I

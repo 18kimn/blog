@@ -12,6 +12,11 @@ sections:
       - name: B.A. in Ethnicity, Race, & Migration and Statistics & Data Science
         role: Yale University
         date: 2018-2022
+  - name: Affiliations 
+    entries:
+      - name: Center for Ethics, Society, and Computing (ESC)
+        role: Researcher ⋅ University of Michigan
+        date: 2023-Present
   - name: Fellowships, Honors, and Awards
     entries:
       - name: The Light Fellowship for Language Study

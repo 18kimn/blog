@@ -100,7 +100,7 @@
     <div class="section-container">
       {#each Object.entries(info) as section, index}
         <section
-          in:fade={{
+          in:fade|global={{
             delay: $firstRender ? 200 * index : 100,
             duration: $firstRender ? 400 : 100,
           }}
@@ -143,7 +143,7 @@
       {/each}
       {#if currently}
         <section
-          in:fade={{
+          in:fade|global={{
             delay: $firstRender ? 600 : 100,
             duration: $firstRender ? 400 : 100,
           }}

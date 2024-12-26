@@ -97,7 +97,7 @@
           <div class="section-container">
             <div
               class="section-wrapper"
-              in:fade={{delay: index * 50}}
+              in:fade|global={{delay: index * 50}}
             >
               <div
                 use:insertElement={{
@@ -110,7 +110,7 @@
             {#if row.footnotes}
               <div
                 class="footnotes"
-                in:fade={{delay: index * 50 + 100}}
+                in:fade|global={{delay: index * 50 + 100}}
               >
                 {#each row.footnotes as footnote}
                   <div class="footnote">
