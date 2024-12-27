@@ -307,16 +307,17 @@
 </div>
 
 <style>
-  .overview {
-    min-width: 40%;
-    max-width: 65ch;
-  }
-
   .page-container {
     display: flex;
     flex-direction: row;
+    gap: 2rem;
     flex-wrap: wrap;
     justify-content: space-around;
+    overflow-x: hidden;
+  }
+
+  .overview {
+    max-width: min(65ch, 100%);
   }
 
   .section-container {
@@ -325,7 +326,7 @@
     place-items: center;
     align-items: end;
     gap: 2rem;
-    min-width: 60ch;
+    max-width: min(40ch, 100%);
   }
 
   section {
