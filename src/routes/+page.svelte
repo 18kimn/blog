@@ -143,7 +143,7 @@
     <p>
       I am a department steward and Co-Chair of the Housing
       Caucus with the
-      <OutLink href="geo3550.org/">
+      <OutLink href="https://geo3550.org/">
         Graduate Employees' Organization at the University
         of Michigan (AFT Local 3550)
       </OutLink>. I am also an organizer with the
