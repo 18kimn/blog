@@ -1,12 +1,12 @@
 <script lang="ts">
   import type {RSSSource} from '$lib/utils/types'
   import {slide} from 'svelte/transition'
+  import OutLink from './OutLink.svelte'
   interface Props {
-    source?: RSSSource;
+    source?: RSSSource
   }
 
-  let { source = {rssUrl: ''}
-  }: Props = $props();
+  let {source = {rssUrl: ''}}: Props = $props()
 
   let shouldExpand = $state(false)
 </script>
@@ -27,16 +27,10 @@
       <p>{source.description}</p>
     {/if}
     <div class="links">
-      <a
-        href={source.rssUrl}
-        target="__blank"
-        rel="noreferrer">Link to feed</a
-      >
+      <OutLink href={source.rssUrl}>Link to feed</OutLink>
       {#if source.contentUrl}
-        <a
-          href={source.contentUrl}
-          target="__blank"
-          rel="noreferrer">Link to content</a
+        <OutLink href={source.contentUrl}
+          >Link to content</OutLink
         >
       {/if}
     </div>

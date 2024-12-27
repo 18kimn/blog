@@ -1,5 +1,6 @@
 <script lang="ts">
   import {run} from 'svelte/legacy'
+  import OutLink from './OutLink.svelte'
 
   interface Props {
     /* when content inside changes, resizes height
@@ -30,13 +31,9 @@
   <span bind:this={inner}>
     {content?.info || ''}
     {#if content?.link}
-      <a
-        href={content.link}
-        target="_blank"
-        rel="noreferrer"
-      >
+      <OutLink href={content.link}>
         {content.link}
-      </a>
+      </OutLink>
     {/if}
   </span>
 </div>

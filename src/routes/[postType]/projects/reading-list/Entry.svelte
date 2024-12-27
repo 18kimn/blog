@@ -17,12 +17,13 @@
   import {slide} from 'svelte/transition'
   import {prettyDate, printList} from '$lib/utils/string'
   import {onMount} from 'svelte'
+  import OutLink from '$lib/OutLink.svelte'
 
   interface Props {
-    entry: Entry;
+    entry: Entry
   }
 
-  let { entry }: Props = $props();
+  let {entry}: Props = $props()
 
   let shouldExpand = $state(false)
   let isHover = $state(false)
@@ -34,9 +35,12 @@
 
   let {title, subtitle, abstract, date, link, creators} =
     $derived(entry)
-  let names = $derived(creators.map(
-    (creator) => `${creator.firstName} ${creator.lastName}`,
-  ))
+  let names = $derived(
+    creators.map(
+      (creator) =>
+        `${creator.firstName} ${creator.lastName}`,
+    ),
+  )
 </script>
 
 {#if entry}
@@ -70,9 +74,7 @@
       {/if}
       <div class="links">
         {#if link}
-          <a href={link} target="__blank" rel="noreferrer"
-            >see more</a
-          >
+          <OutLink href={link}>see more</OutLink>
         {/if}
       </div>
     </div>

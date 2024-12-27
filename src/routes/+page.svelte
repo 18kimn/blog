@@ -248,13 +248,9 @@
             <li>
               reading
               {#if currently.reading.url}
-                <a
-                  href={currently.reading.url}
-                  target="__blank"
-                  rel="noreferrer"
-                >
+                <OutLink href={currently.reading.url}>
                   <em>{currently.reading.title}</em>
-                </a>
+                </OutLink>
               {:else}
                 <em>{currently.reading.title}</em>
               {/if}
@@ -263,13 +259,9 @@
           {/if}
           <li>
             listening to
-            <a
-              target="__blank"
-              rel="noreferrer"
-              href={currently.listening.link}
-            >
+            <OutLink href={currently.listening.link}>
               <em>{currently.listening.title}</em>
-            </a>
+            </OutLink>
             by {currently.listening.singer}
             <button onclick={handleAudio}>
               <svg
