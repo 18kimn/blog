@@ -314,6 +314,7 @@
     flex-wrap: wrap;
     justify-content: space-around;
     overflow-x: hidden;
+    margin: 1rem 0;
   }
 
   .overview {
