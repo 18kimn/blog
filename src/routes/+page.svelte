@@ -400,8 +400,4 @@
   .update-time {
     font-size: 0.8rem;
   }
-
-  button {
-    border: none;
-  }
 </style>

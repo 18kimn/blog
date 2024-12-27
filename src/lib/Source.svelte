@@ -15,13 +15,16 @@
   <div class="expanded" transition:slide|global>
     <div class="header">
       <h3>{source.title}</h3>
-      <svg
+      <button
+        aria-label="expand RSS source"
         onclick={() => {
           shouldExpand = false
         }}
-        class="minimize"
-        viewBox="8 8 12 16"><path d="M6 19h12v2H6z" /></svg
       >
+        <svg class="minimize" viewBox="8 8 12 16"
+          ><path d="M6 19h12v2H6z" /></svg
+        >
+      </button>
     </div>
     {#if source.description}
       <p>{source.description}</p>
@@ -36,7 +39,7 @@
     </div>
   </div>
 {:else}
-  <div
+  <button
     class="default"
     onclick={() => {
       shouldExpand = true
@@ -44,7 +47,7 @@
     in:slide|global={{delay: 500}}
   >
     {source.title}
-  </div>
+  </button>
 {/if}
 
 <style>

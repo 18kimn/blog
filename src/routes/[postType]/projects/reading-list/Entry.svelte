@@ -79,7 +79,7 @@
       </div>
     </div>
   {:else}
-    <div
+    <button
       class="default"
       onclick={() => {
         shouldExpand = true
@@ -102,7 +102,7 @@
           {printList(names, true)}
         </span>
       </div>
-    </div>
+    </button>
   {/if}
 {/if}
 
@@ -164,5 +164,9 @@
     text-align: right;
     max-width: 30ch;
     word-wrap: wrap;
+  }
+
+  button {
+    width: 100%;
   }
 </style>

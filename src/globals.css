@@ -52,7 +52,8 @@ button {
   font-family: var(--font);
   font-size: 1rem;
   margin: 0rem;
-  border: var(--border);
+  border: none;
+  background: none;
   cursor: pointer;
   text-decoration: none;
   transition: all ease-in-out 200ms;

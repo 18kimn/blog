@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { run } from 'svelte/legacy';
+  import {run} from 'svelte/legacy'
 
   import {onMount} from 'svelte'
   import {fade} from 'svelte/transition'
@@ -8,12 +8,12 @@
   import renderCSL from './renderCSL'
 
   interface Props {
-    node: HTMLElement;
-    search: string;
-    csl: CSL;
-    isCompact: boolean;
-    fontsize?: number;
-    children?: import('svelte').Snippet;
+    node: HTMLElement
+    search: string
+    csl: CSL
+    isCompact: boolean
+    fontsize?: number
+    children?: import('svelte').Snippet
   }
 
   let {
@@ -21,9 +21,9 @@
     search,
     csl,
     isCompact,
-    fontsize = 14,
-    children
-  }: Props = $props();
+    fontsize = 12,
+    children,
+  }: Props = $props()
   let meta: CV['meta'] = $state()
   let sections: CV['sections'] = $state()
   let loaded: boolean = $state()
@@ -38,7 +38,7 @@
 
   run(() => {
     sections = renderCSL(sections, csl)
-  });
+  })
 </script>
 
 <div
@@ -71,7 +71,10 @@
       </div>
       {#each filterEntries(search, sections) as section, index}
         <section
-          in:fade|global={{delay: 100 * index, duration: 300}}
+          in:fade|global={{
+            delay: 100 * index,
+            duration: 300,
+          }}
         >
           <h2 class="section-name">{section.name}</h2>
           <hr />
@@ -81,8 +84,8 @@
                 <div class="position-meta">
                   <span class="position-title">
                     {#if 'role' in entry}
-                       <!-- content here -->
-                    <strong>{entry.name}</strong>
+                      <!-- content here -->
+                      <strong>{entry.name}</strong>
                       <em class="role"
                         >{@html entry.role}</em
                       >
@@ -128,7 +131,7 @@
     overflow-x: hidden;
     max-width: min(100%, 70ch);
   }
-  
+
   section {
     margin: 1.5em 0;
   }
