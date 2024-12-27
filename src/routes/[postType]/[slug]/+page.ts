@@ -10,7 +10,9 @@ export async function load({params, data}) {
    * compiled at runtime by Vite 5 or something dumb
    * like that
    */
-  const files = import.meta.glob('../writing/*/*md')
+  const writingFiles = import.meta.glob('../writing/*/*md')
+  const projectFiles = import.meta.glob('../projects/*/*md')
+  const files = {...writingFiles, ...projectFiles}
   const [_, resolver] = Object.entries(files).find(
     ([path]) => {
       const segments = path.split('/')
