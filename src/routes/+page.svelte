@@ -87,7 +87,7 @@
     <p>
       I am a PhD student at the University of Michigan
       School of Information, where I am advised by
-      <OutLink href="matthewbui.com/"
+      <OutLink href="https://matthewbui.com/"
         >Dr. Matthew Bui</OutLink
       >. I'm interested in critical studies of race,
       finance, logistics, and tech infrastructures.
