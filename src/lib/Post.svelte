@@ -13,7 +13,7 @@
   import {fade} from 'svelte/transition'
   import {postDataKey} from '../store'
 
-  let { data = {} as Post, children } = $props();
+  let {data = {} as Post, children} = $props()
   setContext(postDataKey, data.postData)
 
   let rows: {
@@ -53,7 +53,8 @@
   }
 
   let windowWidth: number = $state()
-  let {title, subtitle, modified, date, tags} = $derived(data)
+  let {title, subtitle, modified, date, tags} =
+    $derived(data)
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />
@@ -63,7 +64,7 @@
       <div class="article" bind:this={article}>
         <div class="section-container">
           <div class="section-wrapper">
-            <h1>{@html title}</h1>
+            <h1 id="frontmatter">{@html title}</h1>
             {#if subtitle}<h2>{subtitle}</h2>{/if}
             <div class="meta">
               <span id="date">
@@ -103,7 +104,7 @@
                 use:insertElement={{
                   elm: row.node,
                 }}
-></div>
+              ></div>
             </div>
           </div>
           {#if windowWidth > 1250}
