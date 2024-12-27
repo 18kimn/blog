@@ -5,7 +5,8 @@
     source?: RSSSource;
   }
 
-  let { source = {rssUrl: ''} }: Props = $props();
+  let { source = {rssUrl: ''}
+  }: Props = $props();
 
   let shouldExpand = $state(false)
 </script>

@@ -1,10 +1,10 @@
 <script lang="ts">
-  import {fade} from 'svelte/transition'
   import {onMount} from 'svelte'
   import {firstRender} from '../store'
   import Icons from '$lib/Icons.svelte'
   import ResizingBox from '$lib/ResizingBox.svelte'
   import {prettyDate} from '$lib/utils/string'
+  import OutLink from '$lib/OutLink.svelte'
 
   type Info = {
     display: string
@@ -30,20 +30,18 @@
 
   interface Props {
     data: {
-    info: {[type: string]: Info[]}
-    currently: Currently
-  };
+      info: {[type: string]: Info[]}
+      currently: Currently
+    }
   }
 
-  let { data }: Props = $props();
+  let {data}: Props = $props()
 
   let showing: Info[] = $state([])
 
   let audio: HTMLAudioElement
   let canPlayAudio = $state(false)
-  let showInfo = $state(false)
   onMount(() => {
-    showInfo = true
     setTimeout(() => firstRender.set(false), 1000)
 
     audio = new Audio(
@@ -84,109 +82,202 @@
   let {currently, info} = $derived(data)
 </script>
 
-<div class="meta">
-  <p class="tagline">
-    I am a PhD student at the University of Michigan School
-    of Information, where I am advised by <a href="https://matthewbui.com" target="_blank" rel="noreferrer">
-      Matthew Bui
-    </a> and
-    <a href="https://www.libbyh.com" target="_blank" rel="noreferrer">
-      Libby Hemphill
-    </a>. I work on digital tools for organizers
-    and their communities. I'm interested in critical
-    studies of race, finance, logistics, and tech
-    infrastructures.
-  </p>
-  <Icons />
-</div>
-{#if showInfo}
-  <div class="info">
-    <div class="section-container">
-      {#each Object.entries(info) as section, index}
-        <section
-          in:fade|global={{
-            delay: $firstRender ? 200 * index : 100,
-            duration: $firstRender ? 400 : 100,
-          }}
-          class="topic"
-        >
-          <h2>{section[0]}</h2>
-          <div class="items">
-            {#each section[1] as item}
-              {#if item?.link && !item?.info}
+<div class="page-container">
+  <div class="overview">
+    <p>
+      I am a PhD student at the University of Michigan
+      School of Information, where I am advised by
+      <OutLink href="matthewbui.com/"
+        >Dr. Matthew Bui</OutLink
+      >. I'm interested in critical studies of race,
+      finance, logistics, and tech infrastructures.
+    </p>
+    <p>
+      I'm currently interested in and am writing about the
+      political economy of Silicon Valley, especially as it
+      relates to the recent emboldening of the Valley's
+      right-wing factions and the return towards defense
+      technology (Anduril, the Paypal Mafia, Network State,
+      etc). Though the conditions and processes for the
+      reactionary right's rise has been in place for
+      decades, their recent victories signal a shift away
+      from the libertarian corporatism of the <OutLink
+        href="https://networkcultures.org/wp-content/uploads/2015/10/0585-INC_NN10-totaal-RGB.pdf"
+      >
+        "Californian ideology"
+      </OutLink>
+      and towards an unabashed politics of racial and imperial
+      domination, doing away with pretenses of democratic governance
+      and egalitarianism. If this interests you as well, I am
+      looking for collaborators and would be happy to exchange
+      drafts or just discuss in general.
+    </p>
+    <p>
+      I am interested in social movements broadly and
+      supporting the work of organizers through my research
+      and technical work. I helped build
+      <OutLink href="https://evictorbook.com"
+        >Evictorbook</OutLink
+      >, a tool to perform landlord research for tenant
+      organizers, with <OutLink
+        href="https://antievictionmap.com"
+      >
+        the Anti-Eviction Mapping Project
+      </OutLink>. I currently work as a research intern for
+      <OutLink href="https://www.dair-institute.org">
+        the DAIR Institute
+      </OutLink>, specifically for <OutLink
+        href="https://www.alex-hanna.com"
+      >
+        Dr. Alex Hanna
+      </OutLink>
+      on a project studying campus-based protest movements in
+      the 2010s. <OutLink
+        href="https://journals.sagepub.com/doi/10.1177/23780231241297447"
+      >
+        One article
+      </OutLink> from this work, focusing on top-line trends
+      in the database we built, is out with <em>Socius</em> now,
+      and more work will be released in 2025.
+    </p>
+    <p>
+      I am a department steward and Co-Chair of the Housing
+      Caucus with the
+      <OutLink href="geo3550.org/">
+        Graduate Employees' Organization at the University
+        of Michigan (AFT Local 3550)
+      </OutLink>. I am also an organizer with the
+      <OutLink href="https://tahrirumich.org/">
+        TAHRIR Coalition
+      </OutLink>
+      at the University of Michigan. With TAHRIR, I mostly perform
+      research on the UM endowment and relations of power within
+      the university. We published
+      <OutLink
+        href="https://tahrirumich.org/research/endowment-guide"
+      >
+        a report on the University endowment
+      </OutLink>
+      and a series of articles on the political allegiances of
+      the Board of Regents, available <OutLink
+        href="https://tahrirumich.org/research"
+      >
+        here
+      </OutLink>. I am also an active organizer with the <OutLink
+        href="https://annarbortenants.org/"
+      >
+        Ann Arbor Tenants Union.
+      </OutLink>
+    </p>
+    <p>
+      Before I became a graduate student at UMich, I was an
+      undergraduate student at Yale University, where I
+      double majored in Ethnicity, Race, & Migration and
+      Statistics and Data Science. My senior thesis, <OutLink
+        href="https://raw.githubusercontent.com/18kimn/imf_loans/refs/heads/production/content/text/paper/thesis.pdf"
+      >
+        <em>The IMF and Global Dispossession</em></OutLink
+      >, was advised by Professor Lisa Lowe. I also learned
+      from the late Gary Okihiro, through two courses and a
+      term of independent study with him. These were
+      challenging and transformative intellectual
+      experiences for me, and I am extremely grateful for
+      their illuminating guidance and their encouragement to
+      pursue the work I am doing now. At Yale, I also worked
+      with groups like <OutLink
+        href="https://ctdatahaven.org/">DataHaven</OutLink
+      >
+      and <OutLink href="https://www.leapforkids.org"
+        >LEAP</OutLink
+      >.
+    </p>
+    <p>
+      I am a communist. I am interested in broad questions
+      about racial capitalism and our moment in history, and
+      I see my research and technical work as part of an
+      open-ended project to make sense out of our current
+      material conditions so that we can act against racism,
+      imperialism, and capitalism. "Acting" nearly always
+      means wielding collective power built through mass
+      organizing.
+    </p>
+  </div>
+  <div class="section-container">
+    <section class="topic">
+      <Icons />
+    </section>
+    {#each Object.entries(info) as section, index}
+      <section class="topic">
+        <h2>{section[0]}</h2>
+        <div class="items">
+          {#each section[1] as item}
+            {#if item?.link && !item?.info}
+              <span class="item">
+                <OutLink href={item.link}>
+                  {@html item.display}
+                </OutLink>
+              </span>
+            {:else}
+              <button
+                onclick={() => {
+                  if (
+                    showing[index]?.display !== item.display
+                  ) {
+                    showing[index] = item
+                  } else {
+                    showing[index] = undefined
+                  }
+                }}
+                class="item"
+              >
+                {@html item.display}
+              </button>
+            {/if}
+          {/each}
+        </div>
+        {#if showing[index]?.info}
+          <ResizingBox content={showing[index]} />
+        {/if}
+      </section>
+    {/each}
+    {#if currently}
+      <section>
+        <h2>currently...</h2>
+        <ul class="currently">
+          {#if currently.reading}
+            <li>
+              reading
+              {#if currently.reading.url}
                 <a
-                  class="item"
-                  href={item.link}
-                  target="_blank"
+                  href={currently.reading.url}
+                  target="__blank"
                   rel="noreferrer"
                 >
-                  {@html item.display}
+                  <em>{currently.reading.title}</em>
                 </a>
               {:else}
-                <span
-                  onclick={() => {
-                    if (showing[index] !== item) {
-                      showing[index] = item
-                    } else {
-                      showing[index] = undefined
-                    }
-                  }}
-                  class="item"
-                >
-                  {@html item.display}
-                </span>
+                <em>{currently.reading.title}</em>
               {/if}
-            {/each}
-          </div>
-          {#if showing[index]?.link && !showing[index]?.info}
-            <!-- content here -->
-          {:else}
-            <ResizingBox content={showing[index]} />
+              by {currently.reading.author}
+            </li>
           {/if}
-        </section>
-      {/each}
-      {#if currently}
-        <section
-          in:fade|global={{
-            delay: $firstRender ? 600 : 100,
-            duration: $firstRender ? 400 : 100,
-          }}
-        >
-          <h2>currently...</h2>
-          <ul class="currently">
-            {#if currently.reading}
-              <li>
-                reading
-                {#if currently.reading.url}
-                  <a
-                    href={currently.reading.url}
-                    target="__blank"
-                    rel="noreferrer"
-                  >
-                    <em>{currently.reading.title}</em>
-                  </a>
-                {:else}
-                  <em>{currently.reading.title}</em>
-                {/if}
-                by {currently.reading.author}
-              </li>
-            {/if}
-            <li>
-              listening to
-              <a
-                target="__blank"
-                rel="noreferrer"
-                href={currently.listening.link}
-              >
-                <em>{currently.listening.title}</em>
-              </a>
-              by {currently.listening.singer}
+          <li>
+            listening to
+            <a
+              target="__blank"
+              rel="noreferrer"
+              href={currently.listening.link}
+            >
+              <em>{currently.listening.title}</em>
+            </a>
+            by {currently.listening.singer}
+            <button onclick={handleAudio}>
               <svg
                 class="audio-button"
                 class:isPlayingAudio
                 class:canPlayAudio
-                onclick={handleAudio}
                 viewBox="0 0 24 24"
+                role="button"
               >
                 {#if isPlayingAudio}
                   <path
@@ -198,72 +289,54 @@
                   />
                 {/if}
               </svg>
-            </li>
-            <li>
-              thinking about {currently.thinking}
-            </li>
-            <em class="update-time">
-              This section is updated via automation every
-              few days. Last updated on {prettyDate(
-                currently.time,
-              )}.
-            </em>
-          </ul>
-        </section>
-      {/if}
-    </div>
+            </button>
+          </li>
+          <li>
+            thinking about {currently.thinking}
+          </li>
+          <em class="update-time">
+            This section is updated via automation every few
+            days. Last updated on {prettyDate(
+              currently.time,
+            )}.
+          </em>
+        </ul>
+      </section>
+    {/if}
   </div>
-  <em class="guide">click on any keyword to reveal more.</em
-  >
-{/if}
+</div>
 
 <style>
-  .meta {
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 1rem;
+  .overview {
+    min-width: 40%;
+    max-width: 65ch;
   }
 
-  .tagline {
-    font-size: 1rem;
-    max-width: 72ch;
-  }
-
-  .info,
-  .section-container {
+  .page-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 3rem 2rem;
-    flex-grow: 1;
+    justify-content: space-around;
   }
 
   .section-container {
-    justify-content: space-between;
-  }
-
-  .info div {
-    flex: 1;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    align-items: end;
+    gap: 2rem;
+    min-width: 60ch;
   }
 
   section {
     border-radius: 0.5rem;
     min-width: min(30ch, 100%);
     max-width: 50ch;
-    flex-grow: 1;
-    /* to control when wraps */
-    flex-basis: 40%;
+    flex: 0;
   }
 
   h2 {
     font-size: 2rem;
-  }
-
-  .guide {
-    align-self: flex-end;
   }
 
   .items {
@@ -334,7 +407,7 @@
     font-size: 0.8rem;
   }
 
-  .guide {
-    margin: 1rem 0;
+  button {
+    border: none;
   }
 </style>
