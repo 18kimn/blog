@@ -1,6 +1,4 @@
 <script lang="ts">
-  import { run } from 'svelte/legacy';
-
   import {onMount} from 'svelte'
   import palette from '../utils/colors'
 
@@ -28,12 +26,12 @@
   let hoverContext =
     $derived(hoverCanvas && hoverCanvas.getContext('2d'))
 
-  let width;
-  run(() => {
-    width = clickCanvas && clickCanvas.offsetWidth
-  });
-  let height;
-  run(() => {
+  let width: number = $state();
+  $effect(() => {
+    width = clickCanvas && clickCanvas.offsetWidth 
+  })
+  let height: number = $state();
+  $effect(() => {
     height = clickCanvas && clickCanvas.offsetHeight
   });
 

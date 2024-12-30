@@ -20,9 +20,7 @@
     }, 0)
   }
 
-  console.log('test')
-
-  run(() => {
+  $effect(() => {
     content !== null && resize()
   })
 </script>

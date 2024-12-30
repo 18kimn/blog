@@ -1,11 +1,12 @@
 <script lang="ts">
-  import {run} from 'svelte/legacy'
-
-  import {onMount} from 'svelte'
   import {fade} from 'svelte/transition'
   import type {CSL, CV} from './types'
   import filterEntries from './filterEntries'
   import renderCSL from './renderCSL'
+  import CVDataRaw from './cv.json'
+    import { onMount } from 'svelte'
+  
+  const CVData = CVDataRaw as CV
 
   interface Props {
     node: HTMLElement
@@ -24,23 +25,17 @@
     fontsize = 12,
     children,
   }: Props = $props()
-  let meta: CV['meta'] = $state()
-  let sections: CV['sections'] = $state()
-  let loaded: boolean = $state()
-
-  onMount(async () => {
-    // @ts-ignore
-    ;({meta, sections} = await fetch('/cv.json').then(
-      (res) => res.json(),
-    ))
-    loaded = true
-  })
-
-  run(() => {
-    sections = renderCSL(sections, csl)
+  let meta: CV['meta'] = $state(CVData.meta)
+  let sections: CV['sections'] = $derived(renderCSL(CVData.sections, csl))
+  
+  // needed for transition-on-load
+  let ready = $state(false)
+  onMount(() => {
+    ready = true
   })
 </script>
 
+{#if ready}
 <div
   class="cv"
   style="font-size: {fontsize}pt; --margin-multi: {isCompact
@@ -49,7 +44,6 @@
   bind:this={node}
 >
   <div>
-    {#if loaded}
       <div class="meta">
         {@render children?.()}
         <div class="links">
@@ -70,6 +64,7 @@
         </div>
       </div>
       {#each filterEntries(search, sections) as section, index}
+        {#if section.entries.filter(entry => !(entry["type"] === 'csl' && typeof entry["markup"] === 'undefined')).length}
         <section
           in:fade|global={{
             delay: 100 * index,
@@ -112,10 +107,11 @@
             </div>
           {/each}
         </section>
+          {/if}
       {/each}
-    {/if}
   </div>
 </div>
+{/if}
 
 <style>
   /* margin-multi(plier) refers to a constant by which

@@ -13,11 +13,11 @@
     // doing this via Promise.all to preserve order
     const fetchedCSLs = await Promise.all(
       [
-        {name: 'APA'},
         {
           name: 'Chicago',
           path: '/csl/chicago.csl',
         },
+        {name: 'APA'},
         {name: 'ASA', path: '/csl/asa.csl'},
         {name: 'Harvard', key: 'harvard1'},
       ].map(async (csl) => ({
@@ -73,7 +73,6 @@
 
   let opener: HTMLButtonElement = $state()
   let dialog: HTMLDialogElement = $state()
-  let bubble: HTMLOutputElement = $state()
 
   let node: HTMLElement = $state()
   let search: string = $state()
@@ -89,11 +88,6 @@
   - preview for websites
   - search only for first-authored papers ?? not right now
   */
-  run(() => {
-    fontsize &&
-      bubble &&
-      (bubble.innerHTML = `${fontsize}pt`)
-  })
 </script>
 
 <div class="container">
@@ -107,7 +101,9 @@
         max={32}
         type="range"
       />
-      <output bind:this={bubble}>&nbsp;</output>
+      <output>
+        {fontsize}pt
+      </output>
     </div>
     <div class="row">
       <label for="compact">Compact mode:</label>

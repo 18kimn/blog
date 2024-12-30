@@ -1,20 +1,35 @@
 <script lang="ts">
-  import { run } from 'svelte/legacy';
-
   import type {Entry} from './Entry.svelte'
 
   interface Props {
-    filteredEntries: Entry[];
+    updateFilteredEntries: (entries: Entry[]) => Entry[];
     entries: Entry[];
   }
 
-  let { filteredEntries = $bindable(), entries }: Props = $props();
+  let { updateFilteredEntries = $bindable(), entries }: Props = $props();
   let option = $state('')
+  console.log(entries.length)
 
-  /* sort */
-  run(() => {
-    if (option !== '') {
-      filteredEntries = filteredEntries.sort((a, b) => {
+  let term = $state('')
+  /* search */
+  let searchedEntries = $derived(entries.filter((entry) => {
+      if (term === '') {
+        return true
+      }
+      const creators = entry.creators
+        .map((creator) => {
+          return `${creator.firstName} ${creator.lastName}`
+        })
+        .join(' ')
+      const str =
+        `${creators} ${entry.title} ${entry.date} ${entry.subtitle}`.toLowerCase()
+
+      return str.match(term.toLowerCase())
+    })
+  );
+
+  $effect(() => {
+    const sortedEntries = option === '' ? searchedEntries : searchedEntries.sort((a, b) => {
         switch (option) {
           case 'publication_date':
             return (
@@ -29,27 +44,8 @@
             return a.title.localeCompare(b.title)
         }
       })
-    }
-  });
-
-  let term = $state('')
-  /* search */
-  run(() => {
-    filteredEntries = entries.filter((entry) => {
-      if (term === '') {
-        return true
-      }
-      const creators = entry.creators
-        .map((creator) => {
-          return `${creator.firstName} ${creator.lastName}`
-        })
-        .join(' ')
-      const str =
-        `${creators} ${entry.title} ${entry.date} ${entry.subtitle}`.toLowerCase()
-
-      return str.match(term.toLowerCase())
-    })
-  });
+    updateFilteredEntries(sortedEntries)
+  })
 </script>
 
 <div class="controls">

@@ -59,15 +59,17 @@
             Published {prettyDate(date)}
           </span>
         </div>
-        <svg
+        <button
           onclick={() => {
             shouldExpand = false
             isHover = false
           }}
-          class="minimize"
-          viewBox="8 8 12 16"
-          ><path d="M6 19h12v2H6z" /></svg
+          aria-label="expand entry"
         >
+          <svg class="minimize" viewBox="8 8 12 16"
+            ><path d="M6 19h12v2H6z" /></svg
+          >
+        </button>
       </div>
       {#if abstract}
         <p><em>Abstract: </em>{@html abstract}</p>

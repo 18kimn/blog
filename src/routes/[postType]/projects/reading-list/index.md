@@ -17,7 +17,10 @@ date: 2023-04-22
   import Controls from './Controls.svelte'
 
   const {date, entries} = getContext(postDataKey)
-  let filteredEntries = entries
+  let filteredEntries = $state(entries)
+  function updateFilteredEntries(newEntries){
+   filteredEntries = newEntries
+  }
 </script>
 
 ## context
@@ -94,7 +97,7 @@ to each book. It's been quite nice.
   </p>
   
     <br />
-    <Controls {entries} bind:filteredEntries={filteredEntries} />
+    <Controls {entries} bind:updateFilteredEntries={updateFilteredEntries} />
     <ol>
       {#each filteredEntries as entry, i}
         <li>
