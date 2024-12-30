@@ -5,7 +5,6 @@ import type {CV, CSL} from './types'
 // dynamic/async
 
 function reprocessHTML(html: string) {
-  console.log(html)
   return (
     html
       .replace(

@@ -8,7 +8,6 @@
 
   let { updateFilteredEntries, entries }: Props = $props();
   let option = $state('')
-  console.log(entries.length)
 
   let term = $state('')
   /* search */
