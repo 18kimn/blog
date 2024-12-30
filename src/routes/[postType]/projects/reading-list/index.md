@@ -97,7 +97,7 @@ to each book. It's been quite nice.
   </p>
   
     <br />
-    <Controls {entries} bind:updateFilteredEntries={updateFilteredEntries} />
+    <Controls {entries} {updateFilteredEntries} />
     <ol>
       {#each filteredEntries as entry, i}
         <li>

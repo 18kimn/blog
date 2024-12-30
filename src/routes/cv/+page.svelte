@@ -1,55 +1,16 @@
 <script lang="ts">
-  import {run} from 'svelte/legacy'
-
   import {onMount} from 'svelte'
   import CVBody from './CVBody.svelte'
   import {plugins} from '@citation-js/core'
   import type {CSL} from './types'
+  import type {PageData} from './$types'
   import '@citation-js/plugin-csl'
+
+  let {data}: {data: PageData} = $props()
 
   let csls: CSL[] = $state([])
 
-  onMount(async () => {
-    // doing this via Promise.all to preserve order
-    const fetchedCSLs = await Promise.all(
-      [
-        {
-          name: 'Chicago',
-          path: '/csl/chicago.csl',
-        },
-        {name: 'APA'},
-        {name: 'ASA', path: '/csl/asa.csl'},
-        {name: 'Harvard', key: 'harvard1'},
-      ].map(async (csl) => ({
-        template:
-          csl.path &&
-          (await fetch(csl.path).then((res) => res.text())),
-        name: csl.name,
-        path: csl.path,
-      })),
-    )
-
-    fetchedCSLs.forEach((csl) => {
-      if (csl.path) {
-        const config = plugins.config.get('@csl')
-        config.templates.add(
-          csl.name.toLowerCase(),
-          csl.template,
-        )
-      }
-      csls = [
-        ...csls,
-        {
-          ...csl,
-          key:
-            'key' in csl
-              ? (csl.key as string)
-              : csl.name.toLowerCase(),
-        },
-      ]
-    })
-    csl = csls[0]
-
+  onMount(() => {
     // what a pain in the butt
     dialog.addEventListener('click', (e) => {
       const rect = dialog.getBoundingClientRect()
@@ -76,10 +37,22 @@
 
   let node: HTMLElement = $state()
   let search: string = $state()
-  let csl: CSL = $state()
+  let csl: CSL = $state(csls[0])
   let isCompact = $state(true)
   let fontsize = $state(12)
 
+  data.csls.then((csls) => {
+    csls.forEach((csl) => {
+      if (csl.path) {
+        const config = plugins.config.get('@csl')
+        config.templates.add(
+          csl.name.toLowerCase(),
+          csl.template,
+        )
+      }
+    })
+    csl = csls[0]
+  })
   /*
   - search
   - show navigation header
@@ -116,9 +89,13 @@
     <div class="row">
       <label for="csl">Citation style:</label>
       <select id="csl" name="citations" bind:value={csl}>
+        {#await data.csls}
+          &nbsp;
+        {:then csls} 
         {#each csls as csl}
           <option value={csl}>{csl.name}</option>
         {/each}
+        {/await}
       </select>
     </div>
     <div class="row">

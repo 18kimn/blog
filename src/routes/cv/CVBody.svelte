@@ -4,8 +4,9 @@
   import filterEntries from './filterEntries'
   import renderCSL from './renderCSL'
   import CVDataRaw from './cv.json'
-    import { onMount } from 'svelte'
-  
+  import {onMount} from 'svelte'
+  import ResizingBox from '$lib/ResizingBox.svelte'
+
   const CVData = CVDataRaw as CV
 
   interface Props {
@@ -26,8 +27,10 @@
     children,
   }: Props = $props()
   let meta: CV['meta'] = $state(CVData.meta)
-  let sections: CV['sections'] = $derived(renderCSL(CVData.sections, csl))
-  
+  let sections: CV['sections'] = $derived(
+    renderCSL(CVData.sections, csl),
+  )
+
   // needed for transition-on-load
   let ready = $state(false)
   onMount(() => {
@@ -36,14 +39,14 @@
 </script>
 
 {#if ready}
-<div
-  class="cv"
-  style="font-size: {fontsize}pt; --margin-multi: {isCompact
-    ? 0.5
-    : 1}"
-  bind:this={node}
->
-  <div>
+  <div
+    class="cv"
+    style="font-size: {fontsize}pt; --margin-multi: {isCompact
+      ? 0.5
+      : 1}"
+    bind:this={node}
+  >
+    <div>
       <div class="meta">
         {@render children?.()}
         <div class="links">
@@ -64,7 +67,6 @@
         </div>
       </div>
       {#each filterEntries(search, sections) as section, index}
-        {#if section.entries.filter(entry => !(entry["type"] === 'csl' && typeof entry["markup"] === 'undefined')).length}
         <section
           in:fade|global={{
             delay: 100 * index,
@@ -74,7 +76,13 @@
           <h2 class="section-name">{section.name}</h2>
           <hr />
           {#each section.entries as entry}
-            <div class="entry">
+            <div
+              class="entry"
+              in:fade|global={{
+                delay: 100 * index,
+                duration: 300,
+              }}
+            >
               {#if !('type' in entry)}
                 <div class="position-meta">
                   <span class="position-title">
@@ -102,15 +110,28 @@
               {:else if entry.type === 'markup'}
                 {@html entry.markup}
               {:else if entry.type === 'csl'}
-                {@html entry.markup || ''}
+                <ResizingBox
+                  content={{
+                    info: section.entries
+                      .map((e) => e['markup'])
+                      .join(''),
+                  }}
+                >
+                  {#if entry.markup}
+                    {@html entry.markup || ''}
+                  {:else}
+                    <span class="loading-message">
+                      Loading...
+                    </span>
+                  {/if}
+                </ResizingBox>
               {/if}
             </div>
           {/each}
         </section>
-          {/if}
       {/each}
+    </div>
   </div>
-</div>
 {/if}
 
 <style>
@@ -180,5 +201,21 @@
   :global(.csl-entry) {
     margin-left: 2ch;
     text-indent: -2ch;
+  }
+
+  /* Pulsing loading animation */
+  @keyframes pulse {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .loading-message {
+    animation: pulse 1.5s infinite ease-in-out;
   }
 </style>

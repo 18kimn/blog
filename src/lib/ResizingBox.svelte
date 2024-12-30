@@ -1,14 +1,14 @@
 <script lang="ts">
-  import {run} from 'svelte/legacy'
   import OutLink from './OutLink.svelte'
 
   interface Props {
     /* when content inside changes, resizes height
   with transition */
-    content: {info: string; link?: string}
+    content?: {info: string; link?: string}
+    children
   }
 
-  let {content}: Props = $props()
+  let {content, children}: Props = $props()
 
   let height = $state(0)
   let inner: HTMLSpanElement = $state()
@@ -22,18 +22,23 @@
 
   $effect(() => {
     content !== null && resize()
+    children !== null && resize()
   })
 </script>
 
 <div class="box" style="height: {height}px">
-  <span bind:this={inner}>
-    {content?.info || ''}
-    {#if content?.link}
-      <OutLink href={content.link}>
-        {content.link}
-      </OutLink>
+  <div bind:this={inner}>
+    {#if children}
+      {@render children()}
+    {:else}
+      {content?.info || ''}
+      {#if content?.link}
+        <OutLink href={content.link}>
+          {content.link}
+        </OutLink>
+      {/if}
     {/if}
-  </span>
+  </div>
 </div>
 
 <style>

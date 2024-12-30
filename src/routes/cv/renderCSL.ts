@@ -5,11 +5,12 @@ import type {CV, CSL} from './types'
 // dynamic/async
 
 function reprocessHTML(html: string) {
+  console.log(html)
   return (
     html
       .replace(
         // basic url matching
-        /http.*?(?=<)/,
+        /http.*?(?=\.<)/,
         '<a href="$&" rel="noopener" target="__blank">$&</a>',
       )
       // assume nd entries are forthcoming and display it as such

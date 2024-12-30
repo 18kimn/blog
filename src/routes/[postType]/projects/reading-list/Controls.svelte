@@ -6,7 +6,7 @@
     entries: Entry[];
   }
 
-  let { updateFilteredEntries = $bindable(), entries }: Props = $props();
+  let { updateFilteredEntries, entries }: Props = $props();
   let option = $state('')
   console.log(entries.length)
 
