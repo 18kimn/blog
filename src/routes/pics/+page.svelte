@@ -13,16 +13,22 @@
   import img13 from './personal_images/galaxy_frog_fighting.jpg'
   import img14 from './personal_images/galaxy.jpg'
   import img15 from './personal_images/galaxy_sleeping.jpg'
+  import img16 from './personal_images/pierson.jpg'
   import img17 from './personal_images/incheon.jpg'
   import img18 from './personal_images/rio.jpg'
   import img19 from './personal_images/moths.jpg'
   import img20 from './personal_images/pike_place.jpg'
   import img21 from './personal_images/wendys.jpeg'
   import {onMount} from 'svelte'
-  import ResizingBox from '$lib/ResizingBox.svelte'
-  import {fade} from 'svelte/transition'
+  import {setupDialog} from '$lib/utils/dialog'
 
   let width = $state()
+
+  let activeImg: (typeof imgs)[number] = $state({
+    caption: '',
+    path: '',
+  })
+  let dialog: HTMLDialogElement = $state()
 
   const imgs = [
     {
@@ -90,8 +96,13 @@
     },
     {
       caption:
-        'My cat Galaxy sleeping on my arm. November 2024',
+        "My cat Galaxy sleeping on my girlfriend Anne's arm. November 2024",
       path: img15,
+    },
+    {
+      caption:
+        'A friend and I studying in the common room of Pierson College at Yale. November 2022.',
+      path: img16,
     },
     {
       caption:
@@ -150,9 +161,8 @@
   let loaded = $state(false)
   onMount(() => {
     resizeGrid()
-    const items: NodeListOf<HTMLDivElement> = document.querySelectorAll(
-      '.image-container',
-    )
+    const items: NodeListOf<HTMLDivElement> =
+      document.querySelectorAll('.image-container')
     items.forEach((item) => {
       const img = item.querySelector('img')
       const imgCb = () => {
@@ -166,6 +176,10 @@
         img.onload = imgCb
       }
     })
+
+    setupDialog(dialog, () => {
+      activeImg = {caption: '', path: ''}
+    })
   })
 
   $effect(() => {
@@ -174,15 +188,31 @@
 </script>
 
 <div class="page" bind:clientWidth={width}>
+  <dialog bind:this={dialog}>
+    <img alt={activeImg.caption} src={activeImg.path} />
+    <span>
+      {activeImg.caption}
+    </span>
+  </dialog>
   <div class="image-grid">
-    {#each imgs as { caption, path }, index}
+    {#each imgs as { caption, path }}
       <div
         class="image-container"
         style:opacity={loaded ? 1 : 0}
         style:transition-delay={`${Math.random() * imgs.length * 50}ms`}
       >
         <div>
-          <img alt={caption} src={path} />
+          <button
+            onclick={() => {
+              activeImg = {caption, path}
+              dialog.style.opacity = '0'
+              dialog.style.display = 'flex'
+              dialog.showModal()
+              dialog.style.opacity = '1'
+            }}
+          >
+            <img alt={caption} src={path} />
+          </button>
           <span>
             {caption}
           </span>
@@ -196,7 +226,7 @@
   .page {
     overflow: hidden;
   }
-  
+
   .image-grid {
     display: grid;
     grid-template-columns: repeat(
@@ -217,8 +247,40 @@
     transition-duration: 400ms;
   }
 
-  img {
+  .image-container img {
     max-width: min(40ch, 100%);
     height: auto;
+  }
+
+  dialog img {
+    max-width: min(80vw, 80%);
+    height: auto;
+    max-height: 80vh;
+  }
+
+  dialog {
+    display: none;
+    opacity: 0;
+    transition: all ease-in-out 200ms;
+    border: var(--border);
+    border-radius: 0.2rem;
+    box-shadow: 3px 3px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+
+    flex-direction: column;
+    place-items: center;
+    gap: 1rem;
+    max-width: 70vw;
+  }
+
+  dialog span {
+    max-width: 40ch;
+  }
+
+  dialog[open] {
+    display: flex;
+    opacity: 1;
   }
 </style>

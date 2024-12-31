@@ -5,31 +5,14 @@
   import type {CSL} from './types'
   import type {PageData} from './$types'
   import '@citation-js/plugin-csl'
+  import {setupDialog} from '$lib/utils/dialog'
 
   let {data}: {data: PageData} = $props()
 
   let csls: CSL[] = $state([])
 
   onMount(() => {
-    // what a pain in the butt
-    dialog.addEventListener('click', (e) => {
-      const rect = dialog.getBoundingClientRect()
-      const x = e.clientX
-      const y = e.clientY
-      const isWithin =
-        x < rect.right &&
-        x > rect.left &&
-        y > rect.top &&
-        y < rect.bottom
-      /* if click isn't on gear or the dialog itself, close it
-       */
-      if (!isWithin && e.target !== opener) {
-        dialog.close()
-        setTimeout(() => {
-          dialog.style.display = 'none'
-        }, 200)
-      }
-    })
+    setupDialog(dialog)
   })
 
   let opener: HTMLButtonElement = $state()
@@ -91,10 +74,10 @@
       <select id="csl" name="citations" bind:value={csl}>
         {#await data.csls}
           &nbsp;
-        {:then csls} 
-        {#each csls as csl}
-          <option value={csl}>{csl.name}</option>
-        {/each}
+        {:then csls}
+          {#each csls as csl}
+            <option value={csl}>{csl.name}</option>
+          {/each}
         {/await}
       </select>
     </div>
