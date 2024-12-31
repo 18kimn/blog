@@ -119,7 +119,7 @@
     },
   ]
 
-  function resizeGridItem(item) {
+  function resizeGridItem(item: HTMLDivElement) {
     const grid = document.querySelector('.image-grid')
     const rowHeight = parseInt(
       getComputedStyle(grid).getPropertyValue(
@@ -150,7 +150,22 @@
   let loaded = $state(false)
   onMount(() => {
     resizeGrid()
-    loaded = true
+    const items: NodeListOf<HTMLDivElement> = document.querySelectorAll(
+      '.image-container',
+    )
+    items.forEach((item) => {
+      const img = item.querySelector('img')
+      const imgCb = () => {
+        loaded = true
+        resizeGridItem(item)
+      }
+
+      if (img.complete) {
+        imgCb()
+      } else {
+        img.onload = imgCb
+      }
+    })
   })
 
   $effect(() => {
@@ -164,7 +179,7 @@
       <div
         class="image-container"
         style:opacity={loaded ? 1 : 0}
-        style:transition-delay={index * 100}
+        style:transition-delay={`${Math.random() * imgs.length * 50}ms`}
       >
         <div>
           <img alt={caption} src={path} />
@@ -178,6 +193,10 @@
 </div>
 
 <style>
+  .page {
+    overflow: hidden;
+  }
+  
   .image-grid {
     display: grid;
     grid-template-columns: repeat(
@@ -194,7 +213,7 @@
     place-items: center;
     flex: 1;
     gap: 1rem;
-    transition-property: opacity;
+    transition-property: opacity, grid-row-end;
     transition-duration: 400ms;
   }
 
@@ -202,5 +221,4 @@
     max-width: min(40ch, 100%);
     height: auto;
   }
-
 </style>
