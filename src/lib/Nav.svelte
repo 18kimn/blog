@@ -2,7 +2,7 @@
   import {onMount} from 'svelte'
   import {page} from '$app/stores'
 
-  const routes = ['', 'projects', 'writing', 'cv']
+  const routes = ['', 'projects', 'writing', 'cv', 'pics']
 
   onMount(() => {
     /* below is for header ::after animation */
