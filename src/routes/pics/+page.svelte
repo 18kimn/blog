@@ -32,17 +32,18 @@
 
   const imgs = [
     {
-      caption: 'Me drinking coffee, somewhere in boston',
+      caption:
+        'Me drinking coffee, somewhere in Boston. November 2022.',
       path: img2,
     },
     {
       caption:
-        'I believe this is in Pierson College at Yale',
+        'I believe this is in Pierson College at Yale. Probably November 2022',
       path: img3,
     },
     {
       caption:
-        "In front of a bookstore in Yunbocho ('Book Town') in Tokyo.",
+        "In front of a bookstore in Jimbocho ('Book Town') in Tokyo.",
       path: img4,
     },
     {
@@ -62,7 +63,7 @@
     },
     {
       caption:
-        'Speaking as a workshop hosted by myself and friends, "AI is Not Inevitable", November 2024.',
+        'Speaking at a workshop hosted by myself and friends, "AI is Not Inevitable", November 2024.',
       path: img8,
     },
     {
@@ -87,7 +88,7 @@
     },
     {
       caption:
-        "My cat Galaxy jumping on my friend's cat Frog, who I am taking care of. January 2024",
+        "My cat Galaxy jumping on my friend's cat Frog, who I was taking care of. January 2024",
       path: img13,
     },
     {
@@ -111,7 +112,7 @@
     },
     {
       caption:
-        'Myself and some grads in Rio, June 2024. For the FAccT conference.',
+        'Myself and some friends (other grads) in Rio, June 2024. For the FAccT conference.',
       path: img18,
     },
     {
@@ -121,7 +122,7 @@
     },
     {
       caption:
-        'My girlfriend Anne at Pike Place, Seattle, June 2024',
+        'My girlfriend Anne and I at Pike Place, Seattle, June 2024',
       path: img20,
     },
     {
