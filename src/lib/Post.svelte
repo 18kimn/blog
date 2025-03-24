@@ -101,6 +101,7 @@
               in:fade|global={{delay: index * 50}}
             >
               <div
+                class="section-element"
                 use:insertElement={{
                   elm: row.node,
                 }}
@@ -175,6 +176,10 @@
     display: flex;
     flex-direction: column;
     align-items: start;
+  }
+
+  .section-element {
+    max-width: 100%;
   }
 
   .footnotes {
