@@ -90,7 +90,10 @@
       <OutLink href="https://matthewbui.com/"
         >Dr. Matthew Bui</OutLink
       >. I'm interested in critical studies of race,
-      finance, logistics, and tech infrastructures.
+      finance, logistics, and tech infrastructures. If
+      you're interested in collabing, talking, organizing,
+      or working with me in any way, <strong>please</strong>
+      reach out to me (contact info on right).
     </p>
     <p>
       I'm currently interested in and am writing about the
