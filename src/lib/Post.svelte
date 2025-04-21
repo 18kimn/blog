@@ -152,6 +152,7 @@
     overflow: hidden;
     --section-width: 70ch;
     gap: 0 4rem;
+    margin-bottom: 3rem;
   }
 
   @media (max-width: 1250px) {
