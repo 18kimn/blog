@@ -1,22 +1,27 @@
 ---
-title: "Theda Skocpol's _States and Social Revolutions_"
+title:
+  "Theda Skocpol's <em>States and Social Revolutions</em>"
 subtitle: Response paper for SOC532
 date: Feb 10, 2025
 tags: [readings]
 ---
 
-This is a school assignment; it'd never see the light of day
-other than my Canvas submission box were I not to throw it
-online, so here it is. It's an (amateurish, etc) review of
-Theda Skocpol's _States and Social Revolutions_, which I
-wrote for SOC532. I don't have much of a background in
-comparative historical sociology so it's not meant to
-showcase expertise nor to make a specific intervention by
-thinking with Skocpol (also, that wasn't our assignment) --
-but it does show my thinking, and the end especially
-contains my general perspective to what the work of
-criticism (or scholarship in general) can do. So it's here
-on my blog now !
+This is a school assignment It's an (amateurish, etc) review
+of Theda Skocpol's _States and Social Revolutions_, which I
+wrote for SOC532: Comparative Historical Sociology, taught
+by Jonah Stuart Brundage. That class was amazing and
+genuinely one of the most insightful semester's I've had in
+either undergrad or grad school.
+
+I don't have much of a background in comparative historical
+sociology so this post is not meant to showcase expertise
+nor to make a specific intervention by thinking with Skocpol
+(also, that wasn't our assignment) -- but it does show my
+thinking, and the end especially contains my general
+perspective to what the work of criticism (or scholarship in
+general) can do. And it'd never see the light of day other
+than my Canvas submission box were I not to throw it online,
+so here it is. So it's here on my blog now !
 
 ---
 

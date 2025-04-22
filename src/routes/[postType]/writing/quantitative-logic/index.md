@@ -12,6 +12,11 @@ to hate the word 'science' 🤓",) but I still decided to post
 it because it sums up a lot of my perspective on science,
 technology, and objectivity.
 
+The class is focused on qualitative research methods, and
+this piece responds to the class' larger appraisal of
+qualitative methods as performing a kind of work that
+quantitative methods cannot.
+
 ---
 
 A few years ago, I took a class _Solidarity
