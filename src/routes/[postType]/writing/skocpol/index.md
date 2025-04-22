@@ -7,9 +7,13 @@ tags: [readings]
 ---
 
 This is a school assignment It's an (amateurish, etc) review
-of Theda Skocpol's _States and Social Revolutions_, which I
-wrote for SOC532: Comparative Historical Sociology, taught
-by Jonah Stuart Brundage. That class was amazing and
+of Theda Skocpol's _States and Social Revolutions_. That
+book is arguably the most famous work in comparative
+historical sociology and helped establish it as a
+subdiscipline within sociology.
+
+I wrote this for SOC532: Comparative Historical Sociology,
+taught by Jonah Stuart Brundage. That class was amazing and
 genuinely one of the most insightful semester's I've had in
 either undergrad or grad school.
 
