@@ -31,7 +31,7 @@ Theda Skocpol develops her theoretical intervention by
 contrasting from existing approaches, distilled by Skocpol
 in the introduction into three perspectives. First, she
 emphasizes a "nonvoluntarist, structural perspective on
-[revolutions'] causes and processes," explicitly rejecting
+\[revolutions'\] causes and processes," explicitly rejecting
 schools of thought as diverse as the "political-conflict"
 and "aggregate-psychological" liberal schools and the
 Marxist notions of a vanguard party or class consciousness
