@@ -20,7 +20,7 @@ on my blog now !
 
 ---
 
-# Skocpol's argument and theoretical intervention
+## Skocpol's argument and theoretical intervention
 
 Theda Skocpol develops her theoretical intervention by
 contrasting from existing approaches, distilled by Skocpol
@@ -93,7 +93,7 @@ mass-mobilizing political leaderships post-revolution, which
 was important for the establishment of these states as
 "great power" nations.
 
-# Does Skocpol succeed in making that argument?
+## Does Skocpol succeed in making that argument?
 
 She does, in my opinion, but that is mostly not because she
 applies Mill's methods of agreement and difference, as she
@@ -204,7 +204,7 @@ Skocpol argues as much as I acknowledge the causes she
 identifies may not be the _only_ possible explanations for
 the revolutions she describes.
 
-# Concluding thoughts
+## Concluding thoughts
 
 In other words, Skocpol's analysis is not airtight. I
 conclude this paper with a short argument that Skocpol's
