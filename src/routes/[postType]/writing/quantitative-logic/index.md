@@ -2,7 +2,7 @@
 title: 'Science is actually good, in some senses'
 subtitle: Reading response for SW866
 date: 2025-04-21
-tags: [knowledge]
+tags: [schoolwork]
 ---
 
 I wrote up this reading response for a class. It's just a

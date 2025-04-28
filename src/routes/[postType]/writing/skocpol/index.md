@@ -3,12 +3,12 @@ title:
   "Theda Skocpol's <em>States and Social Revolutions</em>"
 subtitle: Response paper for SOC532
 date: Feb 10, 2025
-tags: [readings]
+tags: [schoolwork]
 ---
 
-This is a school assignment It's an (amateurish, etc) review
-of Theda Skocpol's _States and Social Revolutions_. That
-book is arguably the most famous work in comparative
+This is a school assignment. It's an (amateurish, etc)
+review of Theda Skocpol's _States and Social Revolutions_.
+That book is arguably the most famous work in comparative
 historical sociology and helped establish it as a
 subdiscipline within sociology.
 
