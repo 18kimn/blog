@@ -3,11 +3,11 @@
   import {fade} from 'svelte/transition'
 
   interface Props {
-    items: Post[];
-    children?: import('svelte').Snippet;
+    items: Post[]
+    children?: import('svelte').Snippet
   }
 
-  let { items, children }: Props = $props();
+  let {items, children}: Props = $props()
 </script>
 
 <div class="container">
@@ -65,6 +65,7 @@
   .list {
     display: grid;
     overflow-wrap: break-word;
+    margin-bottom: 2rem;
   }
 
   p {
