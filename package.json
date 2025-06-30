@@ -20,7 +20,7 @@
   "devDependencies": {
     "@citation-js/plugin-bibtex": "^0.6.1",
     "@eslint/js": "^9.17.0",
-    "@sveltejs/adapter-node": "^2.0.0",
+    "@sveltejs/adapter-node": "^5.2.12",
     "@sveltejs/enhanced-img": "^0.4.4",
     "@sveltejs/kit": "^2.5.27",
     "@sveltejs/vite-plugin-svelte": "^4.0.0",

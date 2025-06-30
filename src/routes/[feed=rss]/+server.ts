@@ -45,27 +45,42 @@ export async function GET() {
   const paths = import.meta.glob(
     '../[postType]/*/*/index.md',
   )
-  const posts: Post[] = await Promise.all(
-    Object.entries(paths).map(
-      async ([fullPath, resolver]) => {
-        const {metadata} = await (resolver() as Promise<{
-          metadata: Post
-        }>)
-        const path = fullPath.slice(
-          2,
-          0 - 'index.md'.length,
-        )
-        return {...metadata, path}
-      },
-    ),
-  ).then((posts) => {
-    return posts.sort(
-      (a, b) =>
-        Date.parse(b.date as string) -
-        Date.parse(a.date as string),
-    )
-  })
+  Object.entries(paths).forEach(
+    async ([filename, resolver]) => {
+      await resolver()
+      console.log({filename})
+    },
+  )
+  // const posts: Post[] = await Promise.all(
+  //   Object.entries(paths).map(
+  //     async ([fullPath, resolver]) => {
+  //       const {metadata} = await (resolver() as Promise<{
+  //         metadata: Post
+  //       }>)
+  //       const path = fullPath.slice(
+  //         2,
+  //         0 - 'index.md'.length,
+  //       )
+  //       return {...metadata, path}
+  //     },
+  //   ),
+  // ).then((posts) => {
+  //   return posts.sort(
+  //     (a, b) =>
+  //       Date.parse(b.date as string) -
+  //       Date.parse(a.date as string),
+  //   )
+  // })
 
+  const posts = [
+    {
+      date: 'asdf',
+      title: 'asdf',
+      subtitle: 'asdf',
+      path: 'asdf',
+      postData: 'asdf',
+    },
+  ]
   const body = render(posts)
   const headers = {
     'Cache-Control': 'max-age=0, s-maxage=3600',
