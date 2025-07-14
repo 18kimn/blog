@@ -14,9 +14,12 @@ sections:
         date: 2018-2022
   - name: Affiliations 
     entries:
-      - name: Center for Ethics, Society, and Computing (ESC)
-        role: Researcher ⋅ University of Michigan
-        date: 2023-Present
+      - name: Center for Ethics, Society, and Computing (ESC) at the University of Michigan
+        role: Researcher
+        date: Fall 2023-Present
+      - name: The Marxism Lab at the University of Michigan
+        role: Member
+        date: 2025-Present
   - name: Fellowships, Honors, and Awards
     entries:
       - name: The Light Fellowship for Language Study
@@ -29,6 +32,7 @@ sections:
         date: May 2019
   - name: Peer-reviewed Publications
   - name: Conference Presentations
+  - name: Workshops
   - name: Other Presentations
   - name: Misc. Work
   - name: Work Experience
@@ -50,7 +54,7 @@ sections:
       - name: The Anti-Eviction Mapping Project
         role: Member, Coordinator
         date: Summer 2021 — Present
-        description: Active web developer and researcher in the
+        description: Web developer and researcher in the
           Anti-Eviction Mapping Project, a digital
           cartography and tenant organizing collective.
           Began co-coordinating the Evictorbook project for

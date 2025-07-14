@@ -23,7 +23,12 @@ export default async function importCitations(): Promise<
     {
       name: 'Conference Presentations',
       condition: (ref) =>
-        ref.type === 'speech' && ref.note !== 'Other',
+        ref.type === 'speech' && !ref.note,
+    },
+    {
+      name: 'Workshops',
+      condition: (ref) =>
+        ref.type === 'speech' && ref.note === 'Workshop',
     },
     {
       name: 'Other Presentations',
