@@ -120,7 +120,7 @@ the entire country. The map also brings out Korea's shape
 outside of its geographic context in a statement of Korea's
 unique place in the world.
 
-![](./figure_2.jpg)
+![Chon-Ho Kim, 'Territorial Map of the Great East 1861,' 1861, American Geographical Society Library Digital Map Collection,https://collections.lib.uwm.edu/digital/collection/agdm/id/829.](./figure_2.jpg)
 
 **Figure 2.** **Chon-Ho Kim, "Territorial Map of the Great
 East 1861," 1861, American Geographical Society Library
@@ -175,7 +175,7 @@ where separation is not a declaration of strength and
 instead an indictment of weakness, arguing against Korea's
 traditional relationship with China.
 
-![](./figure_3.jpg)
+![Tokusaburo Wakabayashi, 'Shinsen Chosen Yochi Zenzu: Kan / Wakabayashi Tokusaburo. Saihan. Meiji 27 [1894]' (Wakabayashi Tokusaburo, 1894), University of Chicago LUNA.** ](./figure_3.jpg)
 
 **Figure 3.** **Tokusaburo Wakabayashi, "Shinsen Chosen
 Yochi Zenzu: Kan / Wakabayashi Tokusaburo. Saihan. Meiji 27
@@ -332,7 +332,7 @@ precolonial era, like ownership structures (some regions had
 others did not), were similarly unified by the Japanese
 cadastral survey.
 
-![](./figure_4.jpg)
+![Government-General of Korea, '육지측량부발행지도구역일람표 // List of Map Areas Issued by the Land Survey Department,' 1935. Seoul Museum of History.](./figure_4.jpg)
 
 **Figure 4.** **Government-General of Korea,
 "육지측량부발행지도구역일람표 // List of Map Areas Issued by
@@ -403,7 +403,7 @@ hundreds of thousands of relatively simple maps for daily
 interchangeable use, this project instead did the opposite
 of pouring much detail into four versions of a single map.
 
-![](./figure_5.jpg)
+![Land Survey Bureau Map of Seoul, with plans for parks, playgrounds, and stadiums, 1920. Seoul Museum of History.](./figure_5.jpg)
 
 **Figure 5. Land Survey Bureau Map of Seoul, with plans for
 parks, playgrounds, and stadiums, 1920. Seoul Museum of
@@ -524,7 +524,7 @@ Railway system shown in the inset of the map. The Japanese
 military headquarters can be seen outside of the city and at
 the southernmost point of Taihei Boulevard.
 
-![](./figure_6.png)
+![Map of Gyeongseong (Seoul), publisher unknown, annotations my own. 1927. <https://archives.seoul.go.kr/exhibition/yongsan/2/5>.](./figure_6.png)
 
 **Figure 6. Map of Gyeongseong (Seoul), publisher unknown,
 annotations my own. 1927.
@@ -609,7 +609,7 @@ view here recognizes Seoul for Korea as a whole in a
 cartographic metonymy aided by the generous amount of
 distortion.
 
-![](./figure_7.jpg)
+![A bird's eye view, drawing the empire's ambition. Hatsusaburo Yoshida, for the Seoul Exhibition of 1929. <http://www.hani.co.kr/arti/PRINT/815474.html>](./figure_7.jpg)
 
 **Figure 7. A bird's eye view, drawing the empire's
 ambition. Hatsusaburo Yoshida, for the Seoul Exhibition
@@ -656,7 +656,7 @@ that Korea was less concentrated in urban centers as France
 was, it is evident that the Tourist Bureau stretches to
 compare Korea to modern centers.
 
-![](./figure_8.jpg)
+![Chosen Railway and its connections. Japanese Tourist Bureau, 1913. Geography and Map Division, Library of Congress. <https://blogs.loc.gov/maps/2018/05/maps-of-seoul-south-korea-under-japanese-occupation/>](./figure_8.jpg)
 
 **Figure 8. Chosen Railway and its connections. Japanese
 Tourist Bureau, 1913. Geography and Map Division, Library of
