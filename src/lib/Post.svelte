@@ -149,10 +149,10 @@
     display: grid;
     grid-template-columns: 3fr 2fr;
     place-items: center;
-    overflow: hidden;
     --section-width: 70ch;
     gap: 0 4rem;
     margin-bottom: 3rem;
+    break-after: always;
   }
 
   @media (max-width: 1250px) {
@@ -169,7 +169,6 @@
     justify-self: flex-end;
     width: var(--section-width);
     max-width: 100%;
-    overflow: hidden;
   }
 
   /* Makes sure text is left-aligned within a container */
@@ -187,11 +186,13 @@
     justify-self: flex-start;
     max-width: 40ch;
     overflow: hidden;
+    break-after: always;
   }
 
   .footnote {
     font-size: 0.8rem;
     margin: 1rem;
+    break-inside: avoid;
   }
 
   .meta {

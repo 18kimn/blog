@@ -27,17 +27,10 @@
 
 <style>
   @import '../globals.css';
-  @media print {
-    .page {
-      padding: 0;
-      overflow: visible !important;
-    }
-  }
 
   .page {
     width: 100%;
     max-width: 100vw;
-    height: 100%;
     padding: 0 2rem;
     box-sizing: border-box;
   }
@@ -60,8 +53,19 @@
   main {
     position: relative;
     z-index: 1;
-    height: fit-content;
-    box-sizing: border-box;
-    overflow-x: hidden;
+  }
+
+  @media print {
+    .page {
+      padding: 0;
+      overflow: visible !important;
+    }
+
+    .component,
+    .container {
+      position: relative;
+      display: block !important;
+      width: 100%;
+    }
   }
 </style>

@@ -258,10 +258,6 @@
       visibility: visible !important;
       page-break-after: always;
       overflow: hidden;
-      border: none;
-    }
-    hr {
-      border: revert;
     }
 
     /* Allow child containers to overflow if necessary */
