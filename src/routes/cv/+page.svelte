@@ -6,6 +6,7 @@
   import type {PageData} from './$types'
   import '@citation-js/plugin-csl'
   import {setupDialog} from '$lib/utils/dialog'
+  import {Previewer} from 'pagedjs'
 
   let {data}: {data: PageData} = $props()
 
@@ -22,7 +23,7 @@
   let search: string = $state()
   let csl: CSL = $state(csls[0])
   let isCompact = $state(true)
-  let fontsize = $state(12)
+  let fontsize = $state(10)
 
   data.csls.then((csls) => {
     csls.forEach((csl) => {
@@ -36,16 +37,24 @@
     })
     csl = csls[0]
   })
-  /*
-  - search
-  - show navigation header
-  -
-  - open/minimize sections
-  - preview for websites
-  - search only for first-authored papers ?? not right now
-  */
+
+  let shouldRender = $state(true)
+  async function printCV() {
+    const paged = new Previewer()
+    await paged.preview(node)
+    shouldRender = false
+    const output = document
+      .querySelector('.pagedjs_pages')
+      .cloneNode(true)
+    document.body.innerHTML = ''
+    document.body.appendChild(output)
+    window.print()
+  }
 </script>
 
+<svelte:head>
+  <title>Nathan Kim's CV</title>
+</svelte:head>
 <div class="container">
   <dialog bind:this={dialog}>
     <div class="row">
@@ -85,31 +94,43 @@
       <label for="search">Filter entries:</label>
       <input id="search" bind:value={search} />
     </div>
+    <div class="row">
+      <button
+        class="printerButton no-print"
+        onclick={printCV}
+      >
+        Download as PDF or print (in beta stage)</button
+      >
+    </div>
   </dialog>
-  <CVBody bind:node {search} {csl} {isCompact} {fontsize}>
-    <button
-      bind:this={opener}
-      aria-label="edit the CV settings"
-      onclick={() => {
-        dialog.style.display = 'flex'
-        /* to trigger a layout recalculation;
+
+  {#if shouldRender}
+    <CVBody bind:node {search} {csl} {isCompact} {fontsize}>
+      <button
+        class="opener no-print"
+        bind:this={opener}
+        aria-label="edit the CV settings"
+        onclick={() => {
+          dialog.style.display = 'flex'
+          /* to trigger a layout recalculation;
           otherwise the display flex
         change and the showModal changes will
         be batched together, but we want the
         display to be set to flex first
         */
-        dialog.getBoundingClientRect()
-        dialog.showModal()
-      }}
-    >
-      <svg viewBox="0 0 24 24" class="opener">
-        <path
-          class="opener"
-          d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"
-        />
-      </svg>
-    </button>
-  </CVBody>
+          dialog.getBoundingClientRect()
+          dialog.showModal()
+        }}
+      >
+        <svg viewBox="0 0 24 24" class="opener">
+          <path
+            class="opener"
+            d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"
+          />
+        </svg>
+      </button>
+    </CVBody>
+  {/if}
 </div>
 
 <style>
@@ -170,7 +191,13 @@
     cursor: pointer;
   }
 
-  button {
+  .printerButton {
+    background: buttonface;
+    border: solid 1px black;
+    padding: 0.3rem;
+  }
+
+  .opener {
     padding: 0;
     margin: 0;
   }

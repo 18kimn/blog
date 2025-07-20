@@ -3,10 +3,10 @@
   import Nav from '$lib/Nav.svelte'
   import {stripHTML} from '$lib/utils/string'
   interface Props {
-    children?: import('svelte').Snippet;
+    children?: import('svelte').Snippet
   }
 
-  let { children }: Props = $props();
+  let {children}: Props = $props()
 
   let title = $derived(stripHTML($page.data.title || ''))
 </script>
@@ -27,6 +27,12 @@
 
 <style>
   @import '../globals.css';
+  @media print {
+    .page {
+      padding: 0;
+      overflow: visible !important;
+    }
+  }
 
   .page {
     width: 100%;

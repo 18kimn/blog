@@ -12,7 +12,7 @@
   })
 </script>
 
-<div class="header-container">
+<div class="header-container no-print">
   <div class="header">
     <a href="/">
       {#if $page.route.id === ''}

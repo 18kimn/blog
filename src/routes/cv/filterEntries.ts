@@ -7,7 +7,11 @@ export default function filterEntries(
   return sections.map((section) => ({
     ...section,
     entries: section.entries.filter((entry) => {
-      return Object.values(entry).join('').match(query)
+      if (!query) return true
+      return Object.values(entry)
+        .join('')
+        .toLowerCase()
+        .match(query.toLowerCase())
     }),
   }))
 }

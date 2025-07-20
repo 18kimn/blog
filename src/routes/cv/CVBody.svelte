@@ -23,7 +23,7 @@
     search,
     csl,
     isCompact,
-    fontsize = 12,
+    fontsize = 10,
     children,
   }: Props = $props()
   let meta: CV['meta'] = $state(CVData.meta)
@@ -39,97 +39,105 @@
 </script>
 
 {#if ready}
-  <div
-    class="cv"
-    style="font-size: {fontsize}pt; --margin-multi: {isCompact
-      ? 0.5
-      : 1}"
-    bind:this={node}
-  >
-    <div>
-      <div class="meta">
-        {@render children?.()}
-        <div class="links">
-          <span>{meta.email}</span> |
-          <a
-            href={`https://${meta.website}`}
-            rel="noopener"
-            target="_blank">{meta.website}</a
-          >
-          |
-          <a
-            href={`https://twitter.com/${meta.twitter}`}
-            rel="noopener"
-            target="_blank"
-          >
-            @{meta.twitter}
-          </a>
-        </div>
-      </div>
-      {#each filterEntries(search, sections) as section, index}
-        <section
-          in:fade|global={{
-            delay: 100 * index,
-            duration: 300,
-          }}
-        >
-          <h2 class="section-name">{section.name}</h2>
-          <hr />
-          {#each section.entries as entry}
-            <div
-              class="entry"
-              in:fade|global={{
-                delay: 100 * index,
-                duration: 300,
-              }}
+  <div class="cv-container" bind:this={node}>
+    <div
+      class="cv"
+      id="print-source"
+      style="font-size: {fontsize}pt; --margin-multi: {isCompact
+        ? 0.5
+        : 1}"
+    >
+      <div>
+        <div class="meta">
+          {@render children?.()}
+          <div class="print-title">
+            <h1>Nathan Kim</h1>
+            <span>Curriculum Vitae</span>
+          </div>
+          <div class="links">
+            <span>{meta.email}</span> |
+            <a
+              href={`https://${meta.website}`}
+              rel="noopener"
+              target="_blank">{meta.website}</a
             >
-              {#if !('type' in entry)}
-                <div class="position-meta">
-                  <span class="position-title">
-                    {#if 'role' in entry}
-                      <!-- content here -->
-                      <strong>{entry.name}</strong>
-                      <em class="role"
-                        >{@html entry.role}</em
-                      >
-                    {:else}
-                      {entry.name}
-                    {/if}
-                  </span>
-                  {#if entry.date}
-                    <span class="date"
-                      >{@html entry.date}</span
-                    >
-                  {/if}
-                </div>
-                {#if !isCompact && entry.description}
-                  <div class="entry-description">
-                    {@html entry.description}
-                  </div>
-                {/if}
-              {:else if entry.type === 'markup'}
-                {@html entry.markup}
-              {:else if entry.type === 'csl'}
-                <ResizingBox
-                  content={{
-                    info: section.entries
-                      .map((e) => e['markup'])
-                      .join(''),
-                  }}
-                >
-                  {#if entry.markup}
-                    {@html entry.markup || ''}
-                  {:else}
-                    <span class="loading-message">
-                      Loading...
-                    </span>
-                  {/if}
-                </ResizingBox>
-              {/if}
+            |
+            <a
+              href={`https://twitter.com/${meta.twitter}`}
+              rel="noopener"
+              target="_blank"
+            >
+              @{meta.twitter}
+            </a>
+          </div>
+        </div>
+        {#each filterEntries(search, sections) as section, index}
+          <section
+            in:fade|global={{
+              delay: 100 * index,
+              duration: 300,
+            }}
+          >
+            <div class="section-title">
+              <h2 class="section-name">{section.name}</h2>
+              <hr />
             </div>
-          {/each}
-        </section>
-      {/each}
+            {#each section.entries as entry}
+              <div
+                class="entry"
+                in:fade|global={{
+                  delay: 100 * index,
+                  duration: 300,
+                }}
+              >
+                {#if !('type' in entry)}
+                  <div class="position-meta">
+                    <span class="position-title">
+                      {#if 'role' in entry}
+                        <!-- content here -->
+                        <strong>{entry.name}</strong>
+                        <em class="role"
+                          >{@html entry.role}</em
+                        >
+                      {:else}
+                        {entry.name}
+                      {/if}
+                    </span>
+                    {#if entry.date}
+                      <span class="date"
+                        >{@html entry.date}</span
+                      >
+                    {/if}
+                  </div>
+                  {#if !isCompact && entry.description}
+                    <div class="entry-description">
+                      {@html entry.description}
+                    </div>
+                  {/if}
+                {:else if entry.type === 'markup'}
+                  {@html entry.markup}
+                {:else if entry.type === 'csl'}
+                  <ResizingBox
+                    content={{
+                      info: section.entries
+                        .map((e) => e['markup'])
+                        .join(''),
+                    }}
+                  >
+                    {#if entry.markup}
+                      {@html entry.markup || ''}
+                    {:else}
+                      <span class="loading-message">
+                        Loading...
+                      </span>
+                    {/if}
+                  </ResizingBox>
+                {/if}
+              </div>
+            {/each}
+          </section>
+        {/each}
+      </div>
     </div>
   </div>
 {/if}
@@ -139,7 +147,8 @@
      other margins should be scaled by
     --marg below is just a convenience variable
    */
-  .cv {
+  .cv,
+  .cv-container {
     --marg: calc(var(--margin-multi) * 0.5em);
     padding: calc(var(--marg) - 0.5em)
       calc(var(--marg) - 0.8em);
@@ -162,6 +171,10 @@
 
   .links {
     text-align: right;
+  }
+
+  .section-title {
+    break-inside: avoid-page;
   }
 
   .section-name {
@@ -217,5 +230,77 @@
   }
   .loading-message {
     animation: pulse 1.5s infinite ease-in-out;
+  }
+
+  .print-title {
+    display: none;
+  }
+
+  .print-title h1 {
+    font-size: 18pt;
+  }
+
+  @page {
+    size: 8.5in 11in;
+    margin: 0.8in;
+  }
+
+  @media screen {
+    :global(.pagedjs_page) {
+      border: solid 1px black;
+      margin: 1rem 0;
+    }
+  }
+
+  @media print {
+    :global(.pagedjs_page),
+    :global(.pagedjs_page *) {
+      visibility: visible !important;
+      page-break-after: always;
+      overflow: hidden;
+      border: none;
+    }
+    hr {
+      border: revert;
+    }
+
+    /* Allow child containers to overflow if necessary */
+    :global(.pagedjs_page > .content),
+    :global(.pagedjs_page *) {
+      overflow: visible !important;
+    }
+
+    :global(.cv) {
+      padding: 1rem;
+      overflow: visible !important;
+      max-width: unset !important;
+    }
+
+    *,
+    *::before,
+    *::after {
+      opacity: 1;
+    }
+
+    :global(.entry) {
+      orphans: 0;
+    }
+
+    :global(.box) {
+      height: unset !important;
+    }
+
+    .meta {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .print-title {
+      display: block;
+    }
+  }
+
+  :global(.pagedjs-pages) {
+    display: none;
   }
 </style>
