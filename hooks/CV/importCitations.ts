@@ -21,6 +21,10 @@ export default async function importCitations(): Promise<
       condition: (ref) => ref.type === 'article-journal',
     },
     {
+      name: 'Manuscripts and works in progress',
+      condition: (ref) => ref.type === 'manuscript',
+    },
+    {
       name: 'Conference Presentations',
       condition: (ref) =>
         ref.type === 'speech' && !ref.note,
