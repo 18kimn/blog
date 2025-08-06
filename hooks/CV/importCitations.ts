@@ -17,12 +17,17 @@ export default async function importCitations(): Promise<
 
   const categories = [
     {
-      name: 'Peer-reviewed Publications',
+      name: 'Peer-Reviewed Publications',
       condition: (ref) => ref.type === 'article-journal',
     },
     {
-      name: 'Manuscripts and works in progress',
+      name: 'Manuscripts and Works in Progress',
       condition: (ref) => ref.type === 'manuscript',
+    },
+    {
+      name: 'Reports and Non-Peer Reviewed Publications',
+      condition: (ref) =>
+        ['article', 'report'].includes(ref.type),
     },
     {
       name: 'Conference Presentations',
