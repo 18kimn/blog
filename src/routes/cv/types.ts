@@ -46,7 +46,7 @@ export interface CV {
     name: 'Nathan Kim'
     email: string
     website: string
-    twitter: string
+    bluesky: string
     last_updated: Date
   }
   sections: {

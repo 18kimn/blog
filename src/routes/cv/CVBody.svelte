@@ -63,11 +63,11 @@
             >
             |
             <a
-              href={`https://twitter.com/${meta.twitter}`}
+              href={`https://bsky.app/profile/${meta.bluesky}.bsky.social`}
               rel="noopener"
               target="_blank"
             >
-              @{meta.twitter}
+              @{meta.bluesky}
             </a>
           </div>
         </div>
