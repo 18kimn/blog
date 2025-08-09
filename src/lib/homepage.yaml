@@ -1,37 +1,37 @@
-"worked with:":
+'worked with:':
   - display: University of Michigan School of Information
     info: PhD student; started August 2023.
   - display: the Anti-Eviction Mapping Project
-    info: A tenant organizing, housing justice, critical
+    info:
+      A tenant organizing, housing justice, critical
       cartography collective. I'm working on the Evictorbook
       landlord lookup tool, a site profiling the "Worst
       Evictors" of San Francisco and Oakland, and the
       organization website.
     link: https://antievictionmap.com
   - display: the Distributed AI Research Institute
-    info: Building data processing and analysis pipelines for
+    info:
+      Building data processing and analysis pipelines for
       the Student and Campus Protest Events Project, with
-      Dr. Alex Hanna (DAIR Institute) and Dr. Ellen Berrey (UToronto).
+      Dr. Alex Hanna (DAIR Institute) and Dr. Ellen Berrey
+      (UToronto).
   - display: Ann Arbor Tenants Union
     link: https://annarbortenants.org/
   - display: GEO3550
     link: https://geo3550.org
-"worked on:":
+'worked on:':
+  - display:
+      "How Big Cloud becomes Bigger: Scrutinizing Google,
+      Microsoft, and Amazon's investments"
+    link: https://dx.doi.org/10.2139/ssrn.5377426
+  - display:
+      The University Endowment and the Genocide in Gaza
+    link: https://bit.ly/UMEndowmentGuide
   - display: Property Ownership and Consolidation in Concord
     link: https://antievictionmap.com/blog/2023/9/14/property-ownership-and-consolidation-in-concord-2023
-  - display: The University Endowment and the Genocide in Gaza
-    link: https://bit.ly/UMEndowmentGuide
+  - display: Evictorbook
+    link: https://evictorbook.com
   - display: The Worst Evictors of San Francisco and Oakland
     link: https://worstevictorsbayarea.org
   - display: the Yale Detour
-    info: "An alternative history tour of Yale. My role:
-      editing, coordinating, coding."
     link: https://yale-detour.org
-  - display: Evictorbook
-    info: >-
-      A tool for tenant organizing. My role: front-end
-      coding.
-    link: https://evictorbook.com
-  - display: no more paywalls!
-    info: Tiny site on accessing paywalled academic resources.
-    link: https://no-more-paywalls.org
