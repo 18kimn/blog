@@ -50,25 +50,30 @@
       <div>
         <div class="meta">
           {@render children?.()}
-          <div class="print-title">
-            <h1>Nathan Kim</h1>
-            <span>Curriculum Vitae</span>
-          </div>
-          <div class="links">
-            <span>{meta.email}</span> |
-            <a
-              href={`https://${meta.website}`}
-              rel="noopener"
-              target="_blank">{meta.website}</a
-            >
-            |
-            <a
-              href={`https://bsky.app/profile/${meta.bluesky}.bsky.social`}
-              rel="noopener"
-              target="_blank"
-            >
-              @{meta.bluesky}
-            </a>
+          <div class="meta-info">
+            <div class="print-title">
+              <h1>Nathan Kim</h1>
+              <span>Curriculum Vitae</span>
+            </div>
+            <div class="links">
+              <span>{meta.email}</span> |
+              <a
+                href={`https://${meta.website}`}
+                rel="noopener"
+                target="_blank">{meta.website}</a
+              >
+              |
+              <a
+                href={`https://bsky.app/profile/${meta.bluesky}.bsky.social`}
+                rel="noopener"
+                target="_blank"
+              >
+                @{meta.bluesky}
+              </a>
+            </div>
+            <div>
+              <em>Last updated {meta.last_updated}</em>
+            </div>
           </div>
         </div>
         {#each filterEntries(search, sections) as section, index}
@@ -167,6 +172,13 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .meta-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    align-items: flex-end;
   }
 
   .links {
@@ -287,8 +299,13 @@
     }
 
     .meta {
+      justify-content: center;
+    }
+
+    .meta-info {
       flex-direction: column;
       text-align: center;
+      align-items: center;
     }
 
     .print-title {
