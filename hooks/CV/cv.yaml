@@ -40,7 +40,9 @@ sections:
         date: May 2019
   - name: Peer-Reviewed Publications
   - name: Manuscripts and Works in Progress
-  - name: Reports and Non-Peer Reviewed Publications
+  - name:
+      Reports, Public Writing, and Non-Peer Reviewed
+      Publications
   - name: Conference Presentations
   - name: Workshops
   - name: Other Presentations
