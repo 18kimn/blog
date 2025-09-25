@@ -154,7 +154,7 @@
         Ann Arbor Tenants Union,
       </OutLink> through which I've worked on standing up several
       tenant associations and building citywide power for tenants.
-      My work as an organizer generally focuses creating the
+      My work as an organizer generally focuses on creating the
       excitement and analysis needed for formations of workers
       or tenants to systematically expand and make decisions
       together -- in other words, the positive practice of organizing
