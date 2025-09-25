@@ -85,35 +85,18 @@
 <div class="page-container">
   <div class="overview">
     <p>
-      I am a PhD student at the University of Michigan
-      School of Information, where I am advised by
-      <OutLink href="https://matthewbui.com/"
-        >Dr. Matthew Bui</OutLink
-      >. I'm interested in critical studies of race,
+      I am a PhD candidate at the University of Michigan
+      School of Information. I'm interested in the political
+      economy of Silicon Valley, especially with regards to
+      the evolving relationship between the Valley and
+      logics of state security after the Cold War. That
+      leads me to draw from critical studies of race,
       finance, logistics, and tech infrastructures. If
-      you're interested in collabing, talking, organizing,
-      or working with me in any way, <strong>please</strong>
-      reach out to me (contact info on right).
-    </p>
-    <p>
-      I'm currently interested in and am writing about the
-      political economy of Silicon Valley, especially as it
-      relates to the recent emboldening of the Valley's
-      right-wing factions and the return towards defense
-      technology (Anduril, the Paypal Mafia, Network State,
-      etc). Though the conditions and processes for the
-      reactionary right's rise has been in place for
-      decades, their recent victories signal a shift away
-      from the libertarian corporatism of the <OutLink
-        href="https://networkcultures.org/wp-content/uploads/2015/10/0585-INC_NN10-totaal-RGB.pdf"
+      you're interested in collaborating, talking,
+      organizing, or working with me in any way, <strong
+        >please</strong
       >
-        "Californian ideology"
-      </OutLink>
-      and towards an unabashed politics of racial and imperial
-      domination, doing away with pretenses of democratic governance
-      and egalitarianism. If this interests you as well, I am
-      looking for collaborators and would be happy to exchange
-      drafts or just discuss in general.
+      reach out to me (contact info on right).
     </p>
     <p>
       I am interested in social movements broadly and
@@ -144,16 +127,15 @@
       and more work will be released in 2025.
     </p>
     <p>
-      I am a department steward and Co-Chair of the Housing
-      Caucus with the
+      I am a department steward with the
       <OutLink href="https://geo3550.org/">
         Graduate Employees' Organization at the University
         of Michigan (AFT Local 3550)
-      </OutLink>. I am also an organizer with the
+      </OutLink>. I am also did work with the
       <OutLink href="https://tahrirumich.org/">
         TAHRIR Coalition
       </OutLink>
-      at the University of Michigan. With TAHRIR, I mostly perform
+      at the University of Michigan. With TAHRIR, I mostly performed
       research on the UM endowment and relations of power within
       the university. We published
       <OutLink
@@ -169,8 +151,15 @@
       </OutLink>. I am also an active organizer with the <OutLink
         href="https://annarbortenants.org/"
       >
-        Ann Arbor Tenants Union.
-      </OutLink>
+        Ann Arbor Tenants Union,
+      </OutLink> through which I've worked on standing up several
+      tenant associations and building citywide power for tenants.
+      My work as an organizer generally focuses creating the
+      excitement and analysis needed for formations of workers
+      or tenants to systematically expand and make decisions
+      together -- in other words, the positive practice of organizing
+      necessary to achieve wins while avoiding "leadership" representing
+      or advocating on behalf of members in a union.
     </p>
     <p>
       Before I became a graduate student at UMich, I was an

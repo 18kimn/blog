@@ -25,8 +25,18 @@ sections:
       - name: The Marxism Lab at the University of Michigan
         role: Member
         date: 2025-Present
-  - name: Fellowships, Honors, and Awards
+  - name: Grants, Fellowships, and Awards
     entries:
+      - name: Convener of Rackham Interdisciplinary Workshop on Militarisms, Technological Production, and STEM Research ($5,000)
+        date: September 2025
+      - name: Rackham Travel Grant, University of Michigan ($1,500 per award)
+        date: 2023, 2024
+      - name: UMSI Travel Grant, University of Michigan ($2,000 per award)
+        date: 2024, 2025
+      - name: STS Travel Grant, University of Michigan ($500 per award)
+        date: 2023, 2025
+      - name: Rackham Student Research Grant (Pre-Candidacy), University of Michigan. $1,500. 
+        date: September 2024
       - name: The Light Fellowship for Language Study
         date: January 2022
       - name:
@@ -50,7 +60,7 @@ sections:
   - name: Work Experience
     entries:
       - name: The Distributed AI Research Institute
-        role: Quantitative Research Assistant
+        role: Graduate Research Associate
         date: July 2022 — Present
         description:
           Creating a data pipeline and conducting
