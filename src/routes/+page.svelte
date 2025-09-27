@@ -131,7 +131,7 @@
       <OutLink href="https://geo3550.org/">
         Graduate Employees' Organization at the University
         of Michigan (AFT Local 3550)
-      </OutLink>. I am also did work with the
+      </OutLink>. I also did work with the
       <OutLink href="https://tahrirumich.org/">
         TAHRIR Coalition
       </OutLink>
