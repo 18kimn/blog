@@ -163,6 +163,10 @@
     max-width: min(100%, 70ch);
   }
 
+  .cv {
+    min-width: 100%;
+  }
+
   section {
     margin: 1.5em 0;
   }

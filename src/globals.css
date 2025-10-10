@@ -2,7 +2,9 @@
   /* easiest font-size scaling solution 
    * 12pt min; 2.25vh otherwise; 16pt max
    */
-  font-size: min(max(2vh, 11pt), 16pt);
+  /* font-size: min(max(2vh, 11pt), 16pt);*/
+  /* jk im tired of this */
+  font-size: 12pt;
   transition: font-size ease-in-out 200ms;
   --font: Lora, Cambria, Cochin, Georgia, Times,
     'Times New Roman', Noto Emoji, serif;

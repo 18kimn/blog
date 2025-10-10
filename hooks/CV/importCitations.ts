@@ -25,7 +25,7 @@ export default async function importCitations(): Promise<
       condition: (ref) => ref.type === 'manuscript',
     },
     {
-      name: 'Reports, Public Writing, and Non-Peer Reviewed Publications',
+      name: 'Non-Peer Reviewed Publications',
       condition: (ref) =>
         ['article', 'report', 'article-newspaper'].includes(
           ref.type,
@@ -37,12 +37,12 @@ export default async function importCitations(): Promise<
         ref.type === 'speech' && !ref.note,
     },
     {
-      name: 'Workshops',
+      name: 'Conference Workshops',
       condition: (ref) =>
         ref.type === 'speech' && ref.note === 'Workshop',
     },
     {
-      name: 'Other Presentations',
+      name: 'Invited Lectures and Presentations',
       condition: (ref) =>
         ref.type === 'speech' && ref.note === 'Other',
     },

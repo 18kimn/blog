@@ -3,7 +3,7 @@ meta:
   email: nathanckim18@gmail.com
   website: nathan-kim.org
   bluesky: nathanckim
-  last_updated: 'September 25, 2025'
+  last_updated: 'October 10, 2025'
 sections:
   - name: Education
     entries:
@@ -17,14 +17,20 @@ sections:
         date: 2018-2022
   - name: Affiliations
     entries:
+      - name: The Marxism Lab at the University of Michigan
+        role: Member
+        date: 2025-Present
       - name:
           Center for Ethics, Society, and Computing (ESC) at
           the University of Michigan
         role: Researcher
         date: Fall 2023-Present
-      - name: The Marxism Lab at the University of Michigan
-        role: Member
-        date: 2025-Present
+  - name: Peer-Reviewed Publications
+  - name: Manuscripts and Works in Progress
+  - name: Non-Peer Reviewed Publications
+  - name: Conference Presentations
+  - name: Conference Workshops
+  - name: Invited Lectures and Presentations
   - name: Grants, Fellowships, and Awards
     entries:
       - name: Convener of Rackham Interdisciplinary Workshop on Militarisms, Technological Production, and STEM Research ($5,000)
@@ -48,14 +54,6 @@ sections:
           The Yale Asian American Cultural Center First-Year
           Award
         date: May 2019
-  - name: Peer-Reviewed Publications
-  - name: Manuscripts and Works in Progress
-  - name:
-      Reports, Public Writing, and Non-Peer Reviewed
-      Publications
-  - name: Conference Presentations
-  - name: Workshops
-  - name: Other Presentations
   - name: Misc. Work
   - name: Work Experience
     entries:
