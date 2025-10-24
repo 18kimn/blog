@@ -14,7 +14,7 @@ subdiscipline within sociology.
 
 I wrote this for SOC532: Comparative Historical Sociology,
 taught by Jonah Stuart Brundage. That class was amazing and
-genuinely one of the most insightful semester's I've had in
+likely the most insightful class I've participated in, in
 either undergrad or grad school.
 
 I don't have much of a background in comparative historical
