@@ -219,6 +219,7 @@
   .position-title {
     display: flex;
     flex-direction: column;
+    max-width: 65ch;
   }
 
   .role,
