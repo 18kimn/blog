@@ -7,6 +7,14 @@
   <span class="spacer">⋅</span>
   <span>Signal: nathanckim18.49</span>
   <span class="spacer">⋅</span>
+  <span
+    >Schedule time to meet with me <a
+      href="https://calendar.app.google/7GC6scMDvFwNwCsG8"
+    >
+      at this link
+    </a>
+  </span>
+  <span class="spacer">⋅</span>
   <div class="icons">
     <a
       href="/feed"
