@@ -44,8 +44,10 @@ abundance of theorizing and constant new juxtapositions of
 terms flowing in every day, lack of any unitary basis on
 which to view the world here each of these theories might
 relate to each other, and a poorly-articulated and
-disorganized response to the Trump crackdown that can
-neither articulate what is valuable about scholarship
+disorganized response to the Trumpist attacks on
+universities that can neither articulate what is valuable
+about scholarship nor how we can stop it and create a more
+just future for all.
 
 In this blog post, I'll articulate just one response to this
 state, trying to define what "good" or "useful" scholarship
