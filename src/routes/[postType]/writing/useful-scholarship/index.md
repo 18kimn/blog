@@ -115,17 +115,17 @@ strategy is rightfully not recognized as intervening in
 
 There's of course many cases in which academic scholarship
 is prescriptive in a concrete and material sense, not only
-at the level of thought -- for instance, Frankie and
-Cella-method work (correspond directly with unions, offer an
-intervention into their existing practice). In these cases,
-the interventions Cella and Frankie present to their
-partners (the prescriptive aspect) is not actually why their
-work is important to a scholarly community, which would be
-more on the ramifications of this project for design (the
-descriptive kind). They are conjoined almost by accident, by
-the force of circumstance and strategic innovation of
-researchers; prescriptive theory in this sense happens as a
-byproduct of research.
+at the level of thought -- for instance, corresponding
+directly with unions, offering an intervention into their
+existing practice. In these cases, as far as I have
+observed, the interventions these researchers present to
+their partners (the prescriptive aspect) is not actually why
+their work is important to a scholarly community, which
+would be more on the ramifications of this project for
+design (the descriptive kind). They are conjoined almost by
+accident, by the force of circumstance and strategic
+innovation of researchers; prescriptive theory in this sense
+happens as a byproduct of research.
 
 Both avenues of integration seem to be trying to bring
 prescriptive and descriptive theory together in a way that
@@ -276,12 +276,12 @@ in the domain of the academy. For that reason it's attentive
 to historical and geographical specificities, etc.
 
 Lastly, it can If it forges relationships with the
-prescriptive kind. This is essentially what Frankie and
-Cella do. Another consequence is that the descriptive
-variety is still meant to be read by and engaged with by
-people doing the prescriptive variety. But, to be honest,
-this is still not very compelling to me, as a circumstantial
-effect as mentioned before
+prescriptive kind, as briefly outlined above. Another
+consequence is that the descriptive variety is still meant
+to be read by and engaged with by people doing the
+prescriptive variety. But, to be honest, this is still not
+very compelling to me, as a circumstantial effect as
+mentioned before
 
 OK, this is all phrased at the level of the very general and
 abstract, and the actual conclusions that prescriptive
