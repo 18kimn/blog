@@ -6,3 +6,9 @@
   stuff into an academic paper. See links on the home page
   or in the CV page for more serious work.
 </p>
+
+<style>
+  p {
+    font-size: 1rem;
+  }
+</style>

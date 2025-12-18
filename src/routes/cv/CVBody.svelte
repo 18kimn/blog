@@ -43,7 +43,7 @@
     <div
       class="cv"
       id="print-source"
-      style="font-size: {fontsize}pt; --margin-multi: {isCompact
+      style="font-size: {fontsize}pt !important; --margin-multi: {isCompact
         ? 0.5
         : 1}"
     >
@@ -85,6 +85,9 @@
           >
             <div class="section-title">
               <h2 class="section-name">{section.name}</h2>
+              {#if section.subtitle}
+                <em>{section.subtitle}</em>
+              {/if}
               <hr />
             </div>
             {#each section.entries as entry}
@@ -193,10 +196,18 @@
     break-inside: avoid-page;
   }
 
+  .section-title em {
+    margin: 0.5rem 0;
+  }
+
   .section-name {
     margin: calc(var(--margin-multi) * 0.5em) 0 0 0;
     white-space: break-word;
     font-size: 1.5em;
+  }
+
+  p {
+    font-size: unset;
   }
 
   hr {

@@ -69,6 +69,7 @@
   }
 
   p {
+    font-size: 1rem;
     display: flex;
     justify-content: flex-start;
     margin: 0.5rem 0;

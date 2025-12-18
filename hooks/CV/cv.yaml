@@ -8,30 +8,22 @@ sections:
   - name: Education
     entries:
       - name: PhD in Information
-        role: University of Michigan School of Information
+        role: University of Michigan School of Information (with graduate certificate in Science and Technology Studies)
         date: 2023-Present
       - name:
           B.A. in Ethnicity, Race, & Migration and
           Statistics & Data Science
         role: Yale University
         date: 2018-2022
-  - name: Affiliations
-    entries:
-      - name: The Marxism Lab at the University of Michigan
-        role: Member
-        date: 2025-Present
-      - name:
-          Center for Ethics, Society, and Computing (ESC) at
-          the University of Michigan
-        role: Researcher
-        date: Fall 2023-Present
-  - name: Peer-Reviewed Publications
-  - name: Manuscripts and Works in Progress
-  - name: Non-Peer Reviewed Publications
-  - name: Conference Presentations
-  - name: Conference Workshops
-  - name: Invited Lectures and Presentations
+  - name: Peer-reviewed publications
+  - name: Manuscripts under review and in preparation
   - name: Grants, Fellowships, and Awards
+  - name: Public scholarship and policy writing
+  - name: Conference presentations
+  - name: Conference workshops
+    subtitle: Lightly peer-reviewed.
+  - name: Invited lectures and presentations
+    subtitle: Interviews and presentations in non-peer reviewed settings.
     entries:
       - name: Grant from Michigan Initiative for Democracy and Civic Empowerment, for "Technology and Democracy Conferences - Perspectives from Political Economy." ($10,000)
         date: October 2025
@@ -56,8 +48,18 @@ sections:
           The Yale Asian American Cultural Center First-Year
           Award
         date: May 2019
-  - name: Misc. Work
-  - name: Work Experience
+  - name: Digital projects
+  - name: Affiliations
+    entries:
+      - name: The Marxism Lab at the University of Michigan
+        role: Member
+        date: 2025-Present
+      - name:
+          Center for Ethics, Society, and Computing (ESC) at
+          the University of Michigan
+        role: Researcher
+        date: Fall 2023-Present
+  - name: Work experience
     entries:
       - name: University of Michigan School of Information
         role: Graduate Student Instructor
@@ -80,7 +82,7 @@ sections:
           Assisted in creation of midterm and final exams.
       - name: The Anti-Eviction Mapping Project
         role: Member, Coordinator
-        date: Summer 2021 — Present
+        date: Summer 2021 — Summer 2024
         description:
           Web developer and researcher in the Anti-Eviction
           Mapping Project, a digital cartography and tenant
@@ -122,23 +124,13 @@ sections:
           between donation time, donation amount, LEAP
           activities such as segmenting letters, and donor
           identity.
-  - name: Technical Skills
+  - name: Technical skills
     entries:
       - type: markdown
         markdown: |
-          - **Web development** through the Svelte React and
-            Vue frameworks in JavaScript. Familiar with
-            Typescript and the NodeJS and Rust environments
-            for backend server programming.
-          - **Data visualization** through the
-            ggplot2 ecosystem in R as well as the d3.js
-            ecosystem in JavaScript and the plotly library
-            in Python.
-          - Expertise in **data pipeline creation and data
-            cleaning** through the R programming language,
-            especially through the `renv` and `targets`
-            frameworks for reproducible development.
-          - **Web server architecture** in the Linux world.
-            Familiar with the Arch, NixOS, Debian, and Gentoo
-            families of Linux distros. Familiar with Docker
-            development and abstractions over these architectures.
+           **Front-end web development:** Svelte, React, and Vue JavaScript frameworks. <br />
+           **Back-end web development:**: NodeJS (and Typescript); Python (Django, Flask). <br />
+           **Web server work:** Linux (Arch, NixOS, Gentoo, Debian); Docker development; Nginx. <br />
+           **Data visualization:** `ggplot2`, `d3.js`, `plotly`. <br />
+           **Data pipeline architecture**: `Make` and modern tools like `dagster`, `targets`. <br />
+           **Data analysis and modeling**: Various flavors of OLS and logit regression; time-series analysis; spatial models.

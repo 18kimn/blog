@@ -51,6 +51,7 @@ export interface CV {
   }
   sections: {
     name: string
+    subtitle?: string
     entries: Entry[]
   }[]
 }

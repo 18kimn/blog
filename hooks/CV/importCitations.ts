@@ -17,37 +17,38 @@ export default async function importCitations(): Promise<
 
   const categories = [
     {
-      name: 'Peer-Reviewed Publications',
+      name: 'Peer-reviewed publications',
       condition: (ref) => ref.type === 'article-journal',
     },
     {
-      name: 'Manuscripts and Works in Progress',
+      name: 'Manuscripts under review and in preparation',
       condition: (ref) => ref.type === 'manuscript',
     },
     {
-      name: 'Non-Peer Reviewed Publications',
+      name: 'Public scholarship and policy writing',
       condition: (ref) =>
         ['article', 'report', 'article-newspaper'].includes(
           ref.type,
         ),
     },
     {
-      name: 'Conference Presentations',
+      name: 'Conference presentations',
       condition: (ref) =>
         ref.type === 'speech' && !ref.note,
     },
     {
-      name: 'Conference Workshops',
+      name: 'Conference workshops',
       condition: (ref) =>
         ref.type === 'speech' && ref.note === 'Workshop',
     },
     {
-      name: 'Invited Lectures and Presentations',
+      name: 'Invited lectures and presentations',
       condition: (ref) =>
-        ref.type === 'speech' && ref.note === 'Other',
+        (ref.type === 'speech' && ref.note === 'Other') ||
+        ref.type === 'broadcast',
     },
     {
-      name: 'Misc. Work',
+      name: 'Digital projects',
       condition: (ref) =>
         ['document', 'report'].includes(ref.type),
     },

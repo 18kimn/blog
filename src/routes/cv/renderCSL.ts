@@ -30,7 +30,8 @@ export default function renderCSL(
           '<a href="$&" rel="noopener" target="__blank">$&</a>',
         )
         // assume nd entries are mistakes
-        .replaceAll(/, n\.d\./g, '.')
+        .replaceAll(/ n\.d\./g, '.')
+        .replaceAll(/,”\./g, '.”')
         // Bold "N. Kim" and so on
         .replace(
           new RegExp(

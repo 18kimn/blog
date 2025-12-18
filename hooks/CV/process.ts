@@ -14,7 +14,10 @@ function markup(
   // substitute placeholders from YAML with equivalent from Zotero
   const zotKeys = citations.map((c) => c.name)
   if (zotKeys.includes(section.name)) {
-    return citations.find((c) => c.name === section.name)
+    return {
+      ...citations.find((c) => c.name === section.name),
+      ...section,
+    }
   }
 
   return {
@@ -39,6 +42,7 @@ async function processCV() {
   cv.sections = cv.sections.map((section) =>
     markup(section, citations),
   )
+  console.log(cv.sections)
 
   // Section names from importCitations are also in the YAML file
   // No empty sections

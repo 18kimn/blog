@@ -6,3 +6,9 @@
     href="/cv">CV.</a
   >
 </p>
+
+<style>
+  p {
+    font-size: 1rem;
+  }
+</style>
