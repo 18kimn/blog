@@ -42,7 +42,6 @@ async function processCV() {
   cv.sections = cv.sections.map((section) =>
     markup(section, citations),
   )
-  console.log(cv.sections)
 
   // Section names from importCitations are also in the YAML file
   // No empty sections

@@ -3,6 +3,7 @@ export type Position = {
   date: string
   description: string
   role?: string
+  link?: string
 }
 
 export type Other = {

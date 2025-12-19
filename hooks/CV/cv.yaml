@@ -17,13 +17,13 @@ sections:
         date: 2018-2022
   - name: Peer-reviewed publications
   - name: Manuscripts under review and in preparation
-  - name: Grants, Fellowships, and Awards
   - name: Public scholarship and policy writing
   - name: Conference presentations
   - name: Conference workshops
     subtitle: Lightly peer-reviewed.
   - name: Invited lectures and presentations
     subtitle: Interviews and presentations in non-peer reviewed settings.
+  - name: Grants, Fellowships, and Awards
     entries:
       - name: Grant from Michigan Initiative for Democracy and Civic Empowerment, for "Technology and Democracy Conferences - Perspectives from Political Economy." ($10,000)
         date: October 2025
@@ -52,13 +52,19 @@ sections:
   - name: Affiliations
     entries:
       - name: The Marxism Lab at the University of Michigan
-        role: Member
+        role: Member.
         date: 2025-Present
+        link: https://sites.lsa.umich.edu/marxism-lab/
+      - name: Political Economy and Algorithms Collective
+        role: Member.
+        date: 2025-Present
+        link: https://computing.capital
       - name:
           Center for Ethics, Society, and Computing (ESC) at
           the University of Michigan
-        role: Researcher
+        role: Researcher.
         date: Fall 2023-Present
+        link: https://esc.umich.edu
   - name: Work experience
     entries:
       - name: University of Michigan School of Information

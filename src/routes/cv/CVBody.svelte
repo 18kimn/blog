@@ -6,6 +6,7 @@
   import CVDataRaw from './cv.json'
   import {onMount} from 'svelte'
   import ResizingBox from '$lib/ResizingBox.svelte'
+  import OutLink from '$lib/OutLink.svelte'
 
   const CVData = CVDataRaw as CV
 
@@ -100,17 +101,24 @@
               >
                 {#if !('type' in entry)}
                   <div class="position-meta">
-                    <span class="position-title">
+                    <div class="position-title">
                       {#if 'role' in entry}
                         <!-- content here -->
                         <strong>{entry.name}</strong>
-                        <em class="role"
-                          >{@html entry.role}</em
-                        >
+                        <div>
+                          <em class="role"
+                            >{@html entry.role}</em
+                          >
+                          {#if 'link' in entry}
+                            <OutLink href={entry.link}
+                              >{entry.link}</OutLink
+                            >
+                          {/if}
+                        </div>
                       {:else}
                         {entry.name}
                       {/if}
-                    </span>
+                    </div>
                     {#if entry.date}
                       <span class="date"
                         >{@html entry.date}</span
