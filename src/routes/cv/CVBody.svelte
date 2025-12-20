@@ -214,10 +214,6 @@
     font-size: 1.5em;
   }
 
-  p {
-    font-size: unset;
-  }
-
   hr {
     width: 100%;
     margin: 0 0 calc(var(--margin-multi) * 0.5em) 0;
