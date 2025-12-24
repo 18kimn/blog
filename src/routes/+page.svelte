@@ -86,17 +86,20 @@
   <div class="overview">
     <p>
       I am a PhD candidate at the University of Michigan
-      School of Information. I'm interested in the political
-      economy of Silicon Valley, especially with regards to
-      the evolving relationship between the Valley and
-      logics of state security after the Cold War. That
-      leads me to draw from critical studies of race,
-      finance, logistics, and tech infrastructures. If
-      you're interested in collaborating, talking,
-      organizing, or working with me in any way, <strong
-        >please</strong
+      School of Information, advised by <a
+        href="https://tisjune.github.io">Justine Zhang</a
       >
-      reach out to me (contact info on right).
+      and
+      <a href="https://lisanakamura.net">Lisa Nakamura</a>.
+      I'm interested in the political economy of Silicon
+      Valley, especially with regards to the evolving
+      relationship between the Valley and logics of state
+      security after the Cold War. That leads me to draw
+      from critical studies of race, finance, logistics, and
+      tech infrastructures. If you're interested in
+      collaborating, talking, organizing, or working with me
+      in any way, <strong>please</strong>
+      reach out (contact info on right).
     </p>
     <p>
       I am interested in social movements broadly and
@@ -117,21 +120,20 @@
       >
         Dr. Alex Hanna
       </OutLink>
-      on a project studying campus-based protest movements in
-      the 2010s. <OutLink
+      on a project studying and documenting campus-based protest
+      movements in the 2010s. <OutLink
         href="https://journals.sagepub.com/doi/10.1177/23780231241297447"
       >
         One article
-      </OutLink> from this work, focusing on top-line trends
-      in the database we built, is out with <em>Socius</em> now,
-      and more work will be released in 2025.
+      </OutLink> from this work, focusing on top-line trends in
+      the database we built, is out with <em>Socius</em> now.
     </p>
     <p>
       I am a department steward with the
       <OutLink href="https://geo3550.org/">
         Graduate Employees' Organization at the University
         of Michigan (AFT Local 3550)
-      </OutLink>. I also did work with the
+      </OutLink>. I also was an organizer with the
       <OutLink href="https://tahrirumich.org/">
         TAHRIR Coalition
       </OutLink>
@@ -156,9 +158,9 @@
       tenant associations and building citywide power for tenants.
       My work as an organizer generally focuses on creating the
       excitement and analysis needed for formations of workers
-      or tenants to systematically expand and make decisions
-      together -- in other words, the positive practice of organizing
-      necessary to achieve wins while avoiding "leadership" representing
+      or tenants to systematically expand and make decisions together
+      -- in other words, the positive practice of organizing necessary
+      to achieve wins while avoiding "leadership" representing
       or advocating on behalf of members in a union.
     </p>
     <p>
