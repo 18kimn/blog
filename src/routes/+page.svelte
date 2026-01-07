@@ -86,19 +86,16 @@
   <div class="overview">
     <p>
       I am a PhD candidate at the University of Michigan
-      School of Information, advised by <a
-        href="https://tisjune.github.io">Justine Zhang</a
+      School of Information. I'm interested in the political
+      economy of Silicon Valley, especially with regards to
+      the evolving relationship between the Valley and
+      logics of state security after the Cold War. That
+      leads me to draw from critical studies of race,
+      finance, logistics, and tech infrastructures. If
+      you're interested in collaborating, talking,
+      organizing, or working with me in any way, <strong
+        >please</strong
       >
-      and
-      <a href="https://lisanakamura.net">Lisa Nakamura</a>.
-      I'm interested in the political economy of Silicon
-      Valley, especially with regards to the evolving
-      relationship between the Valley and logics of state
-      security after the Cold War. That leads me to draw
-      from critical studies of race, finance, logistics, and
-      tech infrastructures. If you're interested in
-      collaborating, talking, organizing, or working with me
-      in any way, <strong>please</strong>
       reach out (contact info on right).
     </p>
     <p>
