@@ -16,7 +16,6 @@
     setupDialog(dialog)
   })
 
-  let opener: HTMLButtonElement = $state()
   let dialog: HTMLDialogElement = $state()
 
   let node: HTMLElement = $state()

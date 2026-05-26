@@ -169,8 +169,7 @@ differentiate them? can the prescriptive variety not just
 arise immediately from the descriptive -- why is it the case
 that we do in fact see this divide? I've no idea what the
 answers are to these questions but i suspect the word hus
-"dialectical" is involved. Perhaps "immanent" too. So we
-could talk about this in our meeting
+"dialectical" is involved. Perhaps "immanent" too.
 
 Socialists' broad mission involves somehow integrating the
 descriptive and prescriptive varieties: "philosophy has only
@@ -309,7 +308,6 @@ more questions:
 - how do we assess if the descriptive theory actually
   furnishes tools for prescriptive theory (not only if it
   has the qualities to potentially do so)
-
   - The scholarship in the first category below, for
     instance -- what's actually valuable about each of
     these, besides the high-level notes on method

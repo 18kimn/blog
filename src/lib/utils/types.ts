@@ -7,6 +7,7 @@ export interface Post {
   tags?: string[]
   content?: string
   postData: any
+  hidden?: boolean
 }
 
 export interface RSSSource {
