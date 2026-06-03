@@ -5,6 +5,7 @@
   /* font-size: min(max(2vh, 11pt), 16pt);*/
   /* jk im tired of this */
   font-size: 12pt;
+  color-scheme: light;
   transition: font-size ease-in-out 200ms;
   --font: Lora, Cambria, Cochin, Georgia, Times,
     'Times New Roman', Noto Emoji, serif;

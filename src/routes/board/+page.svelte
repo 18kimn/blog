@@ -176,6 +176,7 @@
 
   .btn {
     font: inherit;
+    color: #222;
     padding: 0.4rem 0.9rem;
     border: var(--border);
     background: rgba(255, 255, 255, 0.6);
@@ -249,6 +250,7 @@
 
   .composer button {
     font: inherit;
+    color: #222;
     padding: 0.4rem 1.2rem;
     border: var(--border);
     background: rgba(255, 255, 255, 0.6);
