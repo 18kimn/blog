@@ -165,6 +165,8 @@
     align-items: center;
     gap: 0.5rem;
     color: #333;
+    min-width: 0;
+    overflow-wrap: anywhere;
   }
 
   .avatar {
@@ -206,6 +208,8 @@
     display: flex;
     align-items: flex-end;
     gap: 0.5rem;
+    flex-wrap: wrap;
+    max-width: 100%;
   }
 
   .email-form input {
@@ -213,6 +217,8 @@
     padding: 0.4rem 0.6rem;
     border: var(--border);
     background: rgba(255, 255, 255, 0.6);
+    min-width: 0;
+    max-width: 100%;
   }
 
   .composer {
@@ -288,10 +294,13 @@
     align-items: center;
     gap: 0.5rem;
     font-size: 0.9rem;
+    flex-wrap: wrap;
   }
 
   .author {
     font-weight: bold;
+    min-width: 0;
+    overflow-wrap: anywhere;
   }
 
   .date {
@@ -319,7 +328,7 @@
   .body {
     margin: 0.4rem 0 0;
     white-space: pre-wrap;
-    word-break: break-word;
+    overflow-wrap: anywhere;
   }
 
   .empty {
