@@ -140,6 +140,34 @@
         {/if}
       </div>
       <p class="body">{comment.body}</p>
+      {#if comment.owner}
+        <div class="owner-info">
+          <span class="owner-id">
+            {comment.owner.name ?? 'no name'} · {comment.owner
+              .email}
+            {#if comment.owner.banned}
+              <span class="banned-tag">banned</span>
+            {/if}
+          </span>
+          {#if !comment.owner.isSelf}
+            <form method="POST" action="?/ban" use:enhance>
+              <input
+                type="hidden"
+                name="userId"
+                value={comment.owner.userId}
+              />
+              <input
+                type="hidden"
+                name="banned"
+                value={(!comment.owner.banned).toString()}
+              />
+              <button type="submit" class="owner-btn">
+                {comment.owner.banned ? 'unban' : 'ban'}
+              </button>
+            </form>
+          {/if}
+        </div>
+      {/if}
     </li>
   {:else}
     <li class="empty">No notes yet. Be the first.</li>
@@ -329,6 +357,47 @@
     margin: 0.4rem 0 0;
     white-space: pre-wrap;
     overflow-wrap: anywhere;
+  }
+
+  .owner-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 0.75rem;
+    padding-top: 0.6rem;
+    border-top: 1px dashed #bbb;
+    font-size: 0.8rem;
+    color: #777;
+  }
+
+  .owner-id {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .banned-tag {
+    color: #c0392b;
+    border: 1px solid #c0392b;
+    border-radius: 3px;
+    padding: 0 0.3rem;
+    margin-left: 0.3rem;
+  }
+
+  .owner-btn {
+    font: inherit;
+    color: #222;
+    margin-left: auto;
+    padding: 0.2rem 0.6rem;
+    border: var(--border);
+    background: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    transition: all ease-in-out 200ms;
+  }
+
+  .owner-btn:hover {
+    color: var(--color);
+    border-color: var(--color);
   }
 
   .empty {

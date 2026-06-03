@@ -24,14 +24,17 @@ export const load: PageServerLoad = async ({locals}) => {
         })
       : null,
     prisma.comment.findMany({
+      where: isOwner ? undefined : {author: {banned: false}},
       orderBy: {createdAt: 'desc'},
       include: {
         author: {
           select: {
+            id: true,
             name: true,
             image: true,
             email: true,
             showIdentity: true,
+            banned: true,
           },
         },
       },
@@ -40,6 +43,7 @@ export const load: PageServerLoad = async ({locals}) => {
 
   return {
     session,
+    isOwner,
     oauthProviders: oauthProviderInfo,
     maxLength: MAX_LENGTH,
     viewerShowIdentity: viewer?.showIdentity ?? false,
@@ -56,6 +60,15 @@ export const load: PageServerLoad = async ({locals}) => {
       canDelete:
         isOwner ||
         (!!viewerEmail && comment.author.email === viewerEmail),
+      owner: isOwner
+        ? {
+            userId: comment.author.id,
+            name: comment.author.name,
+            email: comment.author.email,
+            banned: comment.author.banned,
+            isSelf: comment.author.email === viewerEmail,
+          }
+        : null,
     })),
   }
 }
@@ -81,6 +94,8 @@ export const actions: Actions = {
     })
     if (!author)
       return fail(401, {error: 'Account not found.'})
+    if (author.banned)
+      return fail(403, {error: 'You are banned from posting.'})
 
     const [latest, userCount, totalCount] =
       await Promise.all([
@@ -146,6 +161,26 @@ export const actions: Actions = {
       return fail(403, {error: 'Not allowed.'})
 
     await prisma.comment.delete({where: {id}})
+    return {success: true}
+  },
+
+  ban: async ({locals, request}) => {
+    const session = await locals.auth()
+    if (
+      !session?.user?.email ||
+      session.user.email !== env.OWNER_EMAIL
+    )
+      return fail(403, {error: 'Not allowed.'})
+
+    const data = await request.formData()
+    const userId = (data.get('userId') ?? '').toString()
+    const banned = data.get('banned') === 'true'
+    if (!userId) return fail(400, {error: 'Missing user.'})
+
+    await prisma.user.updateMany({
+      where: {id: userId, email: {not: env.OWNER_EMAIL}},
+      data: {banned},
+    })
     return {success: true}
   },
 }

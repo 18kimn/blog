@@ -13,6 +13,7 @@ model User {
   emailVerified DateTime?
   image         String?
   showIdentity  Boolean   @default(false)
+  banned        Boolean   @default(false)
   accounts      Account[]
   sessions      Session[]
   comments      Comment[]
