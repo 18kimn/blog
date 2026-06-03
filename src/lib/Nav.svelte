@@ -2,7 +2,23 @@
   import {onMount} from 'svelte'
   import {page} from '$app/stores'
 
-  const routes = ['', 'projects', 'writing', 'cv', 'pics']
+  const routes = [
+    '',
+    'projects',
+    'writing',
+    'cv',
+    'pics',
+    'board',
+  ]
+
+  function isCurrent(route: string, pathname: string) {
+    const target = `/${route}`
+    if (route === '') return pathname === '/'
+    return (
+      pathname === target ||
+      pathname.startsWith(`${target}/`)
+    )
+  }
 
   onMount(() => {
     /* below is for header ::after animation */
@@ -15,7 +31,7 @@
 <div class="header-container no-print">
   <div class="header">
     <a href="/">
-      {#if $page.route.id === ''}
+      {#if $page.url.pathname === '/'}
         <h1>Nathan Kim</h1>
       {:else}
         <h2>Nathan Kim</h2>
@@ -24,7 +40,8 @@
     <nav class="links">
       {#each routes as route}
         <a
-          class={$page.route.id === route && 'selected'}
+          class={isCurrent(route, $page.url.pathname) &&
+            'selected'}
           href="/{route}"
         >
           {route === '' ? 'home' : route}

@@ -12,3 +12,6 @@ currently.yaml
 .env
 dist/
 server/ui
+
+board.db
+board.db-*
