@@ -8,7 +8,10 @@ sections:
   - name: Education
     entries:
       - name: PhD in Information
-        role: University of Michigan School of Information (with graduate certificate in Science and Technology Studies)
+        role:
+          University of Michigan School of Information (with
+          graduate certificate in Science and Technology
+          Studies)
         date: 2023-Present
       - name:
           B.A. in Ethnicity, Race, & Migration and
@@ -22,25 +25,43 @@ sections:
   - name: Conference workshops
     subtitle: Lightly peer-reviewed.
   - name: Invited lectures and presentations
-    subtitle: Interviews and presentations in non-peer reviewed settings.
+    subtitle:
+      Interviews and presentations in non-peer reviewed
+      settings.
   - name: Grants, Fellowships, and Awards
     entries:
-      - name: Grant from Michigan Initiative for Democracy and Civic Empowerment, for "Technology and Democracy Conferences - Perspectives from Political Economy." ($10,000)
+      - name:
+          Grant from Michigan Initiative for Democracy and
+          Civic Empowerment, for "Technology and Democracy
+          Conferences - Perspectives from Political
+          Economy." ($10,000)
         date: October 2025
-      - name: Convener of Rackham Interdisciplinary Workshop on Militarisms, Technological Production, and STEM Research ($5,000)
+      - name:
+          Convener of Rackham Interdisciplinary Workshop on
+          Militarisms, Technological Production, and STEM
+          Research ($5,000)
         date: September 2025
-      - name: Rackham Travel Grant, University of Michigan ($1,500 per award)
+      - name:
+          Rackham Travel Grant, University of Michigan
+          ($1,500 per award)
         date: 2023, 2024
-      - name: UMSI Travel Grant, University of Michigan ($2,000 per award)
+      - name:
+          UMSI Travel Grant, University of Michigan ($2,000
+          per award)
         date: 2024, 2025
-      - name: STS Travel Grant, University of Michigan ($500 per award)
+      - name:
+          STS Travel Grant, University of Michigan ($500 per
+          award)
         date: 2023, 2025
-      - name: Rackham Student Research Grant (Pre-Candidacy), University of Michigan. ($1,500)
+      - name:
+          Rackham Student Research Grant (Pre-Candidacy),
+          University of Michigan. ($1,500)
         date: September 2024
       - name: The Light Fellowship for Language Study
         date: January 2022
       - name:
-          The Panel Survey for Income Dynamics Small Grant ($5,000)
+          The Panel Survey for Income Dynamics Small Grant
+          ($5,000)
         date: January 2020
       - name: The Dwight Hall Urban Fellowship
         date: September 2019
@@ -134,9 +155,9 @@ sections:
     entries:
       - type: markdown
         markdown: |
-           **Front-end web development:** Svelte, React, and Vue JavaScript frameworks. <br />
-           **Back-end web development:**: NodeJS (and Typescript); Python (Django, Flask). <br />
-           **Web server work:** Linux (Arch, NixOS, Gentoo, Debian); Docker development; Nginx. <br />
-           **Data visualization:** `ggplot2`, `d3.js`, `plotly`. <br />
-           **Data pipeline architecture**: `Make` and modern tools like `dagster`, `targets`. <br />
-           **Data analysis and modeling**: Various flavors of OLS and logit regression; time-series analysis; spatial models.
+          **Front-end web development:** Svelte, React, and Vue JavaScript frameworks. <br />
+          **Back-end web development:**: NodeJS (and Typescript); Python (Django, Flask). <br />
+          **Web server work:** Linux (Arch, NixOS, Gentoo, Debian); Docker development; Nginx. <br />
+          **Data visualization:** `ggplot2`, `d3.js`, `plotly`. <br />
+          **Data pipeline architecture**: `Make` and modern tools like `dagster`, `targets`. <br />
+          **Data analysis and modeling**: Various flavors of OLS and logit regression; time-series analysis; spatial models.

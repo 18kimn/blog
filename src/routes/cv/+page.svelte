@@ -83,7 +83,7 @@
         {#await data.csls}
           &nbsp;
         {:then csls}
-          {#each csls as csl}
+          {#each csls as csl (csl.name)}
             <option value={csl}>{csl.name}</option>
           {/each}
         {/await}

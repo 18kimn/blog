@@ -7,12 +7,16 @@ import {prisma} from '$lib/server/prisma'
 import {mailer} from '$lib/server/mailer'
 import {magicLinkEmail} from '$lib/server/authEmail'
 
-const oauthProviders = [{provider: Google, id: 'google', name: 'Google'}]
+const oauthProviders = [
+  {provider: Google, id: 'google', name: 'Google'},
+]
 
-export const oauthProviderInfo = oauthProviders.map(({id, name}) => ({
-  id,
-  name,
-}))
+export const oauthProviderInfo = oauthProviders.map(
+  ({id, name}) => ({
+    id,
+    name,
+  }),
+)
 
 const emailProvider: EmailConfig = {
   id: 'email',
@@ -22,13 +26,19 @@ const emailProvider: EmailConfig = {
   maxAge: 60 * 30,
   async sendVerificationRequest({identifier, url}) {
     const {host} = new URL(url)
-    await mailer.send({to: identifier, ...magicLinkEmail(url, host)})
+    await mailer.send({
+      to: identifier,
+      ...magicLinkEmail(url, host),
+    })
   },
 }
 
 export const {handle, signIn, signOut} = SvelteKitAuth({
   adapter: PrismaAdapter(prisma),
-  providers: [...oauthProviders.map((p) => p.provider), emailProvider],
+  providers: [
+    ...oauthProviders.map((p) => p.provider),
+    emailProvider,
+  ],
   trustHost: true,
   pages: {
     verifyRequest: '/check-email',

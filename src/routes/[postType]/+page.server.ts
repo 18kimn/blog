@@ -9,10 +9,10 @@ import type {PageServerLoad} from './$types'
  */
 function getPosts(type: string) {
   switch (type) {
-    case 'projects':
-      return import.meta.glob('./projects/*/*md')
-    case 'writing':
-      return import.meta.glob('./writing/*/*md')
+  case 'projects':
+    return import.meta.glob('./projects/*/*md')
+  case 'writing':
+    return import.meta.glob('./writing/*/*md')
   }
 }
 

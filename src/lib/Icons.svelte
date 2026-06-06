@@ -1,4 +1,5 @@
 <script>
+  import {resolve} from '$app/paths'
   import OutLink from './OutLink.svelte'
 </script>
 
@@ -17,7 +18,7 @@
   <span class="spacer">⋅</span>
   <div class="icons">
     <a
-      href="/feed"
+      href={resolve('/feed')}
       target="_blank"
       aria-label="link to this website's Atom feed"
     >

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import {page} from '$app/stores'
-  import Nav from '$lib/Nav.svelte'
+  import {page} from '$app/state'
+  import Nav from '$lib/Nav/Nav.svelte'
   import {stripHTML} from '$lib/utils/string'
   interface Props {
     children?: import('svelte').Snippet
@@ -8,7 +8,7 @@
 
   let {children}: Props = $props()
 
-  let title = $derived(stripHTML($page.data.title || ''))
+  let title = $derived(stripHTML(page.data.title || ''))
 </script>
 
 <svelte:head>

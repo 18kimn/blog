@@ -1,4 +1,4 @@
-import type {Entry, CV} from '../../src/routes/cv/types'
+import type {Entry, CV} from '../../routes/cv/types'
 import {marked} from 'marked'
 import {promises as fs} from 'fs'
 import {fileURLToPath} from 'url'

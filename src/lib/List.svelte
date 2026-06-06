@@ -1,5 +1,6 @@
 <script lang="ts">
   import type {Post} from '$lib/utils/types'
+  import {resolve} from '$app/paths'
   import {fade} from 'svelte/transition'
 
   interface Props {
@@ -17,7 +18,7 @@
       {#if !items}
         Loading...
       {:else}
-        {#each items as item, index}
+        {#each items as item, index (item.path)}
           <p in:fade|global={{delay: 10 * index}}>
             <span class="date">
               {new Date(item.date)
@@ -25,7 +26,7 @@
                 .slice(0, 10)}:
             </span>
             <span class="content">
-              <a href={item.path}>
+              <a href={resolve(item.path as `/${string}`)}>
                 {@html item.title}
               </a>
               <br />

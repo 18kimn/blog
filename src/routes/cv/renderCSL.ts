@@ -41,10 +41,10 @@ export default function renderCSL(
         )
         // super hacky
         .replace(
-          new RegExp('class=\"csl-entry\">'),
+          new RegExp('class="csl-entry">'),
           entry.csl.note && entry.csl.type == 'manuscript'
             ? `$&<em>(${entry.csl.note}) </em>`
-            : `$&`,
+            : '$&',
         )
 
       return {

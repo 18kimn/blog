@@ -82,7 +82,6 @@ differently.
   that in any way. I hate how this moralizing this sounds,
   it is simply how my interests and what I think to be
   important have turned out to be]
-
   - A counterargument I've heard a lot: Biding time and
     waiting until you have tenure will let you do more of
     the kind of work you want to do in the long run . I'll

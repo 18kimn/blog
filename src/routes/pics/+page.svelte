@@ -23,7 +23,7 @@
     },
     {
       caption:
-        "In front of a bookstore in Jimbocho ('Book Town') in Tokyo.",
+        'In front of a bookstore in Jimbocho (\'Book Town\') in Tokyo.',
       path: '/personal_images/signal-2024-12-29-175848_004.webp',
     },
     {
@@ -38,7 +38,7 @@
     },
     {
       caption:
-        "Also in my apartment -- holding Galaxy (center) and two of my friend's cats, which I was taking care of at the time the picture was taken",
+        'Also in my apartment -- holding Galaxy (center) and two of my friend\'s cats, which I was taking care of at the time the picture was taken',
       path: '/personal_images/signal-2024-12-29-175848_007.webp',
     },
     {
@@ -68,7 +68,7 @@
     },
     {
       caption:
-        "My cat Galaxy jumping on my friend's cat Frog, who I was taking care of. January 2024",
+        'My cat Galaxy jumping on my friend\'s cat Frog, who I was taking care of. January 2024',
       path: '/personal_images/galaxy_frog_fighting.webp',
     },
     {
@@ -77,7 +77,7 @@
     },
     {
       caption:
-        "My cat Galaxy sleeping on my girlfriend Anne's arm. November 2024",
+        'My cat Galaxy sleeping on my girlfriend Anne\'s arm. November 2024',
       path: '/personal_images/galaxy_sleeping.webp',
     },
     {
@@ -97,7 +97,7 @@
     },
     {
       caption:
-        "Getting tattoos from Michigan Ave Tattoo in Ypsi, August 2024. Three moths, a reference to Marx's Paris Manuscripts of 1844",
+        'Getting tattoos from Michigan Ave Tattoo in Ypsi, August 2024. Three moths, a reference to Marx\'s Paris Manuscripts of 1844',
       path: '/personal_images/moths.webp',
     },
     {
@@ -106,7 +106,7 @@
       path: '/personal_images/pike_place.webp',
     },
     {
-      caption: "Late night Wendy's. Sometime in 2024.",
+      caption: 'Late night Wendy\'s. Sometime in 2024.',
       path: '/personal_images/wendys.webp',
     },
   ]
@@ -176,7 +176,7 @@
     </span>
   </dialog>
   <div class="image-grid">
-    {#each imgs as { caption, path }, index}
+    {#each imgs as {caption, path}, index (path)}
       <div
         id={`container-${index}`}
         class="image-container"

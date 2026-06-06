@@ -94,7 +94,7 @@
           </div>
         </div>
         <div class="spacer"></div>
-        {#each rows as row, index}
+        {#each rows as row, index (index)}
           <div class="section-container">
             <div
               class="section-wrapper"
@@ -114,7 +114,7 @@
                 class="footnotes"
                 in:fade|global={{delay: index * 50 + 100}}
               >
-                {#each row.footnotes as footnote}
+                {#each row.footnotes as footnote (footnote.index)}
                   <div class="footnote">
                     {footnote.index + 1}. {@html footnote.html}
                   </div>

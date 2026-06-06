@@ -2,16 +2,17 @@
   import type {Entry} from './Entry.svelte'
 
   interface Props {
-    updateFilteredEntries: (entries: Entry[]) => Entry[];
-    entries: Entry[];
+    updateFilteredEntries: (entries: Entry[]) => Entry[]
+    entries: Entry[]
   }
 
-  let { updateFilteredEntries, entries }: Props = $props();
+  let {updateFilteredEntries, entries}: Props = $props()
   let option = $state('')
 
   let term = $state('')
   /* search */
-  let searchedEntries = $derived(entries.filter((entry) => {
+  let searchedEntries = $derived(
+    entries.filter((entry) => {
       if (term === '') {
         return true
       }
@@ -24,16 +25,19 @@
         `${creators} ${entry.title} ${entry.date} ${entry.subtitle}`.toLowerCase()
 
       return str.match(term.toLowerCase())
-    })
-  );
+    }),
+  )
 
   $effect(() => {
-    const sortedEntries = option === '' ? searchedEntries : searchedEntries.sort((a, b) => {
-        switch (option) {
+    const sortedEntries =
+      option === ''
+        ? searchedEntries
+        : searchedEntries.sort((a, b) => {
+          switch (option) {
           case 'publication_date':
             return (
               Number(new Date(a.date)) -
-              Number(new Date(b.date))
+                  Number(new Date(b.date))
             )
           case 'author':
             return a.creators[0].firstName.localeCompare(
@@ -41,8 +45,8 @@
             )
           case 'title':
             return a.title.localeCompare(b.title)
-        }
-      })
+          }
+        })
     updateFilteredEntries(sortedEntries)
   })
 </script>

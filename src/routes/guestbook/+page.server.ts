@@ -14,17 +14,20 @@ const MIN_SECONDS_BETWEEN_POSTS = 15
 export const load: PageServerLoad = async ({locals}) => {
   const session = await locals.auth()
   const viewerEmail = session?.user?.email ?? null
-  const isOwner = !!viewerEmail && viewerEmail === env.OWNER_EMAIL
+  const isOwner =
+    !!viewerEmail && viewerEmail === env.OWNER_EMAIL
 
   const [viewer, comments] = await Promise.all([
     viewerEmail
       ? prisma.user.findUnique({
-          where: {email: viewerEmail},
-          select: {showIdentity: true},
-        })
+        where: {email: viewerEmail},
+        select: {showIdentity: true},
+      })
       : null,
     prisma.comment.findMany({
-      where: isOwner ? undefined : {author: {banned: false}},
+      where: isOwner
+        ? undefined
+        : {author: {banned: false}},
       orderBy: {createdAt: 'desc'},
       include: {
         author: {
@@ -59,15 +62,16 @@ export const load: PageServerLoad = async ({locals}) => {
         : null,
       canDelete:
         isOwner ||
-        (!!viewerEmail && comment.author.email === viewerEmail),
+        (!!viewerEmail &&
+          comment.author.email === viewerEmail),
       owner: isOwner
         ? {
-            userId: comment.author.id,
-            name: comment.author.name,
-            email: comment.author.email,
-            banned: comment.author.banned,
-            isSelf: comment.author.email === viewerEmail,
-          }
+          userId: comment.author.id,
+          name: comment.author.name,
+          email: comment.author.email,
+          banned: comment.author.banned,
+          isSelf: comment.author.email === viewerEmail,
+        }
         : null,
     })),
   }
@@ -95,7 +99,9 @@ export const actions: Actions = {
     if (!author)
       return fail(401, {error: 'Account not found.'})
     if (author.banned)
-      return fail(403, {error: 'You are banned from posting.'})
+      return fail(403, {
+        error: 'You are banned from posting.',
+      })
 
     const [latest, userCount, totalCount] =
       await Promise.all([
@@ -117,11 +123,11 @@ export const actions: Actions = {
     )
       return fail(429, {
         error:
-          "You're posting too fast — give it a moment.",
+          'You\'re posting too fast — give it a moment.',
       })
     if (userCount >= MAX_COMMENTS_PER_USER)
       return fail(403, {
-        error: "You've reached your post limit.",
+        error: 'You\'ve reached your post limit.',
       })
     if (totalCount >= MAX_TOTAL_COMMENTS)
       return fail(403, {

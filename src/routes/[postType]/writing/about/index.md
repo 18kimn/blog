@@ -76,7 +76,6 @@ What I meant by "quite fun for me:"
   Spotify for the music.
 - you get an Atom (or RSS, for the last two) feed at any of
   the following routes:
-
   - `/atom`
   - `/feed`
   - `/atom.xml`

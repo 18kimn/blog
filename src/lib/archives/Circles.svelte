@@ -21,19 +21,19 @@
 
   let clickCanvas: HTMLCanvasElement = $state()
   let hoverCanvas: HTMLCanvasElement = $state()
-  let clickContext =
-    $derived(clickCanvas && clickCanvas.getContext('2d'))
-  let hoverContext =
-    $derived(hoverCanvas && hoverCanvas.getContext('2d'))
+  let clickContext = $derived(
+    clickCanvas && clickCanvas.getContext('2d'),
+  )
+  let hoverContext = $derived(
+    hoverCanvas && hoverCanvas.getContext('2d'),
+  )
 
-  let width: number = $state();
-  $effect(() => {
-    width = clickCanvas && clickCanvas.offsetWidth 
-  })
-  let height: number = $state();
-  $effect(() => {
-    height = clickCanvas && clickCanvas.offsetHeight
-  });
+  let width: number = $derived(
+    clickCanvas && clickCanvas.offsetWidth,
+  )
+  let height: number = $derived(
+    clickCanvas && clickCanvas.offsetHeight,
+  )
 
   /** triggered on mousemove, updates circle data */
   function updateCircles(event: MouseEvent) {

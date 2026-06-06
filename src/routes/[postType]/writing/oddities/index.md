@@ -55,5 +55,5 @@ standardization could not resolve them.
      (independently bought and traded, so not traditional
      apartment rental units) have an apartment number, can
      be wrong.
-5. A surprising number of properties are owned by nonlocal owners. More
-   about this in our report!
+5. A surprising number of properties are owned by nonlocal
+   owners. More about this in our report!

@@ -2,20 +2,15 @@ import svelte from 'eslint-plugin-svelte'
 import globals from 'globals'
 import js from '@eslint/js'
 import ts from 'typescript-eslint'
-import {defineConfig} from 'eslint/config'
+import {defineConfig, globalIgnores} from 'eslint/config'
 
-export default defineConfig(
-  js.configs.recommended,
-  ...ts.configs.recommended,
-  ...svelte.configs.recommended,
-  {
-    languageOptions: {
-      globals: {
-        ...globals.browser,
-        ...globals.node,
-      },
-    },
-  },
+export default defineConfig([
+  globalIgnores([
+    'node_modules/',
+    '.git/',
+    '.svelte-kit/',
+    'build/',
+  ]),
   {
     files: [
       '**/*.svelte',
@@ -24,9 +19,20 @@ export default defineConfig(
       '**/*.js',
       '**/*.ts',
     ],
+    extends: [
+      js.configs.recommended,
+      ts.configs.recommended,
+      svelte.configs.recommended,
+    ],
     languageOptions: {
       parserOptions: {
-        projectService: true,
+        projectService: {
+          allowDefaultProject: [
+            'eslint.config.js',
+            'svelte.config.js',
+            'prisma.config.ts',
+          ],
+        },
         extraFileExtensions: ['.svelte'],
         parser: ts.parser,
       },
@@ -43,7 +49,11 @@ export default defineConfig(
       quotes: ['error', 'single'],
       semi: ['error', 'never'],
 
-      'no-unused-vars': ['error', {varsIgnorePattern: '_'}],
+      'no-unused-vars': 'off',
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {varsIgnorePattern: '_', argsIgnorePattern: '_'},
+      ],
       'no-multi-spaces': 'error',
       'no-invalid-this': 'error',
       'no-trailing-spaces': 'error',
@@ -54,10 +64,14 @@ export default defineConfig(
       'comma-spacing': 'error',
       'comma-style': 'error',
 
+      'svelte/no-at-html-tags': 'off',
+
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-extra-semi': 'off',
       '@typescript-eslint/ban-ts-comment': 'off',
       '@typescript-eslint/ban-types': 'off',
+      'no-unused-expressions': 'off',
+      '@typescript-eslint/no-unused-expressions': 'off',
     },
   },
-)
+])

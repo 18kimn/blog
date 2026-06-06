@@ -13,9 +13,9 @@
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
-    "lint": "prettier --check --plugin-search-dir=. . && eslint .",
+    "lint": "prettier --check --write . && eslint . --fix",
     "format": "prettier --write --plugin-search-dir=. .",
-    "cv": "pnpm run-ts hooks/CV/process.ts"
+    "cv": "pnpm run-ts src/hooks/CV/process.ts"
   },
   "devDependencies": {
     "@citation-js/plugin-bibtex": "^0.6.1",

@@ -2,10 +2,10 @@
   import Post from '$lib/Post.svelte'
   import type {Post as PostType} from '$lib/utils/types'
   interface Props {
-    data: PostType & {Post: any};
+    data: PostType & {Post: any}
   }
 
-  let { data }: Props = $props();
+  let {data}: Props = $props()
   const Article = data.Post.default
 </script>
 

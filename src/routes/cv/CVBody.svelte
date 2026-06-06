@@ -77,7 +77,7 @@
             </div>
           </div>
         </div>
-        {#each filterEntries(search, sections) as section, index}
+        {#each filterEntries(search, sections) as section, index (section.name)}
           <section
             in:fade|global={{
               delay: 100 * index,
@@ -91,7 +91,7 @@
               {/if}
               <hr />
             </div>
-            {#each section.entries as entry}
+            {#each section.entries as entry (entry)}
               <div
                 class="entry"
                 in:fade|global={{

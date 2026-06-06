@@ -1,5 +1,6 @@
 <script lang="ts">
   import OutLink from '$lib/OutLink.svelte'
+  import {resolve} from '$app/paths'
   import media from './media.json'
 
   type Item = (typeof media)[0] & {
@@ -60,18 +61,18 @@
     <p>
       Some interviews (most very short) and some writing
       involving me. Didn't fit in my CV page but felt useful
-      to collect somewhere. See also <a href="/writing"
-        >/writing</a
-      > for blog-style writing.
+      to collect somewhere. See also <a href={resolve('/blog')}
+        >/blog</a
+      > for other writing.
     </p>
-    {#each Object.entries(dt) as [topic, statusGroups]}
+    {#each Object.entries(dt) as [topic, statusGroups] (topic)}
       <h3>
         {topic}
       </h3>
       <hr />
-      {#each Object.entries(statusGroups) as [status, items]}
+      {#each Object.entries(statusGroups) as [status, items] (status)}
         <h4>{status}:</h4>
-        {#each items as item}
+        {#each items as item (item.URL)}
           <p class="item">
             <OutLink
               href={item.URL}
@@ -96,9 +97,7 @@
             })}.
           </p>
         {/each}
-        {console.log('reached')}
       {/each}
-      {console.log('reached2')}
     {/each}
   </div>
 </main>

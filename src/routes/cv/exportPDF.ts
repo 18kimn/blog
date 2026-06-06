@@ -1,5 +1,4 @@
 import {jsPDF} from 'jspdf'
-import type {CV} from './types'
 /*
   sections.forEach((section) => {
     // add title as section.name
@@ -19,7 +18,7 @@ import type {CV} from './types'
   })
 */
 
-export default async function exportPDF(node: HTMLElement) {
+export default async function exportPDF(_node: HTMLElement) {
   const doc = new jsPDF({
     format: 'a4',
     unit: 'px',

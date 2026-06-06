@@ -143,8 +143,8 @@
       {#if comment.owner}
         <div class="owner-info">
           <span class="owner-id">
-            {comment.owner.name ?? 'no name'} · {comment.owner
-              .email}
+            {comment.owner.name ?? 'no name'} · {comment
+              .owner.email}
             {#if comment.owner.banned}
               <span class="banned-tag">banned</span>
             {/if}

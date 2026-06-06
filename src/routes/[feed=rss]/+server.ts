@@ -2,7 +2,7 @@ import type {Post} from '$lib/utils/types'
 import {dirname, basename} from 'path'
 const siteURL = 'https://nathan-kim.org/'
 const siteTitle = 'Nathan Kim'
-const siteDescription = "Nathan Kim's Personal Website"
+const siteDescription = 'Nathan Kim\'s Personal Website'
 
 /** produces formatted XML string for rss feed */
 function render(posts: Post[]) {
@@ -18,10 +18,10 @@ function render(posts: Post[]) {
         <title>${title}</title>
         <link>${siteURL}${formattedPath}</link>
         ${
-          subtitle
-            ? `<description>${subtitle}</description>`
-            : ''
-        }
+  subtitle
+    ? `<description>${subtitle}</description>`
+    : ''
+}
         <pubDate>${new Date(date).toUTCString()}</pubDate>
       </item>
       `

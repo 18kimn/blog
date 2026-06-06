@@ -13,7 +13,7 @@ export async function load({params, data}) {
   const writingFiles = import.meta.glob('../writing/*/*md')
   const projectFiles = import.meta.glob('../projects/*/*md')
   const files = {...writingFiles, ...projectFiles}
-  const [_, resolver] = Object.entries(files).find(
+  const [, resolver] = Object.entries(files).find(
     ([path]) => {
       const segments = path.split('/')
       const fileSlug = segments[segments.length - 2]

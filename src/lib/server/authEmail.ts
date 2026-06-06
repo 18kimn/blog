@@ -12,7 +12,7 @@ export function magicLinkEmail(
     'Click the link below to sign in. It expires in 30 minutes.',
     url,
     '',
-    "If you didn't request this, you can ignore this email.",
+    'If you didn\'t request this, you can ignore this email.',
   ].join('\n')
 
   const html = `

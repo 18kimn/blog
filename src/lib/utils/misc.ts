@@ -9,3 +9,11 @@ export function delay(ms: number) {
     setTimeout(() => resolve(), ms),
   )
 }
+
+export function isCurrent(route: string, pathname: string) {
+  const target = `/${route}`
+  if (route === '') return pathname === '/'
+  return (
+    pathname === target || pathname.startsWith(`${target}/`)
+  )
+}

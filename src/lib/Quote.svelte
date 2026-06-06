@@ -36,6 +36,7 @@
       >
         <em>Refresh quote</em>
       </button>
+      <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
       <a class="attribution" href={quote.link}
         ><cite>&mdash;{quote.attribution}</cite></a
       >

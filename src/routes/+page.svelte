@@ -72,9 +72,9 @@
 
     isPlayingAudio
       ? setTimeout(
-          () => audio.pause(),
-          transitionTime + diff,
-        )
+        () => audio.pause(),
+        transitionTime + diff,
+      )
       : audio.play()
     isPlayingAudio = !isPlayingAudio
   }
@@ -197,11 +197,11 @@
     <section class="topic">
       <Icons />
     </section>
-    {#each Object.entries(info) as section, index}
+    {#each Object.entries(info) as section, index (section[0])}
       <section class="topic">
         <h2>{section[0]}</h2>
         <div class="items">
-          {#each section[1] as item}
+          {#each section[1] as item (item.display)}
             {#if item?.link && !item?.info}
               <span class="item">
                 <OutLink href={item.link}>
