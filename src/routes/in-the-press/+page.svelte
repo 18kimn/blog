@@ -61,8 +61,8 @@
     <p>
       Some interviews (most very short) and some writing
       involving me. Didn't fit in my CV page but felt useful
-      to collect somewhere. See also <a href={resolve('/blog')}
-        >/blog</a
+      to collect somewhere. See also <a
+        href={resolve('/writing')}>/writing</a
       > for other writing.
     </p>
     {#each Object.entries(dt) as [topic, statusGroups] (topic)}
