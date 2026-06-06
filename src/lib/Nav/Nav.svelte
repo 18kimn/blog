@@ -9,6 +9,7 @@
     '',
     {blog: ['writing', 'projects', 'pics', 'guestbook']},
     'cv',
+    'press',
   ] as const
 
   onMount(() => {
