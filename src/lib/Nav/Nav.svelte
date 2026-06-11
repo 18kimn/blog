@@ -93,6 +93,8 @@
     display: flex;
     flex-wrap: wrap;
     place-content: center;
+    place-items: flex-end;
+    padding: 0;
   }
 
   a {

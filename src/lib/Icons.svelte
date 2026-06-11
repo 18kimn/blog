@@ -6,7 +6,6 @@
 <div class="contact">
   <span>nathanckim18[at]gmail.com</span>
   <span class="spacer">⋅</span>
-  <span>Signal: nathanckim18.49</span>
   <span class="spacer">⋅</span>
   <span
     >Schedule time to meet with me <a
