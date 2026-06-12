@@ -1,6 +1,6 @@
 ---
-title: 'The Connecticut legislature'
-subtitle: 'And programmatically creating shapes'
+title: "The Connecticut legislature"
+subtitle: "And programmatically creating shapes"
 banner: house.png
 date: 2021-01-04
 ---

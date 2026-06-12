@@ -1,6 +1,6 @@
 ---
-customSlug: '/projects/9_nongeographic/'
-title: 'Exploring Korean music: a map'
+customSlug: "/projects/9_nongeographic/"
+title: "Exploring Korean music: a map"
 date: 2021-02-07
 banner: nongeographic-capture.PNG
 ---

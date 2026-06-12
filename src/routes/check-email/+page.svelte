@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {resolve} from '$app/paths'
+  import {resolve} from "$app/paths"
 </script>
 
 <svelte:head>
@@ -10,7 +10,7 @@
 <p>
   A sign-in link is on its way. Click the link in that email
   to finish signing in, then head back to the
-  <a href={resolve('/guestbook')}>guestbook</a>.
+  <a href={resolve("/guestbook")}>guestbook</a>.
 </p>
 <p class="hint">
   The link expires in 30 minutes. If it doesn't arrive,

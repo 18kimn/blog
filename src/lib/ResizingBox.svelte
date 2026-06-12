@@ -1,5 +1,5 @@
 <script lang="ts">
-  import OutLink from './OutLink.svelte'
+  import OutLink from "./OutLink.svelte"
 
   interface Props {
     /* when content inside changes, resizes height
@@ -31,7 +31,7 @@
     {#if children}
       {@render children()}
     {:else}
-      {content?.info || ''}
+      {content?.info || ""}
       {#if content?.link}
         <OutLink href={content.link}>
           {content.link}

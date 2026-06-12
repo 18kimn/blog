@@ -1,140 +1,140 @@
 <script lang="ts">
-  import {onMount} from 'svelte'
-  import {setupDialog} from '$lib/utils/dialog'
+  import {onMount} from "svelte"
+  import {setupDialog} from "$lib/utils/dialog"
 
   let width = $state()
 
   let activeImg: (typeof imgs)[number] = $state({
-    caption: '',
-    path: '',
+    caption: "",
+    path: "",
   })
   let dialog: HTMLDialogElement = $state()
 
   const imgs = [
     {
       caption:
-        'Me drinking coffee, somewhere in Boston. November 2022.',
-      path: '/personal_images/signal-2024-12-29-175848_002.webp',
+        "Me drinking coffee, somewhere in Boston. November 2022.",
+      path: "/personal_images/signal-2024-12-29-175848_002.webp",
     },
     {
       caption:
-        'I believe this is in Pierson College at Yale. Probably November 2022',
-      path: '/personal_images/signal-2024-12-29-175848_003.webp',
+        "I believe this is in Pierson College at Yale. Probably November 2022",
+      path: "/personal_images/signal-2024-12-29-175848_003.webp",
     },
     {
       caption:
-        'In front of a bookstore in Jimbocho (\'Book Town\') in Tokyo.',
-      path: '/personal_images/signal-2024-12-29-175848_004.webp',
+        "In front of a bookstore in Jimbocho ('Book Town') in Tokyo.",
+      path: "/personal_images/signal-2024-12-29-175848_004.webp",
     },
     {
       caption:
-        'My girlfriend Anne and I near Mt. Fuji in Japan',
-      path: '/personal_images/signal-2024-12-29-175848_005.webp',
+        "My girlfriend Anne and I near Mt. Fuji in Japan",
+      path: "/personal_images/signal-2024-12-29-175848_005.webp",
     },
     {
       caption:
-        'In my apartment, holding my cat Galaxy. An AATU logo is present on the water bottle, and a poster for GEO in the background.',
-      path: '/personal_images/signal-2024-12-29-175848_006.webp',
+        "In my apartment, holding my cat Galaxy. An AATU logo is present on the water bottle, and a poster for GEO in the background.",
+      path: "/personal_images/signal-2024-12-29-175848_006.webp",
     },
     {
       caption:
-        'Also in my apartment -- holding Galaxy (center) and two of my friend\'s cats, which I was taking care of at the time the picture was taken',
-      path: '/personal_images/signal-2024-12-29-175848_007.webp',
+        "Also in my apartment -- holding Galaxy (center) and two of my friend's cats, which I was taking care of at the time the picture was taken",
+      path: "/personal_images/signal-2024-12-29-175848_007.webp",
     },
     {
       caption:
-        'Speaking at a workshop hosted by myself and friends, "AI is Not Inevitable", November 2024.',
-      path: '/personal_images/ai_workshop.webp',
+        "Speaking at a workshop hosted by myself and friends, \"AI is Not Inevitable\", November 2024.",
+      path: "/personal_images/ai_workshop.webp",
     },
     {
       caption:
-        'My girlfriend Anne and I, in a canal in Amsterdam. July 2024.',
-      path: '/personal_images/amsterdam.webp',
+        "My girlfriend Anne and I, in a canal in Amsterdam. July 2024.",
+      path: "/personal_images/amsterdam.webp",
     },
     {
       caption:
-        'Awkwardly holding a banner that reads "Yoon Suk Yeol must step down", December 2024.',
-      path: '/personal_images/awkward_korean.webp',
+        "Awkwardly holding a banner that reads \"Yoon Suk Yeol must step down\", December 2024.",
+      path: "/personal_images/awkward_korean.webp",
     },
     {
       caption:
-        'Anne and I at Banpo bridge in Seoul, June 2023',
-      path: '/personal_images/banpo.webp',
+        "Anne and I at Banpo bridge in Seoul, June 2023",
+      path: "/personal_images/banpo.webp",
     },
     {
       caption:
-        'Holding a banner that reads "End the occupation" at a pro-Palestine rally; I believe January 2024.',
-      path: '/personal_images/end_occupation.webp',
+        "Holding a banner that reads \"End the occupation\" at a pro-Palestine rally; I believe January 2024.",
+      path: "/personal_images/end_occupation.webp",
     },
     {
       caption:
-        'My cat Galaxy jumping on my friend\'s cat Frog, who I was taking care of. January 2024',
-      path: '/personal_images/galaxy_frog_fighting.webp',
+        "My cat Galaxy jumping on my friend's cat Frog, who I was taking care of. January 2024",
+      path: "/personal_images/galaxy_frog_fighting.webp",
     },
     {
-      caption: 'My cat Galaxy and myself, February 2024',
-      path: '/personal_images/galaxy.webp',
-    },
-    {
-      caption:
-        'My cat Galaxy sleeping on my girlfriend Anne\'s arm. November 2024',
-      path: '/personal_images/galaxy_sleeping.webp',
+      caption: "My cat Galaxy and myself, February 2024",
+      path: "/personal_images/galaxy.webp",
     },
     {
       caption:
-        'A friend and I studying in the common room of Pierson College at Yale. November 2022.',
-      path: '/personal_images/pierson.webp',
+        "My cat Galaxy sleeping on my girlfriend Anne's arm. November 2024",
+      path: "/personal_images/galaxy_sleeping.webp",
     },
     {
       caption:
-        'My girlfriend Anne and I in Incheon, Korea. June 2022',
-      path: '/personal_images/incheon.webp',
+        "A friend and I studying in the common room of Pierson College at Yale. November 2022.",
+      path: "/personal_images/pierson.webp",
     },
     {
       caption:
-        'Myself and some friends (other grads) in Rio, June 2024. For the FAccT conference.',
-      path: '/personal_images/rio.webp',
+        "My girlfriend Anne and I in Incheon, Korea. June 2022",
+      path: "/personal_images/incheon.webp",
     },
     {
       caption:
-        'Getting tattoos from Michigan Ave Tattoo in Ypsi, August 2024. Three moths, a reference to Marx\'s Paris Manuscripts of 1844',
-      path: '/personal_images/moths.webp',
+        "Myself and some friends (other grads) in Rio, June 2024. For the FAccT conference.",
+      path: "/personal_images/rio.webp",
     },
     {
       caption:
-        'My girlfriend Anne and I at Pike Place, Seattle, June 2024',
-      path: '/personal_images/pike_place.webp',
+        "Getting tattoos from Michigan Ave Tattoo in Ypsi, August 2024. Three moths, a reference to Marx's Paris Manuscripts of 1844",
+      path: "/personal_images/moths.webp",
     },
     {
-      caption: 'Late night Wendy\'s. Sometime in 2024.',
-      path: '/personal_images/wendys.webp',
+      caption:
+        "My girlfriend Anne and I at Pike Place, Seattle, June 2024",
+      path: "/personal_images/pike_place.webp",
+    },
+    {
+      caption: "Late night Wendy's. Sometime in 2024.",
+      path: "/personal_images/wendys.webp",
     },
   ]
 
   function resizeGridItem(item: HTMLDivElement) {
-    const grid = document.querySelector('.image-grid')
+    const grid = document.querySelector(".image-grid")
     const rowHeight = parseInt(
       getComputedStyle(grid).getPropertyValue(
-        'grid-auto-rows',
+        "grid-auto-rows",
       ),
     )
     const rowGap = parseInt(
       getComputedStyle(grid).getPropertyValue(
-        'grid-row-gap',
+        "grid-row-gap",
       ),
     )
     const rowSpan = Math.ceil(
-      (item.querySelector('div').getBoundingClientRect()
+      (item.querySelector("div").getBoundingClientRect()
         .height +
         rowGap) /
         (rowHeight + rowGap),
     )
-    item.style.gridRowEnd = 'span ' + rowSpan
+    item.style.gridRowEnd = "span " + rowSpan
   }
 
   function resizeGrid() {
     const items = document.querySelectorAll(
-      '.image-container',
+      ".image-container",
     )
     items.forEach(resizeGridItem)
   }
@@ -143,9 +143,9 @@
   onMount(() => {
     resizeGrid()
     const items: NodeListOf<HTMLDivElement> =
-      document.querySelectorAll('.image-container')
+      document.querySelectorAll(".image-container")
     items.forEach((item, index) => {
-      const img = item.querySelector('img')
+      const img = item.querySelector("img")
       const imgCb = () => {
         loadedStates[index] = true
         resizeGridItem(item)
@@ -159,7 +159,7 @@
     })
 
     setupDialog(dialog, () => {
-      activeImg = {caption: '', path: ''}
+      activeImg = {caption: "", path: ""}
     })
   })
 
@@ -181,8 +181,8 @@
         id={`container-${index}`}
         class="image-container"
         style:visibility={loadedStates[index]
-          ? 'visible'
-          : 'hidden'}
+          ? "visible"
+          : "hidden"}
         style:opacity={loadedStates[index] ? 1 : 0}
         style:transition-delay={`${Math.random() * imgs.length * 50}ms`}
       >
@@ -190,10 +190,10 @@
           <button
             onclick={() => {
               activeImg = {caption, path}
-              dialog.style.opacity = '0'
-              dialog.style.display = 'flex'
+              dialog.style.opacity = "0"
+              dialog.style.display = "flex"
               dialog.showModal()
-              dialog.style.opacity = '1'
+              dialog.style.opacity = "1"
             }}
           >
             <img alt={caption} src={path} />

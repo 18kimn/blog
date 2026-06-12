@@ -1,14 +1,14 @@
 <script lang="ts">
-  import {page} from '$app/state'
-  import Nav from '$lib/Nav/Nav.svelte'
-  import {stripHTML} from '$lib/utils/string'
+  import {page} from "$app/state"
+  import Nav from "$lib/Nav/Nav.svelte"
+  import {stripHTML} from "$lib/utils/string"
   interface Props {
-    children?: import('svelte').Snippet
+    children?: import("svelte").Snippet
   }
 
   let {children}: Props = $props()
 
-  let title = $derived(stripHTML(page.data.title || ''))
+  let title = $derived(stripHTML(page.data.title || ""))
 </script>
 
 <svelte:head>
@@ -26,7 +26,7 @@
 </div>
 
 <style>
-  @import '../globals.css';
+  @import "../globals.css";
 
   .page {
     width: 100%;

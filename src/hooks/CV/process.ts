@@ -1,10 +1,10 @@
-import type {Entry, CV} from '../../routes/cv/types'
-import {marked} from 'marked'
-import {promises as fs} from 'fs'
-import {fileURLToPath} from 'url'
-import {dirname, resolve} from 'path'
-import importCitations from './importCitations'
-import {parse} from 'yaml'
+import type {Entry, CV} from "../../routes/cv/types"
+import {marked} from "marked"
+import {promises as fs} from "fs"
+import {fileURLToPath} from "url"
+import {dirname, resolve} from "path"
+import importCitations from "./importCitations"
+import {parse} from "yaml"
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
 function markup(
@@ -23,10 +23,10 @@ function markup(
   return {
     ...section,
     entries: section.entries?.map((entry: Entry) => {
-      if (!('type' in entry)) return entry
-      if (entry.type !== 'markdown') return entry
+      if (!("type" in entry)) return entry
+      if (entry.type !== "markdown") return entry
       return {
-        type: 'markup' as const,
+        type: "markup" as const,
         markup: marked(entry.markdown),
       }
     }),
@@ -35,7 +35,7 @@ function markup(
 
 async function processCV() {
   const cv = (await fs
-    .readFile(__dirname + '/cv.yaml', 'utf-8')
+    .readFile(__dirname + "/cv.yaml", "utf-8")
     .then(parse)) as CV
   const citations = await importCitations()
 
@@ -59,7 +59,7 @@ async function processCV() {
   })
 
   fs.writeFile(
-    resolve(__dirname, '../../src/routes/cv/cv.json'),
+    resolve(__dirname, "../../src/routes/cv/cv.json"),
     JSON.stringify(cv),
   )
 }

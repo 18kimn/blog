@@ -2,16 +2,16 @@
 
 /** receives number as day, prints appropriate suffix */
 export function nth(d: number): string {
-  if (d > 3 && d < 21) return d.toString() + 'th'
+  if (d > 3 && d < 21) return d.toString() + "th"
   switch (d % 10) {
   case 1:
-    return d.toString() + 'st'
+    return d.toString() + "st"
   case 2:
-    return d.toString() + 'nd'
+    return d.toString() + "nd"
   case 3:
-    return d.toString() + 'rd'
+    return d.toString() + "rd"
   default:
-    return d.toString() + 'th'
+    return d.toString() + "th"
   }
 }
 
@@ -28,8 +28,8 @@ export function adjustDate(date: string | Date): Date {
 export function prettyDate(date: number | string | Date) {
   const asDate = new Date(date)
   const year = asDate.getFullYear()
-  const month = new Intl.DateTimeFormat('en-US', {
-    month: 'long',
+  const month = new Intl.DateTimeFormat("en-US", {
+    month: "long",
   }).format(asDate)
   const day = asDate.getDate()
   return `${month} ${nth(day)}, ${year}`
@@ -41,7 +41,7 @@ export function isHTML(str: string): boolean {
 }
 
 export function stripHTML(str: string): string {
-  return str.replaceAll(tag, '')
+  return str.replaceAll(tag, "")
 }
 
 export function printList(
@@ -53,14 +53,14 @@ export function printList(
       if (isEtal && list.length >= 4 && i === 0) {
         return `${listItem} et. al`
       } else if (isEtal && list.length >= 4 && i > 0) {
-        return ''
+        return ""
       }
       const isLast = i === list.length - 1
-      const comma = list.length >= 3 && !isLast ? ',' : ''
-      const and = list.length >= 2 && isLast ? 'and' : ''
+      const comma = list.length >= 3 && !isLast ? "," : ""
+      const and = list.length >= 2 && isLast ? "and" : ""
       return `${and} ${listItem}${comma}`
     })
-    .join(' ')
+    .join(" ")
 }
 
 /* imperfect, but good enough */

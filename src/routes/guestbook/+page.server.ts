@@ -1,8 +1,8 @@
-import type {PageServerLoad, Actions} from './$types'
-import {prisma} from '$lib/server/prisma'
-import {fail} from '@sveltejs/kit'
-import {env} from '$env/dynamic/private'
-import {oauthProviderInfo} from '../../auth'
+import type {PageServerLoad, Actions} from "./$types"
+import {prisma} from "$lib/server/prisma"
+import {fail} from "@sveltejs/kit"
+import {env} from "$env/dynamic/private"
+import {oauthProviderInfo} from "../../auth"
 
 export const prerender = false
 
@@ -28,7 +28,7 @@ export const load: PageServerLoad = async ({locals}) => {
       where: isOwner
         ? undefined
         : {author: {banned: false}},
-      orderBy: {createdAt: 'desc'},
+      orderBy: {createdAt: "desc"},
       include: {
         author: {
           select: {
@@ -56,7 +56,7 @@ export const load: PageServerLoad = async ({locals}) => {
       createdAt: comment.createdAt,
       authorName: comment.author.showIdentity
         ? (comment.author.name ?? comment.author.email)
-        : 'anonymous',
+        : "anonymous",
       authorImage: comment.author.showIdentity
         ? comment.author.image
         : null,
@@ -81,13 +81,13 @@ export const actions: Actions = {
   create: async ({locals, request}) => {
     const session = await locals.auth()
     if (!session?.user?.email)
-      return fail(401, {error: 'Sign in to post.'})
+      return fail(401, {error: "Sign in to post."})
 
     const data = await request.formData()
-    const body = (data.get('body') ?? '').toString().trim()
-    const showIdentity = data.has('showIdentity')
+    const body = (data.get("body") ?? "").toString().trim()
+    const showIdentity = data.has("showIdentity")
     if (!body)
-      return fail(400, {error: 'Comment cannot be empty.'})
+      return fail(400, {error: "Comment cannot be empty."})
     if (body.length > MAX_LENGTH)
       return fail(400, {
         error: `Keep it under ${MAX_LENGTH} characters.`,
@@ -97,17 +97,17 @@ export const actions: Actions = {
       where: {email: session.user.email},
     })
     if (!author)
-      return fail(401, {error: 'Account not found.'})
+      return fail(401, {error: "Account not found."})
     if (author.banned)
       return fail(403, {
-        error: 'You are banned from posting.',
+        error: "You are banned from posting.",
       })
 
     const [latest, userCount, totalCount] =
       await Promise.all([
         prisma.comment.findFirst({
           where: {authorId: author.id},
-          orderBy: {createdAt: 'desc'},
+          orderBy: {createdAt: "desc"},
           select: {createdAt: true},
         }),
         prisma.comment.count({
@@ -123,15 +123,15 @@ export const actions: Actions = {
     )
       return fail(429, {
         error:
-          'You\'re posting too fast — give it a moment.',
+          "You're posting too fast — give it a moment.",
       })
     if (userCount >= MAX_COMMENTS_PER_USER)
       return fail(403, {
-        error: 'You\'ve reached your post limit.',
+        error: "You've reached your post limit.",
       })
     if (totalCount >= MAX_TOTAL_COMMENTS)
       return fail(403, {
-        error: 'The guestbook is full for now.',
+        error: "The guestbook is full for now.",
       })
 
     if (author.showIdentity !== showIdentity)
@@ -149,22 +149,22 @@ export const actions: Actions = {
   delete: async ({locals, request}) => {
     const session = await locals.auth()
     if (!session?.user?.email)
-      return fail(401, {error: 'Sign in first.'})
+      return fail(401, {error: "Sign in first."})
 
     const data = await request.formData()
-    const id = (data.get('id') ?? '').toString()
+    const id = (data.get("id") ?? "").toString()
     const comment = await prisma.comment.findUnique({
       where: {id},
       include: {author: {select: {email: true}}},
     })
     if (!comment)
-      return fail(404, {error: 'Comment not found.'})
+      return fail(404, {error: "Comment not found."})
 
     const isOwner = session.user.email === env.OWNER_EMAIL
     const isAuthor =
       comment.author.email === session.user.email
     if (!isOwner && !isAuthor)
-      return fail(403, {error: 'Not allowed.'})
+      return fail(403, {error: "Not allowed."})
 
     await prisma.comment.delete({where: {id}})
     return {success: true}
@@ -176,12 +176,12 @@ export const actions: Actions = {
       !session?.user?.email ||
       session.user.email !== env.OWNER_EMAIL
     )
-      return fail(403, {error: 'Not allowed.'})
+      return fail(403, {error: "Not allowed."})
 
     const data = await request.formData()
-    const userId = (data.get('userId') ?? '').toString()
-    const banned = data.get('banned') === 'true'
-    if (!userId) return fail(400, {error: 'Missing user.'})
+    const userId = (data.get("userId") ?? "").toString()
+    const banned = data.get("banned") === "true"
+    if (!userId) return fail(400, {error: "Missing user."})
 
     await prisma.user.updateMany({
       where: {id: userId, email: {not: env.OWNER_EMAIL}},

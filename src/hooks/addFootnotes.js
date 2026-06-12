@@ -1,6 +1,6 @@
 /** the bulk of the action*/
 function transformer(tree, footnotes, parent, index) {
-  if (tree.type === 'linkReference') {
+  if (tree.type === "linkReference") {
     // if index === 0, not a footnote
     if (index === 0) {
       return
@@ -12,12 +12,12 @@ function transformer(tree, footnotes, parent, index) {
 
     parent.children[index - 1].value = parent.children[
       index - 1
-    ].value.replace(/\^$/, '')
+    ].value.replace(/\^$/, "")
 
     const sup = `<sup id="fn-${footnotes.length}">${link}</sup>`
     // replace the note as HTML
     parent.children[index] = {
-      type: 'html',
+      type: "html",
       value: sup,
     }
   }
@@ -44,13 +44,13 @@ export default function addFootnotes() {
             i + 1
           }">↩</a></li>`,
       )
-      .join('')
+      .join("")
     const footer = renderedFootnotes
       ? `<hr/><ol class="footnotes">${renderedFootnotes}</ol>`
-      : ''
+      : ""
     tree.children = [
       ...tree.children,
-      {type: 'html', value: footer},
+      {type: "html", value: footer},
     ]
   }
 }

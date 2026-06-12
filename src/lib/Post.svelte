@@ -1,17 +1,17 @@
 <script lang="ts">
-  import type {Post} from '$lib/utils/types'
-  import {getHeadings, updateHeadings} from './footnotes'
-  import type {Footnote} from './footnotes'
-  import setupSidebar from './setupSidebar'
+  import type {Post} from "$lib/utils/types"
+  import {getHeadings, updateHeadings} from "./footnotes"
+  import type {Footnote} from "./footnotes"
+  import setupSidebar from "./setupSidebar"
   import {
     countWords,
     prettyDate,
     adjustDate,
-  } from '$lib/utils/string'
-  import {last} from '$lib/utils/misc'
-  import {onMount, setContext} from 'svelte'
-  import {fade} from 'svelte/transition'
-  import {postDataKey} from '../store'
+  } from "$lib/utils/string"
+  import {last} from "$lib/utils/misc"
+  import {onMount, setContext} from "svelte"
+  import {fade} from "svelte/transition"
+  import {postDataKey} from "../store"
 
   let {data = {} as Post, children} = $props()
   setContext(postDataKey, data.postData)
@@ -30,7 +30,7 @@
 
     headings = getHeadings()
     visibleHeading = updateHeadings(headings)
-    document.addEventListener('scroll', () => {
+    document.addEventListener("scroll", () => {
       const newHeading = updateHeadings(headings)
       visibleHeading =
         newHeading > -1 ? newHeading : visibleHeading
@@ -48,7 +48,7 @@
   ) {
     if (!Array.isArray(elm)) elm = [elm]
     elm.forEach((el) =>
-      target.insertAdjacentElement('afterbegin', el),
+      target.insertAdjacentElement("afterbegin", el),
     )
   }
 
@@ -87,7 +87,7 @@
               {#if tags?.length}
                 <span id="tags">
                   Tagged with:
-                  <code>{tags.join(', ')}</code>
+                  <code>{tags.join(", ")}</code>
                 </span>
               {/if}
             </div>

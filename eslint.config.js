@@ -1,23 +1,23 @@
-import svelte from 'eslint-plugin-svelte'
-import globals from 'globals'
-import js from '@eslint/js'
-import ts from 'typescript-eslint'
-import {defineConfig, globalIgnores} from 'eslint/config'
+import svelte from "eslint-plugin-svelte"
+import globals from "globals"
+import js from "@eslint/js"
+import ts from "typescript-eslint"
+import {defineConfig, globalIgnores} from "eslint/config"
 
 export default defineConfig([
   globalIgnores([
-    'node_modules/',
-    '.git/',
-    '.svelte-kit/',
-    'build/',
+    "node_modules/",
+    ".git/",
+    ".svelte-kit/",
+    "build/",
   ]),
   {
     files: [
-      '**/*.svelte',
-      '**/*.svelte.ts',
-      '**/*.svelte.js',
-      '**/*.js',
-      '**/*.ts',
+      "**/*.svelte",
+      "**/*.svelte.ts",
+      "**/*.svelte.js",
+      "**/*.js",
+      "**/*.ts",
     ],
     extends: [
       js.configs.recommended,
@@ -28,50 +28,50 @@ export default defineConfig([
       parserOptions: {
         projectService: {
           allowDefaultProject: [
-            'eslint.config.js',
-            'svelte.config.js',
-            'prisma.config.ts',
+            "eslint.config.js",
+            "svelte.config.js",
+            "prisma.config.ts",
           ],
         },
-        extraFileExtensions: ['.svelte'],
+        extraFileExtensions: [".svelte"],
         parser: ts.parser,
       },
-      ecmaVersion: 'latest',
-      sourceType: 'module',
+      ecmaVersion: "latest",
+      sourceType: "module",
       globals: {
         ...globals.browser,
         ...globals.node,
       },
     },
     rules: {
-      indent: ['error', 2],
-      'linebreak-style': ['error', 'unix'],
-      quotes: ['error', 'single'],
-      semi: ['error', 'never'],
+      indent: ["error", 2],
+      "linebreak-style": ["error", "unix"],
+      quotes: ["error", "double"],
+      semi: ["error", "never"],
 
-      'no-unused-vars': 'off',
-      '@typescript-eslint/no-unused-vars': [
-        'error',
-        {varsIgnorePattern: '_', argsIgnorePattern: '_'},
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        {varsIgnorePattern: "_", argsIgnorePattern: "_"},
       ],
-      'no-multi-spaces': 'error',
-      'no-invalid-this': 'error',
-      'no-trailing-spaces': 'error',
+      "no-multi-spaces": "error",
+      "no-invalid-this": "error",
+      "no-trailing-spaces": "error",
 
-      'array-bracket-spacing': ['error', 'never'],
-      'object-curly-spacing': ['error', 'never'],
-      camelcase: ['error', {properties: 'never'}],
-      'comma-spacing': 'error',
-      'comma-style': 'error',
+      "array-bracket-spacing": ["error", "never"],
+      "object-curly-spacing": ["error", "never"],
+      camelcase: ["error", {properties: "never"}],
+      "comma-spacing": "error",
+      "comma-style": "error",
 
-      'svelte/no-at-html-tags': 'off',
+      "svelte/no-at-html-tags": "off",
 
-      '@typescript-eslint/no-explicit-any': 'off',
-      '@typescript-eslint/no-extra-semi': 'off',
-      '@typescript-eslint/ban-ts-comment': 'off',
-      '@typescript-eslint/ban-types': 'off',
-      'no-unused-expressions': 'off',
-      '@typescript-eslint/no-unused-expressions': 'off',
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-extra-semi": "off",
+      "@typescript-eslint/ban-ts-comment": "off",
+      "@typescript-eslint/ban-types": "off",
+      "no-unused-expressions": "off",
+      "@typescript-eslint/no-unused-expressions": "off",
     },
   },
 ])

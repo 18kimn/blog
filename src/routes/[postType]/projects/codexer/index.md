@@ -1,6 +1,6 @@
 ---
 title: <code>codexer</code>
-subtitle: 'a tool for turning code into books'
+subtitle: "a tool for turning code into books"
 date: 2021-10-21
 banner: codexer-example.png
 ---
@@ -82,14 +82,14 @@ production. But if you want, you can install with
 follows:
 
 ```js
-const codexer = require('codexer')
+const codexer = require("codexer")
 // or
-import codexer from 'codexer'
+import codexer from "codexer"
 
-codexer('.')
+codexer(".")
 // Finished! PDF is located at /tmp/codexer/[your directory basename].pdf
 
-codexer('.', {outPath: 'output.pdf'})
+codexer(".", {outPath: "output.pdf"})
 // Finished! PDF is located at [path to your directory].pdf
 ```
 

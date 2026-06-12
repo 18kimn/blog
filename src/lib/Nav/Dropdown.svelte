@@ -1,8 +1,8 @@
 <script lang="ts">
-  import {page} from '$app/state'
-  import {resolve} from '$app/paths'
-  import {isCurrent} from '$lib/utils/misc'
-  import {onMount} from 'svelte'
+  import {page} from "$app/state"
+  import {resolve} from "$app/paths"
+  import {isCurrent} from "$lib/utils/misc"
+  import {onMount} from "svelte"
 
   let {
     label,
@@ -22,10 +22,10 @@
         isClicked = false
       }
     }
-    document.body.addEventListener('click', onBodyClick)
+    document.body.addEventListener("click", onBodyClick)
     return () =>
       document.body.removeEventListener(
-        'click',
+        "click",
         onBodyClick,
       )
   })
@@ -127,7 +127,7 @@
   }
 
   .subroutes::before {
-    content: '';
+    content: "";
     position: absolute;
     top: -0.4rem;
     left: 0;

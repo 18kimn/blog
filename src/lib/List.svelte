@@ -1,11 +1,11 @@
 <script lang="ts">
-  import type {Post} from '$lib/utils/types'
-  import {resolve} from '$app/paths'
-  import {fade} from 'svelte/transition'
+  import type {Post} from "$lib/utils/types"
+  import {resolve} from "$app/paths"
+  import {fade} from "svelte/transition"
 
   interface Props {
     items: Post[]
-    children?: import('svelte').Snippet
+    children?: import("svelte").Snippet
   }
 
   let {items, children}: Props = $props()
@@ -91,7 +91,7 @@
 
   /** force empty spans to still have height */
   .subtitle:before {
-    content: '\200b';
+    content: "\200b";
   }
 
   .content :global(code) {

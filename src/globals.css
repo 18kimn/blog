@@ -9,7 +9,7 @@
   transition: font-size ease-in-out 200ms;
   --font:
     Lora, Cambria, Cochin, Georgia, Times,
-    'Times New Roman', Noto Emoji, serif;
+    "Times New Roman", Noto Emoji, serif;
   --border: solid 1px black;
   --bg: linear-gradient(to right, #e8f8ff 0%, #fff2f2 100%);
   --color: #1100d9;
@@ -46,7 +46,7 @@ a {
 
 code,
 pre {
-  font-family: 'Fira Code', mono;
+  font-family: "Fira Code", mono;
   background: #e3eaf2;
 }
 
@@ -127,12 +127,12 @@ h3 {
 /** fonts */
 
 @font-face {
-  font-family: 'Lato';
+  font-family: "Lato";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
   src: url(https://fonts.gstatic.com/s/lato/v22/S6uyw4BMUTPHjx4wXg.woff2)
-    format('woff2');
+    format("woff2");
   unicode-range:
     U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
     U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122,
@@ -140,12 +140,12 @@ h3 {
 }
 
 @font-face {
-  font-family: 'Lato';
+  font-family: "Lato";
   font-style: normal;
   font-weight: 700;
   font-display: swap;
   src: url(https://fonts.gstatic.com/s/lato/v22/S6u9w4BMUTPHh6UVSwiPGQ.woff2)
-    format('woff2');
+    format("woff2");
   unicode-range:
     U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
     U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122,
@@ -153,12 +153,12 @@ h3 {
 }
 
 @font-face {
-  font-family: 'Lato';
+  font-family: "Lato";
   font-style: italic;
   font-weight: 400;
   font-display: swap;
   src: url(https://fonts.gstatic.com/s/lato/v22/S6u8w4BMUTPHjxsAXC-q.woff2)
-    format('woff2');
+    format("woff2");
   unicode-range:
     U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
     U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122,
@@ -166,12 +166,12 @@ h3 {
 }
 
 @font-face {
-  font-family: 'Fira Code';
+  font-family: "Fira Code";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
   src: url(https://fonts.gstatic.com/s/firacode/v14/uU9eCBsR6Z2vfE9aq3bL0fxyUs4tcw4W_D1sJVD7Ng.woff2)
-    format('woff2');
+    format("woff2");
   unicode-range:
     U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
     U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122,

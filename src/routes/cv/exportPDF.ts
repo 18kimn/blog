@@ -1,4 +1,4 @@
-import {jsPDF} from 'jspdf'
+import {jsPDF} from "jspdf"
 /*
   sections.forEach((section) => {
     // add title as section.name
@@ -18,21 +18,23 @@ import {jsPDF} from 'jspdf'
   })
 */
 
-export default async function exportPDF(_node: HTMLElement) {
+export default async function exportPDF(
+  _node: HTMLElement,
+) {
   const doc = new jsPDF({
-    format: 'a4',
-    unit: 'px',
-    hotfixes: ['px_scaling'],
+    format: "a4",
+    unit: "px",
+    hotfixes: ["px_scaling"],
   })
   doc.setLineHeightFactor(1)
   doc.setFontSize(10)
   // console.log(doc.getFontList())
 
-  const text = 'some bold text'
-  doc.setFont('Lora', 'bold')
+  const text = "some bold text"
+  doc.setFont("Lora", "bold")
   doc.text(text, 10, 10)
   const dims = doc.getTextDimensions(text)
-  doc.setFont('Lora', 'regular')
-  doc.text('some normal text', dims.w, 10)
-  doc.save('nathan-kim-cv.pdf')
+  doc.setFont("Lora", "regular")
+  doc.text("some normal text", dims.w, 10)
+  doc.save("nathan-kim-cv.pdf")
 }

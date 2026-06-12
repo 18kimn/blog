@@ -1,12 +1,12 @@
 <script lang="ts">
-  import type {RSSSource} from '$lib/utils/types'
-  import {slide} from 'svelte/transition'
-  import OutLink from './OutLink.svelte'
+  import type {RSSSource} from "$lib/utils/types"
+  import {slide} from "svelte/transition"
+  import OutLink from "./OutLink.svelte"
   interface Props {
     source?: RSSSource
   }
 
-  let {source = {rssUrl: ''}}: Props = $props()
+  let {source = {rssUrl: ""}}: Props = $props()
 
   let shouldExpand = $state(false)
 </script>

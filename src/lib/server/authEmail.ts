@@ -1,19 +1,19 @@
-import type {EmailMessage} from '$lib/server/mailer'
+import type {EmailMessage} from "$lib/server/mailer"
 
 export function magicLinkEmail(
   url: string,
   host: string,
-): Omit<EmailMessage, 'to'> {
+): Omit<EmailMessage, "to"> {
   const subject = `Sign in to ${host}`
 
   const text = [
     `Sign in to ${host}`,
-    '',
-    'Click the link below to sign in. It expires in 30 minutes.',
+    "",
+    "Click the link below to sign in. It expires in 30 minutes.",
     url,
-    '',
-    'If you didn\'t request this, you can ignore this email.',
-  ].join('\n')
+    "",
+    "If you didn't request this, you can ignore this email.",
+  ].join("\n")
 
   const html = `
     <body style="font-family: system-ui, sans-serif; color: #222; line-height: 1.5;">

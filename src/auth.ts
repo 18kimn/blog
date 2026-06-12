@@ -1,14 +1,14 @@
-import {SvelteKitAuth} from '@auth/sveltekit'
-import Google from '@auth/sveltekit/providers/google'
-import {PrismaAdapter} from '@auth/prisma-adapter'
-import type {EmailConfig} from '@auth/sveltekit/providers'
-import {env} from '$env/dynamic/private'
-import {prisma} from '$lib/server/prisma'
-import {mailer} from '$lib/server/mailer'
-import {magicLinkEmail} from '$lib/server/authEmail'
+import {SvelteKitAuth} from "@auth/sveltekit"
+import Google from "@auth/sveltekit/providers/google"
+import {PrismaAdapter} from "@auth/prisma-adapter"
+import type {EmailConfig} from "@auth/sveltekit/providers"
+import {env} from "$env/dynamic/private"
+import {prisma} from "$lib/server/prisma"
+import {mailer} from "$lib/server/mailer"
+import {magicLinkEmail} from "$lib/server/authEmail"
 
 const oauthProviders = [
-  {provider: Google, id: 'google', name: 'Google'},
+  {provider: Google, id: "google", name: "Google"},
 ]
 
 export const oauthProviderInfo = oauthProviders.map(
@@ -19,9 +19,9 @@ export const oauthProviderInfo = oauthProviders.map(
 )
 
 const emailProvider: EmailConfig = {
-  id: 'email',
-  type: 'email',
-  name: 'Email',
+  id: "email",
+  type: "email",
+  name: "Email",
   from: env.AUTH_EMAIL_FROM,
   maxAge: 60 * 30,
   async sendVerificationRequest({identifier, url}) {
@@ -41,7 +41,7 @@ export const {handle, signIn, signOut} = SvelteKitAuth({
   ],
   trustHost: true,
   pages: {
-    verifyRequest: '/check-email',
-    error: '/auth-error',
+    verifyRequest: "/check-email",
+    error: "/auth-error",
   },
 })

@@ -13,7 +13,7 @@ function transformer(tree, toc, parent, index) {
    * </ol>
    *
    */
-  if (tree.type !== 'heading') {
+  if (tree.type !== "heading") {
     // recurse over children, if there are children
     return (
       tree.children &&
@@ -33,8 +33,8 @@ function transformer(tree, toc, parent, index) {
 
   const text = tree.children
     .map((child) => child.value)
-    .join('')
-  const slug = text.toLowerCase().replace(/[^\w]+/g, '-')
+    .join("")
+  const slug = text.toLowerCase().replace(/[^\w]+/g, "-")
   toc.push({
     level,
     slug: slug,
@@ -44,11 +44,11 @@ function transformer(tree, toc, parent, index) {
   const heading = `<h${level} class="heading" id="${slug}">${text}`
   const linkToHeading = `<a class="heading-link" href="#${slug}">#</a>`
   const toTop =
-    '<a class="heading-link" href="#frontmatter">🠑</a>'
+    "<a class=\"heading-link\" href=\"#frontmatter\">🠑</a>"
 
   // replace the heading in the tree with markup
   parent.children[index] = {
-    type: 'html',
+    type: "html",
     value: heading + linkToHeading + toTop + `</h${level}>`,
   }
 }
@@ -61,25 +61,25 @@ function makeTOC() {
     const assembled = tocItems
       .map((item, index) => {
         // if it's on a higher level, it should open al <ol>
-        const prefix = item.level > lastLevel ? '<ol>' : ''
+        const prefix = item.level > lastLevel ? "<ol>" : ""
 
         const body = `<li><a href="#${item.slug}">${item.title}</a></li>`
 
         // if the next item doesn't exist, or it's on a lower
         // level, this one should close the ol
         const nextLevel = tocItems[index + 1]?.level || 0
-        const suffix = nextLevel < item.level ? '</ol>' : ''
+        const suffix = nextLevel < item.level ? "</ol>" : ""
         lastLevel = item.level
         return prefix + body + suffix
       })
-      .join('')
+      .join("")
 
     const printableToc = assembled
       ? `<div class="toc"><em>In this post:</em>${assembled}</div>`
-      : ''
+      : ""
 
     tree.children = [
-      {type: 'html', value: printableToc},
+      {type: "html", value: printableToc},
       ...tree.children,
     ]
   }

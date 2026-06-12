@@ -1,20 +1,20 @@
-import {env} from '$env/dynamic/private'
-import type {Mailer} from './types'
+import {env} from "$env/dynamic/private"
+import type {Mailer} from "./types"
 
-const RESEND_ENDPOINT = 'https://api.resend.com/emails'
+const RESEND_ENDPOINT = "https://api.resend.com/emails"
 
 export const resendMailer: Mailer = {
   async send({to, subject, html, text}) {
     if (!env.RESEND_API_KEY)
-      throw new Error('RESEND_API_KEY is not set')
+      throw new Error("RESEND_API_KEY is not set")
     if (!env.AUTH_EMAIL_FROM)
-      throw new Error('AUTH_EMAIL_FROM is not set')
+      throw new Error("AUTH_EMAIL_FROM is not set")
 
     const response = await fetch(RESEND_ENDPOINT, {
-      method: 'POST',
+      method: "POST",
       headers: {
         authorization: `Bearer ${env.RESEND_API_KEY}`,
-        'content-type': 'application/json',
+        "content-type": "application/json",
       },
       body: JSON.stringify({
         from: env.AUTH_EMAIL_FROM,

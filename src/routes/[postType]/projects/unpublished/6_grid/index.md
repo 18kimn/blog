@@ -1,5 +1,5 @@
 ---
-title: 'Grid map of the Japanese cadastral survey'
+title: "Grid map of the Japanese cadastral survey"
 date: 2021-01-10
 banner: assembled_stanford.png
 ---

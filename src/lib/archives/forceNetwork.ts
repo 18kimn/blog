@@ -5,18 +5,18 @@ import {
   forceLink,
   forceX,
   forceY,
-} from 'd3-force'
+} from "d3-force"
 /* simple force network to add some spice */
 
 const N_NODES = 100
 
 const nodeColors = [
-  '#1f77b4',
-  '#ff7f0e',
-  '#2ca02c',
-  '#d62728',
-  '#9467bd',
-  '#8c564b',
+  "#1f77b4",
+  "#ff7f0e",
+  "#2ca02c",
+  "#d62728",
+  "#9467bd",
+  "#8c564b",
 ]
 
 type Node = {id: number; group: number}
@@ -82,13 +82,13 @@ function drawFrame(
   context.save()
   context.clearRect(0, 0, width, height)
   // Draw links
-  context.strokeStyle = '#000000'
+  context.strokeStyle = "#000000"
   context.lineWidth = 0.5
   links.forEach((d) => {
-    if (!(d.source['x'] && d.source['y'])) return
+    if (!(d.source["x"] && d.source["y"])) return
     context.beginPath()
-    context.moveTo(d.source['x'], d.source['y'])
-    context.lineTo(d.target['x'], d.target['y'])
+    context.moveTo(d.source["x"], d.source["y"])
+    context.lineTo(d.target["x"], d.target["y"])
     context.stroke()
   })
   // Draw nodes
@@ -100,7 +100,7 @@ function drawFrame(
     context.fillStyle = nodeColors[d.group]
     context.fill()
     // Node outline
-    context.strokeStyle = '#fff'
+    context.strokeStyle = "#fff"
     context.stroke()
   })
   context.restore()
@@ -109,20 +109,20 @@ function drawFrame(
 export default function makeNetwork(
   canvas: HTMLCanvasElement,
 ) {
-  const context = canvas.getContext('2d')
+  const context = canvas.getContext("2d")
   const {nodes, links} = generateGraph()
 
   const width = canvas.offsetWidth
   const height = canvas.offsetHeight
 
   const simulation = forceSimulation(nodes)
-    .force('center', forceCenter(width / 2, height / 2))
-    .force('charge', forceManyBody().strength(-100))
-    .force('link', forceLink(links).strength(0.2))
-    .force('x', forceX(width / 2).strength(0.05))
-    .force('y', forceY(height / 2).strength(0.05))
+    .force("center", forceCenter(width / 2, height / 2))
+    .force("charge", forceManyBody().strength(-100))
+    .force("link", forceLink(links).strength(0.2))
+    .force("x", forceX(width / 2).strength(0.05))
+    .force("y", forceY(height / 2).strength(0.05))
 
-  simulation.on('tick', () =>
+  simulation.on("tick", () =>
     drawFrame({nodes, links}, context, width, height),
   )
 }

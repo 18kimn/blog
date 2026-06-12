@@ -1,5 +1,5 @@
 ---
-title: 'Third World decolonization'
+title: "Third World decolonization"
 date: 2021-01-09
 banner: assembled.png
 ---

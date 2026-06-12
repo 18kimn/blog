@@ -1,4 +1,4 @@
-import {promises as fs, existsSync} from 'fs'
+import {promises as fs, existsSync} from "fs"
 
 export const prerender = true
 export async function load({params}) {
@@ -8,7 +8,7 @@ export async function load({params}) {
   const dataPath = `${postDir}/data.json`
   const dataExists = existsSync(dataPath)
   const postData = dataExists
-    ? JSON.parse(await fs.readFile(dataPath, 'utf-8'))
+    ? JSON.parse(await fs.readFile(dataPath, "utf-8"))
     : {}
 
   return {

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type {Entry} from './Entry.svelte'
+  import type {Entry} from "./Entry.svelte"
 
   interface Props {
     updateFilteredEntries: (entries: Entry[]) => Entry[]
@@ -7,20 +7,20 @@
   }
 
   let {updateFilteredEntries, entries}: Props = $props()
-  let option = $state('')
+  let option = $state("")
 
-  let term = $state('')
+  let term = $state("")
   /* search */
   let searchedEntries = $derived(
     entries.filter((entry) => {
-      if (term === '') {
+      if (term === "") {
         return true
       }
       const creators = entry.creators
         .map((creator) => {
           return `${creator.firstName} ${creator.lastName}`
         })
-        .join(' ')
+        .join(" ")
       const str =
         `${creators} ${entry.title} ${entry.date} ${entry.subtitle}`.toLowerCase()
 
@@ -30,20 +30,20 @@
 
   $effect(() => {
     const sortedEntries =
-      option === ''
+      option === ""
         ? searchedEntries
         : searchedEntries.sort((a, b) => {
           switch (option) {
-          case 'publication_date':
+          case "publication_date":
             return (
               Number(new Date(a.date)) -
                   Number(new Date(b.date))
             )
-          case 'author':
+          case "author":
             return a.creators[0].firstName.localeCompare(
               b.creators[0].firstName,
             )
-          case 'title':
+          case "title":
             return a.title.localeCompare(b.title)
           }
         })

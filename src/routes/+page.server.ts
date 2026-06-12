@@ -1,7 +1,7 @@
-import yaml from 'yaml'
-import {browser} from '$app/environment'
-import currentlyFile from '../lib/currently.yaml?raw'
-import infoFile from '../lib/homepage.yaml?raw'
+import yaml from "yaml"
+import {browser} from "$app/environment"
+import currentlyFile from "../lib/currently.yaml?raw"
+import infoFile from "../lib/homepage.yaml?raw"
 
 type Info = {
   display: string

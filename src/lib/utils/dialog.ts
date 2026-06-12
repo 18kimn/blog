@@ -3,7 +3,7 @@ export function setupDialog(
   cb = () => {},
 ) {
   // what a pain in the butt
-  dialog.addEventListener('click', (e) => {
+  dialog.addEventListener("click", (e) => {
     const rect = dialog.getBoundingClientRect()
     const x = e.clientX
     const y = e.clientY
@@ -15,10 +15,10 @@ export function setupDialog(
     /* if click isn't on gear or the dialog itself, close it
      */
     if (!isWithin && e.target !== opener) {
-      dialog.style.opacity = '0'
+      dialog.style.opacity = "0"
       dialog.close()
       setTimeout(() => {
-        dialog.style.display = 'none'
+        dialog.style.display = "none"
         cb()
       }, 200)
     }

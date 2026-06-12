@@ -1,6 +1,6 @@
 ---
-title: 'making things with NFCs'
-subtitle: 'to clarify, not NFTs'
+title: "making things with NFCs"
+subtitle: "to clarify, not NFTs"
 date: 2021-10-15
 banner: nfc.png
 ---

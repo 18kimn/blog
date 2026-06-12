@@ -1,17 +1,17 @@
-import {getFootnotes} from './footnotes'
+import {getFootnotes} from "./footnotes"
 
 export default function setupSidebar() {
   const footnotes = getFootnotes()
   /* After Svelte does an initial (invisible) render,
     grab that information and represent it with footnotes alongside it*/
   const nodes = [
-    ...(document.querySelector('.article-shadow')
+    ...(document.querySelector(".article-shadow")
       ?.children as HTMLCollection),
   ]
 
   const rows = nodes.map((node) => {
     const footnoteReferences =
-      node.querySelectorAll('[id^="fn-"]')
+      node.querySelectorAll("[id^=\"fn-\"]")
     if (!footnoteReferences?.length)
       return {
         node,

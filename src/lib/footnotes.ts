@@ -7,18 +7,18 @@ export type Footnote = {
 
 export function getFootnotes(): Footnote[] {
   const raw = [
-    ...document.getElementsByClassName('footnotes'),
+    ...document.getElementsByClassName("footnotes"),
   ][0]?.children
   if (!raw) return []
   return [...raw].map((footnote, index) => {
     const a = footnote.querySelector(
-      '.backlink',
+      ".backlink",
     ) as HTMLAnchorElement
     return {
       index,
       id: footnote.id,
       html: footnote.innerHTML,
-      href: a.getAttribute('href') as string,
+      href: a.getAttribute("href") as string,
     }
   })
 }
@@ -27,14 +27,14 @@ export default function updateFloater(
   footnotes: Footnote[],
 ): Footnote[] {
   const visibleLinks = [
-    ...document.getElementsByClassName('footnote-link'),
+    ...document.getElementsByClassName("footnote-link"),
   ]
     .filter((link) => {
       const top = link.getBoundingClientRect().top
       return top > 0 && top < window.innerHeight * 0.8
     })
     .map((link) =>
-      (link as HTMLLinkElement).href.replace(/.*#/, ''),
+      (link as HTMLLinkElement).href.replace(/.*#/, ""),
     )
   const visibleFootnotes = footnotes.filter((footnote) =>
     visibleLinks.includes(footnote.id),
@@ -44,13 +44,13 @@ export default function updateFloater(
 
 export function getHeadings() {
   const raw = [
-    ...document.getElementsByClassName('heading'),
+    ...document.getElementsByClassName("heading"),
   ]
   return raw.map((heading, index) => {
     return {
       index,
       id: heading.id,
-      html: heading.firstChild?.textContent || '',
+      html: heading.firstChild?.textContent || "",
     }
   })
 }
@@ -59,21 +59,21 @@ export function updateHeadings(
   headings: Footnote[],
 ): number {
   const visibleHeading = [
-    ...document.getElementsByClassName('heading'),
+    ...document.getElementsByClassName("heading"),
   ].filter((heading) => {
     const top = heading.getBoundingClientRect().top
     return top > 0 && top < innerHeight
   })
 
   const smallestNegativeHeading = [
-    ...document.getElementsByClassName('heading'),
+    ...document.getElementsByClassName("heading"),
   ]
     .filter((heading) => {
       const top = heading.getBoundingClientRect().top
       return top < 0
     })
     .reduce((prev: undefined | Element, curr) => {
-      if (typeof prev === 'undefined') return curr
+      if (typeof prev === "undefined") return curr
       const prevTop = prev.getBoundingClientRect().top
       const top = curr.getBoundingClientRect().top
       return top > prevTop ? curr : prev

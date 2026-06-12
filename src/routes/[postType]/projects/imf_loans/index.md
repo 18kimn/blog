@@ -1,5 +1,5 @@
 ---
-title: 'The IMF and Global Dispossession'
+title: "The IMF and Global Dispossession"
 date: 2021-05-16
 banner: site-preview.png
 ---

@@ -1,7 +1,7 @@
 ---
-title: 'Map with a new tool: Seoul, songs, spaces'
+title: "Map with a new tool: Seoul, songs, spaces"
 date: 2021-01-12
-banner: 'annotated.png'
+banner: "annotated.png"
 ---
 
 This past winter break, I made a few maps inspired by the

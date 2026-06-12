@@ -14,10 +14,10 @@
 </script>
 
 <script lang="ts">
-  import {slide} from 'svelte/transition'
-  import {prettyDate, printList} from '$lib/utils/string'
-  import {onMount} from 'svelte'
-  import OutLink from '$lib/OutLink.svelte'
+  import {slide} from "svelte/transition"
+  import {prettyDate, printList} from "$lib/utils/string"
+  import {onMount} from "svelte"
+  import OutLink from "$lib/OutLink.svelte"
 
   interface Props {
     entry: Entry
@@ -95,7 +95,7 @@
       onblur={() => {
         isHover = false
       }}
-      style={isHover ? 'background: violet;' : ''}
+      style={isHover ? "background: violet;" : ""}
       in:slide|global={{delay: firstRender ? 0 : 500}}
     >
       <span style="font-weight: bold;">{title}</span>

@@ -1,16 +1,16 @@
 <script lang="ts">
-  import List from '$lib/List.svelte'
-  import Projects from './Projects.svelte'
-  import Writing from './Writing.svelte'
-  import {page} from '$app/state'
+  import List from "$lib/List.svelte"
+  import Projects from "./Projects.svelte"
+  import Writing from "./Writing.svelte"
+  import {page} from "$app/state"
 
   let {data} = $props()
 
   function getComponent(type: string) {
     switch (type) {
-    case 'projects':
+    case "projects":
       return Projects
-    case 'writing':
+    case "writing":
       return Writing
     }
   }

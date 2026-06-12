@@ -1,7 +1,7 @@
 <script lang="ts">
-  import {enhance} from '$app/forms'
-  import {prettyDate} from '$lib/utils/string'
-  import type {PageData, ActionData} from './$types'
+  import {enhance} from "$app/forms"
+  import {prettyDate} from "$lib/utils/string"
+  import type {PageData, ActionData} from "./$types"
 
   interface Props {
     data: PageData
@@ -143,7 +143,7 @@
       {#if comment.owner}
         <div class="owner-info">
           <span class="owner-id">
-            {comment.owner.name ?? 'no name'} · {comment
+            {comment.owner.name ?? "no name"} · {comment
               .owner.email}
             {#if comment.owner.banned}
               <span class="banned-tag">banned</span>
@@ -162,7 +162,7 @@
                 value={(!comment.owner.banned).toString()}
               />
               <button type="submit" class="owner-btn">
-                {comment.owner.banned ? 'unban' : 'ban'}
+                {comment.owner.banned ? "unban" : "ban"}
               </button>
             </form>
           {/if}

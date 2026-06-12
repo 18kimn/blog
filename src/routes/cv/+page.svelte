@@ -1,12 +1,12 @@
 <script lang="ts">
-  import {onMount} from 'svelte'
-  import CVBody from './CVBody.svelte'
-  import {plugins} from '@citation-js/core'
-  import type {CSL} from './types'
-  import type {PageData} from './$types'
-  import '@citation-js/plugin-csl'
-  import {setupDialog} from '$lib/utils/dialog'
-  import {Previewer} from 'pagedjs'
+  import {onMount} from "svelte"
+  import CVBody from "./CVBody.svelte"
+  import {plugins} from "@citation-js/core"
+  import type {CSL} from "./types"
+  import type {PageData} from "./$types"
+  import "@citation-js/plugin-csl"
+  import {setupDialog} from "$lib/utils/dialog"
+  import {Previewer} from "pagedjs"
 
   let {data}: {data: PageData} = $props()
 
@@ -27,7 +27,7 @@
   data.csls.then((csls) => {
     csls.forEach((csl) => {
       if (csl.path) {
-        const config = plugins.config.get('@csl')
+        const config = plugins.config.get("@csl")
         config.templates.add(
           csl.name.toLowerCase(),
           csl.template,
@@ -43,9 +43,9 @@
     await paged.preview(node)
     shouldRender = false
     const output = document
-      .querySelector('.pagedjs_pages')
+      .querySelector(".pagedjs_pages")
       .cloneNode(true)
-    document.body.innerHTML = ''
+    document.body.innerHTML = ""
     document.body.appendChild(output)
     window.print()
   }
@@ -110,7 +110,7 @@
         bind:this={opener}
         aria-label="edit the CV settings"
         onclick={() => {
-          dialog.style.display = 'flex'
+          dialog.style.display = "flex"
           /* to trigger a layout recalculation;
           otherwise the display flex
         change and the showModal changes will
@@ -119,7 +119,7 @@
         */
           dialog.getBoundingClientRect()
           dialog.showModal()
-          dialog.style.opacity = '1'
+          dialog.style.opacity = "1"
         }}
       >
         <svg viewBox="0 0 24 24" class="opener">

@@ -1,5 +1,5 @@
 ---
-title: 'Documentation: Git as archive'
+title: "Documentation: Git as archive"
 date: 2022-02-10
 tags: [technical, qualitative]
 ---

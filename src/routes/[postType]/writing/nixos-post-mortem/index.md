@@ -1,5 +1,5 @@
 ---
-title: 'NixOS: A personal post-mortem'
+title: "NixOS: A personal post-mortem"
 date: 2023-03-16
 tags: [technical]
 ---

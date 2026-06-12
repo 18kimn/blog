@@ -1,12 +1,12 @@
-import {resolve, parse} from 'path'
-import {promises as fs} from 'fs'
-import sharp from 'sharp'
+import {resolve, parse} from "path"
+import {promises as fs} from "fs"
+import sharp from "sharp"
 
 async function processImages(dir) {
-  const originals = await fs.readdir(resolve('static', dir))
+  const originals = await fs.readdir(resolve("static", dir))
 
   originals.forEach((original) => {
-    sharp(resolve('static', dir, original))
+    sharp(resolve("static", dir, original))
       .resize(600)
       .webp()
       .toBuffer()
@@ -19,4 +19,4 @@ async function processImages(dir) {
   })
 }
 
-processImages('personal_images')
+processImages("personal_images")

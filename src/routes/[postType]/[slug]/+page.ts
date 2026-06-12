@@ -1,4 +1,4 @@
-import type {Post as PostType} from '$lib/utils/types'
+import type {Post as PostType} from "$lib/utils/types"
 
 export const prerender = true
 
@@ -10,12 +10,12 @@ export async function load({params, data}) {
    * compiled at runtime by Vite 5 or something dumb
    * like that
    */
-  const writingFiles = import.meta.glob('../writing/*/*md')
-  const projectFiles = import.meta.glob('../projects/*/*md')
+  const writingFiles = import.meta.glob("../writing/*/*md")
+  const projectFiles = import.meta.glob("../projects/*/*md")
   const files = {...writingFiles, ...projectFiles}
   const [, resolver] = Object.entries(files).find(
     ([path]) => {
-      const segments = path.split('/')
+      const segments = path.split("/")
       const fileSlug = segments[segments.length - 2]
       const fileType = segments[segments.length - 3]
       return slug === fileSlug && postType === fileType

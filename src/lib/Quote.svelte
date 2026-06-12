@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {onMount} from 'svelte'
+  import {onMount} from "svelte"
 
   let quote: {
     body: string
@@ -11,7 +11,7 @@
   function updateQuote() {
     animated = true
 
-    fetch('http://leftist-quotes.com/')
+    fetch("http://leftist-quotes.com/")
       .then((res) => res.json())
       .then((json) => {
         quote = json

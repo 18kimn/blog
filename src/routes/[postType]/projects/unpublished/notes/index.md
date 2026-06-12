@@ -1,5 +1,5 @@
 ---
-title: 'Visualizing my brain'
+title: "Visualizing my brain"
 date: 2022-01-15
 ---
 

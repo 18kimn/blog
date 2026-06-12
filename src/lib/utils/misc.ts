@@ -12,7 +12,7 @@ export function delay(ms: number) {
 
 export function isCurrent(route: string, pathname: string) {
   const target = `/${route}`
-  if (route === '') return pathname === '/'
+  if (route === "") return pathname === "/"
   return (
     pathname === target || pathname.startsWith(`${target}/`)
   )

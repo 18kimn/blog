@@ -1,5 +1,5 @@
 ---
-title: 'Science is actually good, in some senses'
+title: "Science is actually good, in some senses"
 subtitle: Reading response for SW866
 date: 2025-04-21
 tags: [schoolwork]

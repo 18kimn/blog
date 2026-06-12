@@ -1,5 +1,5 @@
 ---
-title: 'How to read paywalls resources for free'
+title: "How to read paywalls resources for free"
 date: 2022-02-03
 tags: [qualitative, other]
 ---

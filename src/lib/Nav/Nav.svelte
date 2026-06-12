@@ -1,29 +1,29 @@
 <script lang="ts">
-  import {onMount} from 'svelte'
-  import {page} from '$app/state'
-  import {resolve} from '$app/paths'
-  import {isCurrent} from '$lib/utils/misc'
-  import Dropdown from './Dropdown.svelte'
+  import {onMount} from "svelte"
+  import {page} from "$app/state"
+  import {resolve} from "$app/paths"
+  import {isCurrent} from "$lib/utils/misc"
+  import Dropdown from "./Dropdown.svelte"
 
   const routes = [
-    '',
-    {blog: ['writing', 'projects', 'pics', 'guestbook']},
-    'cv',
-    'press',
+    "",
+    {blog: ["writing", "projects", "pics", "guestbook"]},
+    "cv",
+    "press",
   ] as const
 
   onMount(() => {
     /* below is for header ::after animation */
     ;(
-      document.querySelector('.header') as HTMLElement
-    )?.style?.setProperty('--header-border-width', '100%')
+      document.querySelector(".header") as HTMLElement
+    )?.style?.setProperty("--header-border-width", "100%")
   })
 </script>
 
 <div class="header-container no-print">
   <div class="header">
-    <a href={resolve('/')}>
-      {#if page.url.pathname === '/'}
+    <a href={resolve("/")}>
+      {#if page.url.pathname === "/"}
         <h1>Nathan Kim</h1>
       {:else}
         <h2>Nathan Kim</h2>
@@ -31,13 +31,13 @@
     </a>
     <nav class="links">
       {#each routes as route (route)}
-        {#if typeof route === 'string'}
+        {#if typeof route === "string"}
           <a
             class={isCurrent(route, page.url.pathname) &&
-              'selected'}
+              "selected"}
             href={resolve(`/${route}`)}
           >
-            {route === '' ? 'home' : route}
+            {route === "" ? "home" : route}
           </a>
           <span class="spacer">⋅</span>
         {:else}
@@ -78,7 +78,7 @@
     bottom: 0;
     height: 1px;
     background-color: gray;
-    content: '';
+    content: "";
     left: 0;
     width: var(--header-border-width);
     transition: all ease-in-out 0.5s;

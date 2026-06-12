@@ -1,7 +1,7 @@
 <script lang="ts">
-  import OutLink from '$lib/OutLink.svelte'
-  import {resolve} from '$app/paths'
-  import media from './media.json'
+  import OutLink from "$lib/OutLink.svelte"
+  import {resolve} from "$app/paths"
+  import media from "./media.json"
 
   type Item = (typeof media)[0] & {
     date: Date
@@ -13,24 +13,24 @@
 
   let dt: DT = (
     media.map((item) => {
-      const dateParts = item.issued['date-parts'][0]
-      item['date'] = new Date(
+      const dateParts = item.issued["date-parts"][0]
+      item["date"] = new Date(
         Number(dateParts[0]),
         Number(dateParts[1]) - 1,
         Number(dateParts[2]),
       )
-      item['status'] = [
+      item["status"] = [
         ...item.author,
         ...(item.editor || []),
       ].filter((a) => {
-        if (a['literal'])
-          return a['literal'] === 'Nathan Kim'
+        if (a["literal"])
+          return a["literal"] === "Nathan Kim"
         return (
-          a['given'] === 'Nathan' && a['family'] === 'Kim'
+          a["given"] === "Nathan" && a["family"] === "Kim"
         )
       }).length
-        ? 'Wrote'
-        : 'Quoted in'
+        ? "Wrote"
+        : "Quoted in"
       return item
     }) as Item[]
   )
@@ -62,7 +62,7 @@
       Some interviews (most very short) and some writing
       involving me. Didn't fit in my CV page but felt useful
       to collect somewhere. See also <a
-        href={resolve('/writing')}>/writing</a
+        href={resolve("/writing")}>/writing</a
       > for other writing.
     </p>
     {#each Object.entries(dt) as [topic, statusGroups] (topic)}
@@ -85,15 +85,15 @@
                 if (a.literal) {
                   return a.literal
                 }
-                return a.given + ' ' + a.family
+                return a.given + " " + a.family
               })
-              .join(', ')}{#if item['container-title']}
-              , <em>{item['container-title']}</em>
+              .join(", ")}{#if item["container-title"]}
+              , <em>{item["container-title"]}</em>
             {/if}.
-            {item.date.toLocaleDateString('en-US', {
-              day: 'numeric',
-              month: 'long',
-              year: 'numeric',
+            {item.date.toLocaleDateString("en-US", {
+              day: "numeric",
+              month: "long",
+              year: "numeric",
             })}.
           </p>
         {/each}

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import {onMount} from 'svelte'
-  import palette from '../utils/colors'
+  import {onMount} from "svelte"
+  import palette from "../utils/colors"
 
   interface Circle {
     dims: [number, number]
@@ -22,10 +22,10 @@
   let clickCanvas: HTMLCanvasElement = $state()
   let hoverCanvas: HTMLCanvasElement = $state()
   let clickContext = $derived(
-    clickCanvas && clickCanvas.getContext('2d'),
+    clickCanvas && clickCanvas.getContext("2d"),
   )
   let hoverContext = $derived(
-    hoverCanvas && hoverCanvas.getContext('2d'),
+    hoverCanvas && hoverCanvas.getContext("2d"),
   )
 
   let width: number = $derived(
@@ -64,7 +64,7 @@
   }
 
   let clicks: Click[] = []
-  const background = {color: 'white'}
+  const background = {color: "white"}
   /** checks if the circle should be added to the clicks */
   function updateClicks(event: MouseEvent) {
     const isOverCanvas = event.target === hoverCanvas
@@ -73,7 +73,7 @@
     clicks?.push({...dims})
   }
 
-  let lastUsedColor = 'white'
+  let lastUsedColor = "white"
   /** draws an expanding circle animation */
   function drawCircles(time: number) {
     if (!clickCanvas || !hoverContext)
@@ -126,10 +126,10 @@
         2 * Math.PI,
       )
       clickContext.lineWidth = 5
-      clickContext.fillStyle = click.color || ''
+      clickContext.fillStyle = click.color || ""
       clickContext.fill()
       if ((click.maxR || 0) < radius) {
-        background.color = click.color || ''
+        background.color = click.color || ""
         click.shouldDelete = true
       }
     })
@@ -149,7 +149,7 @@
         0,
         2 * Math.PI,
       )
-      hoverContext.fillStyle = circle.color || ''
+      hoverContext.fillStyle = circle.color || ""
       const alpha =
         0.2 * (1 - (time - circle.startTime) / 1000)
       hoverContext.globalAlpha = Math.max(0, alpha)
@@ -162,8 +162,8 @@
   }
 
   onMount(() => {
-    document.addEventListener('mousemove', updateCircles)
-    document.addEventListener('click', updateClicks)
+    document.addEventListener("mousemove", updateCircles)
+    document.addEventListener("click", updateClicks)
     const ro = new ResizeObserver(() => {
       width = clickCanvas.offsetWidth
       height = clickCanvas.offsetHeight

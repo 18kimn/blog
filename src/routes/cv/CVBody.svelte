@@ -1,12 +1,12 @@
 <script lang="ts">
-  import {fade} from 'svelte/transition'
-  import type {CSL, CV} from './types'
-  import filterEntries from './filterEntries'
-  import renderCSL from './renderCSL'
-  import CVDataRaw from './cv.json'
-  import {onMount} from 'svelte'
-  import ResizingBox from '$lib/ResizingBox.svelte'
-  import OutLink from '$lib/OutLink.svelte'
+  import {fade} from "svelte/transition"
+  import type {CSL, CV} from "./types"
+  import filterEntries from "./filterEntries"
+  import renderCSL from "./renderCSL"
+  import CVDataRaw from "./cv.json"
+  import {onMount} from "svelte"
+  import ResizingBox from "$lib/ResizingBox.svelte"
+  import OutLink from "$lib/OutLink.svelte"
 
   const CVData = CVDataRaw as CV
 
@@ -16,7 +16,7 @@
     csl: CSL
     isCompact: boolean
     fontsize?: number
-    children?: import('svelte').Snippet
+    children?: import("svelte").Snippet
   }
 
   let {
@@ -27,8 +27,8 @@
     fontsize = 10,
     children,
   }: Props = $props()
-  let meta: CV['meta'] = $state(CVData.meta)
-  let sections: CV['sections'] = $derived(
+  let meta: CV["meta"] = $state(CVData.meta)
+  let sections: CV["sections"] = $derived(
     renderCSL(CVData.sections, csl),
   )
 
@@ -99,17 +99,17 @@
                   duration: 300,
                 }}
               >
-                {#if !('type' in entry)}
+                {#if !("type" in entry)}
                   <div class="position-meta">
                     <div class="position-title">
-                      {#if 'role' in entry}
+                      {#if "role" in entry}
                         <!-- content here -->
                         <strong>{entry.name}</strong>
                         <div>
                           <em class="role"
                             >{@html entry.role}</em
                           >
-                          {#if 'link' in entry}
+                          {#if "link" in entry}
                             <OutLink href={entry.link}
                               >{entry.link}</OutLink
                             >
@@ -130,18 +130,18 @@
                       {@html entry.description}
                     </div>
                   {/if}
-                {:else if entry.type === 'markup'}
+                {:else if entry.type === "markup"}
                   {@html entry.markup}
-                {:else if entry.type === 'csl'}
+                {:else if entry.type === "csl"}
                   <ResizingBox
                     content={{
                       info: section.entries
-                        .map((e) => e['markup'])
-                        .join(''),
+                        .map((e) => e["markup"])
+                        .join(""),
                     }}
                   >
                     {#if entry.markup}
-                      {@html entry.markup || ''}
+                      {@html entry.markup || ""}
                     {:else}
                       <span class="loading-message">
                         Loading...

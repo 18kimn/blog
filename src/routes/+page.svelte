@@ -1,10 +1,10 @@
 <script lang="ts">
-  import {onMount} from 'svelte'
-  import {firstRender} from '../store'
-  import Icons from '$lib/Icons.svelte'
-  import ResizingBox from '$lib/ResizingBox.svelte'
-  import {prettyDate} from '$lib/utils/string'
-  import OutLink from '$lib/OutLink.svelte'
+  import {onMount} from "svelte"
+  import {firstRender} from "../store"
+  import Icons from "$lib/Icons.svelte"
+  import ResizingBox from "$lib/ResizingBox.svelte"
+  import {prettyDate} from "$lib/utils/string"
+  import OutLink from "$lib/OutLink.svelte"
 
   type Info = {
     display: string
@@ -48,7 +48,7 @@
       data?.currently?.listening?.preview_url,
     )
     audio.volume = 0
-    audio.addEventListener('canplaythrough', () => {
+    audio.addEventListener("canplaythrough", () => {
       canPlayAudio = true
     })
   })

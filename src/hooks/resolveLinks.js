@@ -1,6 +1,6 @@
-import {resolve, extname, basename, dirname} from 'path'
-import {promises as fs} from 'fs'
-import sharp from 'sharp'
+import {resolve, extname, basename, dirname} from "path"
+import {promises as fs} from "fs"
+import sharp from "sharp"
 
 const baseDir = process.cwd()
 
@@ -12,9 +12,9 @@ const baseDir = process.cwd()
  * */
 function transformer(tree, file) {
   if (tree.url) {
-    tree.url = tree.url.replace('.md', '')
+    tree.url = tree.url.replace(".md", "")
   }
-  if (['image', 'video', 'audio'].includes(tree.type)) {
+  if (["image", "video", "audio"].includes(tree.type)) {
     const dir = basename(dirname(file.filename))
     const originalFile = resolve(
       dirname(file.filename),
@@ -22,9 +22,9 @@ function transformer(tree, file) {
     )
     const ext = extname(originalFile)
 
-    if (['.png', '.jpeg', '.jpg'].includes(ext)) {
+    if ([".png", ".jpeg", ".jpg"].includes(ext)) {
       const url = `images/${dir}_${basename(
-        tree.url.replace(/^\.\//, ''),
+        tree.url.replace(/^\.\//, ""),
         ext,
       )}.webp`
       sharp(originalFile)
@@ -33,21 +33,21 @@ function transformer(tree, file) {
         .toBuffer()
         .then((buff) => {
           fs.writeFile(
-            resolve(baseDir, 'static', url),
+            resolve(baseDir, "static", url),
             buff,
           )
         })
-      tree.url = '/' + url
+      tree.url = "/" + url
     } else {
       const url = `images/${dir}_${tree.url.replace(
         /^\.\//,
-        '',
+        "",
       )}`
       fs.copyFile(
         originalFile,
-        resolve(baseDir, 'static', url),
+        resolve(baseDir, "static", url),
       )
-      tree.url = '/' + url
+      tree.url = "/" + url
     }
   }
 
