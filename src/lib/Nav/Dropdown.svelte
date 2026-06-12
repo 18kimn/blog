@@ -11,6 +11,7 @@
     $props()
 
   let isOpen = $state(false)
+  let isClicked = $state(false)
 
   let containerDiv: HTMLElement
   onMount(() => {
@@ -18,6 +19,7 @@
       if (!containerDiv) return
       if (!containerDiv.contains(e.target as HTMLElement)) {
         isOpen = false
+        isClicked = false
       }
     }
     document.body.addEventListener('click', onBodyClick)
@@ -32,13 +34,17 @@
 <div
   class="container"
   bind:this={containerDiv}
+  onclick={() => {
+    isClicked = !isClicked
+    console.log(isClicked)
+  }}
   onmouseenter={() => (isOpen = true)}
-  onmouseleave={() => (isOpen = false)}
+  onmouseleave={() => (isOpen = isClicked || false)}
   role="presentation"
 >
   <button
     class="top"
-    class:open={isOpen}
+    class:open={isOpen || isClicked}
     aria-haspopup="true"
     aria-expanded={isOpen}
     onclick={() => (isOpen = !isOpen)}
@@ -46,7 +52,11 @@
     {label}
   </button>
 
-  <div class="subroutes" class:open={isOpen} role="menu">
+  <div
+    class="subroutes"
+    class:open={isOpen || isClicked}
+    role="menu"
+  >
     {#each subroutes as subroute (subroute)}
       <a
         role="menuitem"
