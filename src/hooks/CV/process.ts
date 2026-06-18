@@ -59,7 +59,7 @@ async function processCV() {
   })
 
   fs.writeFile(
-    resolve(__dirname, "../../src/routes/cv/cv.json"),
+    resolve(__dirname, "../../routes/cv/cv.json"),
     JSON.stringify(cv),
   )
 }
