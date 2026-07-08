@@ -9,6 +9,8 @@ currently.yaml
 /build
 /.svelte-kit
 /package
+/error-build
+/worker/cloudflare-error.html
 .env
 dist/
 server/ui

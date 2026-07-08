@@ -15,13 +15,16 @@
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
     "lint": "prettier --check --write . && eslint . --fix",
     "format": "prettier --write --plugin-search-dir=. .",
-    "cv": "pnpm run-ts src/hooks/CV/process.ts"
+    "cv": "pnpm run-ts src/hooks/CV/process.ts",
+    "build:error": "ERROR_PAGE_BUILD=true vite build && cp error-build/cloudflare-error.html worker/cloudflare-error.html",
+    "deploy:worker": "pnpm run build:error && wrangler deploy"
   },
   "devDependencies": {
     "@citation-js/plugin-bibtex": "^0.6.1",
     "@eslint/eslintrc": "^3.3.3",
     "@eslint/js": "^9.17.0",
     "@sveltejs/adapter-node": "^2.0.0",
+    "@sveltejs/adapter-static": "^3.0.10",
     "@sveltejs/enhanced-img": "^0.4.4",
     "@sveltejs/kit": "^2.5.27",
     "@sveltejs/vite-plugin-svelte": "^4.0.0",
@@ -52,6 +55,7 @@
     "typescript": "^5.7.2",
     "typescript-eslint": "^8.18.2",
     "vite": "^5.4.4",
+    "wrangler": "^4.108.0",
     "yaml": "^2.1.1"
   },
   "dependencies": {

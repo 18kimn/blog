@@ -1,0 +1,31 @@
+name = "site-fallback"
+main = "worker/index.js"
+compatibility_date = "2025-06-01"
+
+routes = [
+  { pattern = "nathan-kim.org/*", zone_name = "nathan-kim.org" },
+  { pattern = "www.nathan-kim.org/*", zone_name = "nathan-kim.org" },
+]
+
+kv_namespaces = [
+  { binding = "HEALTH", id = "b6f8cb9c92d34ea3b18f813272ae5de8" },
+]
+
+# lets the worker `import ERROR_PAGE from "./cloudflare-error.html"` as text
+[[rules]]
+type = "Text"
+globs = ["**/*.html"]
+fallthrough = true
+
+[triggers]
+crons = ["* * * * *"]
+
+[vars]
+# proxied (orange-cloud) hostname on the same origin server; keeps the origin
+# IP hidden, and it's off the Worker's routes so there's no request loop
+ORIGIN_HEALTH_URL = "https://nathan-kim.org/health"
+ALERT_FROM = "alerts@nathan-kim.org"
+ALERT_TO = "nathanckim18@gmail.com"
+# tags the cron's health probe so the fetch handler can short-circuit it if it
+# ever loops back into the Worker (see the loop breaker in worker/index.js)
+PROBE_TOKEN = "e4a3c96645e6941b9c876febb7744775"
