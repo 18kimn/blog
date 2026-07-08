@@ -3,4 +3,5 @@ export const csr = false
 
 export const load = () => ({
   title: "Temporarily unavailable",
+  hideNavLinks: true,
 })

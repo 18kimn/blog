@@ -5,6 +5,12 @@
   import {isCurrent} from "$lib/utils/misc"
   import Dropdown from "./Dropdown.svelte"
 
+  interface Props {
+    showLinks?: boolean
+  }
+
+  let {showLinks = true}: Props = $props()
+
   const routes = [
     "",
     {blog: ["writing", "projects", "pics", "guestbook"]},
@@ -29,25 +35,27 @@
         <h2>Nathan Kim</h2>
       {/if}
     </a>
-    <nav class="links">
-      {#each routes as route (route)}
-        {#if typeof route === "string"}
-          <a
-            class={isCurrent(route, page.url.pathname) &&
-              "selected"}
-            href={resolve(`/${route}`)}
-          >
-            {route === "" ? "home" : route}
-          </a>
-          <span class="spacer">⋅</span>
-        {:else}
-          <Dropdown
-            label={Object.keys(route)[0]}
-            subroutes={Object.values(route)[0]}
-          />
-        {/if}
-      {/each}
-    </nav>
+    {#if showLinks}
+      <nav class="links">
+        {#each routes as route (route)}
+          {#if typeof route === "string"}
+            <a
+              class={isCurrent(route, page.url.pathname) &&
+                "selected"}
+              href={resolve(`/${route}`)}
+            >
+              {route === "" ? "home" : route}
+            </a>
+            <span class="spacer">⋅</span>
+          {:else}
+            <Dropdown
+              label={Object.keys(route)[0]}
+              subroutes={Object.values(route)[0]}
+            />
+          {/if}
+        {/each}
+      </nav>
+    {/if}
   </div>
 </div>
 

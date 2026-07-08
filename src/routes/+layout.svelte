@@ -15,7 +15,7 @@
   <title>{title} ⋅ Nathan Kim</title>
 </svelte:head>
 <div class="page">
-  <Nav />
+  <Nav showLinks={!page.data.hideNavLinks} />
   <div class="container">
     <div class="component">
       <main>
