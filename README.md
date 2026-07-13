@@ -18,3 +18,29 @@ npm run dev
 Node projects)
 
 This site is built with Svelte!
+
+## Repo map
+
+SvelteKit, `adapter-node` in prod. Package manager is pnpm.
+
+- **Content** — markdown `index.md` files under
+  `src/routes/[postType]/{writing,projects}/<slug>/`,
+  rendered via mdsvex. Custom remark/rehype passes live in
+  `src/hooks/` (`resolveLinks`, `addFootnotes`, `makeTOC`),
+  wired up in `svelte.config.js`. The `notebook/` section is
+  a git submodule.
+- **CV** — page in `src/routes/cv/`; regenerate from
+  `src/hooks/CV/` with `pnpm cv`. Citation styles in
+  `cv/csl/`. Zotero auto-exports a CV to
+  src/hooks/CV/personal.json.
+- **Media**: Renders a media CV that Zotero auto-exports to
+  src/routes/press/media.json
+- **Guestbook** — `src/routes/guestbook/`, using
+  `@auth/sveltekit` + Prisma/SQLite (`prisma/schema.prisma`,
+  `board.db`).
+- **Uptime fallback** — a Cloudflare Worker
+  (`worker/index.js` + `wrangler.toml`) probes
+  `src/routes/health/+server.ts` and serves
+  `src/routes/cloudflare-error/` when the origin is down.
+  Deploy with `pnpm deploy:worker` (builds the inlined error
+  page first).

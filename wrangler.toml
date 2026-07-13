@@ -29,3 +29,10 @@ ALERT_TO = "nathanckim18@gmail.com"
 # tags the cron's health probe so the fetch handler can short-circuit it if it
 # ever loops back into the Worker (see the loop breaker in worker/index.js)
 PROBE_TOKEN = "e4a3c96645e6941b9c876febb7744775"
+# retry the probe this many times within a single tick before it counts as a
+# failure, spacing attempts by PROBE_RETRY_MS (rides out sub-second blips)
+PROBE_ATTEMPTS = "2"
+PROBE_RETRY_MS = "2000"
+# consecutive failing ticks required before announcing "down" and emailing;
+# with a per-minute cron, 3 waits out ~2-3 min of transient trouble
+FAIL_THRESHOLD = "3"

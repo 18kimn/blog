@@ -11,6 +11,7 @@ export default defineConfig([
     ".git/",
     ".svelte-kit/",
     "build/",
+    "error-build/",
   ]),
   {
     files: [
@@ -32,6 +33,7 @@ export default defineConfig([
             "eslint.config.js",
             "svelte.config.js",
             "prisma.config.ts",
+            "worker/index.js",
           ],
         },
         extraFileExtensions: [".svelte"],
