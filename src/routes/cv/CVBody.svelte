@@ -76,82 +76,82 @@
           </div>
         </div>
         {#await sections then resolved}
-        {#each filterEntries(search, resolved) as section, index (section.name)}
-          <section
-            in:fade|global={{
-              delay: 100 * index,
-              duration: 300,
-            }}
-          >
-            <div class="section-title">
-              <h2 class="section-name">{section.name}</h2>
-              {#if section.subtitle}
-                <em>{section.subtitle}</em>
-              {/if}
-              <hr />
-            </div>
-            {#each section.entries as entry (entry)}
-              <div
-                class="entry"
-                in:fade|global={{
-                  delay: 100 * index,
-                  duration: 300,
-                }}
-              >
-                {#if !("type" in entry)}
-                  <div class="position-meta">
-                    <div class="position-title">
-                      {#if "role" in entry}
-                        <!-- content here -->
-                        <strong>{entry.name}</strong>
-                        <div>
-                          <em class="role"
-                            >{@html entry.role}</em
-                          >
-                          {#if "link" in entry}
-                            <OutLink href={entry.link}
-                              >{entry.link}</OutLink
+          {#each filterEntries(search, resolved) as section, index (section.name)}
+            <section
+              in:fade|global={{
+                delay: 100 * index,
+                duration: 300,
+              }}
+            >
+              <div class="section-title">
+                <h2 class="section-name">{section.name}</h2>
+                {#if section.subtitle}
+                  <em>{section.subtitle}</em>
+                {/if}
+                <hr />
+              </div>
+              {#each section.entries as entry (entry)}
+                <div
+                  class="entry"
+                  in:fade|global={{
+                    delay: 100 * index,
+                    duration: 300,
+                  }}
+                >
+                  {#if !("type" in entry)}
+                    <div class="position-meta">
+                      <div class="position-title">
+                        {#if "role" in entry}
+                          <!-- content here -->
+                          <strong>{entry.name}</strong>
+                          <div>
+                            <em class="role"
+                              >{@html entry.role}</em
                             >
-                          {/if}
-                        </div>
-                      {:else}
-                        {entry.name}
+                            {#if "link" in entry}
+                              <OutLink href={entry.link}
+                                >{entry.link}</OutLink
+                              >
+                            {/if}
+                          </div>
+                        {:else}
+                          {entry.name}
+                        {/if}
+                      </div>
+                      {#if entry.date}
+                        <span class="date"
+                          >{@html entry.date}</span
+                        >
                       {/if}
                     </div>
-                    {#if entry.date}
-                      <span class="date"
-                        >{@html entry.date}</span
-                      >
+                    {#if !isCompact && entry.description}
+                      <div class="entry-description">
+                        {@html entry.description}
+                      </div>
                     {/if}
-                  </div>
-                  {#if !isCompact && entry.description}
-                    <div class="entry-description">
-                      {@html entry.description}
-                    </div>
+                  {:else if entry.type === "markup"}
+                    {@html entry.markup}
+                  {:else if entry.type === "csl"}
+                    <ResizingBox
+                      content={{
+                        info: section.entries
+                          .map((e) => e["markup"])
+                          .join(""),
+                      }}
+                    >
+                      {#if entry.markup}
+                        {@html entry.markup || ""}
+                      {:else}
+                        <span class="loading-message">
+                          Loading...
+                        </span>
+                      {/if}
+                    </ResizingBox>
                   {/if}
-                {:else if entry.type === "markup"}
-                  {@html entry.markup}
-                {:else if entry.type === "csl"}
-                  <ResizingBox
-                    content={{
-                      info: section.entries
-                        .map((e) => e["markup"])
-                        .join(""),
-                    }}
-                  >
-                    {#if entry.markup}
-                      {@html entry.markup || ""}
-                    {:else}
-                      <span class="loading-message">
-                        Loading...
-                      </span>
-                    {/if}
-                  </ResizingBox>
-                {/if}
-              </div>
-            {/each}
-          </section>
-        {/each}
+                </div>
+              {/each}
+            </section>
+          {/each}
         {/await}
       </div>
     </div>
@@ -275,6 +275,12 @@
   @page {
     size: 8.5in 11in;
     margin: 0.8in;
+
+    @bottom-center {
+      content: counter(page) " / " counter(pages);
+      font-size: 9pt;
+      color: #555;
+    }
   }
 
   @media screen {

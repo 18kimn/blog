@@ -1,11 +1,12 @@
 <script lang="ts">
+  import type {Snippet} from "svelte"
   import OutLink from "./OutLink.svelte"
 
   interface Props {
     /* when content inside changes, resizes height
   with transition */
     content?: {info: string; link?: string}
-    children
+    children?: Snippet
   }
 
   let {content, children}: Props = $props()
@@ -16,6 +17,7 @@
   function resize() {
     // setTimeout forces it to happen after a paint
     setTimeout(() => {
+      if (!inner) return
       height = inner.offsetHeight
     }, 0)
   }

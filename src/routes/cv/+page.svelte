@@ -24,29 +24,67 @@
   let isCompact = $state(true)
   let fontsize = $state(10)
 
-  data.csls.then((csls) => {
-    csls.forEach((csl) => {
-      if (csl.path) {
-        const config = plugins.config.get("@csl")
-        config.templates.add(
-          csl.name.toLowerCase(),
-          csl.template,
-        )
-      }
+  $effect(() => {
+    data.csls.then((csls) => {
+      csls.forEach((csl) => {
+        if (csl.path) {
+          const config = plugins.config.get("@csl")
+          config.templates.add(
+            csl.name.toLowerCase(),
+            csl.template,
+          )
+        }
+      })
+      csl = csls[0]
     })
-    csl = csls[0]
   })
 
-  let shouldRender = $state(true)
+  let printTarget: HTMLDivElement | null = null
+
+  /* paged.js's default preview() strips every stylesheet out of the
+     live DOM to feed its polisher, which wrecks the on-screen layout.
+     Collect the same stylesheets non-destructively and hand them over
+     explicitly so the page keeps its styles and the paged pages still
+     get the @page size, margins and page-number box. */
+  function collectStylesheets() {
+    const nodes = Array.from(
+      document.querySelectorAll(
+        "link[rel='stylesheet']:not([data-pagedjs-ignore],[media~='screen'])," +
+          "style:not([data-pagedjs-inserted-styles],[data-pagedjs-ignore],[media~='screen'])",
+      ),
+    )
+    return nodes
+      .sort((a, b) =>
+        a.compareDocumentPosition(b) &
+        Node.DOCUMENT_POSITION_FOLLOWING
+          ? -1
+          : 1,
+      )
+      .map((el) =>
+        el.nodeName === "STYLE"
+          ? {[window.location.href]: el.textContent}
+          : (el as HTMLLinkElement).href,
+      )
+  }
+
   async function printCV() {
+    printTarget?.remove()
+    printTarget = document.createElement("div")
+    printTarget.className = "cv-print-target"
+    document.body.appendChild(printTarget)
     const paged = new Previewer()
-    await paged.preview(node)
-    shouldRender = false
-    const output = document
-      .querySelector(".pagedjs_pages")
-      .cloneNode(true)
-    document.body.innerHTML = ""
-    document.body.appendChild(output)
+    await paged.preview(
+      node.cloneNode(true),
+      collectStylesheets(),
+      printTarget,
+    )
+    const cleanup = () => {
+      paged.polisher.destroy()
+      printTarget?.remove()
+      printTarget = null
+      window.removeEventListener("afterprint", cleanup)
+    }
+    window.addEventListener("afterprint", cleanup)
     window.print()
   }
 </script>
@@ -103,37 +141,52 @@
     </div>
   </dialog>
 
-  {#if shouldRender}
-    <CVBody bind:node {search} {csl} {isCompact} {fontsize}>
-      <button
-        class="opener no-print"
-        bind:this={opener}
-        aria-label="edit the CV settings"
-        onclick={() => {
-          dialog.style.display = "flex"
-          /* to trigger a layout recalculation;
+  <CVBody bind:node {search} {csl} {isCompact} {fontsize}>
+    <button
+      class="opener no-print"
+      bind:this={opener}
+      aria-label="edit the CV settings"
+      onclick={() => {
+        dialog.style.display = "flex"
+        /* to trigger a layout recalculation;
           otherwise the display flex
         change and the showModal changes will
         be batched together, but we want the
         display to be set to flex first
         */
-          dialog.getBoundingClientRect()
-          dialog.showModal()
-          dialog.style.opacity = "1"
-        }}
-      >
-        <svg viewBox="0 0 24 24" class="opener">
-          <path
-            class="opener"
-            d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"
-          />
-        </svg>
-      </button>
-    </CVBody>
-  {/if}
+        dialog.getBoundingClientRect()
+        dialog.showModal()
+        dialog.style.opacity = "1"
+      }}
+    >
+      <svg viewBox="0 0 24 24" class="opener">
+        <path
+          class="opener"
+          d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"
+        />
+      </svg>
+    </button>
+  </CVBody>
 </div>
 
 <style>
+  :global(.cv-print-target) {
+    position: fixed;
+    left: -200vw;
+    top: 0;
+  }
+
+  @media print {
+    .container {
+      display: none !important;
+    }
+
+    :global(.cv-print-target) {
+      position: static;
+      left: auto;
+    }
+  }
+
   .container {
     display: flex;
     place-content: center;
