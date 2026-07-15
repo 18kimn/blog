@@ -14,6 +14,7 @@
   import {postDataKey} from "../store"
 
   let {data = {} as Post, children} = $props()
+  // svelte-ignore state_referenced_locally
   setContext(postDataKey, data.postData)
 
   let rows: {

@@ -48,7 +48,7 @@ export interface CV {
     email: string
     website: string
     bluesky: string
-    last_updated: Date
+    last_updated: Date | string
   }
   sections: {
     name: string

@@ -6,7 +6,7 @@
   }
 
   let {data}: Props = $props()
-  const Article = data.Post.default
+  const Article = $derived(data.Post.default)
 </script>
 
 {#if data}

@@ -28,9 +28,7 @@
     children,
   }: Props = $props()
   let meta: CV["meta"] = $state(CVData.meta)
-  let sections: CV["sections"] = $derived(
-    renderCSL(CVData.sections, csl),
-  )
+  let sections = $derived(renderCSL(CVData.sections, csl))
 
   // needed for transition-on-load
   let ready = $state(false)
@@ -77,7 +75,8 @@
             </div>
           </div>
         </div>
-        {#each filterEntries(search, sections) as section, index (section.name)}
+        {#await sections then resolved}
+        {#each filterEntries(search, resolved) as section, index (section.name)}
           <section
             in:fade|global={{
               delay: 100 * index,
@@ -153,6 +152,7 @@
             {/each}
           </section>
         {/each}
+        {/await}
       </div>
     </div>
   </div>

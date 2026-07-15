@@ -67,7 +67,10 @@ export default async function importCitations(): Promise<
     name: cat.name,
     entries: references
       .filter(cat.condition)
-      .map((ref) => ({type: "csl", csl: ref}))
+      .map(({_graph, abstract, ...csl}) => ({
+        type: "csl",
+        csl,
+      }))
       .sort((a, b) => {
         // if has no date, assume it's in-progress and list it first
         if (!a.csl.issued) {

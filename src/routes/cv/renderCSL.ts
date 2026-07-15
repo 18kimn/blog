@@ -1,12 +1,23 @@
-import {Cite} from "@citation-js/core"
-import "@citation-js/plugin-csl"
+import type {Cite as CiteType} from "@citation-js/core"
 import type {CV, CSL} from "./types"
 
-export default function renderCSL(
+let citePromise: Promise<typeof CiteType> | null = null
+export function loadCite(): Promise<typeof CiteType> {
+  if (!citePromise) {
+    citePromise = Promise.all([
+      import("@citation-js/core"),
+      import("@citation-js/plugin-csl"),
+    ]).then(([core]) => core.Cite)
+  }
+  return citePromise
+}
+
+export default async function renderCSL(
   sections: CV["sections"],
   csl: CSL,
-): CV["sections"] {
+): Promise<CV["sections"]> {
   if (!csl || !sections) return sections
+  const Cite = await loadCite()
   return sections.map((section) => ({
     ...section,
     entries: section.entries.map((entry) => {

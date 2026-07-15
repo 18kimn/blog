@@ -15,6 +15,10 @@ const errorPageBuild =
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
   extensions: [".svelte", ".md", ".yaml"],
+  onwarn: (warning, handler) => {
+    if (warning.code === "script_context_deprecated") return
+    handler(warning)
+  },
   preprocess: [
     mdsvex({
       extensions: [".md"],

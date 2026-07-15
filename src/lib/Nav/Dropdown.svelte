@@ -36,7 +36,6 @@
   bind:this={containerDiv}
   onclick={() => {
     isClicked = !isClicked
-    console.log(isClicked)
   }}
   onmouseenter={() => (isOpen = true)}
   onmouseleave={() => (isOpen = isClicked || false)}

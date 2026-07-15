@@ -52,7 +52,6 @@
       }
       return p
     }, {})
-  console.log(dt)
 </script>
 
 <main>
