@@ -2,6 +2,7 @@
 title: some notes on professionalism and career goals
 date: 2026-07-03
 tags: [meta]
+hidden: true
 ---
 
 Everything that is mine is yours, and it has been that way

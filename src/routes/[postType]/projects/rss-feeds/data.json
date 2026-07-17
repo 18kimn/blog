@@ -1,5 +1,5 @@
 {
-  "date": "2026-07-03T13:10:15.114Z",
+  "date": "2026-07-17T20:32:07.896Z",
   "sources": [
     {
       "rssUrl": "http://antirez.com/rss",
@@ -360,6 +360,12 @@
       "contentUrl": "https://dataswamp.org/~solene/",
       "description": "",
       "title": "Solene'%"
+    },
+    {
+      "rssUrl": "https://spade.work/rss/",
+      "contentUrl": "https://spade.work/",
+      "description": "A project of Communist Caucus",
+      "title": "Spadework"
     },
     {
       "rssUrl": "https://stephensemler.substack.com/feed",
