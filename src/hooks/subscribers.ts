@@ -1,10 +1,20 @@
-import {fileURLToPath} from "url"
-import {dirname, resolve} from "path"
+import "dotenv/config"
+import {resolve} from "path"
+import readline from "readline"
 import Database from "better-sqlite3"
 import _sodium from "libsodium-wrappers"
 
-const __dirname = dirname(fileURLToPath(import.meta.url))
-const DB_PATH = resolve(__dirname, "../../board.db")
+const DATABASE_URL = process.env.DATABASE_URL
+if (!DATABASE_URL) {
+  console.error(
+    "DATABASE_URL is not set (check your .env).",
+  )
+  process.exit(1)
+}
+const DB_PATH = resolve(
+  process.cwd(),
+  DATABASE_URL.replace(/^file:/, ""),
+)
 
 type Sodium = typeof _sodium
 
@@ -12,6 +22,31 @@ interface Row {
   id: string
   ciphertext: string
   createdAt: number
+}
+
+function promptHidden(query: string): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const rl = readline.createInterface({
+      input: process.stdin,
+      output: process.stdout,
+    })
+    const iface = rl as unknown as {
+      _writeToOutput: (s: string) => void
+    }
+    let muted = false
+    iface._writeToOutput = (s: string) => {
+      if (!muted) process.stdout.write(s)
+    }
+    process.stdout.write(query)
+    muted = true
+    rl.question("", (answer) => {
+      rl.close()
+      process.stdout.write("\n")
+      const trimmed = answer.trim()
+      if (!trimmed) reject(new Error("No key entered."))
+      else resolve(trimmed)
+    })
+  })
 }
 
 const b64 = (sodium: Sodium, bytes: Uint8Array) =>
@@ -61,18 +96,10 @@ function decrypt(sodium: Sodium, privateKey: string) {
   console.error(`\n${rows.length} subscriber(s).`)
 }
 
-function rotate(
-  sodium: Sodium,
-  oldKey: string | undefined,
-  force: boolean,
-) {
-  if (!oldKey && !force) {
-    console.error(
-      "rotate needs the old private key (to re-encrypt existing subscribers),\n" +
-        "or --force to generate a new key and leave existing rows behind.",
-    )
-    process.exit(1)
-  }
+async function rotate(sodium: Sodium, force: boolean) {
+  const oldKey = force
+    ? undefined
+    : await promptHidden("Old private key: ")
 
   const {publicKey, privateKey} =
     sodium.crypto_box_keypair()
@@ -126,33 +153,29 @@ function rotate(
 async function main() {
   const [command, ...rest] = process.argv.slice(2)
   const force = rest.includes("--force")
-  const key = rest.find((arg) => !arg.startsWith("--"))
 
   const sodium = _sodium
   await sodium.ready
 
   switch (command) {
     case "decrypt":
-      if (!key) {
-        console.error(
-          "Usage: pnpm subscribers decrypt <private-key>",
-        )
-        process.exit(1)
-      }
-      decrypt(sodium, key)
+      decrypt(sodium, await promptHidden("Private key: "))
       break
     case "rotate":
-      rotate(sodium, key, force)
+      await rotate(sodium, force)
       break
     default:
       console.error(
         "Usage:\n" +
-          "  pnpm subscribers decrypt <private-key>\n" +
-          "  pnpm subscribers rotate <old-private-key>\n" +
-          "  pnpm subscribers rotate --force",
+          "  pnpm subscribers decrypt          (prompts for the private key)\n" +
+          "  pnpm subscribers rotate           (prompts for the old key, re-encrypts)\n" +
+          "  pnpm subscribers rotate --force   (new key, leaves existing rows behind)",
       )
       process.exit(1)
   }
 }
 
-main()
+main().catch((error) => {
+  console.error(error.message)
+  process.exit(1)
+})
