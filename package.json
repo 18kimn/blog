@@ -16,6 +16,7 @@
     "lint": "prettier --check --write . && eslint . --fix",
     "format": "prettier --write --plugin-search-dir=. .",
     "cv": "pnpm run-ts src/hooks/CV/process.ts",
+    "subscribers": "pnpm run-ts src/hooks/subscribers.ts",
     "build:error": "ERROR_PAGE_BUILD=true vite build && cp error-build/cloudflare-error.html worker/cloudflare-error.html",
     "deploy:worker": "pnpm run build:error && wrangler deploy"
   },
@@ -67,6 +68,7 @@
     "@prisma/client": "^7.8.0",
     "better-sqlite3": "^12.10.0",
     "eslint-plugin-svelte": "^3.13.1",
+    "libsodium-wrappers": "^0.8.4",
     "pagedjs": "^0.4.3"
   }
 }

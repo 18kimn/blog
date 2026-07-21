@@ -62,3 +62,11 @@ model Comment {
 
   @@index([createdAt])
 }
+
+model Subscriber {
+  id         String   @id @default(cuid())
+  ciphertext String
+  createdAt  DateTime @default(now())
+
+  @@index([createdAt])
+}
