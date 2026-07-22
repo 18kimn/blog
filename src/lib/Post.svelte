@@ -11,6 +11,8 @@
   import {last} from "$lib/utils/misc"
   import {onMount, setContext} from "svelte"
   import {fade} from "svelte/transition"
+  import {page} from "$app/state"
+  import {resolve} from "$app/paths"
   import {postDataKey} from "../store"
 
   let {data = {} as Post, children} = $props()
@@ -56,6 +58,8 @@
   let windowWidth: number = $state()
   let {title, subtitle, modified, date, tags} =
     $derived(data)
+  let postType = $derived(page.params.postType)
+  let backLabel = $derived(`Back to /${postType}`)
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />
@@ -65,8 +69,27 @@
       <div class="article" bind:this={article}>
         <div class="section-container">
           <div class="section-wrapper">
+            <a
+              class="back-link"
+              href={resolve(`/${postType}`)}
+            >
+              <svg
+                class="back-arrow"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <line x1="23" y1="12" x2="4" y2="12" />
+                <polyline points="9 8 4 12 9 16" />
+              </svg>
+              {backLabel}
+            </a>
             <h1 id="frontmatter">{@html title}</h1>
-            {#if subtitle}<h2>{subtitle}</h2>{/if}
+            {#if subtitle}<h3>{subtitle}</h3>{/if}
             <div class="meta">
               <span id="date">
                 {#if modified?.length && last(modified) !== date}
@@ -196,6 +219,32 @@
     break-inside: avoid;
   }
 
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font);
+    font-size: 0.9rem;
+    color: #0015ab;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    transition: all ease-in-out 200ms;
+  }
+
+  .back-link:hover {
+    color: red;
+  }
+
+  .back-arrow {
+    width: 1em;
+    height: 1em;
+    transition: transform ease-in-out 200ms;
+  }
+
+  .back-link:hover .back-arrow {
+    transform: translateX(-5px);
+  }
+
   .meta {
     display: flex;
     flex-direction: column;
@@ -235,7 +284,7 @@
   }
 
   .content :global(h3) {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 
   .content :global(a) {
