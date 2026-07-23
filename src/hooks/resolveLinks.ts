@@ -4,17 +4,25 @@ import sharp from "sharp"
 
 const baseDir = process.cwd()
 
+type MediaNode = {
+  type: string
+  url?: string
+  children?: MediaNode[]
+}
+
+type MarkdownFile = {filename: string}
+
 /** recurses until it gets to links, then gives them an ID based on
  * dirname and filename and moves it to static
  * it also modifies in place, which is sus
  * but i guess that's what remark
  * plugins do
  * */
-function transformer(tree, file) {
+function transformer(tree: MediaNode, file: MarkdownFile) {
   if (tree.url) {
     tree.url = tree.url.replace(".md", "")
   }
-  if (["image", "video", "audio"].includes(tree.type)) {
+  if (["image", "video", "audio"].includes(tree.type) && tree.url) {
     const dir = basename(dirname(file.filename))
     const originalFile = resolve(
       dirname(file.filename),

@@ -1,9 +1,10 @@
 import adapterNode from "@sveltejs/adapter-node"
 import adapterStatic from "@sveltejs/adapter-static"
 import {sveltePreprocess} from "svelte-preprocess"
-import resolveLinks from "./src/hooks/resolveLinks.js"
-import addFootnotes from "./src/hooks/addFootnotes.js"
-import makeTOC from "./src/hooks/makeTOC.js"
+import resolveLinks from "./src/hooks/resolveLinks.ts"
+import addFootnotes from "./src/hooks/addFootnotes.ts"
+import makeTOC from "./src/hooks/makeTOC.ts"
+import headingLinks from "./src/hooks/headingLinks.ts"
 import rehypeExternalLinks from "rehype-external-links"
 import rehypeSlug from "rehype-slug"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
@@ -26,7 +27,15 @@ const config = {
       rehypePlugins: [
         rehypeExternalLinks,
         rehypeSlug,
-        rehypeAutolinkHeadings,
+        [
+          rehypeAutolinkHeadings,
+          {
+            behavior: "append",
+            properties: {className: ["heading-link"]},
+            content: {type: "text", value: "#"},
+          },
+        ],
+        headingLinks,
       ],
     }),
     sveltePreprocess(),

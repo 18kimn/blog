@@ -18,10 +18,10 @@ function render(posts: Post[]) {
         <title>${title}</title>
         <link>${siteURL}${formattedPath}</link>
         ${
-  subtitle
-    ? `<description>${subtitle}</description>`
-    : ""
-}
+          subtitle
+            ? `<description>${subtitle}</description>`
+            : ""
+        }
         <pubDate>${new Date(date).toUTCString()}</pubDate>
       </item>
       `
@@ -59,11 +59,16 @@ export async function GET() {
       },
     ),
   ).then((posts) => {
-    return posts.sort(
-      (a, b) =>
-        Date.parse(b.date as string) -
-        Date.parse(a.date as string),
-    )
+    return posts
+      .sort(
+        (a, b) =>
+          Date.parse(b.date as string) -
+          Date.parse(a.date as string),
+      )
+      .filter(
+        (item: Post) => typeof item.date !== "undefined",
+      )
+      .filter((item) => !item.hidden)
   })
 
   const body = render(posts)

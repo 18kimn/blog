@@ -217,6 +217,7 @@
     font-size: 0.8rem;
     margin: 1rem;
     break-inside: avoid;
+    display: block;
   }
 
   .back-link {
@@ -261,10 +262,6 @@
     background: none;
   }
 
-  .footnote {
-    display: block;
-  }
-
   .content {
     width: 100%;
     overflow-x: auto;
@@ -289,7 +286,6 @@
 
   .content :global(a) {
     font-family: var(--font);
-    font-size: 1rem;
     margin: 0rem;
     color: #0015ab;
     text-decoration: none;

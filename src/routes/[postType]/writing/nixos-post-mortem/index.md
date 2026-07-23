@@ -413,11 +413,9 @@ continue and the community will reach a critical mass, and
 at that point perhaps a wealth of contributors will improve
 Nix in ways we cannot foressee. Perhaps the language isn't
 as much of an issue for other programmers because AI tooling
-will autocomplete the way to victory.^[I'm one of those
-diehard I-will-never-use-ChatGPT people, personally.] And of
-course, perhaps some of it is not an issue with the design
-but my own unwillingness to really learn the innards of Nix
-and NixOS.
+will autocomplete the way to victory. And of course, perhaps
+some of it is not an issue with the design but my own
+unwillingness to really learn the innards of Nix and NixOS.
 
 Just to hammer home this point, that everything I am
 discussing comes from a deeply personal perspective, I want

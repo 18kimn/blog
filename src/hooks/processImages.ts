@@ -2,7 +2,7 @@ import {resolve, parse} from "path"
 import {promises as fs} from "fs"
 import sharp from "sharp"
 
-async function processImages(dir) {
+async function processImages(dir: string) {
   const originals = await fs.readdir(resolve("static", dir))
 
   originals.forEach((original) => {
