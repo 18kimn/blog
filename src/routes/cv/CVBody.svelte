@@ -165,6 +165,8 @@
    */
   .cv,
   .cv-container {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
     --marg: calc(var(--margin-multi) * 0.5em);
     padding: calc(var(--marg) - 0.5em)
       calc(var(--marg) - 0.8em);
@@ -237,7 +239,6 @@
     max-width: 65ch;
   }
 
-  .role,
   .date {
     white-space: nowrap;
   }
