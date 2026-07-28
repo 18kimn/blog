@@ -1,5 +1,5 @@
 allowBuilds:
-  "@prisma/engines": true
+  '@prisma/engines': true
   better-sqlite3: true
   core-js: true
   es5-ext: true
@@ -7,3 +7,4 @@ allowBuilds:
   prisma: true
   sharp: true
   svelte-preprocess: true
+  workerd: true
