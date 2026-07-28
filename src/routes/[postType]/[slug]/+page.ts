@@ -1,29 +1,13 @@
-import type {Post as PostType} from "$lib/utils/types"
+import {error} from "@sveltejs/kit"
+import {getPost} from "$lib/posts"
 
 export const prerender = true
 
 export async function load({params, data}) {
   const {slug, postType} = params
-  /**
-   * For some reason have to do with glob instead of
-   * with dynamic import, since I guess MDSveX can't be
-   * compiled at runtime by Vite 5 or something dumb
-   * like that
-   */
-  const writingFiles = import.meta.glob("../writing/*/*md")
-  const projectFiles = import.meta.glob("../projects/*/*md")
-  const files = {...writingFiles, ...projectFiles}
-  const [, resolver] = Object.entries(files).find(
-    ([path]) => {
-      const segments = path.split("/")
-      const fileSlug = segments[segments.length - 2]
-      const fileType = segments[segments.length - 3]
-      return slug === fileSlug && postType === fileType
-    },
-  )
-  const Post = await (resolver() as Promise<{
-    metadata: PostType
-  }>)
+  const Post = await getPost(postType, slug)
+  if (!Post) error(404, "post not found")
+
   return {
     Post,
     ...Post.metadata,

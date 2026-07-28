@@ -1,22 +1,25 @@
-import {resolve, parse} from "path"
+import {resolve, parse, extname} from "path"
 import {promises as fs} from "fs"
-import sharp from "sharp"
+import {
+  optimizeImage,
+  RASTER_EXTENSIONS,
+} from "./optimizeImage.ts"
 
 async function processImages(dir: string) {
   const originals = await fs.readdir(resolve("static", dir))
 
-  originals.forEach((original) => {
-    sharp(resolve("static", dir, original))
-      .resize(600)
-      .webp()
-      .toBuffer()
-      .then((buff) => {
-        fs.writeFile(
+  await Promise.all(
+    originals
+      .filter((original) =>
+        RASTER_EXTENSIONS.includes(extname(original)),
+      )
+      .map((original) =>
+        optimizeImage(
+          resolve("static", dir, original),
           `static/${dir}/${parse(original).name}.webp`,
-          buff,
-        )
-      })
-  })
+        ),
+      ),
+  )
 }
 
 processImages("personal_images")
