@@ -58,3 +58,61 @@ into a markdown document and publish on a personal website.
 Everything that is mine is yours, and it will be that way
 forever, long after I have left the earth and long after any
 reference to my name exists anywhere in the world.
+
+Basic contradiction within the university where it serves
+capital through its autonomy, so it also produces its own
+gravediggers. The university as an apparatus as a whole is
+guided to serve the national interest, the capitalist
+interest, stabilizing things, proposing policy the organic
+intellectuals of the capitalist class can’t produce
+themselves (this is a derivation of the labor-capital
+contradiction)
+
+Abolition university studies text
+
+Feelings of betrayal by faculty who saw themselves as
+beholden to social justice but for whom the path to
+achieving that was to stick to the university’s good graces;
+once they had to choose, they couldn’t withstand the
+contradiction None of us are free from that contradiction
+and all of us are subject to its basic premise (trying to
+serve both, by virtue of making a living being employed by
+the university). Unfortunately there are no neutrals
+fundamentally and you will have to choose (you cannot just
+try to hold the contradiction together forever; that is
+attempting to survive without a real way to escape the
+things capitalism subjects you to, and you will thus
+continue to be subject to those things). You can either
+stick with the university’s premise, taking up the idea that
+you are a small business owner entrepreneur-ing within the
+ecosystem of grants and employees, that you have rightfully
+earned or can earn a respectable academic life, that you can
+become a homeowner, get tenure, publish the essays and
+articles, go on the book tours, and teach students as if
+that pattern is the way things are and the way things will
+be; or you can reject it, that nothing afforded to us is
+because we have deserved it in any sense but because
+capitalism has structutral needs fulfilled by the neoliberal
+university, that each of us are precarious even if some of
+us seem to be well resourced at some times, that this
+depends on the constant exploitation of labor (of all of us,
+but of staff, grads, lecs, etc) and violence towards others,
+and that nothing about this fundamental arrangement will
+never change unless we at least make a choice to each other,
+that we want something different, that we are rejecting the
+individualism the university imposes, that we reject the
+bourgeois ambitions that our basic need for security and
+safety have become entangled with and disguised as, and in
+turn that we protect each other forever.
+
+No matter if and how you choose, it will be hard and
+painful, you will lose friends and collaborators and peers,
+you will always be subject to some side of the other
+contradiction (it will always be incomplete), and yet the
+choice must nevetheless be made.
+
+- Financial resources
+- Principled activism constantly
+- Collectivity and a necessity for constant power analysis
+  of collectives
+- Open your home, your offices, your library access, your
