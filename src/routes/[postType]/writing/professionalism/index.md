@@ -19,21 +19,21 @@ contradiction between labor and capital: the needs of
 capital are fundamentally opposed to the needs of those that
 labor for it, and yet the two are bound inseparably
 together. The immediate growth of capital lies in increasing
-working hours, pay less in wages, preventing collective
+working hours, paying less in wages, preventing collective
 bargaining; the needs of the laborers are precisely the
 opposite. At the same time, they constitute each other, they
 are what make each other exist; there would be no capital
 were it not for the concept of laborers producing it and no
 laborers if not the necessity of capital to interpellate
 them as such. Capital's pursuit of its "own" interests
-against those of labor thus has it undermine itself, as seen
-in investments in automation and fixed capital leading to
-the rate of profit to fall, the way depressed wages stunt
-the economy as a whole and attack the market that capital
-needs to sell its goods in, in the way undercutting
-competitors to gain a profit lowers profits made system-wide
-and long-term. In other words, capital and labor not only
-have an antagonistic relationship but one that is constantly
+against those of labor thus undermines itself, as seen in
+investments in automation and fixed capital leading to the
+rate of profit to fall, the way depressed wages stunt the
+economy as a whole and attack the market that capital needs
+to sell its goods in, in the way undercutting competitors to
+gain a profit lowers profits made system-wide and long-term.
+In other words, capital and labor not only have an
+antagonistic relationship but one that is constantly
 unstable and dynamic, each side rearranging itself,
 innovating and changing society in a direction we usually
 recognize as "forward," as described by Marx's most famous
@@ -96,19 +96,19 @@ such). Even private industry and the state carry out each
 others' interests in a structured unity while believing (in
 part correctly) that they are doing so autonomously. In this
 description, capitalism is like a vast machine that indeed
-has an engine (a basic premise of capital accumulation, a
-basic engine of the labor-capital contradiction), but also
-millions of other components that all perform different
-functions that act together and which cannot be discarded as
-somehow less central or less important than that engine.
-None of them can be properly seen as "noncapitalist" in any
-absolute sense, and even if this machine is a complex unity
-composed of other apparent modes of production, as a whole
-it functions as a capitalist one. This is in no way to write
-these individual components off with a blanket maneuever as
-evil or to express a general pessimism around change, only
-that I believe the next world will have to be born out of
-this one.
+has an engine (capital accumulation; even within that engine
+we can identify parts like a "motor" of the labor-capital
+contradiction), but it also has millions of other components
+that all perform different functions that act together and
+which cannot be discarded as somehow less central or less
+important than that engine. None of them can be properly
+seen as "noncapitalist" in any absolute sense, and even if
+this machine is a complex unity composed of other apparent
+modes of production, as a whole it functions as a capitalist
+one. This is in no way to write these individual components
+off with a blanket maneuever as evil or to express a general
+pessimism around change. It's only to say that I believe the
+next world will have to be born out of this one.
 
 The university as an institution to promote liberal
 multiculturalism autonomously from other entities has been a
@@ -148,7 +148,7 @@ precarious even if some of us seem to be well resourced at
 some times, that this depends on the constant exploitation
 of labor (of all of us, but of staff, grads, lecs, etc) and
 violence towards others, and that nothing about this
-fundamental arrangement will never change unless we at least
+fundamental arrangement will ever change unless we at least
 make a choice to each other, that we want something
 different, that we are rejecting the individualism the
 university imposes, that we reject the bourgeois ambitions
@@ -186,7 +186,7 @@ larger struggle for equality and emancipation. But I've
 unfortunately never seen folks that give me such comments
 ever again in such a space or seen a possibility to work
 with them in or outside of the university to do something
-more strategic, so I wonder (maybe ingenuously, because
+more strategic, so I wonder (maybe disingenuously, because
 there are obvious answers here) if these kinds of criticisms
 were really about there being better paths to establishing
 that other collectivity or socialist future -- if so,
@@ -195,7 +195,7 @@ wouldn't I have been able to meet them there?]
 Anyhow, in part I am writing this kind of sappy reflection
 because I am frustrated with the lack of class consciousness
 and the way academic workers, both junior and senior, seem
-to gobble up university propaganda, but it's also just a
+to gobble up university propaganda. But it's also just a
 reminder to myself and a signpost others can remind me of in
 the future. I don't think I will ever be free from having to
 make the choice between the interests of the university (in
