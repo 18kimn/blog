@@ -69,7 +69,7 @@ university can be useful for capital and the state, both in
 a material sense (division of labor) and in an ideological
 sense (material relations are obfuscated when we buy into
 the idea of academic workers as producers of knowledge for
-the sake of itself). As Nick Mitchell writes in his 2019
+the sake of itself). As Nick Mitchell writes in her 2019
 essay
 ["Summertime Selves,"](https://thenewinquiry.com/summertime-selves-on-professionalization/)
 which inspired this blog post, never are we more of it than
