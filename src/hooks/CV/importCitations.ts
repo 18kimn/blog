@@ -8,7 +8,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 
 export default async function importCitations(): Promise<
   CV["sections"]
-  > {
+> {
   const zotbib = await fs.readFile(
     __dirname + "/personal.json",
     "utf-8",
@@ -37,7 +37,7 @@ export default async function importCitations(): Promise<
         ref.type === "speech" && !ref.note,
     },
     {
-      name: "Conference workshops",
+      name: "Papers for conference workshops",
       condition: (ref) =>
         ref.type === "speech" && ref.note === "Workshop",
     },
