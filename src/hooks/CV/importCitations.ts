@@ -15,10 +15,18 @@ export default async function importCitations(): Promise<
   )
   const references = new Cite(zotbib).data as any[]
 
+  const speechNotes = ["Workshop", "Other"]
+
   const categories = [
     {
       name: "Peer-reviewed publications",
-      condition: (ref) => ref.type === "article-journal",
+      condition: (ref) =>
+        [
+          "article-journal",
+          "paper-conference",
+          "chapter",
+          "book",
+        ].includes(ref.type),
     },
     {
       name: "Manuscripts under review and in preparation",
@@ -27,14 +35,20 @@ export default async function importCitations(): Promise<
     {
       name: "Public scholarship and policy writing",
       condition: (ref) =>
-        ["article", "report", "article-newspaper"].includes(
-          ref.type,
-        ),
+        [
+          "article",
+          "preprint",
+          "report",
+          "article-newspaper",
+          "article-magazine",
+          "post-weblog",
+        ].includes(ref.type),
     },
     {
       name: "Conference presentations",
       condition: (ref) =>
-        ref.type === "speech" && !ref.note,
+        ref.type === "speech" &&
+        !speechNotes.includes(ref.note),
     },
     {
       name: "Papers for conference workshops",
@@ -45,14 +59,50 @@ export default async function importCitations(): Promise<
       name: "Invited lectures and presentations",
       condition: (ref) =>
         (ref.type === "speech" && ref.note === "Other") ||
-        ref.type === "broadcast",
+        ["broadcast", "interview"].includes(ref.type),
     },
     {
       name: "Digital projects",
       condition: (ref) =>
-        ["document", "report"].includes(ref.type),
+        [
+          "document",
+          "webpage",
+          "dataset",
+          "software",
+        ].includes(ref.type),
     },
   ]
+
+  const describe = (ref) =>
+    `${ref.id} (type: ${ref.type}${ref.note ? `, note: ${ref.note}` : ""})`
+
+  const sectionsFor = (ref) =>
+    categories
+      .filter((cat) => cat.condition(ref))
+      .map((cat) => cat.name)
+
+  const uncategorized = references.filter(
+    (ref) => sectionsFor(ref).length === 0,
+  )
+  if (uncategorized.length) {
+    throw new Error(
+      `No CV section matches ${uncategorized.map(describe).join("; ")}`,
+    )
+  }
+
+  const overcategorized = references.filter(
+    (ref) => sectionsFor(ref).length > 1,
+  )
+  if (overcategorized.length) {
+    throw new Error(
+      `Multiple CV sections match ${overcategorized
+        .map(
+          (ref) =>
+            `${describe(ref)}: ${sectionsFor(ref).join(", ")}`,
+        )
+        .join("; ")}`,
+    )
+  }
 
   function convertIssuedToDate(
     issued: [string, number, number?][],
@@ -67,7 +117,7 @@ export default async function importCitations(): Promise<
     name: cat.name,
     entries: references
       .filter(cat.condition)
-      .map(({_graph, abstract, ...csl}) => ({
+      .map(({_graph, _abstract, ...csl}) => ({
         type: "csl",
         csl,
       }))

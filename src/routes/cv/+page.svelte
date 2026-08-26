@@ -29,10 +29,7 @@
       csls.forEach((csl) => {
         if (csl.path) {
           const config = plugins.config.get("@csl")
-          config.templates.add(
-            csl.name.toLowerCase(),
-            csl.template,
-          )
+          config.templates.add(csl.key, csl.template)
         }
       })
       csl = csls[0]

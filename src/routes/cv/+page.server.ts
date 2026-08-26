@@ -12,7 +12,7 @@ export const load: PageServerLoad = async () => {
         },
         {name: "APA"},
         {name: "ASA", path: "csl/asa.csl"},
-        {name: "Harvard", key: "harvard1"},
+        {name: "APSA", path: "csl/apsa.csl"},
       ].map(async (csl) => {
         return {
           template:
