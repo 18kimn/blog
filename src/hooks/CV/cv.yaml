@@ -4,6 +4,23 @@ meta:
   website: nathan-kim.org
   bluesky: nathanckim
   last_updated: "July 29, 2026"
+resume:
+  sections:
+    - name: Education
+    - name: Other work experience
+      as: Experience
+      limit: 5
+    - name: Peer-reviewed publications
+      as: Selected publications
+      limit: 3
+    - name: Public scholarship and policy writing
+      as: Selected public writing
+      limit: 3
+    - name: Grants, Fellowships, and Awards
+      as: Grants and awards
+      limit: 4
+    - name: Affiliations
+    - name: Technical skills
 sections:
   - name: Education
     entries:
@@ -86,18 +103,11 @@ sections:
         role: Researcher.
         date: Fall 2023-Present
         link: https://esc.umich.edu
-  - name: Work experience
+  - name: Teaching experience
     entries:
       - name: University of Michigan School of Information
         role: Graduate Student Instructor
         date: Fall 2025 (Math for Information Analysis)
-      - name: The Distributed AI Research Institute
-        role: Graduate Research Associate
-        date: July 2022 — Present
-        description:
-          Creating a data pipeline and conducting
-          time-series analyses for the Student and Campus
-          Protest Events Project.
       - name:
           Yale University Department of Statistics & Data
           Science
@@ -107,6 +117,15 @@ sections:
           Guided students through <em>S&DS230: Data
           Exploration and Analysis</em> during weekly hours.
           Assisted in creation of midterm and final exams.
+  - name: Other work experience
+    entries:
+      - name: The Distributed AI Research Institute
+        role: Graduate Research Associate
+        date: July 2022 — Present
+        description:
+          Creating a data pipeline and conducting
+          time-series analyses for the Student and Campus
+          Protest Events Project.
       - name: The Anti-Eviction Mapping Project
         role: Member, Coordinator
         date: Summer 2021 — Summer 2024
