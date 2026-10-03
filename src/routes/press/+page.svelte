@@ -2,10 +2,34 @@
   import OutLink from "$lib/OutLink.svelte"
   import {resolve} from "$app/paths"
   import media from "./media.json"
+  import uncvBbt from "./uncv.bbt.json"
+  import {parseSections} from "../../hooks/CV/subcollections"
+
+  const {sections, byCitekey} = parseSections(uncvBbt)
+  const topicOrder = new Map(
+    sections.map((s) => [s.name, s.order]),
+  )
+  const unresolved = media.filter(
+    (item) =>
+      !byCitekey.has(item["citation-key"] ?? item["id"] ?? ""),
+  )
+  if (unresolved.length) {
+    throw new Error(
+      "Press items not in any numbered un-cv subcollection: " +
+        unresolved
+          .map((i) => i["citation-key"] ?? i["id"])
+          .join(", ") +
+        ". File them under a topic, or remove from un-cv if they belong only on the CV.",
+    )
+  }
+  const topicOf = (item: {"citation-key"?: string; id?: string}) =>
+    (byCitekey.get(item["citation-key"] ?? item.id ?? "") ?? [])[0]
+      ?.name ?? "Other"
 
   type Item = (typeof media)[0] & {
     date: Date
     status: string
+    topic: string
   }
   type DT = {
     [topic: string]: {[status: string]: Item[]}
@@ -19,6 +43,7 @@
         Number(dateParts[1]) - 1,
         Number(dateParts[2]),
       )
+      item["topic"] = topicOf(item)
       item["status"] = [
         ...item.author,
         ...(item.editor || []),
@@ -36,19 +61,20 @@
   )
     .sort((a, b) => {
       return (
-        a.note.localeCompare(b.note) ||
+        (topicOrder.get(a.topic) ?? 0) -
+          (topicOrder.get(b.topic) ?? 0) ||
         b.status.localeCompare(a.status) ||
         Number(b.date) - Number(a.date)
       )
     })
     .reduce((p, c) => {
       // media = {Tenants: {Wrote: [items], "Quoted in": [items]}}, Org: {}}
-      if (p[c.note] && Object.entries(p[c.note]).length) {
-        p[c.note][c.status] = p[c.note][c.status]
-          ? [...p[c.note][c.status], c]
+      if (p[c.topic] && Object.entries(p[c.topic]).length) {
+        p[c.topic][c.status] = p[c.topic][c.status]
+          ? [...p[c.topic][c.status], c]
           : [c]
       } else {
-        p[c.note] = {[c.status]: [c]}
+        p[c.topic] = {[c.status]: [c]}
       }
       return p
     }, {})

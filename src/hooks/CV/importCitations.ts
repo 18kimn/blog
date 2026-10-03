@@ -3,11 +3,18 @@ import "@citation-js/plugin-bibtex"
 import {promises as fs} from "fs"
 import {fileURLToPath} from "url"
 import {dirname} from "path"
-import type {CV, Entry} from "../../routes/cv/types"
+import type {Entry} from "../../routes/cv/types"
+import {parseSections} from "./subcollections"
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
+export type CitationSection = {
+  name: string
+  order: number
+  entries: Entry[]
+}
+
 export default async function importCitations(): Promise<
-  CV["sections"]
+  CitationSection[]
 > {
   const zotbib = await fs.readFile(
     __dirname + "/personal.json",
@@ -15,78 +22,23 @@ export default async function importCitations(): Promise<
   )
   const references = new Cite(zotbib).data as any[]
 
-  const speechNotes = ["Workshop", "Other"]
+  const bbt = JSON.parse(
+    await fs.readFile(__dirname + "/personal.bbt.json", "utf-8"),
+  )
+  const {sections, byCitekey} = parseSections(bbt)
 
-  const categories = [
-    {
-      name: "Peer-reviewed publications",
-      condition: (ref) =>
-        [
-          "article-journal",
-          "paper-conference",
-          "chapter",
-          "book",
-        ].includes(ref.type),
-    },
-    {
-      name: "Manuscripts under review and in preparation",
-      condition: (ref) => ref.type === "manuscript",
-    },
-    {
-      name: "Public scholarship and policy writing",
-      condition: (ref) =>
-        [
-          "article",
-          "preprint",
-          "report",
-          "article-newspaper",
-          "article-magazine",
-          "post-weblog",
-        ].includes(ref.type),
-    },
-    {
-      name: "Conference presentations",
-      condition: (ref) =>
-        ref.type === "speech" &&
-        !speechNotes.includes(ref.note),
-    },
-    {
-      name: "Papers for conference workshops",
-      condition: (ref) =>
-        ref.type === "speech" && ref.note === "Workshop",
-    },
-    {
-      name: "Invited lectures and presentations",
-      condition: (ref) =>
-        (ref.type === "speech" && ref.note === "Other") ||
-        ["broadcast", "interview"].includes(ref.type),
-    },
-    {
-      name: "Digital projects",
-      condition: (ref) =>
-        [
-          "document",
-          "webpage",
-          "dataset",
-          "software",
-        ].includes(ref.type),
-    },
-  ]
-
-  const describe = (ref) =>
-    `${ref.id} (type: ${ref.type}${ref.note ? `, note: ${ref.note}` : ""})`
-
-  const sectionsFor = (ref) =>
-    categories
-      .filter((cat) => cat.condition(ref))
-      .map((cat) => cat.name)
+  const keyOf = (ref) => ref["citation-key"] || ref.id
+  const sectionsFor = (ref) => byCitekey.get(keyOf(ref)) ?? []
+  const describe = (ref) => `${keyOf(ref)} (type: ${ref.type})`
 
   const uncategorized = references.filter(
     (ref) => sectionsFor(ref).length === 0,
   )
   if (uncategorized.length) {
     throw new Error(
-      `No CV section matches ${uncategorized.map(describe).join("; ")}`,
+      `No numbered subcollection matches ${uncategorized
+        .map(describe)
+        .join("; ")}`,
     )
   }
 
@@ -95,10 +47,12 @@ export default async function importCitations(): Promise<
   )
   if (overcategorized.length) {
     throw new Error(
-      `Multiple CV sections match ${overcategorized
+      `Multiple numbered subcollections match ${overcategorized
         .map(
           (ref) =>
-            `${describe(ref)}: ${sectionsFor(ref).join(", ")}`,
+            `${describe(ref)}: ${sectionsFor(ref)
+              .map((s) => s.name)
+              .join(", ")}`,
         )
         .join("; ")}`,
     )
@@ -113,10 +67,13 @@ export default async function importCitations(): Promise<
     )
   }
 
-  return categories.map((cat) => ({
-    name: cat.name,
+  return sections.map((section) => ({
+    name: section.name,
+    order: section.order,
     entries: references
-      .filter(cat.condition)
+      .filter((ref) =>
+        sectionsFor(ref).some((s) => s.key === section.key),
+      )
       .map(({_graph, _abstract, ...csl}) => ({
         type: "csl",
         csl,

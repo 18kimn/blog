@@ -1,0 +1,2248 @@
+{
+  "config": {
+    "id": "36a3b0b5-bad0-4a04-b79b-441c7cef77db",
+    "label": "BetterBibTeX JSON",
+    "preferences": {
+      "ascii": "",
+      "asciiBibLaTeX": false,
+      "asciiBibTeX": true,
+      "autoExport": "immediate",
+      "autoExportDelay": 5,
+      "autoExportIdleWait": 10,
+      "autoExportPathReplaceDiacritics": false,
+      "autoExportPathReplaceDirSep": "-",
+      "autoExportPathReplaceSpace": " ",
+      "automaticTags": true,
+      "auxImport": false,
+      "baseAttachmentPath": "",
+      "biblatexExtendedDateFormat": true,
+      "biblatexExtendedNameFormat": true,
+      "biblatexExtractEprint": true,
+      "biblatexUsePrefix": true,
+      "bibtexEditionOrdinal": false,
+      "bibtexParticleNoOp": false,
+      "bibtexURL": "off",
+      "cache": true,
+      "cacheDelete": false,
+      "cacheTouch": "fill",
+      "charmap": "",
+      "chinese": false,
+      "chineseSplitName": true,
+      "citeCommand": "cite",
+      "citekeyCaseInsensitive": true,
+      "citekeyFold": true,
+      "citekeyFormat": "auth.lower + shorttitle(3, 3) + year",
+      "citekeyUnsafeChars": "\\\"#%'(),={}~",
+      "csquotes": "",
+      "DOIandURL": "both",
+      "exportBibTeXStrings": "off",
+      "exportBraceProtection": true,
+      "exportCaseProtection": "",
+      "exportSort": "citekey",
+      "exportTitlecase": "",
+      "extraFieldAsNote": false,
+      "extraMergeCitekeys": false,
+      "extraMergeCSL": false,
+      "extraMergeTeX": false,
+      "fillKeyAfter": 1,
+      "git": "config",
+      "import": true,
+      "importBibTeXStrings": true,
+      "importCaseProtection": "as-needed",
+      "importCitationKey": true,
+      "importDetectURLs": true,
+      "importExtra": true,
+      "importJabRefAbbreviations": true,
+      "importJabRefStrings": true,
+      "importNoteToExtra": "",
+      "importPlaceEvent": "inproceedings,conference,presentation,talk",
+      "importSentenceCase": "on+guess",
+      "importSentenceCaseQuoted": true,
+      "importUnknownTexCommand": "ignore",
+      "itemObserverDelay": 5,
+      "jabrefFormat": 0,
+      "japanese": false,
+      "journalAbbreviation": "auto",
+      "keyScope": "library",
+      "language": "langid",
+      "mapMath": "",
+      "mapText": "",
+      "packages": "",
+      "parseParticles": true,
+      "patchDates": "dateadded=dateAdded, date-added=dateAdded, datemodified=dateModified, date-modified=dateModified",
+      "postscript": "",
+      "postscriptOverride": "",
+      "preferencesOverride": "",
+      "profileRuntime": "no",
+      "profileStartup": false,
+      "qualityReport": false,
+      "quickCopyEta": "",
+      "quickCopyMode": "latex",
+      "quickCopyOrgMode": "zotero",
+      "quickCopyPandocBrackets": false,
+      "quickCopySelectLink": "zotero",
+      "rawImports": false,
+      "rawLaTag": "#LaTeX",
+      "relativeFilePaths": false,
+      "remigrate": false,
+      "resetKeyOnChange": false,
+      "separatorList": "and",
+      "separatorNames": "and",
+      "skipFields": "",
+      "skipWords": "a,ab,aboard,about,above,across,after,against,al,along,amid,among,an,and,anti,around,as,at,before,behind,below,beneath,beside,besides,between,beyond,but,by,d,da,das,de,del,dell,dello,dei,degli,della,dell,delle,dem,den,der,des,despite,die,do,down,du,during,ein,eine,einem,einen,einer,eines,el,en,et,except,for,from,gli,i,il,in,inside,into,is,l,la,las,le,les,like,lo,los,near,nor,of,off,on,onto,or,over,past,per,plus,round,save,since,so,some,sur,than,the,through,to,toward,towards,un,una,unas,under,underneath,une,unlike,uno,unos,until,up,upon,versus,via,von,while,with,within,without,yet,zu,zum",
+      "strings": "",
+      "stringsOverride": "",
+      "verbatimFields": "url,doi,file,pdf,ids,eprint,/^verb[a-z]$/,groups,/^citeulike-linkout-[0-9]+$/,/^bdsk-url-[0-9]+$/, keywords",
+      "warnBulkModify": 10,
+      "warnTitleCased": false
+    },
+    "options": {
+      "Items": true,
+      "Normalize": false,
+      "Preferences": true,
+      "YAML": false,
+      "biblatexAPA": false,
+      "biblatexChicago": false,
+      "exportFileData": false,
+      "exportNotes": true,
+      "keepUpdated": false,
+      "worker": true,
+      "exportDir": "/home/nathan/main/personal/projects/blog/src/hooks/CV",
+      "exportPath": "/home/nathan/main/personal/projects/blog/src/hooks/CV/personal.bbt.json"
+    }
+  },
+  "version": {
+    "zotero": "9.0.6",
+    "bbt": "9.0.68"
+  },
+  "collections": {
+    "AYKNZ8TY": {
+      "key": "AYKNZ8TY",
+      "parent": "",
+      "name": "20. Peer-reviewed publications",
+      "collections": [],
+      "items": [
+        6414,
+        6415,
+        8347,
+        10493,
+        14651,
+        15038
+      ]
+    },
+    "ZWSWPGTL": {
+      "key": "ZWSWPGTL",
+      "parent": "",
+      "name": "30. Manuscripts under review and in preparation",
+      "collections": [],
+      "items": [
+        10681
+      ]
+    },
+    "AIDYQLWN": {
+      "key": "AIDYQLWN",
+      "parent": "",
+      "name": "40. Public scholarship and policy writing",
+      "collections": [],
+      "items": [
+        6442,
+        10882,
+        11831,
+        13253,
+        13731,
+        15123
+      ]
+    },
+    "2H2AUZSU": {
+      "key": "2H2AUZSU",
+      "parent": "",
+      "name": "45. Digital projects",
+      "collections": [],
+      "items": [
+        6412,
+        6445,
+        13766
+      ]
+    },
+    "DUE2WRXQ": {
+      "key": "DUE2WRXQ",
+      "parent": "",
+      "name": "60. Academic conference presentations",
+      "collections": [],
+      "items": [
+        6407,
+        6408,
+        6409,
+        6441,
+        6573,
+        13276,
+        13393,
+        15040,
+        15041
+      ]
+    },
+    "FADHNYC2": {
+      "key": "FADHNYC2",
+      "parent": "",
+      "name": "70. Movement conference presentations",
+      "collections": [],
+      "items": [
+        15039,
+        16123,
+        16124,
+        16125
+      ]
+    },
+    "W53JL2GR": {
+      "key": "W53JL2GR",
+      "parent": "",
+      "name": "80. Papers for conference workshops",
+      "collections": [],
+      "items": [
+        10490,
+        10491,
+        10492,
+        15710,
+        15711
+      ]
+    },
+    "ERFZGXJJ": {
+      "key": "ERFZGXJJ",
+      "parent": "",
+      "name": "90. Invited lectures",
+      "collections": [],
+      "items": [
+        6406,
+        13252,
+        13762,
+        13763,
+        15437
+      ]
+    },
+    "RQ28IWLP": {
+      "key": "RQ28IWLP",
+      "parent": "",
+      "name": "100. Media appearances",
+      "collections": [],
+      "items": [
+        15129,
+        16126,
+        16127
+      ]
+    }
+  },
+  "items": [
+    {
+      "key": "E4A3CURX",
+      "version": 21884,
+      "itemType": "newspaperArticle",
+      "title": "AI as a War Issue, War as a Workers’ Issue",
+      "abstractNote": "The fight against the University of Michigan–Los Alamos data center.",
+      "date": "April 2026",
+      "language": "en",
+      "url": "https://www.aaup.org/issue/spring-2026/ai-war-issue-war-workers-issue",
+      "accessDate": "2026-06-04T23:10:01Z",
+      "publisher": "The American Association of University Professionals",
+      "publicationTitle": "Academe",
+      "issue": "Spring 2026",
+      "citationKey": "AIWarIssue",
+      "creators": [
+        {
+          "firstName": "Justine",
+          "lastName": "Zhang",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "Shreya",
+          "lastName": "Chowdhary",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "Nathan",
+          "lastName": "Kim",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2026-06-04T23:10:01Z",
+      "dateModified": "2026-07-29T18:47:19Z",
+      "uri": "http://zotero.org/users/11405897/items/E4A3CURX",
+      "itemID": 15123,
+      "attachments": [
+        {
+          "itemType": "attachment",
+          "title": "Snapshot",
+          "url": "https://www.aaup.org/issue/spring-2026/ai-war-issue-war-workers-issue",
+          "tags": [],
+          "relations": {},
+          "dateAdded": "2026-06-04T23:10:06Z",
+          "dateModified": "2026-06-04T23:10:06Z",
+          "uri": "http://zotero.org/users/11405897/items/2VXQF6DZ",
+          "path": "/home/nathan/Zotero/storage/2VXQF6DZ/ai-war-issue-war-workers-issue.html",
+          "select": "zotero://select/library/items/2VXQF6DZ"
+        }
+      ],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "E4A3CURX",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/E4A3CURX"
+    },
+    {
+      "key": "5XUCP456",
+      "version": 21864,
+      "itemType": "journalArticle",
+      "title": "U.S. and Canadian Higher Education Protests and University and Police Responses, 2012 to 2018",
+      "abstractNote": "The authors describe protest patterns at U.S. and Canadian universities in the 2010s. The research draws on a new dataset, the Higher Ed Protest Event Dataset, ...",
+      "date": "November 20, 2024",
+      "language": "en",
+      "archiveLocation": "Sage CA: Los Angeles, CA",
+      "libraryCatalog": "journals.sagepub.com",
+      "url": "https://journals.sagepub.com/doi/10.1177/23780231241297447",
+      "accessDate": "2024-12-27T15:08:03Z",
+      "rights": "© The Author(s) 2024",
+      "extra": "Publisher: SAGE PublicationsSage CA: Los Angeles, CA",
+      "publicationTitle": "Socius",
+      "DOI": "10.1177/23780231241297447",
+      "citationKey": "berreyUSCanadianHigher2024",
+      "creators": [
+        {
+          "firstName": "Ellen",
+          "lastName": "Berrey",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "Alex",
+          "lastName": "Hanna",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "Nathan",
+          "lastName": "Kim",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "Kristen",
+          "lastName": "Bass",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2024-12-27T15:08:03Z",
+      "dateModified": "2026-02-17T00:14:52Z",
+      "uri": "http://zotero.org/users/11405897/items/5XUCP456",
+      "itemID": 8347,
+      "attachments": [
+        {
+          "itemType": "attachment",
+          "title": "Snapshot",
+          "url": "https://journals.sagepub.com/doi/10.1177/23780231241297447",
+          "tags": [],
+          "relations": {},
+          "dateAdded": "2024-12-27T15:08:12Z",
+          "dateModified": "2024-12-27T15:08:12Z",
+          "uri": "http://zotero.org/users/11405897/items/IKMBZH4S",
+          "path": "/home/nathan/Zotero/storage/IKMBZH4S/23780231241297447.html",
+          "select": "zotero://select/library/items/IKMBZH4S"
+        }
+      ],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "5XUCP456",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/5XUCP456"
+    },
+    {
+      "key": "XQ9W4Q48",
+      "version": 0,
+      "itemType": "interview",
+      "title": "Converting the American War Economy",
+      "abstractNote": "What the 1980s peace and labor movements in the United States can teach us about challenging today’s war economy.",
+      "date": "2025-12-15T12:29:09+00:00",
+      "language": "en",
+      "url": "https://inkstickmedia.com/converting-the-american-war-economy/",
+      "accessDate": "2025-12-18T17:41:36Z",
+      "publisher": "MIC Drop: Inkstick",
+      "citationKey": "cortrightConvertingAmericanWar2025",
+      "creators": [
+        {
+          "firstName": "Laicie",
+          "lastName": "Heeley",
+          "creatorType": "interviewer"
+        },
+        {
+          "firstName": "David",
+          "lastName": "Cortright",
+          "creatorType": "interviewee"
+        },
+        {
+          "firstName": "Larry",
+          "lastName": "Frank",
+          "creatorType": "interviewee"
+        },
+        {
+          "firstName": "Nathan",
+          "lastName": "Kim",
+          "creatorType": "interviewee"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2026-10-03T18:49:37Z",
+      "dateModified": "2026-10-03T18:49:37Z",
+      "uri": "http://zotero.org/users/11405897/items/XQ9W4Q48",
+      "itemID": 16126,
+      "attachments": [],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "XQ9W4Q48",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/XQ9W4Q48"
+    },
+    {
+      "key": "NEGN2AZ4",
+      "version": 21897,
+      "itemType": "interview",
+      "title": "The Hum: Everybody should be filing FOIAs",
+      "abstractNote": "University of Michigan PhD student Nathan Kim talks about how he and other students discovered that their university’s proposed AI data center was being built to make weapons of war, how they’re fighting back, and the overlaps with his research on...",
+      "date": "2026-09-22",
+      "language": "en",
+      "libraryCatalog": "www.buzzsprout.com",
+      "url": "https://www.buzzsprout.com/2614473/episodes/19839587-everybody-should-be-filing-foias",
+      "accessDate": "2026-10-03T18:49:59Z",
+      "publisher": "Rowhome Productions",
+      "citationKey": "EverybodyShouldBe2026",
+      "creators": [
+        {
+          "firstName": "Saul",
+          "lastName": "Levin",
+          "creatorType": "interviewer"
+        },
+        {
+          "firstName": "Nathan",
+          "lastName": "Kim",
+          "creatorType": "interviewee"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2026-10-03T18:49:59Z",
+      "dateModified": "2026-10-03T18:53:05Z",
+      "uri": "http://zotero.org/users/11405897/items/NEGN2AZ4",
+      "itemID": 16127,
+      "attachments": [
+        {
+          "itemType": "attachment",
+          "title": "Snapshot",
+          "url": "https://www.buzzsprout.com/2614473/episodes/19839587-everybody-should-be-filing-foias",
+          "tags": [],
+          "relations": {},
+          "dateAdded": "2026-10-03T18:50:04Z",
+          "dateModified": "2026-10-03T18:50:04Z",
+          "uri": "http://zotero.org/users/11405897/items/HFJPU5F6",
+          "path": "/home/nathan/Zotero/storage/HFJPU5F6/19839587-everybody-should-be-filing-foias.html",
+          "select": "zotero://select/library/items/HFJPU5F6"
+        }
+      ],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "NEGN2AZ4",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/NEGN2AZ4"
+    },
+    {
+      "key": "BYQ6ILLS",
+      "version": 21864,
+      "itemType": "presentation",
+      "title": "Money and Power in Social Work & Social Sciences Research",
+      "date": "October 3, 2025",
+      "url": "https://apps.ssw.umich.edu/rsvp-request/index.php?id=W1064&page=register",
+      "extra": "Other",
+      "place": "University of Michigan",
+      "citationKey": "friedlineMoneyPowerSocial2025",
+      "meetingName": "Virtual Webinar",
+      "creators": [
+        {
+          "firstName": "Terri",
+          "lastName": "Friedline",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "Tawana",
+          "lastName": "Petty",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "So'Phelia",
+          "lastName": "Morrow",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "Nathan",
+          "lastName": "Kim",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "William",
+          "lastName": "Frey",
+          "creatorType": "presenter"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2025-10-10T16:47:04Z",
+      "dateModified": "2026-02-17T13:00:01Z",
+      "uri": "http://zotero.org/users/11405897/items/BYQ6ILLS",
+      "itemID": 13252,
+      "attachments": [],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "BYQ6ILLS",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/BYQ6ILLS"
+    },
+    {
+      "key": "DG5FNASB",
+      "version": 21864,
+      "itemType": "presentation",
+      "title": "The AI Workers' Inquiry",
+      "date": "June 2025",
+      "url": "https://programs.sigchi.org/facct/2025/program/content/198130",
+      "extra": "Workshop",
+      "place": "Athens, Greece",
+      "citationKey": "hannaAIWorkersInquiry2025",
+      "meetingName": "The 2025 ACM Conference on Fairness, Accountability, and Transparency",
+      "creators": [
+        {
+          "firstName": "Alex",
+          "lastName": "Hanna",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "Clarissa",
+          "lastName": "Redwine",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "Linda",
+          "lastName": "Huber",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "Nathan",
+          "lastName": "Kim",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "Cella",
+          "lastName": "Sum",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "JS",
+          "lastName": "Tan",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "Justine",
+          "lastName": "Zhang",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "Gena",
+          "lastName": "Kim",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "Sophie",
+          "lastName": "Song",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "Shreya",
+          "lastName": "Chowdhary",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "Bria",
+          "lastName": "Massey",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "Francesca",
+          "lastName": "Lameiro",
+          "creatorType": "presenter"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2025-07-14T20:28:50Z",
+      "dateModified": "2026-02-17T12:59:06Z",
+      "uri": "http://zotero.org/users/11405897/items/DG5FNASB",
+      "itemID": 10491,
+      "attachments": [],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "DG5FNASB",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/DG5FNASB"
+    },
+    {
+      "key": "JX6EF8IK",
+      "version": 21874,
+      "itemType": "presentation",
+      "title": "AI and the Cloud Economy",
+      "date": "October 30, 2025",
+      "accessDate": "2025-10-13T13:28:56Z",
+      "extra": "Other",
+      "place": "Ann Arbor, Michigan",
+      "citationKey": "kimAICloudEconomy2025",
+      "meetingName": "\"Understanding AI: Concepts, Ethics, and Societal Impacts\" course (invited guest lecture) led by Ben Green",
+      "creators": [
+        {
+          "firstName": "Nathan",
+          "lastName": "Kim",
+          "creatorType": "presenter"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2025-12-18T16:02:50Z",
+      "dateModified": "2026-06-04T23:10:55Z",
+      "uri": "http://zotero.org/users/11405897/items/JX6EF8IK",
+      "itemID": 13762,
+      "attachments": [],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "JX6EF8IK",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/JX6EF8IK"
+    },
+    {
+      "key": "2M7ZGTKB",
+      "version": 21884,
+      "itemType": "presentation",
+      "title": "The UM-LANL data center and transformations in US empire",
+      "date": "June 30, 2026",
+      "accessDate": "2025-10-13T13:28:56Z",
+      "extra": "Other",
+      "place": "Ann Arbor, Michigan",
+      "citationKey": "kimAICloudEconomy2025a",
+      "meetingName": "\"Critical Studies of 'Artificial Intelligence'\" course (invited guest lecture) led by William Frey",
+      "creators": [
+        {
+          "firstName": "Nathan",
+          "lastName": "Kim",
+          "creatorType": "presenter"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2026-07-29T18:48:23Z",
+      "dateModified": "2026-07-29T18:58:16Z",
+      "uri": "http://zotero.org/users/11405897/items/2M7ZGTKB",
+      "itemID": 15437,
+      "attachments": [],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "2M7ZGTKB",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/2M7ZGTKB"
+    },
+    {
+      "key": "FAFJ3VJ6",
+      "version": 21864,
+      "itemType": "newspaperArticle",
+      "title": "‘Big Cloud’ is Building Power via Pervasive Investments",
+      "abstractNote": "Dependence on Big Cloud is not just technical or infrastructural: it is also financial, write Nathan Kim and David Gray Widder.",
+      "date": "2025-08-12T12:56:34.701Z",
+      "language": "en",
+      "url": "https://techpolicy.press/big-cloud-is-building-power-via-pervasive-investments",
+      "accessDate": "2025-08-12T18:22:14Z",
+      "publicationTitle": "Tech Policy Press",
+      "citationKey": "kimBigCloudBuilding2025",
+      "creators": [
+        {
+          "firstName": "Nathan",
+          "lastName": "Kim",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "David",
+          "lastName": "Widder",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2025-08-12T18:22:14Z",
+      "dateModified": "2026-02-17T12:59:27Z",
+      "uri": "http://zotero.org/users/11405897/items/FAFJ3VJ6",
+      "itemID": 11831,
+      "attachments": [
+        {
+          "itemType": "attachment",
+          "title": "Snapshot",
+          "url": "https://www.techpolicy.press/big-cloud-is-building-power-via-pervasive-investments/",
+          "tags": [],
+          "relations": {},
+          "dateAdded": "2025-08-12T18:22:28Z",
+          "dateModified": "2025-08-12T18:22:28Z",
+          "uri": "http://zotero.org/users/11405897/items/RCTTC96C",
+          "path": "/home/nathan/Zotero/storage/RCTTC96C/big-cloud-is-building-power-via-pervasive-investments.html",
+          "select": "zotero://select/library/items/RCTTC96C"
+        }
+      ],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "FAFJ3VJ6",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/FAFJ3VJ6"
+    },
+    {
+      "key": "K2T8XIHY",
+      "version": 21874,
+      "itemType": "presentation",
+      "title": "Building for the Revolution: Participatory Research through Class Struggle Design",
+      "date": "September 7, 2025",
+      "url": "https://www.xcdsystem.com/4sonline/program/b51ICpL/index.cfm?pgid=128&sid=3091&abid=13172",
+      "accessDate": "2025-10-13T13:28:56Z",
+      "place": "Seattle, WA",
+      "citationKey": "kimBuildingRevolutionParticipatory2025",
+      "meetingName": "Annual Meeting of the Society for the Social Studies of Science",
+      "creators": [
+        {
+          "firstName": "Gena",
+          "lastName": "Kim",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "Nathan",
+          "lastName": "Kim",
+          "creatorType": "presenter"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2025-10-24T19:37:46Z",
+      "dateModified": "2026-02-17T13:00:02Z",
+      "uri": "http://zotero.org/users/11405897/items/K2T8XIHY",
+      "itemID": 13393,
+      "attachments": [],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "K2T8XIHY",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/K2T8XIHY"
+    },
+    {
+      "key": "F4THGF5D",
+      "version": 21864,
+      "itemType": "presentation",
+      "title": "Charting a path forward for post-growth HCI through class struggle design",
+      "date": "April 2025",
+      "url": "https://drive.google.com/file/d/1GaBoadlhvelY2UjAm_e8OG3kkoBP44iQ/view?usp=sharing",
+      "extra": "Workshop",
+      "place": "Yokohama, Japan",
+      "citationKey": "kimChartingPathForward2025",
+      "meetingName": "\"Advancing Post-growth HCI.\" Workshop at the ACM Conference on Human Factors in Computing Systems",
+      "creators": [
+        {
+          "firstName": "Nathan",
+          "lastName": "Kim",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "Gena",
+          "lastName": "Kim",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "Shreya",
+          "lastName": "Chowdhary",
+          "creatorType": "presenter"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2025-07-14T20:39:22Z",
+      "dateModified": "2026-02-17T12:59:06Z",
+      "uri": "http://zotero.org/users/11405897/items/F4THGF5D",
+      "itemID": 10492,
+      "attachments": [],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "F4THGF5D",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/F4THGF5D"
+    },
+    {
+      "key": "34B6N7YD",
+      "version": 21884,
+      "itemType": "presentation",
+      "title": "Toward an Immanent Critique of Human-Computer Interaction",
+      "date": "April 2026",
+      "extra": "Workshop",
+      "place": "Barcelona, Spain",
+      "citationKey": "kimChartingPathForward2025a",
+      "meetingName": "\"CHIdeology\" Workshop at the ACM Conference on Human Factors in Computing Systems",
+      "creators": [
+        {
+          "firstName": "Francesca",
+          "lastName": "Lameiro",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "Nathan",
+          "lastName": "Kim",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "Gena",
+          "lastName": "Kim",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "Kevin",
+          "lastName": "Zheng",
+          "creatorType": "presenter"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2026-08-26T15:49:17Z",
+      "dateModified": "2026-08-26T15:50:50Z",
+      "uri": "http://zotero.org/users/11405897/items/34B6N7YD",
+      "itemID": 15710,
+      "attachments": [],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "34B6N7YD",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/34B6N7YD"
+    },
+    {
+      "key": "A4LLISDI",
+      "version": 21854,
+      "itemType": "presentation",
+      "title": "Connecticut Redistricting with Geographers: Mapping for Equity and Inclusion",
+      "date": "2022-09",
+      "url": "https://my.lwv.org/connecticut/event/connecticut-redistricting-geographers-mapping-equity-and-inclusion",
+      "extra": "Other",
+      "citationKey": "kimConnecticutRedistrictingGeographers2022",
+      "meetingName": "Workshop of the Association of American Geographers and the League of Women Voters",
+      "creators": [
+        {
+          "firstName": "Nathan",
+          "lastName": "Kim",
+          "creatorType": "presenter"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2024-03-01T03:30:46Z",
+      "dateModified": "2026-02-17T00:14:56Z",
+      "uri": "http://zotero.org/users/11405897/items/A4LLISDI",
+      "itemID": 6406,
+      "attachments": [],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "A4LLISDI",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/A4LLISDI"
+    },
+    {
+      "key": "CJ8TBR82",
+      "version": 21864,
+      "itemType": "presentation",
+      "title": "Containers, Consolidation, Capital: A History of the Logistics of Software",
+      "date": "March 8, 2024",
+      "url": "https://intheburrow2024.site",
+      "place": "University of California, Irvine",
+      "citationKey": "kimContainersConsolidationCapital2024",
+      "meetingName": "In the Burrow: Critical Approaches to Infrastructure",
+      "creators": [
+        {
+          "firstName": "Nathan",
+          "lastName": "Kim",
+          "creatorType": "presenter"
+        }
+      ],
+      "tags": [],
+      "relations": {
+        "dc:replaces": [
+          "http://zotero.org/users/11405897/items/NU9YL958"
+        ]
+      },
+      "dateAdded": "2024-03-11T17:17:50Z",
+      "dateModified": "2026-06-14T19:36:04Z",
+      "uri": "http://zotero.org/users/11405897/items/CJ8TBR82",
+      "itemID": 6573,
+      "attachments": [],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "CJ8TBR82",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/CJ8TBR82"
+    },
+    {
+      "key": "DHI4FFNC",
+      "version": 21915,
+      "itemType": "presentation",
+      "title": "Mapping Landlords and Their Technologies for Housing Justice and Rent Abolition",
+      "date": "July 5, 2025",
+      "url": "https://sched.co/254aa",
+      "accessDate": "2025-10-13T13:28:56Z",
+      "place": "Chicago, IL",
+      "citationKey": "kimDataCentersClass2026",
+      "meetingName": "Socialism Conference",
+      "creators": [
+        {
+          "firstName": "Nathan",
+          "lastName": "Kim",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "Ben",
+          "lastName": "Bartu",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "Erin",
+          "lastName": "McElroy",
+          "creatorType": "presenter"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2026-05-26T16:54:20Z",
+      "dateModified": "2026-05-26T16:57:26Z",
+      "uri": "http://zotero.org/users/11405897/items/DHI4FFNC",
+      "itemID": 15039,
+      "attachments": [],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "DHI4FFNC",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/DHI4FFNC"
+    },
+    {
+      "key": "UTE7RCM5",
+      "version": 21918,
+      "itemType": "presentation",
+      "title": "Data centers, class struggle, and circulation prime",
+      "date": "March 18, 2026",
+      "url": "https://aag-meetings.secure-platform.com/aag2026/solicitations/93/sessiongallery/25831",
+      "accessDate": "2025-10-13T13:28:56Z",
+      "place": "San Francisco, CA",
+      "citationKey": "kimDataCentersClass2026a",
+      "meetingName": "Annual Meeting of the American Association of Geographers",
+      "creators": [
+        {
+          "firstName": "Nathan",
+          "lastName": "Kim",
+          "creatorType": "presenter"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2026-05-26T16:54:27Z",
+      "dateModified": "2026-05-26T16:54:27Z",
+      "uri": "http://zotero.org/users/11405897/items/UTE7RCM5",
+      "itemID": 15040,
+      "attachments": [],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "UTE7RCM5",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/UTE7RCM5"
+    },
+    {
+      "key": "V8TVQ4BA",
+      "version": 21915,
+      "itemType": "presentation",
+      "title": "Data Centers, Class Politics, and Socialist Strategy",
+      "date": "September 6, 2026",
+      "url": "https://socialism2026.sched.com/event/2Riit/data-centers-class-politics-and-socialist-strategy?iframe=no",
+      "accessDate": "2025-10-13T13:28:56Z",
+      "place": "Chicago, IL",
+      "citationKey": "kimDataCentersClass2026b",
+      "meetingName": "Socialism Conference",
+      "creators": [
+        {
+          "firstName": "Nathan",
+          "lastName": "Kim",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "Austin",
+          "lastName": "Kral",
+          "creatorType": "presenter"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2026-10-02T15:46:29Z",
+      "dateModified": "2026-10-02T15:55:28Z",
+      "uri": "http://zotero.org/users/11405897/items/V8TVQ4BA",
+      "itemID": 16123,
+      "attachments": [],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "V8TVQ4BA",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/V8TVQ4BA"
+    },
+    {
+      "key": "PKL2N26V",
+      "version": 21915,
+      "itemType": "presentation",
+      "title": "Neoliberalism, Fascism, Feudalism...or Socialism? What Lies Ahead",
+      "date": "September 7, 2026",
+      "url": "https://socialism2026.sched.com/event/2RihR",
+      "accessDate": "2025-10-13T13:28:56Z",
+      "place": "Chicago, IL",
+      "citationKey": "kimDataCentersClass2026c",
+      "meetingName": "Socialism Conference",
+      "creators": [
+        {
+          "firstName": "Nathan",
+          "lastName": "Kim",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "Jasper",
+          "lastName": "Bernes",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "Hagen",
+          "lastName": "Blix",
+          "creatorType": "presenter"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2026-10-02T15:47:52Z",
+      "dateModified": "2026-10-02T15:55:25Z",
+      "uri": "http://zotero.org/users/11405897/items/PKL2N26V",
+      "itemID": 16124,
+      "attachments": [],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "PKL2N26V",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/PKL2N26V"
+    },
+    {
+      "key": "S47PH9AJ",
+      "version": 21864,
+      "itemType": "manuscript",
+      "title": "Data for the middle formation: The politics and practices of data gathering in the Palestine solidarity movement",
+      "extra": "In review",
+      "citationKey": "kimDataMiddleFormation",
+      "creators": [
+        {
+          "firstName": "Nathan",
+          "lastName": "Kim",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2025-07-26T20:24:11Z",
+      "dateModified": "2026-03-01T01:24:58Z",
+      "uri": "http://zotero.org/users/11405897/items/S47PH9AJ",
+      "itemID": 10681,
+      "attachments": [],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "S47PH9AJ",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/S47PH9AJ"
+    },
+    {
+      "key": "WF3CQCIR",
+      "version": 21854,
+      "itemType": "presentation",
+      "title": "Evaluating Racial and Socioeconomic Divides During COVID-19",
+      "date": "2021-05",
+      "citationKey": "kimEvaluatingRacialSocioeconomic2021",
+      "meetingName": "Annual Meeting of the Population Association of America",
+      "creators": [
+        {
+          "firstName": "Nathan",
+          "lastName": "Kim",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "Emma",
+          "lastName": "Zang",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "Christina",
+          "lastName": "Pao",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "Jessica",
+          "lastName": "West",
+          "creatorType": "presenter"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2024-03-01T03:30:46Z",
+      "dateModified": "2026-08-26T19:57:54Z",
+      "uri": "http://zotero.org/users/11405897/items/WF3CQCIR",
+      "itemID": 6407,
+      "attachments": [],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "WF3CQCIR",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/WF3CQCIR"
+    },
+    {
+      "key": "NJ9TI7LS",
+      "version": 21874,
+      "itemType": "journalArticle",
+      "title": "Hyperscalers as logistical regimes: software containers and the circulation of cloud capital",
+      "abstractNote": "This article analyzes the software container as a device central to the rise of cloud capitalism. Firms like Google pioneered software containers internally as infrastructure for their own production, then externalized them as open-source standards, accelerating and modularizing the processes by which developers build, deploy, and circulate software to end users. Engineers and entrepreneurs themselves have consistently invoked the shipping container – through imagery, rhetoric, and technical strategy – to frame software containers as portable, modular units promising frictionless scalability. I read against these invocations to reinterpret the software container as part of a broader logistical regime, one that governs circulation and exchange alongside the infrastructural power of data centers and networks. Through a history of container technologies in software from Unix ‘jails’ and Sun’s Solaris Zones to Google’s Borg and the emergence of Docker and Kubernetes, I show how this rhetoric and standardization helped legitimate the expansion of hyperscalers and consolidate new forms of dependency. By bridging critical scholarship on infrastructure with critical logistics, I then argue that hyperscalers’ dominance rests not only on physical infrastructures but also on abstractions like software containers that standardize and format software as a commodity for global circulation. This logistical perspective reframes openness, dependency, and control in the cloud as problems of circulation, and opens new avenues for studying how logistical forms extend capitalist power into computational infrastructures.",
+      "date": "2026-05-26",
+      "shortTitle": "Hyperscalers as logistical regimes",
+      "libraryCatalog": "Taylor and Francis+NEJM",
+      "url": "https://doi.org/10.1080/1369118X.2026.2678361",
+      "accessDate": "2026-05-26T16:54:11Z",
+      "extra": "_eprint: https://doi.org/10.1080/1369118X.2026.2678361",
+      "volume": "0",
+      "publisher": "Routledge",
+      "pages": "1-16",
+      "publicationTitle": "Information, Communication & Society",
+      "DOI": "10.1080/1369118X.2026.2678361",
+      "issue": "0",
+      "ISSN": "1369-118X",
+      "citationKey": "kimHyperscalersLogisticalRegimes2026",
+      "creators": [
+        {
+          "firstName": "Nathan",
+          "lastName": "Kim",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [
+        {
+          "tag": "circulation",
+          "type": 1
+        },
+        {
+          "tag": "Cloud",
+          "type": 1
+        },
+        {
+          "tag": "infrastructure",
+          "type": 1
+        },
+        {
+          "tag": "scale",
+          "type": 1
+        }
+      ],
+      "relations": {},
+      "dateAdded": "2026-05-26T16:54:11Z",
+      "dateModified": "2026-05-26T16:54:11Z",
+      "uri": "http://zotero.org/users/11405897/items/NJ9TI7LS",
+      "itemID": 15038,
+      "attachments": [
+        {
+          "itemType": "attachment",
+          "title": "Full Text PDF",
+          "tags": [],
+          "relations": {},
+          "dateAdded": "2026-08-07T16:21:47Z",
+          "dateModified": "2026-08-07T16:21:47Z",
+          "uri": "http://zotero.org/users/11405897/items/HU9CAU5G",
+          "path": "/home/nathan/Zotero/storage/HU9CAU5G/NJ9TI7LS.pdf",
+          "select": "zotero://select/library/items/HU9CAU5G"
+        },
+        {
+          "itemType": "attachment",
+          "title": "Full Text PDF",
+          "tags": [],
+          "relations": {},
+          "dateAdded": "2026-08-07T16:21:47Z",
+          "dateModified": "2026-08-07T16:21:47Z",
+          "uri": "http://zotero.org/users/11405897/items/T3PZZR7H",
+          "path": "/home/nathan/Zotero/storage/T3PZZR7H/NJ9TI7LS-2.pdf",
+          "select": "zotero://select/library/items/T3PZZR7H"
+        }
+      ],
+      "notes": [],
+      "autoJournalAbbreviation": "Inf. Commun. Soc.",
+      "itemKey": "NJ9TI7LS",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/NJ9TI7LS"
+    },
+    {
+      "key": "5ITNCT88",
+      "version": 21854,
+      "itemType": "presentation",
+      "title": "The IMF and Global Dispossession",
+      "date": "2022-05",
+      "place": "New Haven, CT",
+      "citationKey": "kimIMFGlobalDispossession2022",
+      "meetingName": "Connecticut Ethnic Studies Symposium",
+      "creators": [
+        {
+          "firstName": "Nathan",
+          "lastName": "Kim",
+          "creatorType": "presenter"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2024-03-01T03:30:46Z",
+      "dateModified": "2026-02-17T13:00:01Z",
+      "uri": "http://zotero.org/users/11405897/items/5ITNCT88",
+      "itemID": 6408,
+      "attachments": [],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "5ITNCT88",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/5ITNCT88"
+    },
+    {
+      "key": "QS42Q55Z",
+      "version": 21854,
+      "itemType": "presentation",
+      "title": "Intergenerational Upward Mobility and Racial Disparities in Mortality Among Young Adults",
+      "date": "2021-05",
+      "citationKey": "kimIntergenerationalUpwardMobility2021",
+      "meetingName": "Annual Meeting of the Population Association of America",
+      "creators": [
+        {
+          "firstName": "Nathan",
+          "lastName": "Kim",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "Emma",
+          "lastName": "Zang",
+          "creatorType": "presenter"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2024-03-01T03:30:46Z",
+      "dateModified": "2026-08-26T19:58:05Z",
+      "uri": "http://zotero.org/users/11405897/items/QS42Q55Z",
+      "itemID": 6409,
+      "attachments": [],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "QS42Q55Z",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/QS42Q55Z"
+    },
+    {
+      "key": "FNCU3C39",
+      "version": 21874,
+      "itemType": "newspaperArticle",
+      "title": "Michigan Offers Handouts for Data Centers Promising Jobs. Will Those Jobs Come?",
+      "date": "December 10, 2025",
+      "url": "https://www.techpolicy.press/michigan-offers-handouts-for-data-centers-promising-jobs-will-those-jobs-come/",
+      "accessDate": "2025-12-10T21:09:29Z",
+      "publicationTitle": "Tech Policy Press",
+      "citationKey": "kimMichiganOffersHandouts2025",
+      "creators": [
+        {
+          "firstName": "Nathan",
+          "lastName": "Kim",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "Ira",
+          "lastName": "Anwar",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2025-12-10T21:09:29Z",
+      "dateModified": "2026-02-17T13:00:10Z",
+      "uri": "http://zotero.org/users/11405897/items/FNCU3C39",
+      "itemID": 13731,
+      "attachments": [
+        {
+          "itemType": "attachment",
+          "title": "Michigan Offers Handouts for Data Centers Promising Jobs. Will Those Jobs Come? | TechPolicy.Press",
+          "url": "https://www.techpolicy.press/michigan-offers-handouts-for-data-centers-promising-jobs-will-those-jobs-come/",
+          "tags": [],
+          "relations": {},
+          "dateAdded": "2025-12-10T21:09:37Z",
+          "dateModified": "2025-12-10T21:09:37Z",
+          "uri": "http://zotero.org/users/11405897/items/YDJ9E8NF",
+          "path": "/home/nathan/Zotero/storage/YDJ9E8NF/michigan-offers-handouts-for-data-centers-promising-jobs-will-those-jobs-come.html",
+          "select": "zotero://select/library/items/YDJ9E8NF"
+        }
+      ],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "FNCU3C39",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/FNCU3C39"
+    },
+    {
+      "key": "8AAR7SXQ",
+      "version": 21916,
+      "itemType": "presentation",
+      "title": "From Exploitation to Replacement? Workers in the New Political Economy of AI",
+      "date": "September 6, 2026",
+      "url": "https://socialism2026.sched.com/event/2RiiD/from-exploitation-to-replacement-workers-in-the-new-political-economy-of-ai?iframe=no&w=100%&sidebar=yes&bg=no",
+      "accessDate": "2025-10-13T13:28:56Z",
+      "place": "Chicago, IL",
+      "citationKey": "kimNeoliberalismFascismFeudalismor2026",
+      "meetingName": "Socialism Conference",
+      "creators": [
+        {
+          "firstName": "Alex",
+          "lastName": "Hanna",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "Nathan",
+          "lastName": "Kim",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "Thomas",
+          "lastName": "Mariadson",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "Chika",
+          "lastName": "Okoye",
+          "creatorType": "presenter"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2026-10-02T15:48:41Z",
+      "dateModified": "2026-10-02T15:55:22Z",
+      "uri": "http://zotero.org/users/11405897/items/8AAR7SXQ",
+      "itemID": 16125,
+      "attachments": [],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "8AAR7SXQ",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/8AAR7SXQ"
+    },
+    {
+      "key": "9L8PVVI4",
+      "version": 21884,
+      "itemType": "presentation",
+      "title": "Silicon Valley and the Security State, 1999–2005",
+      "date": "April 26, 2026",
+      "url": "https://www.computing.capital/conference",
+      "accessDate": "2025-10-13T13:28:56Z",
+      "place": "Ann Arbor, Michigan",
+      "citationKey": "kimSiliconValleySecurity2026",
+      "meetingName": "The People's Political Economy Conference",
+      "sessionTitle": "Contemporary Capitalism Theory",
+      "creators": [
+        {
+          "firstName": "Nathan",
+          "lastName": "Kim",
+          "creatorType": "presenter"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2026-05-26T16:55:53Z",
+      "dateModified": "2026-05-26T16:56:53Z",
+      "uri": "http://zotero.org/users/11405897/items/9L8PVVI4",
+      "itemID": 15041,
+      "attachments": [],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "9L8PVVI4",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/9L8PVVI4"
+    },
+    {
+      "key": "6I548G7H",
+      "version": 21854,
+      "itemType": "presentation",
+      "title": "Solidarity, data infrastructures, and anti-eviction politics",
+      "date": "November 2, 2023",
+      "citationKey": "kimSolidarityDataInfrastructures2023",
+      "meetingName": "Annual Meeting of the American Studies Association, 2023",
+      "creators": [
+        {
+          "firstName": "Nathan",
+          "lastName": "Kim",
+          "creatorType": "presenter"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2024-03-02T23:06:13Z",
+      "dateModified": "2026-02-17T00:14:55Z",
+      "uri": "http://zotero.org/users/11405897/items/6I548G7H",
+      "itemID": 6441,
+      "attachments": [],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "6I548G7H",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/6I548G7H"
+    },
+    {
+      "key": "QC26YZMF",
+      "version": 21874,
+      "itemType": "newspaperArticle",
+      "title": "UMich says the Ypsi Data Center won’t “manufacture nuclear weapons.” What does Los Alamos think?",
+      "abstractNote": "<div> In an AI gold rush, those selling the proverbial pickaxes are surest to win: cloud companies provide scalable managed computational resources as a subscr",
+      "date": "October 8, 2025",
+      "language": "en",
+      "url": "https://www.michigandaily.com/opinion/umich-says-the-ypsi-data-center-wont-manufacture-nuclear-weapons-what-does-los-alamos-think/",
+      "accessDate": "2025-08-05T21:29:30Z",
+      "place": "Ann Arbor, Michigan",
+      "publicationTitle": "The Michigan Daily",
+      "citationKey": "kimUMichSaysYpsi2025",
+      "creators": [
+        {
+          "firstName": "Nathan",
+          "lastName": "Kim",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [
+        {
+          "tag": "antitrust",
+          "type": 1
+        },
+        {
+          "tag": "artificial intelligence",
+          "type": 1
+        },
+        {
+          "tag": "big cloud",
+          "type": 1
+        },
+        {
+          "tag": "big tech",
+          "type": 1
+        },
+        {
+          "tag": "cloud computing",
+          "type": 1
+        },
+        {
+          "tag": "competition",
+          "type": 1
+        },
+        {
+          "tag": "competition law",
+          "type": 1
+        },
+        {
+          "tag": "Crunchbase",
+          "type": 1
+        }
+      ],
+      "relations": {
+        "dc:replaces": [
+          "http://zotero.org/users/11405897/items/I9Y9GCV6"
+        ]
+      },
+      "dateAdded": "2025-10-10T16:49:23Z",
+      "dateModified": "2026-06-14T19:36:29Z",
+      "uri": "http://zotero.org/users/11405897/items/QC26YZMF",
+      "itemID": 13253,
+      "attachments": [
+        {
+          "itemType": "attachment",
+          "title": "Snapshot",
+          "url": "https://www.michigandaily.com/opinion/op-eds/umich-says-the-ypsi-data-center-wont-manufacture-nuclear-weapons-what-does-los-alamos-think/",
+          "tags": [],
+          "relations": {},
+          "dateAdded": "2026-03-14T03:16:24Z",
+          "dateModified": "2026-06-14T19:36:29Z",
+          "uri": "http://zotero.org/users/11405897/items/6KG35PK2",
+          "path": "/home/nathan/Zotero/storage/6KG35PK2/umich-says-the-ypsi-data-center-wont-manufacture-nuclear-weapons-what-does-los-alamos-think.html",
+          "select": "zotero://select/library/items/6KG35PK2"
+        }
+      ],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "QC26YZMF",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/QC26YZMF"
+    },
+    {
+      "key": "HDNVRHYL",
+      "version": 21874,
+      "itemType": "presentation",
+      "title": "Venture Capital Never Ends: Imperial Ambitions in Silicon Valley Finance, 2000-2012",
+      "date": "September 5, 2025",
+      "url": "https://www.xcdsystem.com/4sonline/program/b51ICpL/index.cfm?pgid=128&sid=2038&abid=13257",
+      "accessDate": "2025-10-13T13:28:56Z",
+      "place": "Seattle, WA",
+      "citationKey": "kimVentureCapitalNever2025",
+      "meetingName": "Annual Meeting of the Society for the Social Studies of Science",
+      "creators": [
+        {
+          "firstName": "Nathan",
+          "lastName": "Kim",
+          "creatorType": "presenter"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2025-10-13T13:28:56Z",
+      "dateModified": "2026-02-17T13:00:02Z",
+      "uri": "http://zotero.org/users/11405897/items/HDNVRHYL",
+      "itemID": 13276,
+      "attachments": [
+        {
+          "itemType": "attachment",
+          "title": "4S 2025 Seattle",
+          "url": "https://www.xcdsystem.com/4sonline/program/b51ICpL/index.cfm?pgid=128&sid=2038&abid=13257",
+          "tags": [],
+          "relations": {},
+          "dateAdded": "2025-10-13T13:29:00Z",
+          "dateModified": "2025-10-13T13:29:00Z",
+          "uri": "http://zotero.org/users/11405897/items/42YFB3PV",
+          "path": "/home/nathan/Zotero/storage/42YFB3PV/index.html",
+          "select": "zotero://select/library/items/42YFB3PV"
+        }
+      ],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "HDNVRHYL",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/HDNVRHYL"
+    },
+    {
+      "key": "6GN5QFG3",
+      "version": 21854,
+      "itemType": "document",
+      "title": "The Yale Detour: An Alternative History Tour of Yale",
+      "date": "January 2023",
+      "url": "https://yale-detour.org",
+      "citationKey": "kimYaleDetourAlternative2022",
+      "creators": [
+        {
+          "firstName": "Nathan",
+          "lastName": "Kim",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "Janis",
+          "lastName": "Jin",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "Esul",
+          "lastName": "Burton",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "Collin",
+          "lastName": "Bentley",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "Amy",
+          "lastName": "Kim",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "Jose",
+          "lastName": "Garcia",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "Dora",
+          "lastName": "Guo",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "Resty",
+          "lastName": "Fufunan",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2024-03-01T03:30:46Z",
+      "dateModified": "2024-03-03T04:46:59Z",
+      "uri": "http://zotero.org/users/11405897/items/6GN5QFG3",
+      "itemID": 6412,
+      "attachments": [],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "6GN5QFG3",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/6GN5QFG3"
+    },
+    {
+      "key": "HE44QYZL",
+      "version": 21884,
+      "itemType": "presentation",
+      "title": "If AI is everywhere, then we resist everywhere",
+      "date": "October 2025",
+      "extra": "Workshop",
+      "place": "Barcelona, Spain",
+      "citationKey": "lameiroImmanentCritiqueHumanComputer2026",
+      "meetingName": "\"CHIdeology\" Workshop at the ACM Conference on Human Factors in Computing Systems",
+      "creators": [
+        {
+          "firstName": "Ali",
+          "lastName": "Alkhatib",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "Ira",
+          "lastName": "Anwar",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "Shreya",
+          "lastName": "Chowdhary",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "Gena",
+          "lastName": "Kim",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "Nathan",
+          "lastName": "Kim",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "Justine",
+          "lastName": "Zhang",
+          "creatorType": "presenter"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2026-08-26T16:28:52Z",
+      "dateModified": "2026-08-26T16:30:25Z",
+      "uri": "http://zotero.org/users/11405897/items/HE44QYZL",
+      "itemID": 15711,
+      "attachments": [],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "HE44QYZL",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/HE44QYZL"
+    },
+    {
+      "key": "45IM9D58",
+      "version": 21785,
+      "itemType": "webpage",
+      "title": "The real winner of the AI boom so far? Big Cloud",
+      "abstractNote": "How Microsoft, Google, and Amazon are concentrating even more power in the age of AI.",
+      "date": "August 15, 2025",
+      "language": "en",
+      "shortTitle": "The real winner of the AI boom so far?",
+      "url": "https://www.bloodinthemachine.com/p/the-ai-boom-is-fueling-a-land-grab",
+      "accessDate": "2026-06-04T23:23:33Z",
+      "extra": "Political economy research",
+      "citationKey": "merchantRealWinnerAI",
+      "websiteTitle": "Blood in the Machine",
+      "creators": [
+        {
+          "firstName": "Brian",
+          "lastName": "Merchant",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2026-06-04T23:23:33Z",
+      "dateModified": "2026-06-05T03:49:32Z",
+      "uri": "http://zotero.org/users/11405897/items/45IM9D58",
+      "itemID": 15129,
+      "attachments": [
+        {
+          "itemType": "attachment",
+          "title": "Snapshot",
+          "url": "https://www.bloodinthemachine.com/p/the-ai-boom-is-fueling-a-land-grab",
+          "tags": [],
+          "relations": {},
+          "dateAdded": "2026-06-04T23:23:39Z",
+          "dateModified": "2026-06-04T23:23:39Z",
+          "uri": "http://zotero.org/users/11405897/items/6Q6QSSXF",
+          "path": "/home/nathan/Zotero/storage/6Q6QSSXF/the-ai-boom-is-fueling-a-land-grab.html",
+          "select": "zotero://select/library/items/6Q6QSSXF"
+        }
+      ],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "45IM9D58",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/45IM9D58"
+    },
+    {
+      "key": "MLYWLNZF",
+      "version": 21874,
+      "itemType": "journalArticle",
+      "title": "Surveillance, Spacing, Screaming and Scabbing: How Digital Technology Facilitates Union Busting",
+      "abstractNote": "Despite high approval ratings for unions and growing worker interest in organizing, employees in the United States still face significant barriers to securing collective bargaining agreements. A key factor is employer counter-organizing: efforts to suppress unionization through rule changes, retaliation, and disruption. Designing sociotechnical tools and strategies to resist these tactics requires a deeper understanding of the role computing technologies play in counter-organizing against unionization. In this paper, we examine three high-profile organizing effort--at Amazon, Starbucks, and Boston University--using publicly available sources to identify four recurring technological tactics: surveillance, spacing, screaming and scabbing. We analyze how these tactics operate across contexts, highlighting their digital dimensions and strategic deployment. We conclude with implications for organizing in digitally-mediated workplaces, directions for future research, and emergent forms of worker resistance.",
+      "date": "2026-03-11",
+      "shortTitle": "Surveillance, Spacing, Screaming and Scabbing",
+      "libraryCatalog": "arXiv.org",
+      "url": "http://arxiv.org/abs/2603.03130",
+      "accessDate": "2026-03-23T17:03:05Z",
+      "extra": "Accepted to CHI2026",
+      "publisher": "Association for Computing Machinery",
+      "publicationTitle": "Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems",
+      "DOI": "10.48550/arXiv.2603.03130",
+      "citationKey": "reiberSurveillanceSpacingScreaming2026",
+      "creators": [
+        {
+          "firstName": "Frederick",
+          "lastName": "Reiber",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "Nathan",
+          "lastName": "Kim",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "Allison",
+          "lastName": "McDonald",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "Dana",
+          "lastName": "Calacci",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [
+        {
+          "tag": "Computer Science - Human-Computer Interaction",
+          "type": 1
+        }
+      ],
+      "relations": {},
+      "dateAdded": "2026-03-23T17:03:05Z",
+      "dateModified": "2026-05-28T16:48:46Z",
+      "uri": "http://zotero.org/users/11405897/items/MLYWLNZF",
+      "itemID": 14651,
+      "attachments": [
+        {
+          "itemType": "attachment",
+          "title": "Preprint PDF",
+          "url": "http://arxiv.org/pdf/2603.03130v2",
+          "tags": [],
+          "relations": {},
+          "dateAdded": "2026-03-23T17:03:05Z",
+          "dateModified": "2026-03-23T17:03:05Z",
+          "uri": "http://zotero.org/users/11405897/items/X5VK4CRG",
+          "path": "/home/nathan/Zotero/storage/X5VK4CRG/Reiber et al. - 2026 - Surveillance, Spacing, Screaming and Scabbing How Digital Technology Facilitates Union Busting.pdf",
+          "select": "zotero://select/library/items/X5VK4CRG"
+        },
+        {
+          "itemType": "attachment",
+          "title": "Snapshot",
+          "url": "http://arxiv.org/abs/2603.03130",
+          "tags": [],
+          "relations": {},
+          "dateAdded": "2026-03-23T17:03:06Z",
+          "dateModified": "2026-03-23T17:03:06Z",
+          "uri": "http://zotero.org/users/11405897/items/4BEMRXWY",
+          "path": "/home/nathan/Zotero/storage/4BEMRXWY/2603.html",
+          "select": "zotero://select/library/items/4BEMRXWY"
+        }
+      ],
+      "notes": [
+        {
+          "key": "Z3YVR2IM",
+          "version": 18929,
+          "itemType": "note",
+          "parentItem": "MLYWLNZF",
+          "note": "Comment: To appear in CHI 2026",
+          "tags": [],
+          "relations": {},
+          "dateAdded": "2026-03-23T17:03:05Z",
+          "dateModified": "2026-03-23T17:03:05Z",
+          "uri": "http://zotero.org/users/11405897/items/Z3YVR2IM"
+        }
+      ],
+      "autoJournalAbbreviation": "Proc. 2026 CHI Conf. Hum. Factors Comput. Syst.",
+      "itemKey": "MLYWLNZF",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/MLYWLNZF"
+    },
+    {
+      "key": "UKE9JA7C",
+      "version": 21864,
+      "itemType": "journalArticle",
+      "title": "Embracing Training Dataset Bias for Automated Harmful Content Detection",
+      "date": "November 2025",
+      "publicationTitle": "Proceedings for the Association for Information Science and Technology",
+      "citationKey": "schopke-gonzalezEmbracingTrainingDataset2025",
+      "creators": [
+        {
+          "firstName": "Angela",
+          "lastName": "Schöpke-Gonzalez",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "Nathan",
+          "lastName": "Kim",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "Libby",
+          "lastName": "Hemphill",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2025-07-14T20:42:56Z",
+      "dateModified": "2026-02-17T12:59:53Z",
+      "uri": "http://zotero.org/users/11405897/items/UKE9JA7C",
+      "itemID": 10493,
+      "attachments": [],
+      "notes": [],
+      "autoJournalAbbreviation": "Proc. Assoc. Inf. Sci. Technol.",
+      "itemKey": "UKE9JA7C",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/UKE9JA7C"
+    },
+    {
+      "key": "9IADQEKU",
+      "version": 21874,
+      "itemType": "document",
+      "title": "Evictorbook: A tool for tenant organizers",
+      "date": "October 2022",
+      "url": "https://evictorbook.com",
+      "citationKey": "theanti-evictionmappingprojectEvictorbookToolTenant2022",
+      "creators": [
+        {
+          "name": "The Anti-Eviction Mapping Project",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2025-12-18T18:29:44Z",
+      "dateModified": "2026-02-17T13:00:11Z",
+      "uri": "http://zotero.org/users/11405897/items/9IADQEKU",
+      "itemID": 13766,
+      "attachments": [],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "9IADQEKU",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/9IADQEKU"
+    },
+    {
+      "key": "787T8WZW",
+      "version": 21854,
+      "itemType": "preprint",
+      "title": "Property Ownership and Consolidation in Concord, 2023",
+      "date": "September 9th, 2023",
+      "url": "https://antievictionmap.com/blog/2023/9/14/property-ownership-and-consolidation-in-concord-2023",
+      "citationKey": "theanti-evictionmappingprojectPropertyOwnershipConsolidation2023",
+      "creators": [
+        {
+          "name": "The Anti-Eviction Mapping Project",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2024-03-02T23:11:25Z",
+      "dateModified": "2026-02-17T13:00:11Z",
+      "uri": "http://zotero.org/users/11405897/items/787T8WZW",
+      "itemID": 6442,
+      "attachments": [],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "787T8WZW",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/787T8WZW"
+    },
+    {
+      "key": "KV4L63XZ",
+      "version": 21854,
+      "itemType": "document",
+      "title": "The Worst Evictors of San Francisco and Oakland",
+      "date": "October 31, 2023",
+      "url": "https://worstevictorsbayarea.org",
+      "citationKey": "theanti-evictionmappingprojectWorstEvictorsSan2023",
+      "creators": [
+        {
+          "name": "The Anti-Eviction Mapping Project",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2024-03-03T04:40:55Z",
+      "dateModified": "2026-02-16T16:59:27Z",
+      "uri": "http://zotero.org/users/11405897/items/KV4L63XZ",
+      "itemID": 6445,
+      "attachments": [],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "KV4L63XZ",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/KV4L63XZ"
+    },
+    {
+      "key": "3CJZ7B5F",
+      "version": 21874,
+      "itemType": "presentation",
+      "title": "Computing and the Environment",
+      "date": "November 5, 2025",
+      "accessDate": "2025-10-13T13:28:56Z",
+      "extra": "Other",
+      "place": "Ann Arbor, Michigan",
+      "citationKey": "udeagbalaComputingEnvironment2025",
+      "meetingName": "\"Critical AI\" course led by Kat Brewster (invited guest lecture)",
+      "creators": [
+        {
+          "firstName": "Nneka",
+          "lastName": "Udeagbala",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "Nathan",
+          "lastName": "Kim",
+          "creatorType": "presenter"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2025-12-18T16:06:00Z",
+      "dateModified": "2026-05-26T17:07:13Z",
+      "uri": "http://zotero.org/users/11405897/items/3CJZ7B5F",
+      "itemID": 13763,
+      "attachments": [],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "3CJZ7B5F",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/3CJZ7B5F"
+    },
+    {
+      "key": "4LCSMYBZ",
+      "version": 21864,
+      "itemType": "preprint",
+      "title": "How Big Cloud becomes Bigger: Scrutinizing Google, Microsoft, and Amazon's investments",
+      "abstractNote": "<div> In an AI gold rush, those selling the proverbial pickaxes are surest to win: cloud companies provide scalable managed computational resources as a subscr",
+      "date": "2025-07-31",
+      "language": "en",
+      "shortTitle": "How Big Cloud becomes Bigger",
+      "libraryCatalog": "papers.ssrn.com",
+      "url": "https://papers.ssrn.com/abstract=5377426",
+      "accessDate": "2025-08-05T21:29:30Z",
+      "place": "Rochester, NY",
+      "DOI": "10.2139/ssrn.5377426",
+      "genre": "SSRN Scholarly Paper",
+      "repository": "Social Science Research Network",
+      "archiveID": "5377426",
+      "citationKey": "widderHowBigCloud2025",
+      "creators": [
+        {
+          "firstName": "David Gray",
+          "lastName": "Widder",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "Nathan",
+          "lastName": "Kim",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [
+        {
+          "tag": "antitrust",
+          "type": 1
+        },
+        {
+          "tag": "artificial intelligence",
+          "type": 1
+        },
+        {
+          "tag": "big cloud",
+          "type": 1
+        },
+        {
+          "tag": "big tech",
+          "type": 1
+        },
+        {
+          "tag": "cloud computing",
+          "type": 1
+        },
+        {
+          "tag": "competition",
+          "type": 1
+        },
+        {
+          "tag": "competition law",
+          "type": 1
+        },
+        {
+          "tag": "Crunchbase",
+          "type": 1
+        }
+      ],
+      "relations": {
+        "dc:replaces": [
+          "http://zotero.org/users/11405897/items/SF7S8A2G"
+        ]
+      },
+      "dateAdded": "2025-08-05T21:29:30Z",
+      "dateModified": "2026-06-14T19:36:20Z",
+      "uri": "http://zotero.org/users/11405897/items/4LCSMYBZ",
+      "itemID": 10882,
+      "attachments": [
+        {
+          "itemType": "attachment",
+          "title": "Full Text PDF",
+          "url": "https://papers.ssrn.com/sol3/Delivery.cfm/5377426.pdf?abstractid=5377426&mirid=1",
+          "tags": [],
+          "relations": {
+            "dc:replaces": [
+              "http://zotero.org/users/11405897/items/IKINRRYE"
+            ]
+          },
+          "dateAdded": "2025-08-05T21:29:33Z",
+          "dateModified": "2026-06-14T19:36:20Z",
+          "uri": "http://zotero.org/users/11405897/items/XN5ZVRY8",
+          "path": "/home/nathan/Zotero/storage/XN5ZVRY8/Widder and Kim - 2025 - How Big Cloud becomes Bigger Scrutinizing Google, Microsoft, and Amazon's investments.pdf",
+          "select": "zotero://select/library/items/XN5ZVRY8"
+        }
+      ],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "4LCSMYBZ",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/4LCSMYBZ"
+    },
+    {
+      "key": "99JJAF4K",
+      "version": 21854,
+      "itemType": "journalArticle",
+      "title": "Intergenerational upward mobility and racial differences in mortality among young adults: Evidence from county-level analyses",
+      "abstractNote": "Inspired by the influential “deaths of despair” narrative, which emphasizes the role of worsening economic opportunity in driving the increasing mortality for non-Hispanic Whites in the recent decades, a rising number of studies have provided suggestive evidence that upward mobility levels across counties may partly explain variations in mortality rates. A gap in the literature is the lack of life-course studies examining the relationship between early-life upward mobility and later-life mortality across counties. Another gap is the lack of studies on how the relationship between upward mobility and mortality across counties varies across diverse sociodemographic populations. This study examines differences across race and sex in the relationship between early-life intergenerational upward mobility and early adulthood mortality at the county level. We use administrative data on upward mobility and vital statistics data on mortality across 3030 counties for those born between 1978 and 1983. We control for a variety of county-level socioeconomic variables in a model with fixed effects for state and year. Subgroup analyses by educational attainment and urban status were also performed for each race-sex combination. Results show strong negative relationships between early-life upward mobility and early adulthood mortality across racial-sex combinations, with a particularly greater magnitude for non-Hispanic Black males. In addition, individuals without a college degree and living in urban counties are particularly affected by early life upward mobility. The findings of this study highlight the vulnerability of less-educated, young urban Black males, due to the intersecting effects of the urban context, education, race, and sex.",
+      "date": "2021-07",
+      "language": "english",
+      "shortTitle": "Intergenerational upward mobility and racial differences in mortality among young adults",
+      "volume": "70",
+      "pages": "102628",
+      "publicationTitle": "Health & Place",
+      "DOI": "10.1016/j.healthplace.2021.102628",
+      "ISSN": "1353-8292",
+      "citationKey": "zangIntergenerationalUpwardMobility2021",
+      "creators": [
+        {
+          "firstName": "Emma",
+          "lastName": "Zang",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "Nathan",
+          "lastName": "Kim",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [
+        {
+          "tag": "County-level analysis"
+        },
+        {
+          "tag": "Early adulthood mortality"
+        },
+        {
+          "tag": "Intergenerational mobility"
+        },
+        {
+          "tag": "Racial disparities"
+        },
+        {
+          "tag": "Sex disparities"
+        }
+      ],
+      "relations": {},
+      "dateAdded": "2024-03-01T03:30:46Z",
+      "dateModified": "2024-03-05T15:30:35Z",
+      "uri": "http://zotero.org/users/11405897/items/99JJAF4K",
+      "itemID": 6414,
+      "attachments": [],
+      "notes": [],
+      "autoJournalAbbreviation": "Health Place",
+      "itemKey": "99JJAF4K",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/99JJAF4K"
+    },
+    {
+      "key": "WJXA9RPR",
+      "version": 21854,
+      "itemType": "journalArticle",
+      "title": "U.S. regional differences in physical distancing: Evaluating racial and socioeconomic divides during the COVID-19 pandemic",
+      "abstractNote": "Health varies by U.S. region of residence. Despite regional heterogeneity in the outbreak of COVID-19, regional differences in physical distancing behaviors over time are relatively unknown. This study examines regional variation in physical distancing trends during the COVID-19 pandemic and investigates variation by race and socioeconomic status (SES) within regions. Data from the 2015–2019 five-year American Community Survey were matched with anonymized location pings data from over 20 million mobile devices (SafeGraph, Inc.) at the Census block group level. We visually present trends in the stay-at-home proportion by Census region, race, and SES throughout 2020 and conduct regression analyses to examine these patterns. From March to December, the stay-at-home proportion was highest in the Northeast (0.25 in March to 0.35 in December) and lowest in the South (0.24 to 0.30). Across all regions, the stay-at-home proportion was higher in block groups with a higher percentage of Blacks, as Blacks disproportionately live in urban areas where stay-at-home rates were higher (0.009 [CI: 0.008, 0.009]). In the South, West, and Midwest, higher-SES block groups stayed home at the lowest rates pre-pandemic; however, this trend reversed throughout March before converging in the months following. In the Northeast, lower-SES block groups stayed home at comparable rates to higher-SES block groups during the height of the pandemic but diverged in the months following. Differences in physical distancing behaviors exist across U.S. regions, with a pronounced Southern and rural disadvantage. Results can be used to guide reopening and COVID-19 mitigation plans.",
+      "date": "2021-11",
+      "language": "english",
+      "shortTitle": "U.S. regional differences in physical distancing",
+      "volume": "16",
+      "publisher": "Public Library of Science",
+      "pages": "e0259665",
+      "publicationTitle": "PLOS ONE",
+      "DOI": "10.1371/journal.pone.0259665",
+      "issue": "11",
+      "ISSN": "1932-6203",
+      "citationKey": "zangRegionalDifferencesPhysical2021",
+      "creators": [
+        {
+          "firstName": "Emma",
+          "lastName": "Zang",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "Jessica",
+          "lastName": "West",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "Nathan",
+          "lastName": "Kim",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "Christina",
+          "lastName": "Pao",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [
+        {
+          "tag": "Cell phones"
+        },
+        {
+          "tag": "COVID 19"
+        },
+        {
+          "tag": "Human mobility"
+        },
+        {
+          "tag": "Medical risk factors"
+        },
+        {
+          "tag": "Pandemics"
+        },
+        {
+          "tag": "Population density"
+        },
+        {
+          "tag": "Public and occupational health"
+        },
+        {
+          "tag": "Socioeconomic aspects of health"
+        }
+      ],
+      "relations": {},
+      "dateAdded": "2024-03-01T03:30:46Z",
+      "dateModified": "2024-03-01T03:30:46Z",
+      "uri": "http://zotero.org/users/11405897/items/WJXA9RPR",
+      "itemID": 6415,
+      "attachments": [],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "WJXA9RPR",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/WJXA9RPR"
+    },
+    {
+      "key": "23BFBJWQ",
+      "version": 21864,
+      "itemType": "presentation",
+      "title": "Resisting AI Solutionism within the University through Workplace Collective Action",
+      "date": "April 2025",
+      "url": "https://arxiv.org/abs/2508.08313",
+      "extra": "Workshop",
+      "place": "Yokohama, Japan",
+      "citationKey": "zhengResistingAISolutionism2025",
+      "meetingName": "\"Resisting AI Solutionism: Where do we go from here?\" Workshop at the ACM Conference on Human Factors in Computing Systems",
+      "creators": [
+        {
+          "firstName": "Kevin",
+          "lastName": "Zheng",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "Linda",
+          "lastName": "Huber",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "Aaron",
+          "lastName": "Stark",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "Nathan",
+          "lastName": "Kim",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "Francesca",
+          "lastName": "Lameiro",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "Wells Lucas",
+          "lastName": "Santo",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "Shreya",
+          "lastName": "Chowdhary",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "Eugene",
+          "lastName": "Kim",
+          "creatorType": "presenter"
+        },
+        {
+          "firstName": "Justine",
+          "lastName": "Zhang",
+          "creatorType": "presenter"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2025-07-14T20:24:06Z",
+      "dateModified": "2026-02-17T12:59:27Z",
+      "uri": "http://zotero.org/users/11405897/items/23BFBJWQ",
+      "itemID": 10490,
+      "attachments": [],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "23BFBJWQ",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/23BFBJWQ"
+    }
+  ]
+}

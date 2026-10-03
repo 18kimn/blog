@@ -1,0 +1,1357 @@
+{
+  "config": {
+    "id": "36a3b0b5-bad0-4a04-b79b-441c7cef77db",
+    "label": "BetterBibTeX JSON",
+    "preferences": {
+      "ascii": "",
+      "asciiBibLaTeX": false,
+      "asciiBibTeX": true,
+      "autoExport": "immediate",
+      "autoExportDelay": 5,
+      "autoExportIdleWait": 10,
+      "autoExportPathReplaceDiacritics": false,
+      "autoExportPathReplaceDirSep": "-",
+      "autoExportPathReplaceSpace": " ",
+      "automaticTags": true,
+      "auxImport": false,
+      "baseAttachmentPath": "",
+      "biblatexExtendedDateFormat": true,
+      "biblatexExtendedNameFormat": true,
+      "biblatexExtractEprint": true,
+      "biblatexUsePrefix": true,
+      "bibtexEditionOrdinal": false,
+      "bibtexParticleNoOp": false,
+      "bibtexURL": "off",
+      "cache": true,
+      "cacheDelete": false,
+      "cacheTouch": "fill",
+      "charmap": "",
+      "chinese": false,
+      "chineseSplitName": true,
+      "citeCommand": "cite",
+      "citekeyCaseInsensitive": true,
+      "citekeyFold": true,
+      "citekeyFormat": "auth.lower + shorttitle(3, 3) + year",
+      "citekeyUnsafeChars": "\\\"#%'(),={}~",
+      "csquotes": "",
+      "DOIandURL": "both",
+      "exportBibTeXStrings": "off",
+      "exportBraceProtection": true,
+      "exportCaseProtection": "",
+      "exportSort": "citekey",
+      "exportTitlecase": "",
+      "extraFieldAsNote": false,
+      "extraMergeCitekeys": false,
+      "extraMergeCSL": false,
+      "extraMergeTeX": false,
+      "fillKeyAfter": 1,
+      "git": "config",
+      "import": true,
+      "importBibTeXStrings": true,
+      "importCaseProtection": "as-needed",
+      "importCitationKey": true,
+      "importDetectURLs": true,
+      "importExtra": true,
+      "importJabRefAbbreviations": true,
+      "importJabRefStrings": true,
+      "importNoteToExtra": "",
+      "importPlaceEvent": "inproceedings,conference,presentation,talk",
+      "importSentenceCase": "on+guess",
+      "importSentenceCaseQuoted": true,
+      "importUnknownTexCommand": "ignore",
+      "itemObserverDelay": 5,
+      "jabrefFormat": 0,
+      "japanese": false,
+      "journalAbbreviation": "auto",
+      "keyScope": "library",
+      "language": "langid",
+      "mapMath": "",
+      "mapText": "",
+      "packages": "",
+      "parseParticles": true,
+      "patchDates": "dateadded=dateAdded, date-added=dateAdded, datemodified=dateModified, date-modified=dateModified",
+      "postscript": "",
+      "postscriptOverride": "",
+      "preferencesOverride": "",
+      "profileRuntime": "no",
+      "profileStartup": false,
+      "qualityReport": false,
+      "quickCopyEta": "",
+      "quickCopyMode": "latex",
+      "quickCopyOrgMode": "zotero",
+      "quickCopyPandocBrackets": false,
+      "quickCopySelectLink": "zotero",
+      "rawImports": false,
+      "rawLaTag": "#LaTeX",
+      "relativeFilePaths": false,
+      "remigrate": false,
+      "resetKeyOnChange": false,
+      "separatorList": "and",
+      "separatorNames": "and",
+      "skipFields": "",
+      "skipWords": "a,ab,aboard,about,above,across,after,against,al,along,amid,among,an,and,anti,around,as,at,before,behind,below,beneath,beside,besides,between,beyond,but,by,d,da,das,de,del,dell,dello,dei,degli,della,dell,delle,dem,den,der,des,despite,die,do,down,du,during,ein,eine,einem,einen,einer,eines,el,en,et,except,for,from,gli,i,il,in,inside,into,is,l,la,las,le,les,like,lo,los,near,nor,of,off,on,onto,or,over,past,per,plus,round,save,since,so,some,sur,than,the,through,to,toward,towards,un,una,unas,under,underneath,une,unlike,uno,unos,until,up,upon,versus,via,von,while,with,within,without,yet,zu,zum",
+      "strings": "",
+      "stringsOverride": "",
+      "verbatimFields": "url,doi,file,pdf,ids,eprint,/^verb[a-z]$/,groups,/^citeulike-linkout-[0-9]+$/,/^bdsk-url-[0-9]+$/, keywords",
+      "warnBulkModify": 10,
+      "warnTitleCased": false
+    },
+    "options": {
+      "Items": true,
+      "Normalize": false,
+      "Preferences": true,
+      "YAML": false,
+      "biblatexAPA": false,
+      "biblatexChicago": false,
+      "exportFileData": false,
+      "exportNotes": true,
+      "keepUpdated": false,
+      "worker": true,
+      "exportDir": "/home/nathan/main/personal/projects/blog/src/routes/press",
+      "exportPath": "/home/nathan/main/personal/projects/blog/src/routes/press/uncv.bbt.json"
+    }
+  },
+  "version": {
+    "zotero": "9.0.6",
+    "bbt": "9.0.68"
+  },
+  "collections": {
+    "68YXJXZX": {
+      "key": "68YXJXZX",
+      "parent": "",
+      "name": "10. Tenant organizing",
+      "collections": [],
+      "items": [
+        13632,
+        13638,
+        13643,
+        13645,
+        13647,
+        13649,
+        13653,
+        13659,
+        13733,
+        15694
+      ]
+    },
+    "83T2GVWW": {
+      "key": "83T2GVWW",
+      "parent": "",
+      "name": "20. Palestine activism",
+      "collections": [],
+      "items": [
+        6416,
+        13634,
+        13641,
+        13651,
+        13655,
+        15119,
+        15121,
+        15133
+      ]
+    },
+    "TLL4K3XC": {
+      "key": "TLL4K3XC",
+      "parent": "",
+      "name": "30. Data center and AI activism",
+      "collections": [],
+      "items": [
+        13639,
+        13640,
+        15127,
+        15131,
+        15206,
+        16122
+      ]
+    },
+    "MF6RS67Q": {
+      "key": "MF6RS67Q",
+      "parent": "",
+      "name": "40. Other campus organizing",
+      "collections": [],
+      "items": [
+        15696
+      ]
+    },
+    "M5DBZCG4": {
+      "key": "M5DBZCG4",
+      "parent": "",
+      "name": "50. Political economy research",
+      "collections": [],
+      "items": [
+        15692
+      ]
+    }
+  },
+  "items": [
+    {
+      "key": "KMWRR693",
+      "version": 21796,
+      "itemType": "newspaperArticle",
+      "title": "Ann Arbor City Council closes loophole left in rental ordinances",
+      "abstractNote": "Ann Arbor City Council voted unanimously to close loopholes surrounding city ordinances intended to protect renters. WEMU’s Taylor Bowie has more.",
+      "date": "2024-03-06T11:02:05.147",
+      "language": "en",
+      "url": "https://www.wemu.org/wemu-news/2024-03-06/ann-arbor-city-council-closes-loophole-left-in-rental-ordinances",
+      "accessDate": "2025-12-09T03:31:52Z",
+      "extra": "Tenant organizing",
+      "place": "Ann Arbor, Michigan",
+      "section": "WEMU News",
+      "publicationTitle": "WEMU-FM",
+      "citationKey": "bowieAnnArborCity2024",
+      "creators": [
+        {
+          "firstName": "Taylor",
+          "lastName": "Bowie",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2025-12-09T03:31:52Z",
+      "dateModified": "2026-06-05T00:56:21Z",
+      "uri": "http://zotero.org/users/11405897/items/KMWRR693",
+      "itemID": 13643,
+      "attachments": [
+        {
+          "itemType": "attachment",
+          "title": "Snapshot",
+          "url": "https://www.wemu.org/wemu-news/2024-03-06/ann-arbor-city-council-closes-loophole-left-in-rental-ordinances",
+          "tags": [],
+          "relations": {},
+          "dateAdded": "2025-12-09T03:31:59Z",
+          "dateModified": "2025-12-09T03:31:59Z",
+          "uri": "http://zotero.org/users/11405897/items/IHBB84P9",
+          "path": "/home/nathan/Zotero/storage/IHBB84P9/ann-arbor-city-council-closes-loophole-left-in-rental-ordinances.html",
+          "select": "zotero://select/library/items/IHBB84P9"
+        }
+      ],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "KMWRR693",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/KMWRR693"
+    },
+    {
+      "key": "4SH5E3R4",
+      "version": 21796,
+      "itemType": "newspaperArticle",
+      "title": "Ann Arbor renters charged $6K in waitlist fees for apartments - CBS Detroit",
+      "date": "March 18, 2024",
+      "url": "https://www.cbsnews.com/detroit/news/ann-arbor-renters-charged-6k-in-waitlist-fees-for-apartments/",
+      "accessDate": "2025-12-09T03:32:30Z",
+      "extra": "Tenant organizing",
+      "place": "Ann Arbor, Michigan",
+      "publicationTitle": "CBS News",
+      "citationKey": "brucknerAnnArborRenters",
+      "creators": [
+        {
+          "firstName": "Meredith",
+          "lastName": "Bruckner",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2025-12-09T03:32:30Z",
+      "dateModified": "2026-06-05T00:56:18Z",
+      "uri": "http://zotero.org/users/11405897/items/4SH5E3R4",
+      "itemID": 13645,
+      "attachments": [
+        {
+          "itemType": "attachment",
+          "title": "Ann Arbor renters charged $6K in waitlist fees for apartments - CBS Detroit",
+          "url": "https://www.cbsnews.com/detroit/news/ann-arbor-renters-charged-6k-in-waitlist-fees-for-apartments/",
+          "tags": [],
+          "relations": {},
+          "dateAdded": "2025-12-09T03:32:39Z",
+          "dateModified": "2025-12-09T03:32:39Z",
+          "uri": "http://zotero.org/users/11405897/items/IDQ33VBY",
+          "path": "/home/nathan/Zotero/storage/IDQ33VBY/ann-arbor-renters-charged-6k-in-waitlist-fees-for-apartments.html",
+          "select": "zotero://select/library/items/IDQ33VBY"
+        }
+      ],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "4SH5E3R4",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/4SH5E3R4"
+    },
+    {
+      "key": "EWHV8MB8",
+      "version": 21805,
+      "itemType": "newspaperArticle",
+      "title": "UMich students stage walkout, teach-in to call for divestment",
+      "abstractNote": "Hundreds of University of Michigan students walked out of their classes and gathered on the Diag to call on the University to divest from companies profiting from Israel’s military campaign in Gaza. Organized by Students Allied for Freedom and Equality and the TAHRIR Coalition, the protest was part of a national walkout on campuses across […]",
+      "date": "2024-02-09T04:22:42+00:00",
+      "language": "en-US",
+      "url": "https://www.michigandaily.com/news/administration/umich-students-stage-walkout-teach-in-to-call-for-divestment/",
+      "accessDate": "2025-12-09T03:30:50Z",
+      "extra": "Palestine activism",
+      "place": "Ann Arbor, Michigan",
+      "publicationTitle": "The Michigan Daily",
+      "citationKey": "corsiUMichStudentsStage2024",
+      "creators": [
+        {
+          "firstName": "Marissa",
+          "lastName": "Corsi",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2025-12-09T03:30:50Z",
+      "dateModified": "2026-06-05T02:40:07Z",
+      "uri": "http://zotero.org/users/11405897/items/EWHV8MB8",
+      "itemID": 13634,
+      "attachments": [
+        {
+          "itemType": "attachment",
+          "title": "Snapshot",
+          "url": "https://www.michigandaily.com/news/administration/umich-students-stage-walkout-teach-in-to-call-for-divestment/",
+          "tags": [],
+          "relations": {},
+          "dateAdded": "2025-12-09T03:30:59Z",
+          "dateModified": "2025-12-09T03:30:59Z",
+          "uri": "http://zotero.org/users/11405897/items/WVT2V4XM",
+          "path": "/home/nathan/Zotero/storage/WVT2V4XM/umich-students-stage-walkout-teach-in-to-call-for-divestment.html",
+          "select": "zotero://select/library/items/WVT2V4XM"
+        }
+      ],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "EWHV8MB8",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/EWHV8MB8"
+    },
+    {
+      "key": "3IL4XCYV",
+      "version": 21796,
+      "itemType": "newspaperArticle",
+      "title": "City council passes ordinance banning pre-tenancy fees",
+      "abstractNote": "The Ann Arbor City Council to discuss an ordinance that will remove pre-tenancy fees, cap application fees and require refunds within 60 days.",
+      "date": "2025-01-08T03:23:29+00:00",
+      "language": "en-US",
+      "url": "https://www.michigandaily.com/news/ann-arbor/city-council-passes-ordinance-banning-pre-tenancy-fees/",
+      "accessDate": "2025-12-09T03:33:21Z",
+      "extra": "Tenant organizing",
+      "place": "Ann Arbor, Michigan",
+      "publicationTitle": "The Michigan Daily",
+      "citationKey": "dolataCityCouncilPasses2025",
+      "creators": [
+        {
+          "firstName": "Barrett",
+          "lastName": "Dolata",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2025-12-09T03:33:21Z",
+      "dateModified": "2026-06-05T00:56:12Z",
+      "uri": "http://zotero.org/users/11405897/items/3IL4XCYV",
+      "itemID": 13649,
+      "attachments": [
+        {
+          "itemType": "attachment",
+          "title": "Snapshot",
+          "url": "https://www.michigandaily.com/news/ann-arbor/city-council-passes-ordinance-banning-pre-tenancy-fees/",
+          "tags": [],
+          "relations": {},
+          "dateAdded": "2025-12-09T03:33:28Z",
+          "dateModified": "2025-12-09T03:33:28Z",
+          "uri": "http://zotero.org/users/11405897/items/C2DXSTXX",
+          "path": "/home/nathan/Zotero/storage/C2DXSTXX/city-council-passes-ordinance-banning-pre-tenancy-fees.html",
+          "select": "zotero://select/library/items/C2DXSTXX"
+        }
+      ],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "3IL4XCYV",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/3IL4XCYV"
+    },
+    {
+      "key": "V23DN333",
+      "version": 21796,
+      "itemType": "newspaperArticle",
+      "title": "Concord's Rent Stabilization Survives Another Challenge",
+      "abstractNote": "After eight years of tenant advocacy, rent stabilization and just cause eviction protections were enacted, but months of challenges ensued",
+      "date": "2024-05-16T18:55:36+00:00",
+      "language": "en-US",
+      "url": "https://www.eltimpano.org/english/housing/concords-rent-stabilization-survives-another-challenge/",
+      "accessDate": "2025-12-09T03:39:19Z",
+      "extra": "Tenant organizing",
+      "publicationTitle": "El Tímpano",
+      "citationKey": "garibayConcordsRentStabilization2024",
+      "creators": [
+        {
+          "firstName": "Cassandra",
+          "lastName": "Garibay",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2025-12-09T03:39:19Z",
+      "dateModified": "2026-06-05T00:56:01Z",
+      "uri": "http://zotero.org/users/11405897/items/V23DN333",
+      "itemID": 13659,
+      "attachments": [
+        {
+          "itemType": "attachment",
+          "title": "Snapshot",
+          "url": "https://www.eltimpano.org/english/housing/concords-rent-stabilization-survives-another-challenge/",
+          "tags": [],
+          "relations": {},
+          "dateAdded": "2025-12-09T03:39:24Z",
+          "dateModified": "2025-12-09T03:39:24Z",
+          "uri": "http://zotero.org/users/11405897/items/87AKEQBU",
+          "path": "/home/nathan/Zotero/storage/87AKEQBU/concords-rent-stabilization-survives-another-challenge.html",
+          "select": "zotero://select/library/items/87AKEQBU"
+        }
+      ],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "V23DN333",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/V23DN333"
+    },
+    {
+      "key": "AJ2VXCP8",
+      "version": 21812,
+      "itemType": "blogPost",
+      "title": "Data center battle exposes Michigan Democrats’ slide to the right",
+      "abstractNote": "SALINE TOWNSHIP, Mich.—Tech industry leaders gathered here on Monday for the groundbreaking ceremony for the construction of a new data center dubbed “The Barn.” At 2.",
+      "date": "2026-06-04T12:45:01-05:00",
+      "language": "en-US",
+      "url": "https://peoplesworld.org/article/data-center-battle-exposes-michigan-democrats-slide-to-the-right/",
+      "accessDate": "2026-06-04T23:26:41Z",
+      "extra": "Data center and AI activism",
+      "blogTitle": "People's World",
+      "citationKey": "hansenDataCenterBattle2026",
+      "creators": [
+        {
+          "firstName": "Chrissy M. E.",
+          "lastName": "Hansen",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2026-06-04T23:26:41Z",
+      "dateModified": "2026-06-05T03:41:06Z",
+      "uri": "http://zotero.org/users/11405897/items/AJ2VXCP8",
+      "itemID": 15131,
+      "attachments": [
+        {
+          "itemType": "attachment",
+          "title": "Snapshot",
+          "url": "https://peoplesworld.org/article/data-center-battle-exposes-michigan-democrats-slide-to-the-right/",
+          "tags": [],
+          "relations": {},
+          "dateAdded": "2026-06-04T23:26:46Z",
+          "dateModified": "2026-06-04T23:26:46Z",
+          "uri": "http://zotero.org/users/11405897/items/X39DPJ7M",
+          "path": "/home/nathan/Zotero/storage/X39DPJ7M/data-center-battle-exposes-michigan-democrats-slide-to-the-right.html",
+          "select": "zotero://select/library/items/X39DPJ7M"
+        }
+      ],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "AJ2VXCP8",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/AJ2VXCP8"
+    },
+    {
+      "key": "JDCE9FSD",
+      "version": 21812,
+      "itemType": "newspaperArticle",
+      "title": "Ypsilanti residents protest UMich data center construction",
+      "abstractNote": "Update 10/17: This article has been updated to include a statistic on the facility’s proposed size provided by the University. Correction 10/20: This article’s image has been replaced to reflect that the proposed facility will not release wastewater into the Huron River. The University of Michigan, in partnership with the Los Alamos National Laboratory, is […]",
+      "date": "2025-10-16T22:38:34+00:00",
+      "language": "en-US",
+      "url": "https://www.michigandaily.com/news/administration/ypsilanti-residents-protest-umich-data-center-construction/",
+      "accessDate": "2025-12-09T03:31:29Z",
+      "extra": "Data center and AI activism",
+      "place": "Ann Arbor, Michigan",
+      "publicationTitle": "The Michigan Daily",
+      "citationKey": "hedinYpsilantiResidentsProtest2025",
+      "creators": [
+        {
+          "firstName": "Glenn",
+          "lastName": "Hedin",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2025-12-09T03:31:29Z",
+      "dateModified": "2026-06-05T03:41:26Z",
+      "uri": "http://zotero.org/users/11405897/items/JDCE9FSD",
+      "itemID": 13640,
+      "attachments": [],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "JDCE9FSD",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/JDCE9FSD"
+    },
+    {
+      "key": "LSX2XUWY",
+      "version": 21805,
+      "itemType": "newspaperArticle",
+      "title": "Michigan Democrats look for inspiration at endorsement convention",
+      "abstractNote": "The progressive wing of the Michigan Democratic Party made its voice heard over the weekend during the party’s endorsement convention. Colin Jackson has more.",
+      "date": "2026-04-21T09:35:32.744",
+      "language": "en",
+      "url": "https://www.wemu.org/michigan-news/2026-04-21/michigan-democrats-look-for-inspiration-at-endorsement-convention",
+      "accessDate": "2026-06-04T23:30:17Z",
+      "extra": "Palestine activism",
+      "publicationTitle": "WEMU-FM",
+      "citationKey": "jacksonMichiganDemocratsLook2026",
+      "creators": [
+        {
+          "firstName": "Colin",
+          "lastName": "Jackson",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2026-06-04T23:30:17Z",
+      "dateModified": "2026-06-05T02:39:23Z",
+      "uri": "http://zotero.org/users/11405897/items/LSX2XUWY",
+      "itemID": 15133,
+      "attachments": [
+        {
+          "itemType": "attachment",
+          "title": "Snapshot",
+          "url": "https://www.wemu.org/michigan-news/2026-04-21/michigan-democrats-look-for-inspiration-at-endorsement-convention",
+          "tags": [],
+          "relations": {},
+          "dateAdded": "2026-06-04T23:30:24Z",
+          "dateModified": "2026-06-04T23:30:24Z",
+          "uri": "http://zotero.org/users/11405897/items/66BYBRIF",
+          "path": "/home/nathan/Zotero/storage/66BYBRIF/michigan-democrats-look-for-inspiration-at-endorsement-convention.html",
+          "select": "zotero://select/library/items/66BYBRIF"
+        }
+      ],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "LSX2XUWY",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/LSX2XUWY"
+    },
+    {
+      "key": "UZHHQ6DR",
+      "version": 21812,
+      "itemType": "newspaperArticle",
+      "title": "Inside the University of Michigan’s faculty, staff and students push to halt Los Alamos project",
+      "abstractNote": "A coalition of university members gathered in the Ann Arbor District Library on Tuesday night to discuss methods to potentially halt the university’s high-performance computing facility with Los Alamos National Laboratory.",
+      "date": "2026-02-11T17:33:10.516Z",
+      "language": "en",
+      "url": "https://www.mlive.com/news/ann-arbor/2026/02/inside-the-university-of-michigans-faculty-staff-and-students-push-to-halt-los-alamos-project.html",
+      "accessDate": "2026-06-04T23:20:27Z",
+      "extra": "Data center and AI activism",
+      "place": "Ann Arbor, Michigan",
+      "publicationTitle": "MLive",
+      "citationKey": "janeUniversityMichigansFaculty2026",
+      "creators": [
+        {
+          "firstName": "Sam",
+          "lastName": "Jane",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2026-06-04T23:20:27Z",
+      "dateModified": "2026-06-05T03:41:13Z",
+      "uri": "http://zotero.org/users/11405897/items/UZHHQ6DR",
+      "itemID": 15127,
+      "attachments": [
+        {
+          "itemType": "attachment",
+          "title": "Snapshot",
+          "url": "https://www.mlive.com/news/ann-arbor/2026/02/inside-the-university-of-michigans-faculty-staff-and-students-push-to-halt-los-alamos-project.html",
+          "tags": [],
+          "relations": {},
+          "dateAdded": "2026-06-04T23:20:58Z",
+          "dateModified": "2026-06-04T23:20:58Z",
+          "uri": "http://zotero.org/users/11405897/items/WQE9XR5F",
+          "path": "/home/nathan/Zotero/storage/WQE9XR5F/inside-the-university-of-michigans-faculty-staff-and-students-push-to-halt-los-alamos-project.html",
+          "select": "zotero://select/library/items/WQE9XR5F"
+        }
+      ],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "UZHHQ6DR",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/UZHHQ6DR"
+    },
+    {
+      "key": "7K9IGBBJ",
+      "version": 21805,
+      "itemType": "blogPost",
+      "title": "Does your research support genocide?",
+      "abstractNote": "Given this multitude of material and ideological links to the Israeli state within our university, as students and scholars, we must ask ourselves the following: Is my education and research shaped by Israeli influence?",
+      "date": "2025-12-02T04:54:28+00:00",
+      "language": "en-US",
+      "url": "https://www.michigandaily.com/opinion/op-eds/does-your-research-support-genocide/",
+      "accessDate": "2026-06-04T23:06:48Z",
+      "extra": "Palestine activism",
+      "blogTitle": "The Michigan Daily",
+      "citationKey": "kimDoesYourResearch2025",
+      "creators": [
+        {
+          "firstName": "Amatullah",
+          "lastName": "Hakim",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "Aaron",
+          "lastName": "McCleery",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "Nathan",
+          "lastName": "Kim",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2026-06-04T23:06:48Z",
+      "dateModified": "2026-06-05T02:39:32Z",
+      "uri": "http://zotero.org/users/11405897/items/7K9IGBBJ",
+      "itemID": 15121,
+      "attachments": [
+        {
+          "itemType": "attachment",
+          "title": "Snapshot",
+          "url": "https://www.michigandaily.com/opinion/op-eds/does-your-research-support-genocide/",
+          "tags": [],
+          "relations": {},
+          "dateAdded": "2026-06-04T23:06:55Z",
+          "dateModified": "2026-06-04T23:06:55Z",
+          "uri": "http://zotero.org/users/11405897/items/USXWNGP8",
+          "path": "/home/nathan/Zotero/storage/USXWNGP8/does-your-research-support-genocide.html",
+          "select": "zotero://select/library/items/USXWNGP8"
+        }
+      ],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "7K9IGBBJ",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/7K9IGBBJ"
+    },
+    {
+      "key": "K7SV99EE",
+      "version": 21812,
+      "itemType": "newspaperArticle",
+      "title": "How MADSA is Organizing Against AI Data Centers",
+      "abstractNote": "Today, we seek to protect each other from austerity by barring the University from making these kinds of blanket policy changes around grad worker employment without negotiations with GEO.",
+      "date": "2026-08-04T19:48:24+00:00",
+      "language": "en-US",
+      "url": "https://redmadison.com/2026/09/30/how-madsa-is-organizing-against-ai-data-centers/",
+      "accessDate": "2026-08-20T22:12:41Z",
+      "extra": "Data center and AI activism",
+      "place": "Madison, WI",
+      "publisher": "Madison DSA",
+      "publicationTitle": "Red Madison",
+      "citationKey": "kimGEOs2026Contract2026",
+      "creators": [
+        {
+          "firstName": "Nathan",
+          "lastName": "Kim",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2026-10-02T15:45:13Z",
+      "dateModified": "2026-10-02T15:50:22Z",
+      "uri": "http://zotero.org/users/11405897/items/K7SV99EE",
+      "itemID": 16122,
+      "attachments": [],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "K7SV99EE",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/K7SV99EE"
+    },
+    {
+      "key": "66XEW5HR",
+      "version": 21796,
+      "itemType": "magazineArticle",
+      "title": "How We Failed to Organize a Tenants Union",
+      "date": "January 17, 2026",
+      "url": "https://whatsleftypsi.com/2026/how-we-failed-to-organize-a-tenants-union/",
+      "extra": "Tenant organizing",
+      "place": "Ypsilanti, Michigan",
+      "publicationTitle": "What's Left Ypsi",
+      "issue": "5: The Labor Issue",
+      "citationKey": "kimHowWeFailed2025",
+      "creators": [
+        {
+          "firstName": "Nathan",
+          "lastName": "Kim",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "Grace",
+          "lastName": "Viscito",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "Michael",
+          "lastName": "Mueller",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2025-12-10T21:11:17Z",
+      "dateModified": "2026-06-05T02:13:22Z",
+      "uri": "http://zotero.org/users/11405897/items/66XEW5HR",
+      "itemID": 13733,
+      "attachments": [],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "66XEW5HR",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/66XEW5HR"
+    },
+    {
+      "key": "SDJ3YAMN",
+      "version": 21814,
+      "itemType": "newspaperArticle",
+      "title": "With GEO’s 2026 contract campaign, graduate workers show that we protect each other",
+      "abstractNote": "Today, we seek to protect each other from austerity by barring the University from making these kinds of blanket policy changes around grad worker employment without negotiations with GEO.",
+      "date": "2026-08-04T19:48:24+00:00",
+      "language": "en-US",
+      "url": "https://www.michigandaily.com/opinion/op-eds/with-geos-2026-contract-campaign-graduate-workers-show-that-we-protect-each-other/",
+      "accessDate": "2026-08-20T22:12:41Z",
+      "extra": "Other campus organizing",
+      "place": "Ann Arbor, Michigan",
+      "publicationTitle": "The Michigan Daily",
+      "citationKey": "kimOpEds2026",
+      "creators": [
+        {
+          "firstName": "Nathan",
+          "lastName": "Kim",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2026-08-20T22:12:41Z",
+      "dateModified": "2026-08-20T22:19:04Z",
+      "uri": "http://zotero.org/users/11405897/items/SDJ3YAMN",
+      "itemID": 15696,
+      "attachments": [
+        {
+          "itemType": "attachment",
+          "title": "Snapshot",
+          "url": "https://www.michigandaily.com/opinion/op-eds/with-geos-2026-contract-campaign-graduate-workers-show-that-we-protect-each-other/",
+          "tags": [],
+          "relations": {},
+          "dateAdded": "2026-08-20T22:12:47Z",
+          "dateModified": "2026-08-20T22:12:47Z",
+          "uri": "http://zotero.org/users/11405897/items/FP46SML4",
+          "path": "/home/nathan/Zotero/storage/FP46SML4/with-geos-2026-contract-campaign-graduate-workers-show-that-we-protect-each-other.html",
+          "select": "zotero://select/library/items/FP46SML4"
+        }
+      ],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "SDJ3YAMN",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/SDJ3YAMN"
+    },
+    {
+      "key": "8US9B2HW",
+      "version": 21805,
+      "itemType": "newspaperArticle",
+      "title": "Divestment demands over Israel collide with Michigan university rejection",
+      "date": "2024-05-02T19:27:19Z",
+      "url": "https://archive.is/WNjn6",
+      "accessDate": "2025-12-09T03:37:31Z",
+      "extra": "Palestine activism",
+      "place": "Ann Arbor, Michigan",
+      "publicationTitle": "The Detroit News",
+      "citationKey": "kozlowskiDivestmentDemandsIsrael2024",
+      "creators": [
+        {
+          "firstName": "Kim",
+          "lastName": "Kozlowski",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2025-12-09T03:37:31Z",
+      "dateModified": "2026-08-20T22:18:37Z",
+      "uri": "http://zotero.org/users/11405897/items/8US9B2HW",
+      "itemID": 13655,
+      "attachments": [
+        {
+          "itemType": "attachment",
+          "title": "Snapshot",
+          "url": "https://archive.is/WNjn6",
+          "tags": [],
+          "relations": {},
+          "dateAdded": "2025-12-09T03:37:36Z",
+          "dateModified": "2025-12-09T03:37:36Z",
+          "uri": "http://zotero.org/users/11405897/items/P3GJ9D6E",
+          "path": "/home/nathan/Zotero/storage/P3GJ9D6E/WNjn6.html",
+          "select": "zotero://select/library/items/P3GJ9D6E"
+        }
+      ],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "8US9B2HW",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/8US9B2HW"
+    },
+    {
+      "key": "HXE433ZP",
+      "version": 21805,
+      "itemType": "newspaperArticle",
+      "title": "UMich campus reacts to Gaza solidarity encampment removal",
+      "abstractNote": "The Gaza solidarity encampment remained a constant presence on the Diag for nearly a month before the University cleared the site on May 21.",
+      "date": "2024-06-03T02:44:31+00:00",
+      "language": "en-US",
+      "url": "https://www.michigandaily.com/news/campus-life/umich-campus-and-organizations-react-to-gaza-solidarity-encampment-removal/",
+      "accessDate": "2025-12-09T03:34:03Z",
+      "extra": "Palestine activism",
+      "place": "Ann Arbor, Michigan",
+      "publicationTitle": "The Michigan Daily",
+      "citationKey": "lappUMichCampusReacts2024",
+      "creators": [
+        {
+          "firstName": "Bronwyn Johnston, Marissa Corsi, Emma",
+          "lastName": "Lapp",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2025-12-09T03:34:03Z",
+      "dateModified": "2026-06-05T02:39:45Z",
+      "uri": "http://zotero.org/users/11405897/items/HXE433ZP",
+      "itemID": 13651,
+      "attachments": [],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "HXE433ZP",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/HXE433ZP"
+    },
+    {
+      "key": "46JBPCAA",
+      "version": 21796,
+      "itemType": "newspaperArticle",
+      "title": "CSG discusses Campus Plan 2050’s, AATU Budget Proposal",
+      "abstractNote": "CSG met to discuss the potential for a Campus Connector system as part of Campus Plan 2050 and a Budget Proposal for the AATU.",
+      "date": "2024-03-28T02:56:59+00:00",
+      "language": "en-US",
+      "url": "https://www.michigandaily.com/news/student-government/csg-discusses-campus-plan-2050-aatu-budget-proposal/",
+      "accessDate": "2025-12-09T03:30:39Z",
+      "extra": "Tenant organizing",
+      "place": "Ann Arbor, Michigan",
+      "publicationTitle": "The Michigan Daily",
+      "citationKey": "mcintyreCSGDiscussesCampus2024",
+      "creators": [
+        {
+          "firstName": "Brock",
+          "lastName": "McIntyre",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2025-12-09T03:30:39Z",
+      "dateModified": "2026-06-05T00:56:33Z",
+      "uri": "http://zotero.org/users/11405897/items/46JBPCAA",
+      "itemID": 13632,
+      "attachments": [
+        {
+          "itemType": "attachment",
+          "title": "Snapshot",
+          "url": "https://www.michigandaily.com/news/student-government/csg-discusses-campus-plan-2050-aatu-budget-proposal/",
+          "tags": [],
+          "relations": {},
+          "dateAdded": "2025-12-09T03:30:47Z",
+          "dateModified": "2025-12-09T03:30:47Z",
+          "uri": "http://zotero.org/users/11405897/items/BQ3WZBCV",
+          "path": "/home/nathan/Zotero/storage/BQ3WZBCV/csg-discusses-campus-plan-2050-aatu-budget-proposal.html",
+          "select": "zotero://select/library/items/BQ3WZBCV"
+        }
+      ],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "46JBPCAA",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/46JBPCAA"
+    },
+    {
+      "key": "S5VEW4Z6",
+      "version": 21812,
+      "itemType": "magazineArticle",
+      "title": "Everybody Hates Data Centers",
+      "abstractNote": "Anarchists, union activists, Indigenous organizers, and disgruntled Trumpists find themselves side by side in the fight.",
+      "date": "2026-06-05T16:57:43+00:00",
+      "language": "en-US",
+      "url": "https://truthout.org/articles/everybody-hates-data-centers/",
+      "accessDate": "2026-06-18T10:21:48Z",
+      "extra": "Data center and AI activism",
+      "publicationTitle": "Truthout",
+      "citationKey": "messersmith-glavinEverybodyHatesData2026",
+      "creators": [
+        {
+          "firstName": "Paul",
+          "lastName": "Messersmith-Glavin",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2026-06-18T10:21:48Z",
+      "dateModified": "2026-06-18T10:22:39Z",
+      "uri": "http://zotero.org/users/11405897/items/S5VEW4Z6",
+      "itemID": 15206,
+      "attachments": [
+        {
+          "itemType": "attachment",
+          "title": "Snapshot",
+          "url": "https://truthout.org/articles/everybody-hates-data-centers/",
+          "tags": [],
+          "relations": {},
+          "dateAdded": "2026-06-18T10:21:54Z",
+          "dateModified": "2026-06-18T10:21:54Z",
+          "uri": "http://zotero.org/users/11405897/items/FB9FCMIW",
+          "path": "/home/nathan/Zotero/storage/FB9FCMIW/everybody-hates-data-centers.html",
+          "select": "zotero://select/library/items/FB9FCMIW"
+        }
+      ],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "S5VEW4Z6",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/S5VEW4Z6"
+    },
+    {
+      "key": "T7GGRHFR",
+      "version": 21805,
+      "itemType": "blogPost",
+      "title": "Power Research for Palestine: How Campus Organizers Are Using Research to Oppose the War Machine",
+      "abstractNote": "Graduate workers and student groups across the US are mapping university ties to militarism and Israel’s war on Gaza.",
+      "date": "2024-09-26",
+      "language": "en-US",
+      "shortTitle": "Power Research for Palestine",
+      "url": "https://littlesis.org/news/power-research-for-palestine-how-campus-organizers-are-using-research-to-oppose-the-war-machine/",
+      "accessDate": "2026-06-04T23:05:25Z",
+      "extra": "Palestine activism",
+      "blogTitle": "Little Sis",
+      "citationKey": "seidmanPowerResearchPalestine2024",
+      "creators": [
+        {
+          "firstName": "Derek",
+          "lastName": "Seidman",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2026-06-04T23:05:25Z",
+      "dateModified": "2026-06-05T02:39:37Z",
+      "uri": "http://zotero.org/users/11405897/items/T7GGRHFR",
+      "itemID": 15119,
+      "attachments": [
+        {
+          "itemType": "attachment",
+          "title": "Snapshot",
+          "url": "https://littlesis.org/news/power-research-for-palestine-how-campus-organizers-are-using-research-to-oppose-the-war-machine/",
+          "tags": [],
+          "relations": {},
+          "dateAdded": "2026-06-04T23:05:32Z",
+          "dateModified": "2026-06-04T23:05:32Z",
+          "uri": "http://zotero.org/users/11405897/items/H5FKULWS",
+          "path": "/home/nathan/Zotero/storage/H5FKULWS/power-research-for-palestine-how-campus-organizers-are-using-research-to-oppose-the-war-machine.html",
+          "select": "zotero://select/library/items/H5FKULWS"
+        }
+      ],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "T7GGRHFR",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/T7GGRHFR"
+    },
+    {
+      "key": "HJW73693",
+      "version": 21805,
+      "itemType": "newspaperArticle",
+      "title": "UMich Regents discuss protection for faculty, free speech principles",
+      "abstractNote": "The University of Michigan Board of Regents met in the Ruthven Building to discuss of free speech principles and a recap of previous events.",
+      "date": "2024-02-16T04:44:20+00:00",
+      "language": "en-US",
+      "url": "https://www.michigandaily.com/news/administration/board-of-regents-holds-meeting-on-protection-for-faculty-free-speech-principles/",
+      "accessDate": "2025-12-09T03:31:43Z",
+      "extra": "Palestine activism",
+      "place": "Ann Arbor, Michigan",
+      "publicationTitle": "The Michigan Daily",
+      "citationKey": "shanbomUMichRegentsDiscuss2024",
+      "creators": [
+        {
+          "firstName": "Matthew",
+          "lastName": "Shanbom",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [],
+      "relations": {
+        "dc:replaces": [
+          "http://zotero.org/users/11405897/items/Z52V75C5"
+        ]
+      },
+      "dateAdded": "2025-12-09T03:31:43Z",
+      "dateModified": "2026-06-14T19:36:25Z",
+      "uri": "http://zotero.org/users/11405897/items/HJW73693",
+      "itemID": 13641,
+      "attachments": [
+        {
+          "itemType": "attachment",
+          "title": "Snapshot",
+          "url": "https://www.michigandaily.com/news/administration/board-of-regents-holds-meeting-on-protection-for-faculty-free-speech-principles/",
+          "tags": [],
+          "relations": {},
+          "dateAdded": "2025-12-09T03:31:52Z",
+          "dateModified": "2025-12-09T03:31:52Z",
+          "uri": "http://zotero.org/users/11405897/items/YVFJ9ZAD",
+          "path": "/home/nathan/Zotero/storage/YVFJ9ZAD/board-of-regents-holds-meeting-on-protection-for-faculty-free-speech-principles.html",
+          "select": "zotero://select/library/items/YVFJ9ZAD"
+        }
+      ],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "HJW73693",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/HJW73693"
+    },
+    {
+      "key": "6MBDZ2LL",
+      "version": 21812,
+      "itemType": "newspaperArticle",
+      "title": "Students and staff question UMich AI investments",
+      "abstractNote": "Over 50 University of Michigan students, staff and community members attended a hybrid workshop about artificial intelligence’s current impact",
+      "date": "2024-11-07T03:29:26+00:00",
+      "language": "en-US",
+      "url": "https://www.michigandaily.com/news/campus-life/students-and-staff-question-umich-ai-investments/",
+      "accessDate": "2025-12-09T03:31:14Z",
+      "extra": "Data center and AI activism",
+      "place": "Ann Arbor, Michigan",
+      "publicationTitle": "The Michigan Daily",
+      "citationKey": "staffordStudentsStaffQuestion2024",
+      "creators": [
+        {
+          "firstName": "Elizabeth",
+          "lastName": "Stafford",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2025-12-09T03:31:14Z",
+      "dateModified": "2026-06-05T03:41:29Z",
+      "uri": "http://zotero.org/users/11405897/items/6MBDZ2LL",
+      "itemID": 13639,
+      "attachments": [],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "6MBDZ2LL",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/6MBDZ2LL"
+    },
+    {
+      "key": "C24NDK5T",
+      "version": 21796,
+      "itemType": "newspaperArticle",
+      "title": "Ann Arbor ban on certain ‘junk fees’ celebrated by renter rights advocates",
+      "abstractNote": "Some renter 'junk fees' are now banned in Ann Arbor. Here's what you need to know.",
+      "date": "2025-01-08T21:15:51.951Z",
+      "language": "en",
+      "url": "https://www.mlive.com/news/ann-arbor/2025/01/ann-arbor-ban-on-certain-junk-fees-celebrated-by-renter-rights-advocates.html",
+      "accessDate": "2025-12-09T03:35:48Z",
+      "extra": "Tenant organizing",
+      "place": "Ann Arbor, Michigan",
+      "section": "Ann Arbor",
+      "publicationTitle": "MLive",
+      "citationKey": "stantonAnnArborBan2025",
+      "creators": [
+        {
+          "firstName": "Ryan",
+          "lastName": "Stanton",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2025-12-09T03:35:48Z",
+      "dateModified": "2026-06-05T00:56:08Z",
+      "uri": "http://zotero.org/users/11405897/items/C24NDK5T",
+      "itemID": 13653,
+      "attachments": [
+        {
+          "itemType": "attachment",
+          "title": "Snapshot",
+          "url": "https://www.mlive.com/news/ann-arbor/2025/01/ann-arbor-ban-on-certain-junk-fees-celebrated-by-renter-rights-advocates.html",
+          "tags": [],
+          "relations": {},
+          "dateAdded": "2025-12-09T03:36:19Z",
+          "dateModified": "2025-12-09T03:36:19Z",
+          "uri": "http://zotero.org/users/11405897/items/J7HYTAPX",
+          "path": "/home/nathan/Zotero/storage/J7HYTAPX/ann-arbor-ban-on-certain-junk-fees-celebrated-by-renter-rights-advocates.html",
+          "select": "zotero://select/library/items/J7HYTAPX"
+        }
+      ],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "C24NDK5T",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/C24NDK5T"
+    },
+    {
+      "key": "UT38CEWK",
+      "version": 21805,
+      "itemType": "preprint",
+      "title": "The University Endowment and the Genocide in Gaza: An Investigation of the University of Michigan Endowment",
+      "date": "February 15, 2024",
+      "url": "https://bit.ly/UMEndowmentGuide",
+      "extra": "Palestine activism",
+      "citationKey": "tahrircoalitionUniversityEndowmentGenocide2024",
+      "creators": [
+        {
+          "name": "TAHRIR Coalition",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "Nathan",
+          "lastName": "Kim",
+          "creatorType": "editor"
+        }
+      ],
+      "tags": [],
+      "relations": {
+        "dc:replaces": [
+          "http://zotero.org/users/11405897/items/IPK3PD85",
+          "http://zotero.org/users/11405897/items/UI99M8K3"
+        ],
+        "owl:sameAs": [
+          "http://zotero.org/groups/5715748/items/7DI3J6U4"
+        ]
+      },
+      "dateAdded": "2024-03-01T03:33:40Z",
+      "dateModified": "2026-06-05T03:27:26Z",
+      "uri": "http://zotero.org/users/11405897/items/UT38CEWK",
+      "itemID": 6416,
+      "attachments": [
+        {
+          "itemType": "attachment",
+          "title": "Snapshot",
+          "url": "https://drive.google.com/file/d/1QMZRZyKakiX2HNax1zlw4Q47lPmSb1EK/view",
+          "tags": [],
+          "relations": {
+            "owl:sameAs": [
+              "http://zotero.org/groups/5715748/items/ZS98D3IQ"
+            ]
+          },
+          "dateAdded": "2024-05-01T18:06:52Z",
+          "dateModified": "2024-05-13T04:47:45Z",
+          "uri": "http://zotero.org/users/11405897/items/VKFGD89X",
+          "path": "/home/nathan/Zotero/storage/VKFGD89X/view.html",
+          "select": "zotero://select/library/items/VKFGD89X"
+        }
+      ],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "UT38CEWK",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/UT38CEWK"
+    },
+    {
+      "key": "A5Q8HQJ7",
+      "version": 21816,
+      "itemType": "blogPost",
+      "title": "First Paper Friday: Nathan Kim",
+      "abstractNote": "Kim’s paper explores how software containers helped make cloud computing possible, and how large tech companies used them to grow their power.",
+      "date": "July 24, 2026",
+      "language": "en",
+      "shortTitle": "First Paper Friday",
+      "url": "https://www.si.umich.edu/about-umsi/news/first-paper-friday-nathan-kim",
+      "accessDate": "2026-08-20T22:10:24Z",
+      "extra": "Political economy research",
+      "blogTitle": "University of Michigan School of Information",
+      "citationKey": "uomsiFirstPaperFriday",
+      "creators": [
+        {
+          "firstName": "Noor",
+          "lastName": "Hindi",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2026-08-20T22:10:24Z",
+      "dateModified": "2026-08-20T22:14:45Z",
+      "uri": "http://zotero.org/users/11405897/items/A5Q8HQJ7",
+      "itemID": 15692,
+      "attachments": [
+        {
+          "itemType": "attachment",
+          "title": "Snapshot",
+          "url": "https://www.si.umich.edu/about-umsi/news/first-paper-friday-nathan-kim",
+          "tags": [],
+          "relations": {},
+          "dateAdded": "2026-08-20T22:10:32Z",
+          "dateModified": "2026-08-20T22:10:32Z",
+          "uri": "http://zotero.org/users/11405897/items/MWQYJQMK",
+          "path": "/home/nathan/Zotero/storage/MWQYJQMK/first-paper-friday-nathan-kim.html",
+          "select": "zotero://select/library/items/MWQYJQMK"
+        }
+      ],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "A5Q8HQJ7",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/A5Q8HQJ7"
+    },
+    {
+      "key": "3HH8BF59",
+      "version": 21796,
+      "itemType": "newspaperArticle",
+      "title": "City Council will vote to close loopholes in Early Leasing Ordinance",
+      "abstractNote": "A new proposed ordinance aims to help tenants in the city by closing perceived loopholes in two existing housing ordinances",
+      "date": "2024-03-04T04:13:25+00:00",
+      "language": "en-US",
+      "url": "https://www.michigandaily.com/news/ann-arbor/a-victory-for-tenants-city-council-to-vote-on-ordinance-to-close-loopholes-in-right-to-renew-early-leasing-ordinances/",
+      "accessDate": "2025-12-09T03:33:00Z",
+      "extra": "Tenant organizing",
+      "place": "Ann Arbor, Michigan",
+      "publicationTitle": "The Michigan Daily",
+      "citationKey": "vandermolenCityCouncilWill2024",
+      "creators": [
+        {
+          "firstName": "Abigail",
+          "lastName": "VanderMolen",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2025-12-09T03:33:00Z",
+      "dateModified": "2026-06-05T00:56:15Z",
+      "uri": "http://zotero.org/users/11405897/items/3HH8BF59",
+      "itemID": 13647,
+      "attachments": [
+        {
+          "itemType": "attachment",
+          "title": "Snapshot",
+          "url": "https://www.michigandaily.com/news/ann-arbor/a-victory-for-tenants-city-council-to-vote-on-ordinance-to-close-loopholes-in-right-to-renew-early-leasing-ordinances/",
+          "tags": [],
+          "relations": {},
+          "dateAdded": "2025-12-09T03:33:07Z",
+          "dateModified": "2025-12-09T03:33:07Z",
+          "uri": "http://zotero.org/users/11405897/items/Y7N72HDD",
+          "path": "/home/nathan/Zotero/storage/Y7N72HDD/a-victory-for-tenants-city-council-to-vote-on-ordinance-to-close-loopholes-in-right-to-renew-ea.html",
+          "select": "zotero://select/library/items/Y7N72HDD"
+        }
+      ],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "3HH8BF59",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/3HH8BF59"
+    },
+    {
+      "key": "M5K9CEU6",
+      "version": 21796,
+      "itemType": "newspaperArticle",
+      "title": "Ann Arbor Tenants Union sees revival after decades-long hiatus",
+      "abstractNote": "After a decades-long pause in organizing efforts, the Ann Arbor Tenants Union is resuming its operations and held its first meeting March 3.",
+      "date": "2024-03-14T03:02:47+00:00",
+      "language": "en-US",
+      "url": "https://www.michigandaily.com/news/ann-arbor/ann-arbor-tenants-union-sees-revival-after-decades-long-hiatus/",
+      "accessDate": "2025-12-09T03:31:08Z",
+      "extra": "Tenant organizing",
+      "publicationTitle": "The Michigan Daily",
+      "citationKey": "venclovaite-piraniAnnArborTenants2024",
+      "creators": [
+        {
+          "firstName": "Amanda",
+          "lastName": "Venclovaite-Pirani",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2025-12-09T03:31:08Z",
+      "dateModified": "2026-06-05T03:41:41Z",
+      "uri": "http://zotero.org/users/11405897/items/M5K9CEU6",
+      "itemID": 13638,
+      "attachments": [],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "M5K9CEU6",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/M5K9CEU6"
+    },
+    {
+      "key": "N5IDD2CY",
+      "version": 21796,
+      "itemType": "magazineArticle",
+      "title": "Why Tenant Unions Are Spreading Across College Campuses",
+      "abstractNote": "Faced with aging dorms, private equity landlords and few protections, student renters are banding together.",
+      "date": "2026-08-19",
+      "language": "en",
+      "url": "https://inthesetimes.com/article/why-tenant-unions-are-spreading-across-college-campuses",
+      "accessDate": "2026-08-20T22:11:00Z",
+      "extra": "Tenant organizing",
+      "publicationTitle": "In These Times",
+      "citationKey": "WhyTenantUnions2026",
+      "creators": [
+        {
+          "firstName": "Lily",
+          "lastName": "Seltz",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2026-08-20T22:11:00Z",
+      "dateModified": "2026-08-20T22:11:50Z",
+      "uri": "http://zotero.org/users/11405897/items/N5IDD2CY",
+      "itemID": 15694,
+      "attachments": [
+        {
+          "itemType": "attachment",
+          "title": "Snapshot",
+          "url": "https://inthesetimes.com/article/why-tenant-unions-are-spreading-across-college-campuses",
+          "tags": [],
+          "relations": {},
+          "dateAdded": "2026-08-20T22:11:10Z",
+          "dateModified": "2026-08-20T22:11:10Z",
+          "uri": "http://zotero.org/users/11405897/items/MTCGPVTX",
+          "path": "/home/nathan/Zotero/storage/MTCGPVTX/why-tenant-unions-are-spreading-across-college-campuses.html",
+          "select": "zotero://select/library/items/MTCGPVTX"
+        }
+      ],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "N5IDD2CY",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/N5IDD2CY"
+    }
+  ]
+}

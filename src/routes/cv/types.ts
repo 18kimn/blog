@@ -52,9 +52,11 @@ export interface CV {
   }
   sections: {
     name: string
+    order?: number
     subtitle?: string
     entries: Entry[]
   }[]
+  subtitles?: {[name: string]: string}
 }
 
 export type CSL = {

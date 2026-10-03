@@ -138,7 +138,13 @@
     </div>
   </dialog>
 
-  <CVBody bind:node {search} {csl} {isCompact} {fontsize}>
+  <CVBody
+    bind:node
+    {search}
+    {csl}
+    {isCompact}
+    {fontsize}
+  >
     <button
       class="opener no-print"
       bind:this={opener}

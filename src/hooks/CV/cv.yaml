@@ -3,26 +3,15 @@ meta:
   email: nathanckim18@gmail.com
   website: nathan-kim.org
   bluesky: nathanckim
-  last_updated: "July 29, 2026"
-resume:
-  sections:
-    - name: Education
-    - name: Other work experience
-      as: Experience
-      limit: 5
-    - name: Peer-reviewed publications
-      as: Selected publications
-      limit: 3
-    - name: Public scholarship and policy writing
-      as: Selected public writing
-      limit: 3
-    - name: Grants, Fellowships, and Awards
-      as: Grants and awards
-      limit: 4
-    - name: Affiliations
-    - name: Technical skills
+  last_updated: "October 1, 2026"
+subtitles:
+  Papers for conference workshops: Lightly peer-reviewed.
+  Invited lectures: Guest lectures and talks in non-peer reviewed settings.
+  Media appearances: Podcast interviews and press coverage of my research.
+  Digital projects: Digital archives and web research tools for which I acted as a web developer or project manager.
 sections:
   - name: Education
+    order: 10
     entries:
       - name: PhD in Information
         role:
@@ -35,17 +24,8 @@ sections:
           Statistics & Data Science
         role: Yale University
         date: 2018-2022
-  - name: Peer-reviewed publications
-  - name: Manuscripts under review and in preparation
-  - name: Public scholarship and policy writing
-  - name: Conference presentations
-  - name: Papers for conference workshops
-    subtitle: Lightly peer-reviewed.
-  - name: Invited lectures and presentations
-    subtitle:
-      Interviews and presentations in non-peer reviewed
-      settings.
   - name: Grants, Fellowships, and Awards
+    order: 50
     entries:
       - name:
           Grant from Michigan Initiative for Democracy and
@@ -86,8 +66,8 @@ sections:
           The Yale Asian American Cultural Center First-Year
           Award
         date: May 2019
-  - name: Digital projects
   - name: Affiliations
+    order: 140
     entries:
       - name: The Marxism Lab at the University of Michigan
         role: Member.
@@ -104,6 +84,7 @@ sections:
         date: Fall 2023-Present
         link: https://esc.umich.edu
   - name: Teaching experience
+    order: 110
     entries:
       - name: University of Michigan School of Information
         role: Graduate Student Instructor
@@ -118,6 +99,7 @@ sections:
           Exploration and Analysis</em> during weekly hours.
           Assisted in creation of midterm and final exams.
   - name: Other work experience
+    order: 120
     entries:
       - name: The Distributed AI Research Institute
         role: Graduate Research Associate
@@ -171,6 +153,7 @@ sections:
           activities such as segmenting letters, and donor
           identity.
   - name: Technical skills
+    order: 150
     entries:
       - type: markdown
         markdown: |
